@@ -1,0 +1,25 @@
+<%- include('partials/header') %>
+
+<div class="mx-auto" style="width: 90%;margin:20px; padding:20px; border: 1px grey solid;">
+    <h1> <%= artentries.category %> </h1>
+    <h3> <%= artentries.title %> </h3>
+    <div>
+        <img src="<%= artentries.image %>" class="img-fluid" alt="<%= artentries.title %>">
+    </div>
+    <div>
+        <p> <%= artentries.primaryAudience %> </p>
+        <p> <%= artentries.description %> </p>
+        <p> <%= artentries.format %> </p>
+    </div>
+</div>
+
+
+<div>
+    <button type="button" class="btn-btn" style="margin-left:5%;" ><a href="/artentries">Back to Home</a></button>
+    <a href="/artentries/<%= artentries._id %>/edit" class="btn-sm btn-warning">Edit</a> 
+</div>
+
+
+<%- include('partials/footer') %>
+
+

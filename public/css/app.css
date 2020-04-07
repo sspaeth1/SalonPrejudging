@@ -1,0 +1,21 @@
+*{
+	margin:0;
+	padding:0;	
+}
+
+.navbar{
+	background: #002632 !important;
+}
+
+.footer{
+	color:#fff;
+	background: #002632;
+	margin:0px;
+	padding:40px;
+}
+
+
+img {
+	width:30%
+	margin: auto;
+}

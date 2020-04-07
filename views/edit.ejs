@@ -1,0 +1,28 @@
+<%- include('partials/header')%>
+
+<div class="container">
+
+    <h1 class="d-flex justify-content-center mt-5">Edit <%= artentries.title %> </h1>
+      <div class="d-flex justify-content-center">
+        <form class="" action="/artentries/<%= artentries._id %>?_method=PUT" method="POST">
+          <input class="form-control m-3" type="text" name="artentries[category]" value="<%= artentries.category %>">
+          <input class="form-control m-3" type="text" name="artentries[title]" value="<%= artentries.title %>">
+          <input  class="form-control m-3" type='text' name='artentries[image]' value="<%= artentries.image %>">
+    <!-- <input class="form-control m-3" type="text" name="artentries[inviteeStatus]" placeholder="Invitee Status">
+          <input  class="form-control m-3" type="text" name="artentries[category]" placeholder=" Category">
+          <input class="form-control m-3" type="text" name="artentries[medium]" placeholder="Medium">
+    -->     <input  class="form-control m-3" type="text" name="artentries[format]" value="<%= artentries.format %>">
+          <textarea class="form-control m-3" type="textarea" name="artentries[primaryAudience]"><%= artentries.primaryAudience %></textarea>
+          <input class='form-control m-3' type="text" name="artentries[description]"  value="<%= artentries.description %>">
+          <a href="../images/logo.png" class=""></a>
+        <span>
+          <button class='btn btn-primary lg btn-block m-3' type="post" name="button" onclick="function clicked(){console.log('button clicked')}">Edit Entry</button>
+          <form action="/artentries/<%= artentries._id %>?_method=DELETE" method="POST" >
+              <button class="btn-sm btn-danger btn-block m-3"> Delete</button>
+          </form>
+        </span>
+  </div>
+      <a href="/artentries" class="d-flex justify-content-center">Go Back</a>
+</div>
+
+<%- include('partials/footer');%>

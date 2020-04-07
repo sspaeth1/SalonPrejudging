@@ -1,0 +1,34 @@
+<%- include('partials/header')%>
+
+<div class="container">
+  <div class="">
+    <header class="jumbotron">
+      <h1>AMI Prejudging Panel</h1>
+      <p>preperation for AMI conference</p>
+      <a class="btn btn-primary btn-large" href="/artentries/new">Submit new entry</a>
+    </header>
+  </div>
+
+  <div class="row">
+    <% artentries.forEach(function(artentries){ %>
+      <div class="col-md-3 `col-sm-6">
+        <div class="img-thumbnail m-2" >
+          <img src="<%= artentries.image%>" class="card-img-top" alt="" >
+        </div>
+        <span> <%= artentries.created %> </span>
+        <div class="">
+            <h4>
+               <%=  artentries.title %>
+            </h4>
+            <p>
+              <%= artentries.primaryAudience.substring(0,100) %> ...  
+              <a href="/artentries/<%= artentries._id %>" class="btn btn-primary lg"> More info <%= artentries._id %></a>  
+            </p>   
+        </div>
+      </div>
+    <% }); %>
+  </div>
+</div>
+
+
+<%- include ('partials/footer') %>
