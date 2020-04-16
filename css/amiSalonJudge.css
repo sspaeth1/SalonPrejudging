@@ -1,0 +1,96 @@
+*, html{
+	//5DBCD2
+	// 002631   dark
+	font-family: 'Raleway', sans-serif;
+	padding:0;
+	margin: 0;
+}
+
+
+@media screen and (min-width: 500px){
+	.loginContainer{
+	margin: 10% 30%;
+	height: 300px;
+	min-width: 400px;
+	padding: 0;
+	background: #002631;
+	}
+
+
+	fieldset > img{
+	height: 50px;
+	padding:0;
+	margin: 5% 18%;
+	background: #002631 left;
+	}
+}
+
+
+@media screen and (max-width: 501px){
+
+	.loginContainer{	
+		margin: 0;
+		padding: 0;
+		border: none;
+		background: #002631;
+		height: 500px;
+	}
+
+
+	fieldset > img{
+		height: 50px;
+		padding:0;
+		margin: 5% 35%;
+		background: #002631 left;
+	}
+
+}
+
+
+	form{
+	background: #fff;
+	padding: 10% 0% 30% 0%;
+	text-align: center;
+	}
+
+
+	fieldset{
+		border: 1px solid #002631;
+		margin:0;
+		padding:0;
+	}
+
+	.bar{
+		height: 60px;
+		background: #5DBCD2;
+		border:0;
+		padding: 15px 0;
+		height: 30px;
+		color: #fff;
+		text-align: center;
+		font-size: 2em;
+		font-family: 'Raleway', sans-serif;
+	}
+
+
+	input {
+	  display: inline-block;
+	  border-radius: 2px;
+	  border: 1px solid #5DBCD2;
+	  height: 40px;
+	  margin:10px;
+	}
+
+	input[placeholder]{
+		font-size: 1.2em;
+		padding:8px;
+	}
+
+
+	legend{
+		color:#fff;
+	}
+
+	.fieldTitle{
+		padding-top: 200px;
+	}
