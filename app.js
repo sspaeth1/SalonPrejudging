@@ -136,7 +136,7 @@ function isLoggedIn(req, res, next){
 //==============
 
 //INDEX route 
-app.get('/artentries', function(req, res){
+app.get('/artentries',isLoggedIn, function(req, res){
   artEntry.find({}, function(err, artentries){
     if(err){
       console.log(err);
