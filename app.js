@@ -11,7 +11,32 @@ app = express();
 
 //App config
 
-mongoose.connect("mongodb://localhost:27017/salon_prejudging_app", { useNewUrlParser: true,  useUnifiedTopology: true }, { useFindAndModify: false });
+// // mongoose connect local
+// mongoose.connect("mongodb://localhost:27017/salon_prejudging_app", { useNewUrlParser: true,  useUnifiedTopology: true }, { useFindAndModify: false });
+// //mongoose connect mongo DB Atlas
+//mongoose.connect("mongodb+srv://spaeth2:acdNGY4RKoPe@ss-apps-vtkpg.mongodb.net/test?retryWrites=true&w=majority",{
+//   useNewUrlParser:true,
+//     useCreateIndex:true
+//   }).then(()=>{
+//     console.log('Connected to DB');
+//   }).catch(err => {
+//     console.log("Error: " + err.message);
+// });
+
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://spaeth2:acdNGY4RKoPe@ss-apps-vtkpg.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, {
+  useNewUrlParser : true, 
+  useCreateIndex:true,
+  useUnifiedTopology: true
+});
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
+
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
