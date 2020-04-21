@@ -1,0 +1,13 @@
+<%- include('partials/header.ejs') %>
+<h1>Register</h1>
+
+<form action="/register" method="post">
+    <input required type="text" name="username" placeholder=""sample@email.com>
+    <input required type="text" name="password" placeholder="Password">
+    <button>Register</button>;
+
+</form>
+
+<a href="/" class="btn btn-primary large ">View all campgrounds</a>
+
+<%- include('partials/footer.ejs') %>
