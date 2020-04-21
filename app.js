@@ -221,5 +221,5 @@ app.delete("/artentries/:id", function(req, res){
   });
 });
 
-
-app.listen(3000, process.env.IP, function(){console.log("Server Started for prejuging app");});
+var port = process.env.PORT || 8000 ;
+app.listen(port, function(){console.log("Server Started for prejuging app");});
