@@ -19,3 +19,7 @@ img {
 	width:30%
 	margin: auto;
 }
+
+.singlePage{
+	min-height: 600px;
+}

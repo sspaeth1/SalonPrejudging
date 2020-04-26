@@ -3,11 +3,16 @@
 
 
 
- <div class="d-flex flex-row justify-content-center m-5 footer">
-   <p>AMI Members Login   |   Admin Login   |   Site Map   |   info@ami.org   |   866-393-4AMI
-    All Content ©2020 Association of Medical Illustrators. All Rights Reserved.   |   Using Images from This Site   |   Policies  
-   </p>
-  <p> ©  Shlomotion <%= Date() %></p>
+ <div class="d-flex flex-row m-5 footer">
+  <div>
+    <p class="col-8">     info@ami.org   |   866-393-4AMI
+      All Content ©2020 Association of Medical Illustrators. All Rights Reserved.   |   Using Images from This Site   |   Policies  
+     </p>  
+  </div> 
+   <div>
+     ©  Shlomotion <%= new Date().getFullYear(); %>
+   </div>
+
 </div>
   </body>
 </html>
