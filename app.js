@@ -5,36 +5,42 @@ express = require('express'),
 passport = require('passport'),
 LocalStrategy = require('passport-local'),
 User = require ('./models/user'),
-artEntry = require('./models/artentries');
+artEntry = require('./models/artentries'),
+alt = 'acdNGY4RKoPe';
 
 app = express();
+
+
 
 //App config
 
 // // mongoose connect local
 // mongoose.connect("mongodb://localhost:27017/salon_prejudging_app", { useNewUrlParser: true,  useUnifiedTopology: true }, { useFindAndModify: false });
-// //mongoose connect mongo DB Atlas
-//mongoose.connect("mongodb+srv://spaeth2:acdNGY4RKoPe@ss-apps-vtkpg.mongodb.net/test?retryWrites=true&w=majority",{
-//   useNewUrlParser:true,
-//     useCreateIndex:true
-//   }).then(()=>{
-//     console.log('Connected to DB');
-//   }).catch(err => {
-//     console.log("Error: " + err.message);
-// });
 
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://spaeth2:acdNGY4RKoPe@ss-apps-vtkpg.mongodb.net/test?retryWrites=true&w=majority";
-const client = new MongoClient(uri, {
-  useNewUrlParser : true, 
-  useCreateIndex:true,
-  useUnifiedTopology: true
+// //mongoose connect mongo DB Atlas
+mongoose.connect("mongodb+srv://spaeth2:"+alt+"@ss-apps-vtkpg.mongodb.net/test?retryWrites=true&w=majority",{
+   useNewUrlParser:true,
+    useCreateIndex:true,
+    useUnifiedTopology:true
+  }).then(()=>{
+    console.log('Connected to DB');
+  }).catch(err => {
+    console.log("Error: " + err.message);
 });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
+
+// // Atlas mongo client code
+// const MongoClient = require('mongodb').MongoClient;
+// const uri = "mongodb+srv://spaeth2:acdNGY4RKoPe@ss-apps-vtkpg.mongodb.net/test?retryWrites=true&w=majority";
+// const client = new MongoClient(uri, {
+//   useNewUrlParser : true, 
+//   useCreateIndex:true,
+//   useUnifiedTopology: true
+// });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });
 
 
 app.use(express.static("public"));
@@ -68,7 +74,6 @@ app.use(function(req, res, next){
 //   fomat: 'painting',
 //   audience: 'High School'
 // });
-
 
 // // check if admin middleware
 // router.post('/login', requireAdmin(), passport.authenticate('local'), function(req, res) {
