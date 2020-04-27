@@ -13,3 +13,8 @@ img {
 	width:30%
 	margin: auto;
 }
+
+img.card-img-top {
+    width: auto;
+	height: 200px !important;
+}
