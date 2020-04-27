@@ -10,7 +10,9 @@ var artEntrySchema = new mongoose.Schema({
     primaryAudience: String,
     description: String,
     audience: String,
+    rating: Number,
     created: {type: Date, default: Date.now}
+
   });
   
   var artEntry = mongoose.model("ArtEntry", artEntrySchema);
