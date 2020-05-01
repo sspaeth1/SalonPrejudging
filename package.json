@@ -5,12 +5,17 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node app.js",
+    "compilesass": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 public/css/app.scss public/css/app.css",
+    "css-minify": "cleancss --level 1 --format breaksWith=lf --source-map --source-map-inline-sources --output dist/styles.min.css dist/styles.css",
+    "process-styles": "npm run compilesass && npm run css-minify"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "bootstrap": "^4.4.1",
+    "connect-flash": "^0.1.1",
     "dotenv": "^8.2.0",
     "dropbox": "^4.0.30",
     "ejs": "^3.0.1",
@@ -20,8 +25,14 @@
     "isomorphic-fetch": "^2.2.1",
     "method-override": "^3.0.0",
     "mongoose": "^5.7.13",
+    "node-fetch": "^2.6.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "passport-local-mongoose": "^6.0.1"
+    "passport-local-mongoose": "^6.0.1",
+    "uuid": "^7.0.3"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^4.3.0",
+    "node-sass": "^4.14.0"
   }
 }

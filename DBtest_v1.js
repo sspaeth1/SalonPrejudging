@@ -42,11 +42,12 @@ let filesFromDB =JSON.stringify(json);
 let url = 'https://www.reddit.com/r/popular.json';
 
 
-app.get('/_index', (req, res, next)=>{
+app.get('/index', (req, res, next)=>{
+    res.render('DBtest');
     });
 
 
-app.get('/', (req, res)=>{res.redirect('/_index')});
+app.get('/', (req, res)=>{res.redirect('/index')});
 
 
 app.listen(port, host,console.log(`listening on port: ${port}`));

@@ -14,9 +14,10 @@
     -->     <input  class="form-control m-3" type="text" name="artentries[format]" value="<%= artentries.format %>">
           <textarea class="form-control m-3" type="textarea" name="artentries[primaryAudience]"><%= artentries.primaryAudience %></textarea>
           <input class='form-control m-3' type="text" name="artentries[description]"  value="<%= artentries.description %>">
+          <input class='form-control m-3' type="text" name="artentries[rating]"  value="<%= artentries.rating %>">
           <a href="../images/logo.png" class=""></a>
         <span>
-          <button class='btn btn-primary lg btn-block m-3' type="post" name="button" onclick="function clicked(){console.log('button clicked')}">Edit Entry</button>
+          <button class='btn btn-primary lg btn-block m-3' type="post" name="button">Edit Entry</button>
           <form action="/artentries/<%= artentries._id %>?_method=DELETE" method="POST" >
               <button class="btn-sm btn-danger btn-block m-3"> Delete</button>
           </form>
@@ -25,4 +26,4 @@
       <a href="/artentries" class="d-flex justify-content-center">Go Back</a>
 </div>
 
-<%- include('partials/footer');%>
+<%- include('partials/footer') %>

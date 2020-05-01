@@ -1,0 +1,149 @@
+$theme-colors:(
+	"primary":#002632,
+	"danger": rgb(212, 87, 87)
+);
+$DarkBlue:#002632;
+
+@import "node_modules/bootstrap/scss/bootstrap";
+@font-face{
+	font-family: 'ProximaNova_reg';
+	src: url('../font/ProximaNova-Reg.otf')format('otf');
+}
+@font-face{
+	font-family: 'ProximaNova_blck';
+	src: url('../font/ProximaNova-Black.otf')format('otf');
+}
+
+*{
+	margin:0;
+	padding:0;	
+}
+
+body{
+	background-color: #FFA100;
+}
+
+.headerNav {
+	min-height: 125px;
+	background: #002632 !important;
+	color: #fff;
+	min-width: 400px
+}
+
+.signInBox {
+    background-color: #fff;
+    padding: 30px 60px 30px 30px;
+    border: 1px solid black;
+	color: #ffa100;
+	min-width: 350px;
+}
+
+.form-control-lg{
+	border-radius: 0;
+}
+
+.footer{
+	color:#fff;
+	background: #002632;
+	margin:0px;
+	padding:40px;
+}
+
+
+img {
+	width:30%;
+	margin: auto;
+}
+
+.singlePage{
+	min-height: 600px;
+}
+
+.entryItem{
+	width: 90%;
+	margin:20px;
+	padding:20px;
+	border: 1px $gray-600;
+}
+
+
+label{
+	/* content: '\A';
+	white-space: pre; */
+	display:block;
+} 
+
+.navbar-light{
+	background: #002632 !important;
+}
+
+*{
+	margin:0;
+	padding:0;	
+}
+
+img {
+	width:30%;
+	margin: auto;
+}
+
+img.card-img-top {
+    width: auto;
+	height: 200px !important;
+}
+
+h1.formField{
+	text-align: center;
+	font-size: 1.5rem;
+}
+
+.midgrey{
+	color: $gray-600;
+}
+
+////// Nav Drop down//
+
+#pageNav{
+	font-family: 'proximaNova_reg', sans-serif;
+	font-size: 1.2rem;
+	font-weight: 300;
+	background-color:$gray-100;
+    color: $DarkBlue;
+}
+
+  .navbar .nav-item:not(:last-child) {
+	margin-right: 35px;
+	font-family: 'roboto', sans-serif;
+  }
+  
+  .dropdown-toggle::after {
+	 transition: transform 0.15s linear; 
+  }
+  
+  .show.dropdown .dropdown-toggle::after {
+	transform: translateY(3px);
+  }
+  
+  .dropdown-menu {
+	margin-top: 0;
+	border-radius: 0;
+	box-shadow: 4px 4px $DarkBlue;
+	font-family: roboto, sans-serif;
+	;
+  }
+
+  img[alt="Home button"]{
+	  height:35px;
+  }
+  
+/////
+
+.appendixContainer{
+    margin: auto;
+    width: 90%;
+    border: solid $DarkBlue 1px;
+    border-top: 0;
+    background-color: #fff;
+    padding: 40px;
+
+}

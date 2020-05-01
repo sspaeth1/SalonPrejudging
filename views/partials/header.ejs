@@ -9,17 +9,19 @@
       integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
       crossorigin="anonymous">
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link href="../css/app.css" rel="stylesheet" type="text/css" >
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark headerNav">
      <div class="container-fluid">
       <img src="../images/logo.png">
-      <h3>AMI Salon Prejudging</h3>
+      <h1>AMI Salon Prejudging</h1>
     </div>
+   
     <div class="navbar navbar-dark navbar-collapse">
       <ul class="navbar-nav mr-auto navbar-right">
         <% if(!currentUser){ %>
@@ -32,3 +34,83 @@
       </ul>
     </div>
   </nav>
+  <nav id="pageNav" class="navbar navbar-expand-md">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              My Judging Catergories
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+              <a class="dropdown-item" href="#">F. Animation - Medical visualizations of surgical, anatomical, pathological, health-related or bio-scientific structures, functions, and/or processes. May be 2D or 3D.</a>
+              <a class="dropdown-item" href="#">Past Winners</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Guidelines
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+              group1
+              <a class="dropdown-item" href="#">entry 1</a>
+              <a class="dropdown-item" href="#">entry2</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">entry 3</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Judging Groups
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+              group1
+              <a class="dropdown-item" href="#">entry 1</a>
+              <a class="dropdown-item" href="#">entry2</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">entry 3</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Award Winners
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                A
+              </div>
+          </li> 
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Apendices
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+              <a class="dropdown-item" href="/appendixA">Appendix A</a>
+              <a class="dropdown-item" href="/appendixB">Appendix B</a>
+            </div>
+        </li>    
+        </ul>
+        <img src="images/svg/home.svg" href="/" alt="Home button">
+      </div>
+    </div>
+  </nav>
+  <script src="js/navHover.js"></script>
+
+
+  <div class="container">
+    <% if(error && error.length > 0){ %>
+      <div class="alert alert-danger" role="alert">
+        <%= error %>
+      </div>
+    <% } %>
+    <% if( success && success.length > 0){ %> 
+      <div class="alert alert-success" role="alert">
+          <%= success %>
+      </div>
+    <% } %>
+
+  
+  </div>
+ 
