@@ -15,7 +15,7 @@ const express = require('express'),
 
 // show register form
 router.get("/register", function(req, res){
-    res.render("register");
+    res.redirect("login");
   });
   
   //handle sign up logic

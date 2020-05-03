@@ -30,13 +30,33 @@ const artentries = ('../models/artentries'),
   //SHOW Routes
   //===========
 
+
+  // Home
+  router.get('/home', isLoggedIn, (req, res)=> res.render('home'));
+
+
+  // guidelines
+  router.get('/generalGuidelines', isLoggedIn, (req, res)=> res.render('generalGuidelines'));
+  router.get('/guidelinesPrejudging',isLoggedIn, (req, res)=> res.render('guidelinesPrejudging'));
+
+  // Judging Groups
+  router.get('/judgingGroups', isLoggedIn, (req, res)=> res.render('judgingGroups'));
+    // create POST route
+
+  // Award Winners
+  router.get('/awardWinners',isLoggedIn, (req, res)=> res.render('awardWinners'));
+    
+  
   // appendix A
-  router.get('/appendixA',(req,res)=> res.render('appendixA'));
+  router.get('/appendixA', isLoggedIn,(req,res)=> res.render('appendixA'));
 
   // appendix B
-  router.get('/appendixB', (req, res)=> res.render('appendixB'));
+  router.get('/appendixB', isLoggedIn,(req, res)=> res.render('appendixB'));
 
+   
+    
 
+  // My Judging Categories
   router.get("/artentries/:id", function(req, res){
     artEntry.findById(req.params.id, function(err, foundBlog){
       if(err){
@@ -48,7 +68,6 @@ const artentries = ('../models/artentries'),
   
     });
   });
-
   
   
   //EDIT ROUTE 

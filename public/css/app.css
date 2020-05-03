@@ -10,7 +10,7 @@
   --purple: #6f42c1;
   --pink: #e83e8c;
   --red: #dc3545;
-  --orange: #fd7e14;
+  --orange: #ffa100;
   --yellow: #ffc107;
   --green: #28a745;
   --teal: #20c997;
@@ -9644,14 +9644,22 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 body {
-  background-color: #FFA100;
+  background-color: #F6F8F9;
+}
+
+.orange {
+  color: #ffa100;
 }
 
 .headerNav {
   min-height: 125px;
   background: #002632 !important;
-  color: #fff;
+  color: #8c8d97;
   min-width: 400px;
+}
+
+.navbar-brand img {
+  max-height: 50px;
 }
 
 .signInBox {
@@ -9671,11 +9679,6 @@ body {
   background: #002632;
   margin: 0px;
   padding: 40px;
-}
-
-img {
-  width: 30%;
-  margin: auto;
 }
 
 .singlePage {
@@ -9704,11 +9707,6 @@ label {
   padding: 0;
 }
 
-img {
-  width: 30%;
-  margin: auto;
-}
-
 img.card-img-top {
   width: auto;
   height: 200px !important;
@@ -9731,9 +9729,17 @@ h1.formField {
   color: #002632;
 }
 
+nav h1 {
+  text-align: center;
+}
+
 .navbar .nav-item:not(:last-child) {
   margin-right: 35px;
   font-family: 'roboto', sans-serif;
+}
+
+.navbar-toggler-icon {
+  background-image: url("../images/svg/hamburger.svg");
 }
 
 .dropdown-toggle::after {
@@ -9752,7 +9758,9 @@ h1.formField {
 }
 
 img[alt="Home button"] {
+  margin-left: 10px;
   height: 35px;
+  width: 25px;
 }
 
 .appendixContainer {
@@ -9766,7 +9774,7 @@ img[alt="Home button"] {
 
 .fullSpan {
   font-weight: 100;
-  background-color: #FFA100;
+  background-color: #ffa100;
   color: #fff;
   padding: 2% 8%;
   box-shadow: 2px 2px 10px #d85102;
