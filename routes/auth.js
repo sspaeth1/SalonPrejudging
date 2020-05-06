@@ -15,7 +15,7 @@ const express = require('express'),
 
 // show register form
 router.get("/register", function(req, res){
-    res.redirect("login");
+    res.render("register");
   });
   
   //handle sign up logic
@@ -29,7 +29,7 @@ router.get("/register", function(req, res){
         return res.render('register');
       }
       passport.authenticate('local')(req, res, function(){
-        res.redirect('/artentries');
+        res.redirect('/index');
       });
     });
   });

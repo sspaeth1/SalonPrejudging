@@ -24,21 +24,25 @@
 
     <nav class="navbar navbar-expand-sm  headerNav">
      <div class="container-fluid">
-      <div class="navbar-brand"> <img src="../images/logo.png" href="/home"></div>
-      <span class="navbar-text"> <h1>AMI Salon Prejudging</h1></span>
-      
-    </div>
+       <div class="col-10">
+            <div class="navbar-brand"> <img src="../images/logo.png" href="/home"></div>
+            <h3 class="navbar-text text-center"> AMI Salon Prejudging</h3>
+       </div>
+       <div class="col-2">
+        <ul class="">
+          <% if(!currentUser){ %>
+            <li class=" userProfileStatus nav-link"> <a href="/login">Login</a></li>
+            <!-- <li class="nav-item"><a href="/register" class="nav-link">Register</a></li> -->
+          <%  } else{   %>
+            <li class=" userProfileStatus "><a href="/profile" class="orange font-weight-bold nav-link"> <%= currentUser.username %></a></li>
+            <li class=" userProfileStatus"><a href="/logout" class="nav-link midgrey">Logout</a></li>
+          <% } %>
+        </ul>
+       </div>
+      </div>
    
-    <div class="navbar navbar-dark navbar-collapse">
-      <ul class="navbar-nav mr-auto navbar-right">
-        <% if(!currentUser){ %>
-          <li class="nav-item"> <a href="/login" class="nav-link">Login</a></li>
-          <li class="nav-item"><a href="/register" class="nav-link">Register</a></li>
-        <%  } else{   %>
-          <li class="nav-item"><a href="/profile" class="orange"> <%= currentUser.username %></a></li>
-          <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
-        <% } %>
-      </ul>
+  
+     
     </div>
   </nav>
 

@@ -1,17 +1,30 @@
 <%- include('partials/header.ejs') %>
 
+<style> body{background-color:#FFA100} </style>
 
-<div class="d-flex justify-content-center m-4 singlePage align-items-center">
-    <div class="col-md-4">
-        <h1>Register</h1>
+      
+<main class="d-flex justify-content-center m-4 singlePage align-items-center">
+    <div class="col-md-4 signInBox">
+        <h1 class="formField">Enter a new username</h1>
+        <p class="midgrey _1rem">Please use alphanumerica with no spaces or the following characters $.%,|</p>
         <form action="/register" method="post" class="form-group ">
             <input required type="text" name="username" placeholder="Email"  class="form-control-lg m-2">
-            <input required type="text" name="password" placeholder="Password" class="form-control-lg m-2">
+            <input required type="password" name="password" placeholder="Password" class="form-control-lg m-2">
             <button class="btn btn-lg btn-primary m-2 ">Register</button>
-        
         </form>
+        <p class="midgrey">Already registered? <a href="/register" %> >Login</p></a> </p> 
+    </div>
+</main>
         
     </div>
 </div>
+
+
+
+
+
+
+
+
 
 <%- include('partials/footer.ejs') %>

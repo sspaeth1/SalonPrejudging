@@ -9671,6 +9671,14 @@ body {
   padding-left: 40px;
 }
 
+._1Rem {
+  font-size: 1rem;
+}
+
+.halfRem {
+  font-size: .5rem;
+}
+
 .nobullet {
   list-style: none;
 }
@@ -9752,6 +9760,15 @@ body {
   max-height: 50px;
 }
 
+.navbar-text {
+  display: inline-block;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  top: 5px;
+  position: relative;
+  left: 30px;
+}
+
 .signInBox {
   background-color: #fff;
   padding: 30px 30px 30px 40px;
@@ -9766,6 +9783,11 @@ body {
 
 .navbar {
   padding: 0;
+}
+
+.userProfileStatus {
+  text-align: right;
+  list-style: none;
 }
 
 .container.centerTextContainer li {
