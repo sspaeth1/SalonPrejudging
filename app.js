@@ -51,7 +51,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-//site specific middleware  sets a currentUser check on every Route //returns user feedback
+//User Flash: site specific middleware  sets a currentUser check on every Route //returns user feedback
 app.use(function(req, res, next){
   res.locals.currentUser = req.user;
   res.locals.error       = req.flash('error');

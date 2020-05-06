@@ -2,7 +2,7 @@
 
 <style> body{background-color:#FFA100} </style>
 
-<div class="d-flex justify-content-center m-4 singlePage align-items-center">
+<main class="d-flex justify-content-center m-4 singlePage align-items-center">
     <div class="col-md-4 signInBox">
         <h1 class="formField">Login</h1>
         <form action="/login" method="POST" class="form-group">
@@ -13,6 +13,20 @@
         <a href="#"><p class="midgrey">Forgot password?</p></a>
         <a href="/register" %> ><p class="midgrey">Register</p></a>
     </div>
-</div>
+</main>
+<section class="loginLinks container ">
+    <hr>
+    <div class="row">
+        <div class="col-6">
+            <li><a href="/generalGuidelines" class="lineSpaceing2 white">Salon Judging Guidelines</a></li>
+            <li><a href="/guidelinesPrejudging"  class=" lineSpaceing2 white">Salon Prejudging Guidelines</a></li>
+        </div>
+        <div class="col-6 justify-content-center">
+            <li><a href="/appendixA"  class=" lineSpaceing2 white">Appendix A – Salon Categories</a></li>
+            <li><a href="/appendixB"  class=" lineSpaceing2 white"> Appendix B – History of Salon Judging</a></li>
+        </div>
+    </div>
+</section>
+
 
 <%- include('partials/footer.ejs') %>

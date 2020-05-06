@@ -13,7 +13,7 @@ const artentries = ('../models/artentries'),
   //==============
   
   //INDEX route 
-  router.get('/artentries',isLoggedIn, function(req, res){
+  router.get('/index', function(req, res){
     artEntry.find({}, function(err, artentries){
       if(err){
         console.log(err);
@@ -32,7 +32,7 @@ const artentries = ('../models/artentries'),
 
 
   // Home
-  router.get('/home', isLoggedIn, (req, res)=> res.render('home'));
+  router.get('/home', (req, res)=> res.render('home'));
 
 
   // guidelines
@@ -48,15 +48,25 @@ const artentries = ('../models/artentries'),
     
   
   // appendix A
-  router.get('/appendixA', isLoggedIn,(req,res)=> res.render('appendixA'));
+  router.get('/appendixA',(req,res)=> res.render('appendixA'));
 
   // appendix B
-  router.get('/appendixB', isLoggedIn,(req, res)=> res.render('appendixB'));
+  router.get('/appendixB',(req, res)=> res.render('appendixB'));
 
    
-    
+  
+// My Judging Categories
+  router.get('/artentries', isLoggedIn, function(req, res){
+    artEntry.find({}, function(err, artentries){
+      if(err){
+        console.log(err);
+      } 
+        res.render('artentries', { artentries:artentries});
+      
+    });
+  });
 
-  // My Judging Categories
+
   router.get("/artentries/:id", function(req, res){
     artEntry.findById(req.params.id, function(err, foundBlog){
       if(err){

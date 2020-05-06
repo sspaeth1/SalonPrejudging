@@ -22,6 +22,7 @@
     "es6-promise": "^4.2.8",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
+    "googleapis": "^39.2.0",
     "isomorphic-fetch": "^2.2.1",
     "method-override": "^3.0.0",
     "mongoose": "^5.7.13",

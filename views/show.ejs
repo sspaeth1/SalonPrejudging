@@ -1,54 +1,105 @@
 <%- include('partials/header') %>
 
-<div class="mx-auto entryItem" >
-    <h1> <%= artentries.category %> </h1>
-    <h3> <%= artentries.title %> </h3>
-    <div>
-        <img src="<%= artentries.image %>" class="img-fluid" alt="<%= artentries.title %>">
+<script>
+    //active menu highlight
+    $(document).ready(function(){
+      $('li.nav-item.dropdown.myCategories').attr("style", "background-color:orange;");
+      $('a.nav-link.dropdown-toggle.myCategories').attr("style", "color:#fff;");
+    });
+  </script>
+
+
+<h1  class="fullSpan">My judging category: Sample</h1> <!--MAKE DYNAMIC-->
+<main class="centerRatingPage">
+    <h1 class="ratingItemTitle"> <span class="midGrey">Title: </span>   <%= artentries.title %> </h1>
+    <div class="row">
+       
+        <div class="col-8">
+            <img src="<%= artentries.image %>" class="img-fluid imgScore" alt="<%= artentries.title %>">
+        </div>
+        <div class="col-4">
+           
+            <h3> <%= artentries.category %> </h3>
+            <p> <%= artentries.format %> </p>
+            <p> <%= artentries.rating %> </p>
+       </div>
     </div>
-    <div>
-        <p> <%= artentries.primaryAudience %> </p>
-        <p> <%= artentries.description %> </p>
-        <p> <%= artentries.format %> </p>
-        <p> <%= artentries.rating %> </p>
-    </div>
+
     <hr>
-    <form action="/show" method="POST">
-        <h2>Convey the message</h2>
-        <p>Generally, medical/life science art is produced to convery a specific messafe or idea. How well does the illustration tell the story identified in the statement of the purpose?</p>
-        <label for="0">
-            <input type="radio" id="0" name="rating" value="0" onclick="vote()" >
-             0 Failure 
-        </label>
-        <label for="1">
-            <input type="radio" id="1" name="rating" value="1" >
-             1 Minimal/Poor      
-        </label>
-        <label for="2">
-            <input type="radio" id="2" name="rating" value="2" />
-             2 Fair/low    
-        </label>
-        <label for="3">
-            <input type="radio" id="3" name="rating" value="3" />
-              3 Average / Adequate
-        </label>
-        <label for="4">
-            <input type="radio" id="4" name="rating" value="4" />
-            4 Very Good / High   
-        </label>
-        <label for="">
-            <input type="radio" id="5" name="rating" value="5" />
-            5 Excellent / Very High   
-        </label>
-        <input type="submit" class="btn btn-lg bt-primary" />
-    </form>
-</div>
+        <section class="container">
+            <form action="/show" method="POST">
+                <h2>Convey the message</h2>
+                <p>Generally, medical/life science art is produced to convery a specific messafe or idea. How well does the illustration tell the story identified in the statement of the purpose?</p>
+        
+                <ul>
+                    <li>
+                        <input type="radio" id="0" name="rating" value="0" onclick="vote()" >
+                        <label for="0"> 0 Failure </label>
+                        <div class="check"><div class="inside"></div>
+                    </li>
+                    <li>
+                        <input type="radio" id="1" name="rating" value="1" >
+                        <label for="1"> 1 Minimal/Poor  </label>
+                        <div class="check"><div class="inside"></div>
+                    </li>
+                    <li>
+                        <input type="radio" id="2" name="rating" value="2" />
+                        <label for="2">2 &nbsp Fair/low </label>
+                        <div class="check"><div class="inside"></div>
+                    </li>
+                    <li>
+                        <input type="radio" id="3" name="rating" value="3" />
+                        <label for="3"> 3 Average / Adequate</label>
+                        <div class="check"><div class="inside"></div>
+                    </li>
+                    <li>
+                        <input type="radio" id="4" name="rating" value="4" />
+                        <label for="4"> 4 Very Good / High   </label>
+                        <div class="check"><div class="inside"></div>
+                    </li>
+                    <li>
+                        <input type="radio" id="5" name="rating" value="5" />
+                        <label for="5">  5 Excellent / Very High  </label>
+                        <div class="check"><div class="inside"></div>
+                    </li>
+                </ul>
+            </form>
+        </section>
+
+        <button type="button" class="btn-btn" style="margin-left:5%;" ><a href="/artentries">Back to Home</a></button>
+        <a href="/artentries/<%= artentries._id %>/edit" class="btn-sm btn-warning">Edit</a> 
+
+    </main>
 
 
-<div>
-    <button type="button" class="btn-btn" style="margin-left:5%;" ><a href="/artentries">Back to Home</a></button>
-    <a href="/artentries/<%= artentries._id %>/edit" class="btn-sm btn-warning">Edit</a> 
-</div>
+                     <!-- <label for="0">
+                        <input type="radio" id="0" name="rating" value="0" onclick="vote()" >
+                        0 Failure 
+                    </label>
+                    <label for="1">
+                        <input type="radio" id="1" name="rating" value="1" >
+                        1 Minimal/Poor      
+                    </label>
+                    <label for="2">
+                        <input type="radio" id="2" name="rating" value="2" />
+                        2 Fair/low    
+                    </label>
+                    <label for="3">
+                        <input type="radio" id="3" name="rating" value="3" />
+                        3 Average / Adequate
+                    </label>
+                    <label for="4">
+                        <input type="radio" id="4" name="rating" value="4" />
+                        4 Very Good / High   
+                    </label>
+                    <label for="">
+                        <input type="radio" id="5" name="rating" value="5" />
+                        5 Excellent / Very High   
+                    </label>
+                    <input type="submit" class="btn btn-lg bt-primary" /> -->
+
+
+
 
 
 <%- include('partials/footer') %>

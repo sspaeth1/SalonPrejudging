@@ -1,0 +1,46 @@
+<%- include('partials/header')%>
+
+<script>
+    //active menu highlight
+    $(document).ready(function(){
+      $('li.nav-item.dropdown.myCategories').attr("style", "background-color:orange;");
+      $('a.nav-link.dropdown-toggle.myCategories').attr("style", "color:#fff;");
+    });
+  </script>
+
+<h1  class="fullSpan">My judging category: Sample</h1>
+<article class="appendixContainer">
+  <p class="alert alert-warning alert-dismissible fade show" role="alert">The goal is to have this page dynamically populate from the submissions on AMI.org via the dropbox folders  
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </p>
+ 
+  <div class="row entries">
+    <% artentries.forEach(function(artentries){ %>
+      <div class="col-md-4 `col-sm-6">
+        <div class="img-thumbnail m-2" >
+          <a href="/artentries/<%= artentries._id %>">  <img src="<%= artentries.image%>" class="card-img-top" alt="Image for scoring" > </a> 
+        </div>
+        <div class="artEntriesTitle">
+            <h4>
+               <%=  artentries.title %>
+            </h4>
+            <span> <%= artentries.created.getFullYear() %> </span>
+            <p>
+              <%= artentries.primaryAudience %>
+             </p>
+             <p>
+                <p> <%= artentries.description.substring(0,100) %> ... 
+             </p> 
+              <div class="scoreThisEntry">   <a href="/artentries/<%= artentries._id %>" class="btn btn-primary lg"> Score this entry</a>  
+              </div>       
+        </div>
+      </div>
+    <% }); %>
+  </div>
+</div>
+</article>
+
+
+<%- include ('partials/footer') %>

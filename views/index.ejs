@@ -1,71 +1,47 @@
 <%- include('partials/header.ejs') %>
 
-
-   <style>
-
-body{
-    font-family: 'Raleway', sans-serif;
-    color:#002632;
-}
-
-.linkOrange{
-
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 23px;
-    text-decoration-line: underline;
-    color: #FFA100;
-    text-decoration: underline;
-}
-.linkOrange:hover{
-    text-decoration: none;
-}
-
-.centerTextContainer{
-    width: 90%;
-    background-color: #fff;
-    border:#002632 solid 1px;
-    padding: 30px;
-    margin: auto;
-}
-
-.lineSpaceing2{
-    line-height: 4rem;
-}
-
-   </style> 
-
-   <div class="centerTextContainer">
-       <h1> Welcome Judge</h1>
-   
-    Thank you for volunteering to judge the annual Salon. Please read these documents  to prepare for judging: 
-    Welcome Judges:
-    
-    <ul>
-        <li><a href="/generalGuidelines" class="linkOrange lineSpaceing2">Salon Judging Guidelines</a></li>
-        <li><a href="/guidelinesPrejudging"  class="linkOrange lineSpaceing2">Salon Prejudging Guidelines</a></li>
-        <li><a href="/appendixA"  class="linkOrange lineSpaceing2">Appendix A – Salon Categories</a></li>
-        <li><a href="/appendixB"  class="linkOrange lineSpaceing2"> Appendix B – History of Salon Judging</a></li>
-    </ul>
-   
+<div class="container index centerTextContainer">
+    <div class="row  ">
+          <div class="col-8 ">
+                <% if(!currentUser){ %>
+                <h2> <a href="mailto:info@ami.org"> Contact us</a> to become a future judge</h2>
+                    <h4 class="orange"> Judges login above</h4>
+                <% }else{  %>
+                    <h1> Welcome <%= currentUser.username %></h1>
+                    <p>    Thank you for volunteering to judge the annual Salon. Please read these documents  to prepare for judging: 
+                        Welcome Judges:</p>
+                <% } %>
+           
+            
+            <ul>
+                <li><a href="/generalGuidelines" class="linkOrange lineSpaceing2">Salon Judging Guidelines</a></li>
+                <li><a href="/guidelinesPrejudging"  class="linkOrange lineSpaceing2">Salon Prejudging Guidelines</a></li>
+                <li><a href="/appendixA"  class="linkOrange lineSpaceing2">Appendix A – Salon Categories</a></li>
+                <li><a href="/appendixB"  class="linkOrange lineSpaceing2"> Appendix B – History of Salon Judging</a></li>
+            </ul>
+        </div>
+        <div class="col-4 annualLogo">
+            <img src="images/AMI2020_75.png" class="annualLogo" alt="AMI Annual Conference">
+        </div>
+    </div>    
     <hr>
+    <div class="row">
+        <div class="col-12">
+            <h2> Important Dates:</h2>
+            <h3> Date DBD</h3>
+            <p>
+                Day of Judging. Have judges also determine Student Best of Show (Still Media) and Student Best of Show (New Media). This usually after lunch after all the teams have completed student judging.
+            </p>
+            <h3> Date DBD</h3>
+            <ul>
+                <li>3:30 p.m.  Arrive</li>
+                <li> 8:30 a.m. breakfast</li>
+                <li> 4:00 -5:00 p.m. Group collaboration</li>
+            </ul>
+        </div>
+    </div>
+</div>
 
-    <h2> Important Dates:</h2>
-
-    <h3> Date DBD</h3>
-      <p>
-        Day of Judging. Have judges also determine Student Best of Show (Still Media) and Student Best of Show (New Media). This usually after lunch after all the teams have completed student judging.
-    </p>
-    <h3> Date DBD</h3>
-    <ul>
-        <li>3:30 p.m.  Arrive</li>
-        <li> 8:30 a.m. breakfast</li>
-        <li> 4:00 -5:00 p.m. Group collaboration</li>
-    </ul>
-   
-
-   </div>
 
   
     <%- include('partials/footer.ejs') %>
