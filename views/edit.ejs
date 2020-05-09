@@ -5,19 +5,17 @@
     <h1 class="d-flex justify-content-center mt-5">Edit <%= artentries.title %> </h1>
       <div class="d-flex justify-content-center">
         <form class="" action="/artentries/<%= artentries._id %>?_method=PUT" method="POST">
-          <input class="form-control m-3" type="text" name="artentries[category]" value="<%= artentries.category %>">
-          <input class="form-control m-3" type="text" name="artentries[title]" value="<%= artentries.title %>">
-          <input  class="form-control m-3" type='text' name='artentries[image]' value="<%= artentries.image %>">
-    <!-- <input class="form-control m-3" type="text" name="artentries[inviteeStatus]" placeholder="Invitee Status">
-          <input  class="form-control m-3" type="text" name="artentries[category]" placeholder=" Category">
-          <input class="form-control m-3" type="text" name="artentries[medium]" placeholder="Medium">
-    -->     <input  class="form-control m-3" type="text" name="artentries[format]" value="<%= artentries.format %>">
-          <textarea class="form-control m-3" type="textarea" name="artentries[primaryAudience]"><%= artentries.primaryAudience %></textarea>
-          <input class='form-control m-3' type="text" name="artentries[description]"  value="<%= artentries.description %>">
-          <input class='form-control m-3' type="text" name="artentries[rating]"  value="<%= artentries.rating %>">
+          <input class="form-control m-3" type="text" name="artentries[category]" value="<%= artentries.category %>" placeholder="category">
+          <input class="form-control m-3" type="text" name="artentries[title]" value="<%= artentries.title %>" placeholder="Title">
+          <input  class="form-control m-3" type="text" name="artentries[image]" value="<%= artentries.image %>" placeholder="Image Url">
+         <input  class="form-control m-3" type="text" name="artentries[client]" value="<%= artentries.client %>" placeholder="Client">
+          <input class="form-control m-3" type="text" name="artentries[medium_software]" value="<%= artentries.medium_software %>" placeholder="Medium or software used">
+          <input class='form-control m-3' type="text" name="artentries[presentation_format]"  value="<%= artentries.presentation_format %>" placeholder="Presentation format">
+          <input class='form-control m-3' type="text" name="artentries[primaryAudience]"  value="<%= artentries.primaryAudience %>" placeholder="Primary Audience">
+          <textarea class='form-control m-3' type="textarea" name="artentries[intended_purpose]"  value="<%= artentries.intended_purpose %>" placeholder="Intended Audience"></textarea>
           <a href="../images/logo.png" class=""></a>
         <span>
-          <button class='btn btn-primary lg btn-block m-3' type="post" name="button">Edit Entry</button>
+          <button class="btn btn-primary lg btn-block m-3" type="post" name="button">Edit Entry</button>
           <form action="/artentries/<%= artentries._id %>?_method=DELETE" method="POST" >
               <button class="btn-sm btn-danger btn-block m-3"> Delete</button>
           </form>

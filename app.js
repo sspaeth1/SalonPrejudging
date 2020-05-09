@@ -37,7 +37,7 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.use(require('express-session')({
-  secret: "pulseOx",
+  secret: "pulseOx___20",
   resave: false,
   saveUninitialized: false
 }));

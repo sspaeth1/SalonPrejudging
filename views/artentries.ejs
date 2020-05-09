@@ -1,5 +1,7 @@
 <%- include('partials/header')%>
 
+
+
 <script>
     //active menu highlight
     $(document).ready(function(){
@@ -16,22 +18,25 @@
     </button>
   </p>
  
+
   <div class="row entries">
     <% artentries.forEach(function(artentries){ %>
       <div class="col-md-4 `col-sm-6">
-        <div class="img-thumbnail m-2" >
-          <a href="/artentries/<%= artentries._id %>">  <img src="<%= artentries.image%>" class="card-img-top" alt="Image for scoring" > </a> 
+        <div class="img-thumbnail " >
+          <a href="/artentries/<%= artentries._id %>">  
+            <img src="<%= artentries.image%>" class="card-img-top" alt="Image for scoring" > </a> 
         </div>
         <div class="artEntriesTitle">
-            <h4>
+            <h5>
                <%=  artentries.title %>
-            </h4>
-            <span> <%= artentries.created.getFullYear() %> </span>
+            </h5>
             <p>
               <%= artentries.primaryAudience %>
              </p>
+             <p><%= artentries.medium_software %></p>
              <p>
-                <p> <%= artentries.description.substring(0,100) %> ... 
+              <%= artentries.intended_purpose.substring(0,50) %>
+              ... 
              </p> 
               <div class="scoreThisEntry">   <a href="/artentries/<%= artentries._id %>" class="btn btn-primary lg"> Score this entry</a>  
               </div>       

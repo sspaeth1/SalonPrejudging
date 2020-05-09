@@ -1,11 +1,15 @@
-const express = require('express');
-const router = express.Router();
-const passport = require('passport');
-const artentries = ('../models/artentries'),
-     User = require('../models/user'),
-     artEntry =require('../models/artentries')
-     auth = require('../routes/auth'),
-     isLoggedIn = require('../public/isLoggedIn');
+const express       = require('express');
+const router        = express.Router();
+const passport      = require('passport');
+const artentries    = require('../models/artentries'),
+     User           = require('../models/user'),
+     artEntry       = require('../models/artentries'),
+     Categories     = require('../models/Categories'),
+     bookScore      = require('../models/bookScore'),
+     generalScore   = require('../models/generalScore'),
+     animationScore = require('../models/animationScore'),
+     auth           = require('../routes/auth'),
+     isLoggedIn     = require('../public/isLoggedIn');
 
   
   //==============
@@ -68,13 +72,13 @@ const artentries = ('../models/artentries'),
 
 
   router.get("/artentries/:id", function(req, res){
-    artEntry.findById(req.params.id, function(err, foundBlog){
+    artEntry.findById(req.params.id, function(err, foundPage){
       if(err){
         console.log("redirect show route");
         res.redirect("/artentries");
       }
     
-        res.render("show", {artentries : foundBlog});
+        res.render("show", {artentries : foundPage});
   
     });
   });
@@ -82,13 +86,13 @@ const artentries = ('../models/artentries'),
   
   //EDIT ROUTE 
   router.get("/artentries/:id/edit", function(req, res){
-    artEntry.findById(req.params.id, function(err, foundBlog){
+    artEntry.findById(req.params.id, function(err, foundPage){
       if(err){
         console.log("redirect id edit");
         res.redirect("/artentries");
       }
       
-        res.render("edit", {artentries : foundBlog});
+        res.render("edit", {artentries : foundPage});
       
     });
   });
@@ -96,7 +100,7 @@ const artentries = ('../models/artentries'),
   //Update route
   router.put("/artentries/:id", function(req, res){
                               // (id, new data, callback )
-    artEntry.findByIdAndUpdate(req.params.id, req.body.artentries, function(err, foundBlog){
+    artEntry.findByIdAndUpdate(req.params.id, req.body.artentries, function(err, foundPage){
       if(err){
         console.log('error');
         res.render("/");
