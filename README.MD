@@ -1,1 +1,4 @@
-#Get Out Site
+#2020 update for digitization of the AMI salon judging.
+
+goals: assist the judges in keeping track of their scores. 
+Speed of the time it takes to judge by having remote judging fulfilled before the day of in-person judging.   
