@@ -3,12 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>AMI Salon Prejudging</title>
-
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
-      crossorigin="anonymous">
-    </script>
+=
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
@@ -18,21 +13,6 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-    <!-- <script>
-      function refreshPage () {
-                var page_y = document.getElementsByTagName("body")[0].scrollTop;
-                window.location.href = window.location.href.split('?')[0] + '?page_y=' + page_y;
-            }
-            window.onload = function () {
-                setTimeout(refreshPage, 35000);
-                if ( window.location.href.indexOf('page_y') != -1 ) {
-                    var match = window.location.href.split('?')[1].split("&")[0].split("=");
-                    document.getElementsByTagName("body")[0].scrollTop = match[1];
-                }
-            }
-
-    </script> -->
- 
   </head>
 
   <body>
@@ -49,9 +29,21 @@
             <li class=" userProfileStatus nav-link"> <a href="/login">Login</a></li>
             <!-- <li class="nav-item"><a href="/register" class="nav-link">Register</a></li> -->
           <%  } else{   %>
-            <li class=" userProfileStatus "><a href="/profile" class="orange font-weight-bold nav-link"> <%= currentUser.username %></a></li>
+            <li class=" userProfileStatus ">
+               <!-- <img src="/images/svg/avatar.svg" alt="avatar"> -->
+              <a href="/profile/<%= currentUser.id %>" class="orange font-weight-bold nav-link">
+              
+                <%= currentUser.username %>
+                  
+                <% if(currentUser.isAdmin){ %>
+                  <span class="midgrey inline">Admin</span> 
+                <% } %>
+         
+             </a> 
+           </li>
             <li class=" userProfileStatus"><a href="/logout" class="nav-link midgrey">Logout</a></li>
           <% } %>
+         
         </ul>
        </div>
       </div>
@@ -63,6 +55,7 @@
 
   <nav id="pageNav" class="navbar navbar-expand-md ">
     <div class="container-fluid">
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon" ></span>
       </button>
@@ -136,7 +129,6 @@
           </button>
       </div>
     <% } %>
+  </div>
 
   
-  </div>
- 

@@ -6,7 +6,8 @@ const express = require('express'),
       methodOverride = require('method-override'),
       mongoose = require('mongoose'),
       User = require ('../models/user'),
-      artEntry = require('../models/artentries');
+      artEntry = require('../models/artentries'),
+      locus = require('locus');
 
 
 // ===================
@@ -17,16 +18,51 @@ const express = require('express'),
 router.get("/register", function(req, res){
     res.render("register");
   });
+
+  router.get("/registerAdmin", function(req, res){
+    res.render("registerAdmin");
+  });
   
   //handle sign up logic
   
   //Show register form
   router.post("/register", function( req, res){
-    var newUser = new User({username: req.body.username});
+    var newUser = new User({
+          username: req.body.username,
+          firstName: req.body.firstName,
+          lastName:  req.body.lastName,
+          email:     req.body.email,
+          avatar:    req.body.avatar,
+        });
     User.register(newUser, req.body.password, function(err, user){
       if(err){
         console.log(err);
         return res.render('register');
+      }
+      passport.authenticate('local')(req, res, function(){
+        res.redirect('/index');
+      });
+    });
+  });
+
+
+  // admin register POST
+  router.post("/registerAdmin", function( req, res){
+    var  newUser = new User({
+          username:  req.body.username,
+          firstName: req.body.firstName,
+          lastName:  req.body.lastName,
+          email:     req.body.email,
+          avatar:    req.body.avatar,
+          isAdmin:   req.body.isAdmin
+        });
+    if(req.body.adminCode === '12cranialnerves'){
+      newUser.isAdmin = true;
+    }
+    User.register(newUser, req.body.password, function(err, user){
+      if(err){
+        console.log(err);
+        return res.render('registerAdmin');
       }
       passport.authenticate('local')(req, res, function(){
         res.redirect('/index');

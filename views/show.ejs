@@ -45,8 +45,8 @@
     </div>
 
     <section id="scoringSlider">
-        <a href="#" class="control_next"> >> </a>
-        <a href="#" class="control_prev"> << </a>
+        <a  class="control_next"> >> </a>
+        <a  class="control_prev"> << </a>
         <ul class="slider">
             <li class="slider">
                 <div class="ratingFormSubHeader">Part I: Communication/Problem Solving </div> 
@@ -357,7 +357,7 @@
 
         $('#scoringSlider ul.slider li.slider').css({ width: slideWidth - (slideWidth*.2)});
         
-        $('#scoringSlider ul.slider li.slider:last-child').prependTo('#scoringSlider ul.slider');
+        // $('#scoringSlider ul.slider li.slider:last-child').prependTo('#scoringSlider ul.slider');
 
         function moveLeft() {
             $('#scoringSlider ul').animate({

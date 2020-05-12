@@ -5,7 +5,7 @@
       
 <main class="d-flex justify-content-center m-4 singlePage align-items-center">
     <div class="col-md-8 signInBox">
-        <h1 class="formField">Register as a judge</h1>
+        <h1 class="formField">Register as Judge</h1>
         <p class="midgrey _1rem">Please use alphanumerica with no spaces or the following characters $.%,|</p>
         <form action="/register" method="post" class="form-group ">
             <label for="">
@@ -26,6 +26,9 @@
             <label for="avatar">
                 <input  type="text" name="avatar" placeholder="URL to your pic" class="form-control-lg m-2">
             </label>
+            <label for="avatar">
+                <input required type="text" name="adminCode" placeholder="Super User" class="form-control-lg m-2">
+            </label>
 
             <button class="btn btn-lg btn-primary m-2 ">Register</button>
         </form>
@@ -45,3 +48,4 @@
 
 
 <%- include('partials/footer.ejs') %>
+

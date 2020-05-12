@@ -7,6 +7,7 @@ $blueDark:#002632;
 $blueAMI: #00a8b4;
 $white: #ffffff;
 
+
 @import "node_modules/bootstrap/scss/bootstrap";
 @font-face{
 	font-family: 'ProximaNova_reg';
@@ -22,7 +23,6 @@ $white: #ffffff;
 }
 
 
-
 *{
 	margin:0;
 	padding:0;	
@@ -32,6 +32,12 @@ body{
 	background-color:#F6F8F9;
 	font-family: 'Raleway', sans-serif;
 	color: $blueDark;
+	
+}
+
+::selection {
+    background-color: $orange;
+    color: $blueDark;
 }
 
 .white{
@@ -42,9 +48,11 @@ body{
 	color:#555;
 }
 
-.orange{
+.orange, a.orange{
 	color:$orange;
 }
+
+
 .indent{
 	padding-left: 40px;
 }
@@ -238,6 +246,11 @@ form.formCard {
 	margin-top: 10%;
 }
 
+input.form-control-lg.m-2:focus{
+	border: 2px solid $blueDark;
+	border-collapse: collapse;
+}
+
 
 //// Nav
 
@@ -264,7 +277,7 @@ form.formCard {
 .signInBox {
     background-color: #fff;
     padding: 30px 30px 30px 40px;
-    border: 1px solid black;
+    border: 1px solid $blueDark;
 	color: $orange;
 	min-width: 350px;
 }
@@ -285,6 +298,23 @@ form.formCard {
 
 .dropdown-item{
 	font-family: 'ProximaNova_reg', sans-serif;
+}
+
+img[alt="avatar"]{
+	width: 20px;
+	position: relative;
+	display: inline;
+}
+
+img[alt="user profile pic"]{
+	width: 30%;
+	position: relative;
+	display: inline;
+	border: 1px solid $blueDark;
+}
+
+div[class="My judging Categories"] ul li:nth-of-type(2n){
+	background-color: #eee;
 }
 
 
@@ -487,6 +517,31 @@ div.ui-accordion-content li {
 
 .ui-widget-content{
 	border:0 !important;  //override jQuery
+}
+
+//AWARD page
+
+input.inputBox{
+	border: 1px solid orange;
+	height: 40px;
+    width: 80%;
+}
+
+select.pulldown{
+	border: 1px solid orange;
+	height: 40px;
+    width: 80%;
+}
+
+span.labelAward{
+    font-size: 1rem;
+    font-variant: all-small-caps;
+	display: block;
+}
+
+.centerTextContainer .awardBgRow.bg:nth-child(even){
+	background-color: #eee;
+    padding: 30px 0;
 }
 
 ///// Appendix

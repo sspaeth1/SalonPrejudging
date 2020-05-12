@@ -1,13 +1,13 @@
-const express       = require('express');
-const router        = express.Router();
-const passport      = require('passport');
-const artentries    = require('../models/artentries'),
-     User           = require('../models/user'),
-     artEntry       = require('../models/artentries'),
-     Categories     = require('../models/Categories'),
-     bookScore      = require('../models/bookScore'),
-     generalScore   = require('../models/generalScore'),
-     animationScore = require('../models/animationScore'),
+const express       = require('express'),
+      router        = express.Router(),
+      passport      = require('passport'),
+      artentries    = require('../models/artentries'),
+      User           = require('../models/user'),
+      artEntry       = require('../models/artentries'),
+      Categories     = require('../models/Categories'),
+      bookScore      = require('../models/bookScore'),
+      generalScore   = require('../models/generalScore'),
+      animationScore = require('../models/animationScore'),
      auth           = require('../routes/auth'),
      isLoggedIn     = require('../public/isLoggedIn');
 
@@ -48,7 +48,7 @@ const artentries    = require('../models/artentries'),
     // create POST route
 
   // Award Winners
-  router.get('/awardWinners',isLoggedIn, (req, res)=> res.render('awardWinners'));
+  router.get('/awardWinners',isLoggedIn, (req, res)=> res.render('awardWinnersFinal'));
     
   
   // appendix A
@@ -80,6 +80,19 @@ const artentries    = require('../models/artentries'),
     
         res.render("show", {artentries : foundPage});
   
+    });
+  });
+
+
+  //User Profiles
+
+  router.get("/profile/:id", function(req,res){
+    User.findById(req.params.id, function(err, foundProfile){
+      if(err){
+        req.flash("error", "Urp, issue with your profile");
+        res.redirect('/login');
+      }
+      res.render("profiles/show", {user: foundProfile});
     });
   });
   

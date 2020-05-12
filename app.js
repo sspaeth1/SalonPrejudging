@@ -54,6 +54,7 @@ passport.deserializeUser(User.deserializeUser());
 //User Flash: site specific middleware  sets a currentUser check on every Route //returns user feedback
 app.use(function(req, res, next){
   res.locals.currentUser = req.user;
+  res.locals.isAdmin     = req.isAdmin;
   res.locals.error       = req.flash('error');
   res.locals.success     = req.flash('success');
   next();
