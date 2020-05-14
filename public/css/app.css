@@ -9854,6 +9854,7 @@ form.formCard {
 input.form-control-lg.m-2:focus {
   border: 2px solid #002632;
   border-collapse: collapse;
+  outline: none;
 }
 
 .headerNav {
@@ -10095,6 +10096,7 @@ input.inputBox {
   border: 1px solid orange;
   height: 40px;
   width: 80%;
+  outline: none;
 }
 
 select.pulldown {
@@ -10112,6 +10114,11 @@ span.labelAward {
 .centerTextContainer .awardBgRow.bg:nth-child(even) {
   background-color: #eee;
   padding: 30px 0;
+}
+
+textarea {
+  padding: 2%;
+  color: #c4c4c4;
 }
 
 .appendixContainer {
@@ -10333,6 +10340,7 @@ section.container ul li {
 section.container ul li input[type=radio] {
   position: absolute;
   visibility: hidden;
+  outline: none;
 }
 
 section.container ul li label {
@@ -10386,14 +10394,17 @@ section.container ul li .check::before {
 
 section.container input[type=radio]:checked ~ .check {
   border: 2px solid #ffa100;
+  outline: none;
 }
 
 section.container input[type=radio]:checked ~ .check::before {
   background: #ffa100;
+  outline: none;
 }
 
 section.container input[type=radio]:checked ~ label {
   color: #ffa100;
+  outline: none;
 }
 
 /*# sourceMappingURL=app.css.map */
