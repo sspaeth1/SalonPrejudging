@@ -1,12 +1,13 @@
-const express = require('express'),
-      router = express.Router(),
-      passport = require('passport'),
-      LocalStrategy = require('passport-local'),
-      bodyParser = require('body-parser'),
-      methodOverride = require('method-override'),
-      mongoose = require('mongoose'),
-      User = require ('../models/user'),
-      artEntry = require('../models/artentries');
+const    express = require('express'),
+          router = express.Router(),
+        passport = require('passport'),
+   LocalStrategy = require('passport-local'),
+      bodyParser = require('body-parser') 
+  methodOverride = require('method-override'),
+        mongoose = require('mongoose'),
+expressSanitizer = require('express-sanitizer'),
+            User = require ('../models/user'),
+        artEntry = require('../models/artentries');
 
 
 // ===================
@@ -22,14 +23,17 @@ router.get("/register", function(req, res){
   
   //Show register form
   router.post("/register", function( req, res){
+    req.body.password = req.sanitize(req.body.password);
     var newUser = new User({username: req.body.username});
     User.register(newUser, req.body.password, function(err, user){
       if(err){
         console.log(err);
+        req.flash('error', err);
         return res.render('register');
       }
       passport.authenticate('local')(req, res, function(){
         res.redirect('/index');
+        req.flash('success', "Welcome " + user.username);
       });
     });
   });
@@ -44,8 +48,10 @@ router.get("/register", function(req, res){
   router.post(("/login"), passport.authenticate("local",
    {
      successRedirect: "/index",
+     failureFlash:'Login failed',
     failureRedirect: "/login"
   }), function(req, res){
+
   
   });
   

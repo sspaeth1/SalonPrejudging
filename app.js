@@ -1,13 +1,14 @@
 const bodyParser = require('body-parser'),
-methodOverride = require('method-override'),
-mongoose = require('mongoose'),
-express = require('express'),
-flash = require('connect-flash'),
-passport = require('passport'),
-LocalStrategy = require('passport-local'),
-User = require ('./models/user'),
-artEntry = require('./models/artentries'),
-alt = 'acdNGY4RKoPe';
+  methodOverride = require('method-override'),
+        mongoose = require('mongoose'),
+         express = require('express'), 
+expressSanitizer = require('express-sanitizer'),
+           flash = require('connect-flash'),
+        passport = require('passport'),
+   LocalStrategy = require('passport-local'),
+            User = require ('./models/user'),
+        artEntry = require('./models/artentries'),
+             alt = 'acdNGY4RKoPe';
 
 const newItemRoutes    = require('./routes/newItem');
 const auth             = require('./routes/auth');
@@ -42,6 +43,7 @@ app.use(require('express-session')({
   saveUninitialized: false
 }));
 app.use(flash());
+app.use(expressSanitizer());
 
 //Use passport functions
 app.use(passport.initialize());
