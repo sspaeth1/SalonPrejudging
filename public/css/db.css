@@ -1,12 +1,6 @@
-body {
-	margin: 0;
-	padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color:red;
-  }
-  
+
   :root {
-	--blue: #0061ff;
+	--orange: #ffa100;
 	--stone: #D0D0D2;
   }
   
@@ -21,51 +15,15 @@ body {
 	bottom: 0;
 	left: 50%;
 	transform: translateX(-50%);
-	color: var(--blue);
+	color: var(--orange);
 	padding: 5px 15px;
 	border-radius: 10px 10px 0 0;
 	z-index: 1;
 	transition: 2s;
   }
   
-  header {
-	background: var(--blue);
-	color: #fff;
-	display: flex;
-	flex-wrap: wrap;
-	/* justify-content: center; */
-	align-items: center;
-  }
-  
-  h1 {
-	text-align: center;
-	padding: 15px;
-	color: white;
-	font-family: cursive, sans-serif;
-	margin: 0 auto;
-  }
-  h1 div {
-	font-size: 0.5em;
-  }
-  
-  h2 {
-	font-size: 0.8rem;
-	margin-bottom: 0.5rem;
-  }
-  
-  hr {
-	color: var(--stone);
-	border: 1px solid var(--stone);
-  }
-  .hr--lg {
-	width: 80%;
-  }
-  .hr--md {
-	width: 50%;
-  }
-  .hr--sm {
-	width: 30%;
-  }
+
+
   
   .root-path-wrap {
 	margin: 1rem auto;
@@ -78,39 +36,42 @@ body {
   }
   
   .dbx-list {
+
 	margin: auto;
 	padding: 10px;
-	background: var(--blue);
-	color: white;
-	max-width: 700px;
+	color: grey;
+
   }
   .dbx-list-item {
+	  display: inline-block;
 	list-style: none;
-	padding: 5px;
-	margin: 5px;
+	padding: 5px 80px 150px 5px;
+	margin: 10px;
+	border: 1px solid #ffa100;
+	max-height: 200px;;
   }
   .dbx-list-item:not(:last-child) {
 	border-bottom: 1px solid white;
   }
   
   .dbx-thumb {
-	width: 32px;
-	height: 32px;
+	width:90%;
+	height: auto;
 	vertical-align: middle;
 	margin-right: 15px;
   }
   
   .dbx-btn {
 	background: white;
-	border: 3px solid var(--blue);
-	color: var(--blue);
+	border: 3px solid var(--orange);
+	color: var(--orange);
 	cursor: pointer;
 	display: block;
 	font-size: 1.5rem;
 	margin: 5px auto;
   }
   .dbx-btn:hover:not(:disabled) {
-	background: var(--blue);
+	background: var(--orange);
 	color: white;
   }
   .dbx-btn:disabled {
@@ -127,11 +88,7 @@ body {
 	text-align: center;
 	margin: 1rem auto;
   }
-  
-  footer {
-	margin: 15px 0;
-  }
-  
+
   .log {
 	margin: 0 10px;
   }

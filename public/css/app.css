@@ -9655,6 +9655,11 @@ body {
   color: #002632;
 }
 
+::selection {
+  background-color: #ffa100;
+  color: #002632;
+}
+
 .white {
   color: #ffffff;
 }
@@ -9663,8 +9668,18 @@ body {
   color: #555;
 }
 
-.orange {
+.orange, a.orange {
   color: #ffa100;
+}
+
+span.regAdmin{
+	color: #bbb;
+	font-size: .75rem;
+	font-weight: 600;
+	padding-left: 10px;
+	margin-bottom: 30px;
+	position: absolute;
+	transform: translate(0, -10px);
 }
 
 .indent {
@@ -9736,7 +9751,7 @@ body {
 }
 
 .artEntriesTitle {
-  min-height: 300px;
+  min-height: 350px;
   background-color: #eee;
   padding: 5%;
 }
@@ -9846,6 +9861,12 @@ form.formCard {
   margin-top: 10%;
 }
 
+input.form-control-lg.m-2:focus {
+  border: 2px solid #002632;
+  border-collapse: collapse;
+  outline: none;
+}
+
 .headerNav {
   min-height: 125px;
   background: #002632 !important;
@@ -9869,7 +9890,7 @@ form.formCard {
 .signInBox {
   background-color: #fff;
   padding: 30px 30px 30px 40px;
-  border: 1px solid black;
+  border: 1px solid #002632;
   color: #ffa100;
   min-width: 350px;
 }
@@ -9889,6 +9910,23 @@ form.formCard {
 
 .dropdown-item {
   font-family: 'ProximaNova_reg', sans-serif;
+}
+
+img[alt="avatar"] {
+  width: 20px;
+  position: relative;
+  display: inline;
+}
+
+img[alt="user profile pic"] {
+  width: 30%;
+  position: relative;
+  display: inline;
+  border: 1px solid #002632;
+}
+
+div[class="My judging Categories"] ul li:nth-of-type(2n) {
+  background-color: #eee;
 }
 
 .container.centerTextContainer li {
@@ -10064,6 +10102,35 @@ div.ui-accordion-content li {
   border: 0 !important;
 }
 
+input.inputBox {
+  border: 1px solid orange;
+  height: 40px;
+  width: 80%;
+  outline: none;
+}
+
+select.pulldown {
+  border: 1px solid orange;
+  height: 40px;
+  width: 80%;
+}
+
+span.labelAward {
+  font-size: 1rem;
+  font-variant: all-small-caps;
+  display: block;
+}
+
+.centerTextContainer .awardBgRow.bg:nth-child(even) {
+  background-color: #eee;
+  padding: 30px 0;
+}
+
+textarea {
+  padding: 2%;
+  color: #c4c4c4;
+}
+
 .appendixContainer {
   margin: auto;
   width: 90%;
@@ -10084,7 +10151,8 @@ div.ui-accordion-content li {
 .fullSpan {
   font-weight: 100;
   background-color: #ffa100;
-  color: #af7f27;
+  color: #002632;
+  font-weight: 500;
   padding: 1% 8%;
   box-shadow: 2px 2px 10px #d85102;
   margin-bottom: 0;
@@ -10283,6 +10351,7 @@ section.container ul li {
 section.container ul li input[type=radio] {
   position: absolute;
   visibility: hidden;
+  outline: none;
 }
 
 section.container ul li label {
@@ -10336,14 +10405,17 @@ section.container ul li .check::before {
 
 section.container input[type=radio]:checked ~ .check {
   border: 2px solid #ffa100;
+  outline: none;
 }
 
 section.container input[type=radio]:checked ~ .check::before {
   background: #ffa100;
+  outline: none;
 }
 
 section.container input[type=radio]:checked ~ label {
   color: #ffa100;
+  outline: none;
 }
 
 /*# sourceMappingURL=app.css.map */

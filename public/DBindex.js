@@ -1,11 +1,30 @@
 // http://dropbox.github.io/dropbox-sdk-js/Dropbox.html
 
-import { Dropbox } from './js/Dropbox-sdk.min.js';
+// import { Dropbox } from '../node_modules/dropbox/dist/Dropbox-sdk.js';
+//  src="/__build__/Dropbox-sdk.min.js"
+// const Dropbox = require('Dropbox').Dropbox;
 
-const dbx = new Dropbox({
-  accessToken: 'VqJ_FOuvvXAAAAAAAAAAP60UX2G6sA1LGGT4ug8Xc6eMRGmhZ76X-uoXkzjsr6V-',
+
+
+// Dotenv.config();
+//     // {path: path/filename}
+
+//     // process env PORT
+// let port = process.env.PORT;
+// let host = process.env.HOST;
+// let DBkey = process.env.DB_API_KEY;
+// let DBaccess = process.env.DB_ACCESS_KEY;
+
+
+const dbx = new Dropbox.Dropbox({
+  accessToken: 'VqJ_FOuvvXAAAAAAAAAARR1se66VKDemTdReecsQmV8GZB7YGTEQtq13Kv2zMglQ',
   fetch
 })
+
+
+
+
+
 
 const fileListElem = document.querySelector('.js-file-list')
 const loadingElem = document.querySelector('.js-loading')
@@ -126,3 +145,7 @@ const moveFilesToDatedFolders = async () => {
 }
 
 init()
+
+// export {
+//   Dropbox as Dropbox
+// }

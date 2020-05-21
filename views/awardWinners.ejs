@@ -11,31 +11,41 @@
 
 <h1  class="fullSpan"> Award Winners</h1>
 
-<div class="centerTextContainer">
-    <p class="alert alert-warning alert-dismissible fade show" role="alert"> Sample data, page to change later with dynamic content
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </p>
-        <div class="row">
-            <!-- <div class="col-6">
-                <div class="col-3" style="background-color: rgb(126, 170, 38); height:40px; width: 100px; border-radius: 5px; float: left;"></div>
-                <div class="col-3" style="background-color: rgb(214, 185, 19); height:40px; width: 100px; border-radius: 5px;"></div>            
-            </div>    -->
-            <div class="col-6 d-flex font-justify-right">
-                <button type="button" class="btn btn-warning btn-lg m-3">Download</button>
 
-            </div>   
-            <div class="container-iframe">
-                <div class="responsive-iframe">
-                    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRaKVmKiFPRGu5KkPZiRvd-euuzd9oWnJeH8muELiBV786sooiR07l65iYy0m-FSXJkZlAtLXWg62t5/pubhtml?widget=true&amp;headers=false"> </iframe>
-                </div>
-           </div>
-        </div>
-       
-        
+<div class="centerTextContainer p-3 ">
+    <h1 class="text-left">Group 1</h1>
+    <div class="awardBgRow bg">
+        <h2 class="text-left pt-3 pl-4">G4:Interactive Media-Gaming</h2>
+        <div class="row row-cols-2 d-flex pb-2 pt-3 pl-5 justify-content-around">
+            <div class="">
+               <form class="award" action="/" method="POST">
+                   <label for="Award of Excellence" name="Award of Excellence" class="labelAward">
+                   <span class="labelAward">Award of Excellence</span> 
+                       <input type="text" class="inputBox">
+                   </label>
+               </form>
+            </div>
+            <div class="">
+               <form class="award" action="/" method="POST">
+                   <label for="G4:Interactive Media-Gaming" name="Award of merit" >
+                     <span class="labelAward">Award of merit</span> 
+                       <select class="pulldown" name="G4:Interactive Media-Gaming" id="">
+                           <option value="Entry 1"> Entry 1</option>
+                           <option value="Entry 2"> Entry 2</option>
+                           <option value="Entry 3"> Entry 3</option>
+                       </select>
+                   </label>
+                   <h2 class="addAwardMeritInput text-weight-bold pt-2"> <a href="#" class="orange"> + Additional Award of Merit </a></div>
+               </form>
+            </div>
+        </div>        
+
+   
+
+         
 </div>
 
+<script src="/js/addAwardMeritField.js" type="text/javascript"></script>
 
 
     <%- include('partials/footer.ejs') %>

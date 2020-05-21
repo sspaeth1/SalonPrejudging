@@ -21,23 +21,19 @@
 
   <div class="row entries">
     <% artentries.forEach(function(artentries){ %>
-      <div class="col-md-4 `col-sm-6">
+      <div class="col-md-4 `col-sm-6 mt-5">
         <div class="img-thumbnail " >
           <a href="/artentries/<%= artentries._id %>">  
             <img src="<%= artentries.image%>" class="card-img-top" alt="Image for scoring" > </a> 
         </div>
         <div class="artEntriesTitle">
             <h5>
-               <%=  artentries.title %>
+               <%=  artentries.title.substring(0,50) %>...
             </h5>
-            <p>
-              <%= artentries.primaryAudience %>
-             </p>
-             <p><%= artentries.medium_software %></p>
-             <p>
-              <%= artentries.intended_purpose.substring(0,50) %>
-              ... 
-             </p> 
+            <p> <div class="orange font-weight-bolder threeQuarterRem ">Primary Audience: </div> <%= artentries.primaryAudience %></p>
+            <!-- <p> <div class="orange font-weight-bolder threeQuarterRem ">Medium/Software: </div><%= artentries.medium_software %></p> -->
+            <p> <div class="orange font-weight-bolder threeQuarterRem ">Category: </div><%= artentries.category %></p>
+            <p> <div class="orange font-weight-bolder threeQuarterRem ">Intended purpose: </div><%= artentries.intended_purpose.substring(0,50) %>... </p> 
               <div class="scoreThisEntry">   <a href="/artentries/<%= artentries._id %>" class="btn btn-primary lg"> Score this entry</a>  
               </div>       
         </div>

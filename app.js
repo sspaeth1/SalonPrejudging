@@ -1,47 +1,64 @@
-const bodyParser = require('body-parser'),
-  methodOverride = require('method-override'),
-        mongoose = require('mongoose'),
-         express = require('express'), 
-expressSanitizer = require('express-sanitizer'),
-           flash = require('connect-flash'),
-        passport = require('passport'),
-   LocalStrategy = require('passport-local'),
-            User = require ('./models/user'),
-        artEntry = require('./models/artentries'),
-             alt = 'acdNGY4RKoPe';
+const bodyParser = require("body-parser"),
+  methodOverride = require("method-override"),
+  mongoose = require("mongoose"),
+  express = require("express"),
+  expressSanitizer = require("express-sanitizer"),
+  flash = require("connect-flash"),
+  passport = require("passport"),
+  LocalStrategy = require("passport-local"),
+  User = require("./models/user"),
+  artEntry = require("./models/artentries"),
+  alt = "acdNGY4RKoPe",
+  entrance2019 = require("./public/json/entrance2019.js");
 
-const newItemRoutes    = require('./routes/newItem');
-const auth             = require('./routes/auth');
-const indexRoutes      = require('./routes/index');
-const rating           = require('./routes/rating');
+const newItemRoutes = require("./routes/newItem");
+const auth = require("./routes/auth");
+const indexRoutes = require("./routes/index");
+const rating = require("./routes/rating");
 
 const app = express();
 
 //App config//
 
 // //mongoose connect mongo DB Atlas
-mongoose.connect("mongodb+srv://spaeth2:"+alt+"@ss-apps-vtkpg.mongodb.net/test?retryWrites=true&w=majority",{
-   useNewUrlParser:true,
-    useCreateIndex:true,
-    useUnifiedTopology:true,
-    useFindAndModify: false
-  }).then(()=>{
-    console.log('Connected to DB');
-  }).catch(err => {
+mongoose
+  .connect(
+    "mongodb+srv://spaeth2:" +
+      alt +
+      "@ss-apps-vtkpg.mongodb.net/ami_prejudge?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useCreateIndex: true,
+      useUnifiedTopology: true,
+      useFindAndModify: false,
+    }
+  )
+  .then(() => {
+    artEntry.find().then((res) => {
+      if (res.length == 0) {
+        for (let i = 0; i < entrance2019.length; i++) {
+          let art = new artEntry(entrance2019[i]);
+          art.save();
+        }
+      }
+    });
+    console.log("Connected to DB");
+  })
+  .catch((err) => {
     console.log("Error: " + err.message);
-});
-
-
+  });
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
-app.use(require('express-session')({
-  secret: "pulseOx___20",
-  resave: false,
-  saveUninitialized: false
-}));
+app.use(
+  require("express-session")({
+    secret: "pulseOx___20",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 app.use(flash());
 app.use(expressSanitizer());
 
@@ -54,20 +71,22 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 //User Flash: site specific middleware  sets a currentUser check on every Route //returns user feedback
-app.use(function(req, res, next){
+app.use(function (req, res, next) {
   res.locals.currentUser = req.user;
-  res.locals.error       = req.flash('error');
-  res.locals.success     = req.flash('success');
+  res.locals.isAdmin = req.isAdmin;
+  res.locals.error = req.flash("error");
+  res.locals.success = req.flash("success");
   next();
 });
 
-//Use routes 
+//Use routes
 app.use(indexRoutes);
 app.use(auth);
 app.use(newItemRoutes);
 app.use(rating);
 
-
-//App listen 
-var port = process.env.PORT || 3000 ;
-app.listen(port, process.env.IP, function(){console.log("Server Started for prejuging app: process.env.PORT || 3000");});
+//App listen
+var port = process.env.PORT || 3000;
+app.listen(port, process.env.IP, function () {
+  console.log("Server Started for prejuging app: process.env.PORT || 3000");
+});

@@ -4,3 +4,4 @@ node_modules/
 **/archive
 **/PastSalonWinners/
 **/dropbox-sdk-js
+/public/DBtest.js

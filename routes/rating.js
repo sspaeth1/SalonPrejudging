@@ -27,3 +27,18 @@ router.post('/show', function(req, res){
   
 
 module.exports = router;
+
+
+
+
+
+//CREATE route
+router.post("/artentries", function(req, res){
+  //create entry
+  artEntry.create(req.body.artentries, function(err, newEntry){
+    if(err){
+      res.render("/new");
+    }
+       res.redirect("/artentries");
+  });
+});
