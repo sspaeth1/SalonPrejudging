@@ -2,12 +2,12 @@ const express = require("express"),
   router = express.Router(),
   passport = require("passport"),
   LocalStrategy = require("passport-local"),
-  bodyParser = require("body-parser");
-(methodOverride = require("method-override")),
-  (mongoose = require("mongoose")),
-  (expressSanitizer = require("express-sanitizer")),
-  (User = require("../models/user")),
-  (artEntry = require("../models/artentries"));
+  bodyParser = require("body-parser"),
+  methodOverride = require("method-override"),
+  mongoose = require("mongoose"),
+  expressSanitizer = require("express-sanitizer"),
+  User = require("../models/user"),
+  artEntry = require("../models/artentries");
 
 // ===================
 // Authenticate routes

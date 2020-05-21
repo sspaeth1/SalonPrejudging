@@ -64,7 +64,7 @@ router.get("/artentries", isLoggedIn, function (req, res) {
     }
     if (artEntry.find({ category: "A-1" })) {
       res.render("artentries", { artentries: artentries });
-    } 
+    }
   });
 });
 
