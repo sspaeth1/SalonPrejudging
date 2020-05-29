@@ -16,7 +16,6 @@ const { isLoggedIn } = require("../middleware");
 router.get("/index", function (req, res) {
   ArtEntry.find({}, function (err, artentries) {
     if (err) {
-      console.log(err);
     }
     res.render("index", { artentries: artentries });
   });
@@ -58,71 +57,25 @@ router.get("/appendixB", (req, res) => res.render("appendixB"));
 router.get("/artentries", isLoggedIn, function (req, res) {
   ArtEntry.find({}, function (err, artentries) {
     if (err) {
-      console.log(err);
     }
     res.render("artentries", { artentries: artentries });
-    // console.log(ArtEntry.find({ category: "A-1" }));
   });
 });
-
-// idividual art entries
-
-// router.get("/artentries/:id", isLoggedIn, async (req, res) => {
-//   try {
-//     const score = await GeneralScore.findById({
-//       judge: req.user,
-//       entryID: `${entryID._id}`,
-//     });
-//     console.log("score: " + score);
-//     const {
-//       gnrl_part1_1_message,
-//       gnrl_part1_2_audience,
-//       gnrl_part1_3_problemSolving,
-//       gnrl_part1_4_accuracy,
-//       gnrl_part1_5_clarity,
-//     } = score;
-
-//     const foundPage = await GeneralScore.findById(req.params.id);
-//     res.render("show", {
-//       artentries: foundPage,
-//       score: Score,
-//     });
-//     console.log("found page: " + foundPage);
-//   } catch (err) {
-//     console.log("catch err: " + err.message);
-//     res.redirect("/artentries");
-//   }
-// });
 
 router.get("/artentries/:id", isLoggedIn, function (req, res) {
   ArtEntry.findById(req.params.id, function (err, foundPage) {
     if (err) {
-      console.log("redirect show route");
       res.redirect("/artentries");
     }
-    console.log(foundPage);
+
     res.render("show", { artentries: foundPage });
   });
 });
-
-//   try {
-//     User.find({ assignedCategories }, function (err, AssignedCategories) {
-//       if (err) {
-//         console.log("error: " + err.message);
-//       }
-//       res.render("show", { AssignedCategories });
-//     });
-
-//   } catch (err) {
-//     console.log("error message: " + err.message);
-//   }
-// });
 
 //EDIT ROUTE
 router.get("/artentries/:id/edit", function (req, res) {
   ArtEntry.findById(req.params.id, function (err, foundPage) {
     if (err) {
-      console.log("redirect id edit");
       res.redirect("/artentries");
     }
 
@@ -138,7 +91,6 @@ router.put("/artentries/:id", function (req, res) {
     foundPage
   ) {
     if (err) {
-      console.log("error");
       res.render("/");
     }
 
@@ -154,7 +106,6 @@ router.delete("/artentries/:id", function (req, res) {
       res.redirect("/artentries");
     }
 
-    console.log("Deleted entry");
     res.redirect("/artentries");
   });
 });
