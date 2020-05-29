@@ -11,16 +11,14 @@ var artEntrySchema = new mongoose.Schema({
   intended_purpose: String,
   rating: Number,
   category: String,
-  user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-  score_animation: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Score_animation",
-  },
-  score_book: { type: mongoose.Schema.Types.ObjectId, ref: "Score_book" },
+  excellenceWinner: { type: Boolean, default: false },
+  meritWinner: { type: Boolean, default: false }, //ArtEntry.find({meritWinner: true})
+  judge: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+  judge: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   score_general: { type: mongoose.Schema.Types.ObjectId, ref: "Score_general" },
   created: { type: Date, default: Date.now },
 });
 
-var artEntry = mongoose.model("ArtEntry", artEntrySchema);
+var ArtEntry = mongoose.model("ArtEntry", artEntrySchema);
 
-module.exports = artEntry;
+module.exports = ArtEntry;

@@ -15,7 +15,12 @@ const AnimationSchema = new mongoose.Schema({
   anim_part2_11_sound: Number,
   notes: String,
   complete: Boolean,
-  category: { type: String, ref: "Categories", required: true },
+  entryId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "ArtEntry",
+    required: true,
+  },
+  category: { type: String, required: true },
   created: { type: Date, default: Date.now },
 });
 

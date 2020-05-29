@@ -7,7 +7,8 @@ const express = require("express"),
   mongoose = require("mongoose"),
   expressSanitizer = require("express-sanitizer"),
   User = require("../models/user"),
-  artEntry = require("../models/artentries");
+  ArtEntry = require("../models/artEntry");
+const { isLoggedIn } = require("../middleware");
 
 // ===================
 // Authenticate routes
@@ -34,7 +35,8 @@ router.post("/register", function (req, res) {
     email: req.body.email,
     avatar: req.body.avatar,
   });
-  User.register(newUser, req.body.password, function (err, user) {
+
+  User.register(newUser, req.body.password, isLoggedIn, function (err, user) {
     if (err) {
       console.log(err);
       req.flash("error", err);
@@ -48,7 +50,7 @@ router.post("/register", function (req, res) {
 });
 
 // admin register POST
-router.post("/registerAdmin", function (req, res) {
+router.post("/registerAdmin", isLoggedIn, function (req, res) {
   var newUser = new User({
     username: req.body.username,
     firstName: req.body.firstName,
@@ -72,6 +74,58 @@ router.post("/registerAdmin", function (req, res) {
   });
 });
 
+//User Profiles
+
+router.get("/profile/:id", isLoggedIn, function (req, res) {
+  User.findById(req.params.id, function (err, foundProfile) {
+    if (err) {
+      req.flash("error", "Urp, issue with your profile");
+      res.redirect("/login");
+    }
+    res.render("profiles/show", { user: foundProfile });
+  });
+});
+
+//EDIT User
+router.get("/profile/:id/edit", function (req, res) {
+  User.findById(req.params.id, function (err, foundProfile) {
+    if (err) {
+      console.log("redirect id edit");
+      res.redirect("/artentries");
+    }
+    res.render("editUser", { user: foundProfile });
+  });
+});
+
+//Update user
+router.put("/profile/:id/", function (req, res) {
+  // (id, new data, callback )
+  User.findByIdAndUpdate(req.params.id, req.body.user, function (
+    err,
+    foundPage
+  ) {
+    if (err) {
+      console.log("error");
+      res.render("/");
+    }
+
+    res.redirect("/login/" + req.params.id);
+  });
+});
+
+//Destroy user
+router.delete("/profile/:id", function (req, res) {
+  //destroy
+  User.deleteOne(req.params.id, function (err) {
+    if (err) {
+      res.redirect("/login");
+    }
+
+    console.log("Deleted user");
+    res.redirect("/login");
+  });
+});
+
 //======
 //LOGIN
 //======
@@ -82,7 +136,7 @@ router.get("/login", function (req, res) {
 router.post(
   "/login",
   passport.authenticate("local", {
-    successRedirect: "/index",
+    successRedirect: "/artEntries", ///index
     failureFlash: "Login failed",
     failureRedirect: "/login",
   }),
@@ -99,6 +153,19 @@ router.get("/logout", function (req, res) {
   req.logout();
   req.flash("success", "Successfully logged out");
   res.redirect("/login");
+});
+
+//Get judges list:  ROUTE
+
+router.get("/profiles/_judges", (req, res) => {
+  User.find(req.params.id, function (err, foundUser) {
+    if (err) {
+      console.log("catch err: " + err.message);
+      redirect("/index");
+    }
+    console.log(foundUser);
+    res.render("profiles/_judges", { user: foundUser });
+  });
 });
 
 module.exports = router;

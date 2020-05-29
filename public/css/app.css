@@ -262,6 +262,10 @@ button,
   -webkit-appearance: button;
 }
 
+.hidden{
+  visibility: hidden;
+}
+
 button:not(:disabled),
 [type="button"]:not(:disabled),
 [type="reset"]:not(:disabled),
@@ -9755,6 +9759,15 @@ span.regAdmin{
   background-color: #eee;
   padding: 5%;
 }
+
+section#scoring h1 span{
+	left: 5%;
+    top: 5px;
+    position: relative;
+    font-weight: bold;
+} 
+
+
 
 .scoreThisEntry {
   position: absolute;

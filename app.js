@@ -7,9 +7,9 @@ const bodyParser = require("body-parser"),
   passport = require("passport"),
   LocalStrategy = require("passport-local"),
   User = require("./models/user"),
-  artEntry = require("./models/artentries"),
+  ArtEntry = require("./models/artEntry"),
   alt = "acdNGY4RKoPe",
-  entrance2019 = require("./public/json/entrance2019.js");
+  entrants2019 = require("./public/json/entrants2019.js"); // js file with all entries  converted from excel> CSV > Json > js
 
 const newItemRoutes = require("./routes/newItem");
 const auth = require("./routes/auth");
@@ -34,15 +34,15 @@ mongoose
     }
   )
   .then(() => {
-    artEntry.find().then((res) => {
+    ArtEntry.find().then((res) => {
       if (res.length == 0) {
-        for (let i = 0; i < entrance2019.length; i++) {
-          let art = new artEntry(entrance2019[i]);
+        for (let i = 0; i < entrants2019.length; i++) {
+          let art = new ArtEntry(entrants2019[i]);
           art.save();
         }
       }
     });
-    console.log("Connected to DB");
+    console.log("Connected to mongoDB Atlas DB");
   })
   .catch((err) => {
     console.log("Error: " + err.message);

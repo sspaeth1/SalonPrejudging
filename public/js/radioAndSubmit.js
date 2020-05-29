@@ -1,16 +1,15 @@
-
 //save radio selection
 
-function radioSelect(){
-    var inputs = document.querySelectorAll('input');
+function radioSelect() {
+  console.log("test");
+  var inputs = document.querySelectorAll("input");
 
-    for(let i = 0; i < inputs.length ;i++){
-        if(inputs[i].checked){
-            // save selection to mongoDB
-            console.log(inputs[i].getAttribute('id') + ' checked')
-
-        }
+  for (let i = 0; i < inputs.length; i++) {
+    if (inputs[i].checked) {
+      // save selection to mongoDB
+      console.log(inputs[i].getAttribute("id") + " checked");
     }
+  }
 }
 
-module.exports.radioSelect = radioSelect; 
+// module.exports.radioSelect = radioSelect;

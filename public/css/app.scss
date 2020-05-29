@@ -67,6 +67,9 @@ body{
 .threeQuarterRem{
 	font-size: .75rem;
 }
+.hidden{
+	visibility: hidden;
+}
 
 
 .nobullet{
@@ -125,6 +128,12 @@ body{
 
 // My Judging Categories
 
+section#scoring h1 span{
+	left: 5%;
+    top: 5px;
+    position: relative;
+    font-weight: bold;
+} 
 
 .artEntriesTitle{
 	min-height: 350px;

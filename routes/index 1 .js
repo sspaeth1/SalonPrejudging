@@ -4,7 +4,9 @@ const express = require("express"),
   User = require("../models/user"),
   ArtEntry = require("../models/artEntry"),
   Category = require("../models/category"),
-  GeneralScore = require("../models/score_general"),
+  bookScore = require("../models/score_book"),
+  generalScore = require("../models/score_general"),
+  animationScore = require("../models/score_animation"),
   auth = require("../routes/auth");
 const { isLoggedIn } = require("../middleware");
 
@@ -65,58 +67,15 @@ router.get("/artentries", isLoggedIn, function (req, res) {
   });
 });
 
-// idividual art entries
-
-// router.get("/artentries/:id", isLoggedIn, async (req, res) => {
-//   try {
-//     const score = await GeneralScore.findById({
-//       judge: req.user,
-//       entryID: `${entryID._id}`,
-//     });
-//     console.log("score: " + score);
-//     const {
-//       gnrl_part1_1_message,
-//       gnrl_part1_2_audience,
-//       gnrl_part1_3_problemSolving,
-//       gnrl_part1_4_accuracy,
-//       gnrl_part1_5_clarity,
-//     } = score;
-
-//     const foundPage = await GeneralScore.findById(req.params.id);
-//     res.render("show", {
-//       artentries: foundPage,
-//       score: Score,
-//     });
-//     console.log("found page: " + foundPage);
-//   } catch (err) {
-//     console.log("catch err: " + err.message);
-//     res.redirect("/artentries");
-//   }
-// });
-
-router.get("/artentries/:id", isLoggedIn, function (req, res) {
+router.get("/artentries/:id", function (req, res) {
   ArtEntry.findById(req.params.id, function (err, foundPage) {
     if (err) {
       console.log("redirect show route");
       res.redirect("/artentries");
     }
-    console.log(foundPage);
     res.render("show", { artentries: foundPage });
   });
 });
-
-//   try {
-//     User.find({ assignedCategories }, function (err, AssignedCategories) {
-//       if (err) {
-//         console.log("error: " + err.message);
-//       }
-//       res.render("show", { AssignedCategories });
-//     });
-
-//   } catch (err) {
-//     console.log("error message: " + err.message);
-//   }
-// });
 
 //EDIT ROUTE
 router.get("/artentries/:id/edit", function (req, res) {

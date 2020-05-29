@@ -12,35 +12,104 @@
 <h1  class="fullSpan"> Award Winners</h1>
 
 
-<div class="centerTextContainer p-3 ">
-    <h1 class="text-left">Group 1</h1>
-    <div class="awardBgRow bg">
-        <h2 class="text-left pt-3 pl-4">G4:Interactive Media-Gaming</h2>
-        <div class="row row-cols-2 d-flex pb-2 pt-3 pl-5 justify-content-around">
-            <div class="">
-               <form class="award" action="/" method="POST">
-                   <label for="Award of Excellence" name="Award of Excellence" class="labelAward">
-                   <span class="labelAward">Award of Excellence</span> 
-                       <input type="text" class="inputBox">
-                   </label>
-               </form>
-            </div>
-            <div class="">
-               <form class="award" action="/" method="POST">
-                   <label for="G4:Interactive Media-Gaming" name="Award of merit" >
-                     <span class="labelAward">Award of merit</span> 
-                       <select class="pulldown" name="G4:Interactive Media-Gaming" id="">
-                           <option value="Entry 1"> Entry 1</option>
-                           <option value="Entry 2"> Entry 2</option>
-                           <option value="Entry 3"> Entry 3</option>
-                       </select>
-                   </label>
-                   <h2 class="addAwardMeritInput text-weight-bold pt-2"> <a href="#" class="orange"> + Additional Award of Merit </a></div>
-               </form>
-            </div>
-        </div>        
+<% if( currentUser == Admin){ %>
+    <div class="centerTextContainer p-3 ">
+        <h1 class="text-left">Group 1</h1>
+        <div class="awardBgRow bg">
+            <h2 class="text-left pt-3 pl-4">A1: String,  //  Didactic/Instructional - Non-Commercial   </h2>
+                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
+                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
+            <h2 class="text-left pt-3 pl-4">A2: String,  //  Didactic/Instructional - Commercial   </h2> 
+                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
+                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>                
+            <h2 class="text-left pt-3 pl-4">B: String,  //  Still Media - Editorial</h2>     
+                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
+                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
+            <h2 class="text-left pt-3 pl-4">C: String,  //  Still Media - Advertising and Marketing/Promotional</h2>     
+                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
+                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
+            <h2 class="text-left pt-3 pl-4"> D: String,  //  Still Media - Medical Legal</h2>     
+                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
+                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
+            <h2 class="text-left pt-3 pl-4"> E: String,  //  Still Media - Illustrated Textbook (Traditionally printed book)</h2>     
+                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
+                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
+            <h2 class="text-left pt-3 pl-4">  F1: String,  //  Animation-Didactic/Instructional - Non-Commercial</h2>     
+                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
+                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
+            <h2 class="text-left pt-3 pl-4"> G1: String,  //  Interactive Media - Didactic/Instructional-Non-Commercial</h2>     
+                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
+                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
+            <h2 class="text-left pt-3 pl-4"> G3: String,  //  Interactive Media - Advertising and Marketing/Promotional</h2>     
+                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
+                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
+             <h2 class="text-left pt-3 pl-4"> G4: String,  //  Interactive Media – Gaming</h2>     
+                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
+                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
+             <h2 class="text-left pt-3 pl-4">G5: String,  //  Interactive Media – Interactive Textbook</h2>     
+                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
+                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
+             <h2 class="text-left pt-3 pl-4">I1: String,  //  Didactic/Instructional – Anatomical/ Pathological </h2>     
+                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
+                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
+             <h2 class="text-left pt-3 pl-4"> I2: String,  //  Didactic/Instructional – Surgical/Clinical Procedures</h2>     
+                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
+                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
+            <h2 class="text-left pt-3 pl-4"> I3: String,  //  Didactic/Instructional – Molecular/Biological/Life Sciences</h2>     
+                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
+                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
+             <h2 class="text-left pt-3 pl-4"> J: String,  //  Didactic/Instructional – Editorial </h2>     
+                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
+                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
+             <h2 class="text-left pt-3 pl-4"> K: String,  //  Didactic/Instructional – Advertising and Marketing/Promotional</h2>     
+                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
+                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
+             <h2 class="text-left pt-3 pl-4"> L: String,  //  Student Motion Media -  Animation</h2>     
+                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
+                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
+             <h2 class="text-left pt-3 pl-4">  M: String,  //  Student Interactive Section - Interactive </h2>     
+                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
+                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
+        
+        </div>
+    </div>
 
-   
+
+<% }else{ %>
+
+
+
+
+
+    <div class="centerTextContainer p-3 ">
+        <h1 class="text-left">Group 1</h1>
+        <div class="awardBgRow bg">
+            <h2 class="text-left pt-3 pl-4">G4:Interactive Media-Gaming</h2>
+            <div class="row row-cols-2 d-flex pb-2 pt-3 pl-5 justify-content-around">
+                <div class="">
+                <form class="award" action="/" method="POST">
+                    <label for="Award of Excellence" name="Award of Excellence" class="labelAward">
+                    <span class="labelAward">Award of Excellence</span> 
+                        <input type="text" class="inputBox">
+                    </label>
+                </form>
+                </div>
+                <div class="">
+                <form class="award" action="/" method="POST">
+                    <label for="G4:Interactive Media-Gaming" name="Award of merit" >
+                        <span class="labelAward">Award of merit</span> 
+                        <select class="pulldown" name="G4:Interactive Media-Gaming" id="">
+                            <option value="Entry 1"> Entry 1</option>
+                            <option value="Entry 2"> Entry 2</option>
+                            <option value="Entry 3"> Entry 3</option>
+                        </select>
+                    </label>
+                    <h2 class="addAwardMeritInput text-weight-bold pt-2"> <a href="#" class="orange"> + Additional Award of Merit </a></div>
+                </form>
+                </div>
+            </div>        
+
+       <% } %>
 
          
 </div>

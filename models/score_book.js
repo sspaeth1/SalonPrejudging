@@ -14,7 +14,7 @@ var BookSchema = new mongoose.Schema({
   book_part2_9_layoutIntegration: Number,
   notes: String,
   complete: Boolean,
-  category: { type: String, ref: "Categories", required: true },
+  category: { type: String, ref: "Category", required: true },
   created: { type: Date, default: Date.now },
 });
 

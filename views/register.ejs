@@ -8,16 +8,16 @@
         <h1 class="formField">Register as a judge</h1>
         <p class="midgrey _1rem">Please use alphanumerica with no spaces or the following characters $.%,|</p>
         <form action="/register" method="post" class="form-group ">
-            <label for="">  <span class="regAdmin">Username</span>
+            <label for="username">  <span class="regAdmin">Username</span>
                 <input required type="text" name="username" placeholder="Username"  class="form-control-lg m-2" autofocus>
             </label>
-           <label for="">  <span class="regAdmin">Password</span>
+           <label for="password">  <span class="regAdmin">Password</span>
                 <input required type="password" name="password" placeholder="Password" class="form-control-lg m-2">
            </label>
-           <label for=""> <span class="regAdmin">First name</span>
+           <label for="firstName"> <span class="regAdmin">First name</span>
                 <input required type="text" name="firstName" placeholder="First Name" class="form-control-lg m-2">
             </label>
-            <label for=""> <span class="regAdmin">Last name </span>
+            <label for="lastName"> <span class="regAdmin">Last name </span>
                 <input required type="text" name="lastName" placeholder="Last Name" class="form-control-lg m-2">
             </label>
             <label for="email"> <span class="regAdmin">e-mail</span>
@@ -26,6 +26,13 @@
             <label for="avatar"> <span class="regAdmin">Avatar</span>
                 <input  type="text" name="avatar" placeholder="URL to your pic" class="form-control-lg m-2">
             </label>
+            <label for="assignedCategories" class=""> <span class="regAdmin">assignedCategories</span>
+                <input  type="text" name="assignedCategories" placeholder=" A-1, A-2, B, C ..." class="form-control-lg m-2">
+            </label>
+            <label for="judge" class=""> <span class="regAdmin">Judge?</span>
+                <input  type="checkbox" name="judge" placeholder="URL to your pic" class="form-control-lg m-2">
+            </label>
+            
 
             <button class="btn btn-lg btn-primary m-2 ">Register</button>
         </form>
@@ -35,6 +42,7 @@
         
     </div>
 </div>
+
 
 
 

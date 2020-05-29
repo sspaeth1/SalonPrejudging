@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="/css/db.css" type="text/css">
 
 
+
 <script>
     //active menu highlight
     $(document).ready(function(){
@@ -16,16 +17,16 @@
 
  
 
-<h1  class="fullSpan">My judging category: <%= artentries.category %></h1> <!--MAKE DYNAMIC-->
+<h1  class="fullSpan">My judging category: <%= artentries.category %></h1>
   
 <button type="button" class="btn btn-primary m-2  btn-lg  buttonReturn" style="margin-left:5%;" ><a href="/artentries">Back to entries in this category</a></button>
 
 <main class="centerRatingPage">
-    <h1 class="ratingFormHeader"> <div class="orange">Category: </div>
+    <!-- <h1 class="ratingFormHeader"> <div class="orange">Category: </div>
         <div class="midGrey">A-1 Professional still media section </div> 
         Didactic/Instructional – Non-Commercial 
         <br>
-    </h1>  <!-- make dynamic-->
+    </h1>  make dynamic -->
 
     <h4 class="midGrey"></h4>
 
@@ -34,7 +35,7 @@
         <div class="col-8">
             <a href="<%= artentries.image %>" target="_blank" class="expandWinIcon orange halfRem" >  Enlarge <img src="/images/svg/expandWindow.svg" class="expandWinIcon" alt="expand Image">
             </a>
-            <a href="<%= artentries.image %>" target="blank"> <img src="<%= artentries.image %>" class="img-fluid imgScore" alt="<%= artentries.title %>"></a>
+           <img src="<%= artentries.image %>" class="img-fluid imgScore" alt="<%= artentries.title %>">
            
         </div>
         <div class="col-4 mt-4" >
@@ -54,328 +55,340 @@
     <script>
         //save radio selection
 
-        function radioSelect(){
-            var inputs = document.querySelectorAll('input');
-           
+        function radioSelect( event, entryId, artEntryCategory){  
+            const el =  event.target
+            //console.log({  el })
 
-        //check score
-        //if statement for type category  book vs general 
-        
+            if(el.checked) {
+                const selectedRadio = el.id;
+                const getQuestionNum = el.parentNode.parentNode.classList[1];
+                console.log({  selectedRadio,getQuestionNum });
 
-            // if(!finalResult);
-            let finalResult = [];
-            //send Id of artEntries  
-
-            for(let i = 0; i < inputs.length ;i++){
-                var getQuestionNum =  document.querySelectorAll('input')[i].parentElement.parentElement.classList[i];
-                var selectedRadio =  inputs[i].getAttribute('value') ;
-                if(inputs[i].checked){
-                    // save selection to mongoDB
-                    finalResult.push({getQuestionNum: selectedRadio })   
-   
-                }
+                $.ajax('/score', {
+                type: 'POST', 
+                data: { getQuestionNum: getQuestionNum, selectedRadio: selectedRadio, entry: entryId, category: artEntryCategory   },
+                dataType: 'json',
+                success: function (data, status, xhr) {
+                    console.log(data);
+                    console.log(user);
+                },
+                error: function (jqXhr, textStatus, errorMessage) {
+                    console.log(errorMessage);
+                    }
+                    });    
             }
-        }
+         }
 
+
+  </script>
+<script>
+    $( function() {
+      $( "#accordion" ).accordion({
+        collapsible: true,
+        heightStyle: "content"
+      });
+    });
   </script>
 
 
-    <section id="scoringSlider">
-        <a  class="control_next"> >> </a>
-        <a  class="control_prev"> << </a>
-        <ul class="slider">
-            <li class="slider">
-                <div class="ratingFormSubHeader">Part I: Communication/Problem Solving </div> 
-                    <form action="/show" method="POST" class="formCard  gnrl_part1_1_message">
+    <section id="scoring">
+        <h1 class="ratingFormHeader"> 
+            <span> Scoring</span> 
+            <hr>
+       
+        <div id="accordion" >
+             <h3 class=""> Part I: Communication/Problem Solving  </h3>
+                <div class="ratingFormSubHeader" > 
+                    <form action="/show" method="POST" class="gnrl_part1_1_message">
                         <h2>1: Conveys the message</h2>
                         <p>Generally, medical/life sciences art is produced to convey a specific message or idea. How well does the illustration tell the story identified in the statement of purpose?</p>
                       
                         <label for="0">
-                            <input onclick="radioSelect();" type="radio" id="0" name="rating" value="0" >
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="0" name="rating" value="0"  />  
                             0 Failure 
                         </label>
                         <label for="1">
-                            <input onclick="radioSelect();" type="radio" id="1" name="rating" value="1" >
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="1" name="rating" value="1" />
                             1 Minimal/Poor      
                         </label>
                         <label for="2">
-                            <input onclick="radioSelect();" type="radio" id="2" name="rating" value="2" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="2" name="rating" value="2"  />
                             2 Fair/low    
                         </label>
                         <label for="3">
-                            <input onclick="radioSelect();" type="radio" id="3" name="rating" value="3" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="3" name="rating" value="3" />
                             3 Average / Adequate
                         </label>
                         <label for="4">
-                            <input onclick="radioSelect();" type="radio" id="4" name="rating" value="4" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="4" name="rating" value="4"   />
                             4 Very Good / High   
                         </label>
                         <label for="">
-                            <input onclick="radioSelect();" type="radio" id="5" name="rating" value="5" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="5" name="rating" value="5"  />
                             5 Excellent / Very High   
                         </label>
-                    </form>
-            </li>
-            <li class="slider">
-                <div class="ratingFormSubHeader">Part I: Communication/Problem Solving </div> 
-                    <form action="/show" method="POST" class="formCard  gnrl_part1_2_audience">
+                     </form>
+            </div>
+             <h3 class=""> Part I: Communication/Problem Solving </h3>
+                <div class="ratingFormSubHeader"> 
+                    <form action="/show" method="POST" class="gnrl_part1_2_audience">
                         <h2>2: APPROPRIATE FOR THE INTENDED AUDIENCE:</h2>
                         <p>The simplicity or complexity of the artwork should be appropriate for the knowledge of the audience. For example, the medical/scientific content should match the background and knowledge of the intended end user, and informational complexity should be built on a foundation of relevance to that audience. Overloading with professional-level informational detail for the layman or the opposite, reduction of information into simplistic terms for an expert audience, would define an inappropriate content level.</p>
                       
                         <label for="0">
-                            <input onclick="radioSelect();" type="radio" id="0" name="rating" value="0">
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="0" name="rating" value="0" />
                             0 Failure 
                         </label>
                         <label for="1">
-                            <input onclick="radioSelect();" type="radio" id="1" name="rating" value="1" >
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="1" name="rating" value="1" />
                             1 Minimal/Poor      
                         </label>
                         <label for="2">
-                            <input onclick="radioSelect();" type="radio" id="2" name="rating" value="2" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="2" name="rating" value="2"  />
                             2 Fair/low    
                         </label>
                         <label for="3">
-                            <input onclick="radioSelect();" type="radio" id="3" name="rating" value="3" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="3" name="rating" value="3" />
                             3 Average / Adequate
                         </label>
                         <label for="4">
-                            <input onclick="radioSelect();" type="radio" id="4" name="rating" value="4" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="4" name="rating" value="4"  />
                             4 Very Good / High   
                         </label>
-                        <label for="">
-                            <input onclick="radioSelect();" type="radio" id="5" name="rating" value="5" />
+                        <label for="5">
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="5" name="rating" value="5" />
                             5 Excellent / Very High   
                         </label>
-                    </form>
-            </li>
-            <li class="slider">
-                <div class="ratingFormSubHeader">Part I: Communication/Problem Solving </div> 
-                    <form action="/show" method="POST" class="formCard  gnrl_part1_3_problemSolving">
+                     </form>
+            </div>
+             <h3 class=""> Part I: Communication/Problem Solving  </h3>
+                <div class="ratingFormSubHeader">
+                   </form action="/show" method="POST" class="gnrl_part1_3_problemSolving">
                         <h2>3: DEGREE OF PROBLEM SOLVING:</h2>
                         <p>Consider the degree of problem solving expressed in the illustration and/or the uniqueness of the concept in the pictorial solution. Take into account obstacles presented by the conceptual and technical parameters of the job, as per the entry’s statement of purpose.</p>
                       
                         <label for="0">
-                            <input onclick="radioSelect();" type="radio" id="0" name="rating" value="0" >
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="0" name="rating" value="0" />
                             0 Failure 
                         </label>
                         <label for="1">
-                            <input onclick="radioSelect();" type="radio" id="1" name="rating" value="1" >
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="1" name="rating" value="1" />
                             1 Minimal/Poor      
                         </label>
                         <label for="2">
-                            <input onclick="radioSelect();" type="radio" id="2" name="rating" value="2" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="2" name="rating" value="2" />
                             2 Fair/low    
                         </label>
                         <label for="3">
-                            <input onclick="radioSelect();" type="radio" id="3" name="rating" value="3" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="3" name="rating" value="3" />
                             3 Average / Adequate
                         </label>
                         <label for="4">
-                            <input onclick="radioSelect();" type="radio" id="4" name="rating" value="4" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="4" name="rating" value="4"  />
                             4 Very Good / High   
                         </label>
                         <label for="">
-                            <input onclick="radioSelect();" type="radio" id="5" name="rating" value="5" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="5" name="rating" value="5" />
                             5 Excellent / Very High   
                         </label>
-                    </form>
-            </li>
-            <li class="slider">
-                <div class="ratingFormSubHeader">Part I: Communication/Problem Solving </div> 
-                    <form action="/show" method="POST" class="formCard  gnrl_part1_4_accuracy">
+                     </form>
+            </div>
+             <h3 class="">Part I: Communication/Problem Solving   </h3>
+                <div class="ratingFormSubHeader">
+                    <form action="/show" method="POST" class="gnrl_part1_4_accuracy">
                         <h2>4: ACCURACY OF MEDICAL OR SCIENTIFIC INFORMATION REPRESENTED:</h2>
                         <p>The information must be accurate, depicting currently accepted standards of biological and anatomical relationships, relative scale and proportions. Pictorial manipulation or distortion of anatomical/scientific information is sometimes necessary or even preferred, but it should be done clearly, with purpose and knowledge. It should not be misleading or cause confusion. Note: this criterion is double weighted.</p>
                       
                         <label for="0">
-                            <input onclick="radioSelect();" type="radio" id="0" name="rating" value="0">
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="0" name="rating" value="0" />
                             0 Failure 
                         </label>
                         <label for="1">
-                            <input onclick="radioSelect();" type="radio" id="1" name="rating" value="1" >
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="1" name="rating" value="1"  />
                             1 Minimal/Poor      
                         </label>
                         <label for="2">
-                            <input onclick="radioSelect();" type="radio" id="2" name="rating" value="2" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="2" name="rating" value="2"  />
                             2 Fair/low    
                         </label>
                         <label for="3">
-                            <input onclick="radioSelect();" type="radio" id="3" name="rating" value="3" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="3" name="rating" value="3" />
                             3 Average / Adequate
                         </label>
                         <label for="4">
-                            <input onclick="radioSelect();" type="radio" id="4" name="rating" value="4" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="4" name="rating" value="4" />
                             4 Very Good / High   
                         </label>
                         <label for="">
-                            <input onclick="radioSelect();" type="radio" id="5" name="rating" value="5" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="5" name="rating" value="5"  />
                             5 Excellent / Very High   
                         </label>
-                    </form>
-            </li>
-            <li class="slider">
-                <div class="ratingFormSubHeader">Part I: Communication/Problem Solving </div> 
-                    <form action="/show" method="POST" class="formCard  gnrl_part1_5_clarity">
+                     </form>
+            </div>
+             <h3 class=""> Part I: Communication/Problem Solving  </h3>
+                <div class="ratingFormSubHeader">
+                    <form action="/show" method="POST" class="gnrl_part1_5_clarity">
                         <h2>5: CLARITY:</h2>
                         <p>The pictorial or dimensional (e.g. anatomical models) information should be clear, direct, precise, and easily read. It should be unencumbered with excessive, confusing, and distracting peripheral information. When the artwork is presented as part of a series, information flow and consistency are taken into consideration.</p>
                       
                         <label for="0">
-                            <input onclick="radioSelect();" type="radio" id="0" name="rating" value="0" >
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="0" name="rating" value="0" >
                             0 Failure 
                         </label>
                         <label for="1">
-                            <input onclick="radioSelect();" type="radio" id="1" name="rating" value="1" >
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="1" name="rating" value="1" >
                             1 Minimal/Poor      
                         </label>
                         <label for="2">
-                            <input onclick="radioSelect();" type="radio" id="2" name="rating" value="2" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="2" name="rating" value="2" />
                             2 Fair/low    
                         </label>
                         <label for="3">
-                            <input onclick="radioSelect();" type="radio" id="3" name="rating" value="3" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="3" name="rating" value="3" />
                             3 Average / Adequate
                         </label>
                         <label for="4">
-                            <input onclick="radioSelect();" type="radio" id="4" name="rating" value="4" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="4" name="rating" value="4" />
                             4 Very Good / High   
                         </label>
                         <label for="">
-                            <input onclick="radioSelect();" type="radio" id="5" name="rating" value="5" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="5" name="rating" value="5" />
                             5 Excellent / Very High   
                         </label>
-                    </form>
-            </li>
-            <li class="slider">
-                <div class="ratingFormSubHeader">Part II: Technique</div> 
-                    <form action="/show" method="POST" class="formCard  gnrl_part2_6_technique">
+                     </form>
+            </div>
+             <h3 class=""> Part II: Technique </h3>
+                <div class="ratingFormSubHeader">
+                    <form action="/show" method="POST" class="gnrl_part2_6_technique">
                         <h2>6: EFFECTIVENESS OF TECHNIQUE AND MEDIA FOR THE INTENDED PRESENTATION FORMAT:</h2>
                         <p>All basic reproduction criteria for the intended presentation format should be met, including: appropriate aspect ratio; proper use of color, tone, line, and type within the reproduction limitations of the format; size of rendered original in relation to final format; appropriate level of (reproducible) graphic complexity.</p>
                       
                         <label for="0">
-                            <input onclick="radioSelect();" type="radio" id="0" name="rating" value="0" >
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="0" name="rating" value="0" >
                             0 Failure 
                         </label>
                         <label for="1">
-                            <input onclick="radioSelect();" type="radio" id="1" name="rating" value="1" >
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="1" name="rating" value="1" >
                             1 Minimal/Poor      
                         </label>
                         <label for="2">
-                            <input onclick="radioSelect();" type="radio" id="2" name="rating" value="2" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="2" name="rating" value="2" />
                             2 Fair/low    
                         </label>
                         <label for="3">
-                            <input onclick="radioSelect();" type="radio" id="3" name="rating" value="3" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="3" name="rating" value="3" />
                             3 Average / Adequate
                         </label>
                         <label for="4">
-                            <input onclick="radioSelect();" type="radio" id="4" name="rating" value="4" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="4" name="rating" value="4" />
                             4 Very Good / High   
                         </label>
                         <label for="">
-                            <input onclick="radioSelect();" type="radio" id="5" name="rating" value="5" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="5" name="rating" value="5" />
                             5 Excellent / Very High   
                         </label>
-                    </form>
-            </li>
-            <li class="slider">
-                <div class="ratingFormSubHeader">Part II: Technique</div> 
-                    <form action="/show" method="POST" class="formCard  gnrl_part2_7_composition">
+                     </form>
+            </div>
+             <h3 class=""> Part II: Technique </h3>
+                <div class="ratingFormSubHeader">
+                    <form action="/show" method="POST" class="gnrl_part2_7_composition">
                         <h2>7: COMPOSITION:</h2>
                         <p>The effective use of design elements to focus attention via placement and use of color, tone, or line; contrast; dynamics of form and shape; balance; unity of elements; and use of space. In illustrations where mood and drama are part of the treatment used to enhance the message or storytelling, evaluate the effectiveness of color and scenic lighting to create special effects. If 3D software is used, how effective is the framing, choice of camera lens, camera view and/or lighting?</p>
                       
                         <label for="0">
-                            <input onclick="radioSelect();" type="radio" id="0" name="rating" value="0">
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="0" name="rating" value="0">
                             0 Failure 
                         </label>
                         <label for="1">
-                            <input onclick="radioSelect();" type="radio" id="1" name="rating" value="1" >
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="1" name="rating" value="1" >
                             1 Minimal/Poor      
                         </label>
                         <label for="2">
-                            <input onclick="radioSelect();" type="radio" id="2" name="rating" value="2" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="2" name="rating" value="2" />
                             2 Fair/low    
                         </label>
                         <label for="3">
-                            <input onclick="radioSelect();" type="radio" id="3" name="rating" value="3" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="3" name="rating" value="3" />
                             3 Average / Adequate
                         </label>
                         <label for="4">
-                            <input onclick="radioSelect();" type="radio" id="4" name="rating" value="4" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="4" name="rating" value="4" />
                             4 Very Good / High   
                         </label>
                         <label for="">
-                            <input onclick="radioSelect();" type="radio" id="5" name="rating" value="5" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="5" name="rating" value="5" />
                             5 Excellent / Very High   
                         </label>
-                    </form>
-            </li>
-            <li class="slider">
-                <div class="ratingFormSubHeader">Part II: Technique</div> 
-                    <form action="/show" method="POST" class="formCard  gnrl_part2_8_draftsmanship">
+                     </form>
+            </div>
+             <h3 class=""> Part II: Technique </h3>
+                <div class="ratingFormSubHeader">
+                    <form action="/show" method="POST" class="gnrl_part2_8_draftsmanship">
                         <h2>8: DRAFTSMANSHIP:</h2>
                         <p>Overall drawing and rendering skill displayed in portraying objects and their setting, with attention to correct proportions and scale. When creating the illusion of depth, space and form, biological and medical art should exhibit dimensional quality, convincing perspective and effective use of form lighting and scenic lighting. If 3D software-based models are utilized in creation of the artwork, take into account whether or not objects appear properly proportioned and scaled with appropriate textures mapped to display the same qualities expected in non-3D media.</p>
                       
                         <label for="0">
-                            <input onclick="radioSelect();" type="radio" id="0" name="rating" value="0">
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="0" name="rating" value="0">
                             0 Failure 
                         </label>
                         <label for="1">
-                            <input onclick="radioSelect();" type="radio" id="1" name="rating" value="1" >
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="1" name="rating" value="1" >
                             1 Minimal/Poor      
                         </label>
                         <label for="2">
-                            <input onclick="radioSelect();" type="radio" id="2" name="rating" value="2" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="2" name="rating" value="2" />
                             2 Fair/low    
                         </label>
                         <label for="3">
-                            <input onclick="radioSelect();" type="radio" id="3" name="rating" value="3" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="3" name="rating" value="3" />
                             3 Average / Adequate
                         </label>
                         <label for="4">
-                            <input onclick="radioSelect();" type="radio" id="4" name="rating" value="4" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="4" name="rating" value="4" />
                             4 Very Good / High   
                         </label>
                         <label for="">
-                            <input onclick="radioSelect();" type="radio" id="5" name="rating" value="5" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="5" name="rating" value="5" />
                             5 Excellent / Very High   
                         </label>
-                    </form>
-            </li>
-            <li class="slider">
-                <div class="ratingFormSubHeader">Part II: Technique</div> 
-                    <form action="/show" method="POST" class="formCard  gnrl_part2_9_craftsmanship">
+                     </form>
+            </div>
+             <h3 class=""> Part II: Technique </h3>
+                <div class="ratingFormSubHeader">
+                    <form action="/show" method="POST" class="gnrl_part2_9_craftsmanship">
                         <h2>9: CRAFTSMANSHIP:</h2>
                         <p>The overall level of skill demonstrated in the application and handling of the technique and media.</p>
                       
                         <label for="0">
-                            <input onclick="radioSelect();" type="radio" id="0" name="rating" value="0"  >
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="0" name="rating" value="0"  >
                             0 Failure 
                         </label>
                         <label for="1">
-                            <input onclick="radioSelect();" type="radio" id="1" name="rating" value="1" >
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="1" name="rating" value="1" >
                             1 Minimal/Poor      
                         </label>
                         <label for="2">
-                            <input onclick="radioSelect();" type="radio" id="2" name="rating" value="2" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="2" name="rating" value="2" />
                             2 Fair/low    
                         </label>
                         <label for="3">
-                            <input onclick="radioSelect();" type="radio" id="3" name="rating" value="3" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="3" name="rating" value="3" />
                             3 Average / Adequate
                         </label>
                         <label for="4">
-                            <input onclick="radioSelect();" type="radio" id="4" name="rating" value="4" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="4" name="rating" value="4" />
                             4 Very Good / High   
                         </label>
                         <label for="">
-                            <input onclick="radioSelect();" type="radio" id="5" name="rating" value="5" />
+                            <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="5" name="rating" value="5" />
                             5 Excellent / Very High   
                         </label>
-                    </form>
-            </li>
+                     </form>
+            </div>
 
-            <li class="slider">
-                <div class="ratingFormSubHeader">Notes and Submit</div> 
-                    <form action="/show" method="POST" class="formCard  gnrl_part2_9_craftsmanship">
+             <h3 class=""> Notes and Submit </h3>
+                <div class="ratingFormSubHeader">
+                    <form action="/show" method="POST" class="gnrl_part2_9_craftsmanship">
                         <h2>Notes</h2>
 
                         <label for="0">
@@ -383,254 +396,13 @@
                         </label>
                   
                         <button type="button" class="scoreSubmitBtn btn btn-warning btn-block btn-lg"> Submit</button>
-                    </form>
-            </li>
+                     </form>
+            </div>
         </ul>
-  
+    </h1>
     </section>
 
 
-    <script>
-
-        var slideCount = $('#scoringSlider ul.slider li.slider').length;
-        var slideWidth = $('#scoringSlider ul.slider li.slider').width();
-        var slideHeight = $('#scoringSlider ul.slider li.slider').height();
-        var sliderUlWidth = slideCount * slideWidth ;
-
-        console.log( 'slideCount' , slideCount , '\n', 'slideWidth', slideWidth, '\n', 'slideHeight', slideHeight, '\n', 'sliderUlWidth', sliderUlWidth);
-
-        $('#scoringSlider').css({ width: slideWidth, height: slideHeight });
-        
-        $('#scoringSlider ul.slider').css({ width: sliderUlWidth});
-
-        $('#scoringSlider ul.slider li.slider').css({ width: slideWidth - (slideWidth*.2)});
-        
-        // $('#scoringSlider ul.slider li.slider:last-child').prependTo('#scoringSlider ul.slider');
-
-        function moveLeft() {
-            $('#scoringSlider ul').animate({
-                left: + slideWidth
-            }, 200, function () {
-                $('#scoringSlider ul li:last-child').prependTo('#scoringSlider ul');
-                $('#scoringSlider ul').css('left', '');
-            });
-        };
-
-        function moveRight() {
-            $('#scoringSlider ul').animate({
-                left: - slideWidth
-            }, 200, function () {
-                $('#scoringSlider ul li:first-child').appendTo('#scoringSlider ul');
-                $('#scoringSlider ul').css('left', '');
-            });
-        };
-
-        $('a.control_prev').click(function () {
-            moveLeft();
-    
-        });
-
-        $('a.control_next').click(function () {
-            moveRight();
-
-        });
-
-    </script>
-
-
-
-    
-    </main>
-
-
-    <header>
-        <h1>
-          File Organizer
-          <div>3000</div>
-        </h1>
-        <form class="root-path-wrap js-root-path__form">
-          <h2><label for="root-path"> Folder Path</label></h2>
-          <input
-            type="text"
-            name="root-path"
-            id="root-path"
-            class="js-root-path__input"
-            value="/"
-          />
-          <button aria-label="Load path" class="dbx-btn" type="submit">
-            &rarr;
-          </button>
-        </form>
-      </header>
-      <main>
-  
-        <button type="button" class="dbx-btn js-organize-btn">Organize</button>
-  
-        <div class="dbx-list js-file-list">Nothing to see here</div>
-         <footer>
-          <ul class="log js-log hidden"></ul>
-          <div class="date-range">
-            <h2>Date Range</h2>
-            <div class="js-date-range"></div>
-          </div>
-        </footer>
-      </main>
-      <div class="loading js-loading">Loading...</div>
-   
-   
-      <!-- <script src="DBindex.js" ></script> -->
-  
-  
-   <script>
-              // const Dropbox = require('Dropbox').Dropbox;
-  
-  
-  
-        // Dotenv.config();
-        //     // {path: path/filename}
-  
-        //     // process env PORT
-        // let port = process.env.PORT;
-        // let host = process.env.HOST;
-        // let DBkey = process.env.DB_API_KEY;
-        // let DBaccess = process.env.DB_ACCESS_KEY;
-  
-  
-        const dbx = new Dropbox.Dropbox({
-          accessToken: 'VqJ_FOuvvXAAAAAAAAAARR1se66VKDemTdReecsQmV8GZB7YGTEQtq13Kv2zMglQ',
-          fetch
-        })
-  
-  
-  
-  
-  
-  
-        const fileListElem = document.querySelector('.js-file-list')
-        const loadingElem = document.querySelector('.js-loading')
-        const rootPathForm = document.querySelector('.js-root-path__form')
-        const rootPathInput = document.querySelector('.js-root-path__input')
-        const organizeBtn = document.querySelector('.js-organize-btn')
-  
-        rootPathForm.addEventListener('submit', e => {
-          e.preventDefault();
-          state.rootPath = rootPathInput.value === '/' ? '' : rootPathInput.value.toLowerCase()
-          state.files = []
-          loadingElem.classList.remove('hidden')
-          init()
-        })
-  
-        organizeBtn.addEventListener('click', async e => {
-          const originalMsg = e.target.innerHTML
-          e.target.disabled = true
-          e.target.innerHTML = 'Working...'
-          await moveFilesToDatedFolders()
-          e.target.disabled = false
-          e.target.innerHTML = originalMsg
-        })
-  
-        const state = {
-          files: [],
-          rootPath: ''
-        }
-  
-        const init = async () => {
-          const res = await dbx.filesListFolder({
-            path: state.rootPath,
-            limit: 20
-          })
-          updateFiles(res.entries)
-          if (res.has_more) {
-            loadingElem.classList.remove('hidden')
-            await getMoreFiles(res.cursor, more => updateFiles(more.entries))
-            loadingElem.classList.add('hidden')
-          } else {
-            loadingElem.classList.add('hidden')
-          }
-        }
-  
-        const updateFiles = files => {
-          state.files = [...state.files, ...files]
-          renderFiles()
-          getThumbnails(files)
-        }
-  
-        const getMoreFiles = async (cursor, cb) => {
-          const res = await dbx.filesListFolderContinue({ cursor })
-          if (cb) cb(res)
-          if (res.has_more) {
-            await getMoreFiles(res.cursor, cb)
-          }
-        }
-  
-        const renderFiles = () => {
-          fileListElem.innerHTML = state.files.sort((a, b) => {
-            // sort alphabetically, folders first
-            if ((a['.tag'] === 'folder' || b['.tag'] === 'folder')
-              && !(a['.tag'] === b['.tag'])) {
-              return a['.tag'] === 'folder' ? -1 : 1;
-              console.log(files);
-            } else {
-              return a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1
-            }
-          }).map(file => {
-            const type = file['.tag']
-            let thumbnail
-            if (type === 'file') {
-              thumbnail = file.thumbnail
-              ? `data:image/jpeg;base64, ${file.thumbnail}`
-              : `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0iZmVhdGhlciBmZWF0aGVyLWZpbGUiPjxwYXRoIGQ9Ik0xMyAySDZhMiAyIDAgMCAwLTIgMnYxNmEyIDIgMCAwIDAgMiAyaDEyYTIgMiAwIDAgMCAyLTJWOXoiPjwvcGF0aD48cG9seWxpbmUgcG9pbnRzPSIxMyAyIDEzIDkgMjAgOSI+PC9wb2x5bGluZT48L3N2Zz4=`
-            } else {
-              thumbnail = `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0iZmVhdGhlciBmZWF0aGVyLWZvbGRlciI+PHBhdGggZD0iTTIyIDE5YTIgMiAwIDAgMS0yIDJINGEyIDIgMCAwIDEtMi0yVjVhMiAyIDAgMCAxIDItMmg1bDIgM2g5YTIgMiAwIDAgMSAyIDJ6Ij48L3BhdGg+PC9zdmc+`
-            }
-            return `
-              <div class="dbx-list-item ${type}">
-                <img class="dbx-thumb" src="${thumbnail}">
-                ${file.name}
-              </div>
-            `
-          }).join('')
-        }
-  
-        const getThumbnails = async files => {
-          const paths = files.filter(file => file['.tag'] === 'file')
-          .map(file => ({
-            path: file.path_lower,
-            size: 'w32h32'
-          }))
-          const res = await dbx.filesGetThumbnailBatch({
-            entries: paths
-          })
-          const newStateFiles = [...state.files]
-          res.entries.forEach(file => {
-            let indexToUpdate = state.files.findIndex(
-              stateFile => file.metadata.path_lower === stateFile.path_lower
-            )
-            newStateFiles[indexToUpdate].thumbnail = file.thumbnail
-          })
-          state.files = newStateFiles
-          renderFiles()
-        }
-  
-        const moveFilesToDatedFolders = async () => {
-          const entries = state.files
-            .filter(file => file['.tag'] === 'file')
-            .map(file => {
-              const date = new Date(file.client_modified);
-              return {
-                from_path: file.path_lower,
-                to_path: `${state.rootPath}/${date.getFullYear()}/${date.getUTCMonth() + 1}/${file.name}`
-              }
-            })
-          dbx.filesMoveBatchV2({ entries })
-        }
-  
-        init()
-  
-        // export {
-        //   Dropbox as Dropbox
-        // }
-            </script>
 
 
 
@@ -640,32 +412,32 @@
   <!-- <article class="container radio"></article>
                        <ul>
                             <li>
-                                <input onclick="radioSelect();" type="radio" id="0" name="rating" value="0" onclick="vote()" >
+                                <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="0" name="rating" value="0" onclick="vote()" >
                                 <label for="0"> 0 Failure </label>
                                 <div class="check"><div class="inside"></div>
                             </li>
                             <li>
-                                <input onclick="radioSelect();" type="radio" id="1" name="rating" value="1" >
+                                <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="1" name="rating" value="1" >
                                 <label for="1"> 1 Minimal/Poor  </label>
                                 <div class="check"><div class="inside"></div>
                             </li>
                             <li>
-                                <input onclick="radioSelect();" type="radio" id="2" name="rating" value="2" />
+                                <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="2" name="rating" value="2" />
                                 <label for="2">2 &nbsp Fair/low </label>
                                 <div class="check"><div class="inside"></div>
                             </li>
                             <li>
-                                <input onclick="radioSelect();" type="radio" id="3" name="rating" value="3" />
+                                <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="3" name="rating" value="3" />
                                 <label for="3"> 3 Average / Adequate</label>
                                 <div class="check"><div class="inside"></div>
                             </li>
                             <li>
-                                <input onclick="radioSelect();" type="radio" id="4" name="rating" value="4" />
+                                <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="4" name="rating" value="4" />
                                 <label for="4"> 4 Very Good / High   </label>
                                 <div class="check"><div class="inside"></div>
                             </li>
                             <li>
-                                <input onclick="radioSelect();" type="radio" id="5" name="rating" value="5" />
+                                <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="5" name="rating" value="5" />
                                 <label for="5">  5 Excellent / Very High  </label>
                                 <div class="check"><div class="inside"></div>
                             </li>
