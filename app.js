@@ -88,5 +88,5 @@ app.use(rating);
 //App listen
 var port = process.env.PORT || 3000;
 app.listen(port, process.env.IP, function () {
-  console.log("Server Started for prejuging app: process.env.PORT || 3000");
+  console.log(`Server Started for prejuging app: ${port}`);
 });

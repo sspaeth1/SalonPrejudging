@@ -1,7 +1,7 @@
 {
   "name": "salonjudging",
   "version": "1.0.0",
-  "description": "",
+  "description": "Association of Medical Illustrators Salon prejudging application",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,7 +10,7 @@
     "css-minify": "cleancss --level 1 --format breaksWith=lf --source-map --source-map-inline-sources --output dist/styles.min.css dist/styles.css",
     "process-styles": "npm run compilesass && npm run css-minify"
   },
-  "author": "",
+  "author": "Shlomo Spaeth",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
