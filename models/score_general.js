@@ -33,7 +33,7 @@ const GeneralScoreSchema = new mongoose.Schema({
   notes: String,
   complete: { type: Boolean, default: false },
   entryId: {
-    type: mongoose.SchemaTypes.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "ArtEntry",
     required: true,
   },

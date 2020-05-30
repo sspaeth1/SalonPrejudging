@@ -125,6 +125,33 @@ body{
     word-break: break-word;
 }
 
+.green, .green.ui-accordion-header.ui-corner-top.ui-state-default.ui-accordion-icons.ui-accordion-header-collapsed.ui-corner-all{
+	border: 1px solid rgb(70, 121, 70);
+	display: block;
+    cursor: pointer;
+    position: relative;
+    margin: 2px 0 0 0;
+    padding: .5em .5em .5em .7em;
+    font-size: 100%;
+    background: rgb(70, 121, 70);
+    font-weight: normal;
+	color: #454545;
+}
+
+.green:hover, .green:active, .green:visited, h3#ui-id*{
+	border: 1px solid rgb(70, 121, 70);
+	display: block;
+    cursor: pointer;
+    position: relative;
+    margin: 2px 0 0 0;
+    padding: .5em .5em .5em .7em;
+    font-size: 100%;
+    background: rgb(56, 105, 56);
+    font-weight: normal;
+	color: #454545;
+}
+
+
 
 // My Judging Categories
 

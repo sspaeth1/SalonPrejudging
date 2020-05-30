@@ -47,25 +47,33 @@ router.post("/artentries", function (req, res) {
 
 // Check id ajax request  to assure only score if logged in
 router.post("/score", isLoggedIn, async function (req, res) {
-  const { entry, getQuestionNum, selectedRadio } = req.body;
+  const {
+    entryId,
+    getQuestionNum,
+    selectedRadio,
+    notes,
+    complete,
+    user,
+  } = req.body;
   try {
     let score = await GeneralScore.findOne({
-      entryId: entry,
+      entryId: entryId,
       judge: req.user,
     }).exec();
-    console.log(selectedRadio, getQuestionNum);
+    console.log(entryId, selectedRadio, getQuestionNum, notes, complete);
     if (!score) {
       console.log("No existing score, creating new score");
       await GeneralScore.create({
         judge: req.user,
-        entryId: entry,
+        entryId: entryId,
         [getQuestionNum]: Number(selectedRadio),
-        category: "A1",
+
+        category: "B", ////  MUST COME FROM SCHEMA
       });
     } else {
       console.log("Score already exists, updating score");
       await GeneralScore.updateOne(
-        { entryId: entry, judge: req.user },
+        { entryId: entryId, judge: req.user },
         { [getQuestionNum]: Number(selectedRadio) }
       ).exec();
     }
