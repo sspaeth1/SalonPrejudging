@@ -10107,6 +10107,10 @@ div.card li:not(.ui-accordion-content li) {
   list-style: none;
 }
 
+.ui-state-active{
+  color: #000 !important;
+}
+
 div.card-body {
   padding-left: 50px;
 }
