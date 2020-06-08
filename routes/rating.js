@@ -80,7 +80,7 @@ router.post("/score", isLoggedIn, async function (req, res) {
     console.log("Score created/updated");
     res.send({ message: "Scored successfully" });
   } catch (err) {
-    console.log("ERROR", err.message);
+    console.log("score ERROR: ", err.message);
   }
 
   // entry

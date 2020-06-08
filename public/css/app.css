@@ -262,10 +262,6 @@ button,
   -webkit-appearance: button;
 }
 
-.hidden{
-  visibility: hidden;
-}
-
 button:not(:disabled),
 [type="button"]:not(:disabled),
 [type="reset"]:not(:disabled),
@@ -4991,20 +4987,6 @@ a.badge-dark:focus, a.badge-dark.focus {
   border-top-color: #c8cbcf;
 }
 
-.green, .green.ui-accordion-header.ui-corner-top.ui-state-default.ui-accordion-icons.ui-accordion-header-collapsed.ui-corner-all{
-	border: 1px solid rgb(70, 121, 70);
-	display: block;
-    cursor: pointer;
-    position: relative;
-    margin: 2px 0 0 0;
-    padding: .5em .5em .5em .7em;
-    font-size: 100%;
-    background: rgb(70, 121, 70);
-    font-weight: normal;
-	color: #454545;
-}
-
-
 .alert-secondary .alert-link {
   color: #202326;
 }
@@ -9690,16 +9672,6 @@ body {
   color: #ffa100;
 }
 
-span.regAdmin{
-	color: #bbb;
-	font-size: .75rem;
-	font-weight: 600;
-	padding-left: 10px;
-	margin-bottom: 30px;
-	position: absolute;
-	transform: translate(0, -10px);
-}
-
 .indent {
   padding-left: 40px;
 }
@@ -9714,6 +9686,10 @@ span.regAdmin{
 
 .threeQuarterRem {
   font-size: .75rem;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 .nobullet {
@@ -9768,20 +9744,44 @@ span.regAdmin{
   word-break: break-word;
 }
 
+.green, .green.ui-accordion-header.ui-corner-top.ui-state-default.ui-accordion-icons.ui-accordion-header-collapsed.ui-corner-all {
+  border: 1px solid #467946;
+  display: block;
+  cursor: pointer;
+  position: relative;
+  margin: 2px 0 0 0;
+  padding: .5em .5em .5em .7em;
+  font-size: 100%;
+  background: #467946;
+  font-weight: normal;
+  color: #454545;
+}
+
+.green:hover, .green:active, .green:visited, h3#ui-id* {
+  border: 1px solidrgb(89, 139, 75);
+  display: block;
+  cursor: pointer;
+  position: relative;
+  margin: 2px 0 0 0;
+  padding: .5em .5em .5em .7em;
+  font-size: 100%;
+  background: #598b4b;
+  font-weight: normal;
+  color: #454545;
+}
+
+section#scoring h1 span {
+  left: 0;
+  top: 0;
+  position: relative;
+  font-weight: bold;
+}
+
 .artEntriesTitle {
   min-height: 350px;
   background-color: #eee;
   padding: 5%;
 }
-
-section#scoring h1 span{
-	left: 5%;
-    top: 5px;
-    position: relative;
-    font-weight: bold;
-} 
-
-
 
 .scoreThisEntry {
   position: absolute;
@@ -9956,6 +9956,18 @@ div[class="My judging Categories"] ul li:nth-of-type(2n) {
   background-color: #eee;
 }
 
+.groups, .assignGroup {
+  display: inline-block;
+  margin-left: 5%;
+}
+
+select#categories {
+  width: 50%;
+  height: 420;
+  padding-left: 20px;
+  margin-bottom: -22px;
+}
+
 .container.centerTextContainer li {
   list-style: none;
 }
@@ -10107,7 +10119,7 @@ div.card li:not(.ui-accordion-content li) {
   list-style: none;
 }
 
-.ui-state-active{
+.ui-state-active {
   color: #000 !important;
 }
 
@@ -10290,6 +10302,16 @@ button[class="btn btn-link"] {
 
 .expandWinIcon:hover {
   opacity: .5;
+}
+
+span.regAdmin {
+  color: #bbb;
+  font-size: .75rem;
+  font-weight: 600;
+  padding-left: 10px;
+  margin-bottom: 30px;
+  position: absolute;
+  transform: translate(0, -10px);
 }
 
 p.more {

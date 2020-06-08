@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const CategorySchema = new mongoose.Schema({
   categoryName: String,
-  // artEntry: { type: mongoose.Schema.Types.ObjectId, ref: "ArtEntry" },
   created: { type: Date, default: Date.now },
 });
 

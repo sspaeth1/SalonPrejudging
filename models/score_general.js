@@ -38,7 +38,7 @@ const GeneralScoreSchema = new mongoose.Schema({
     required: true,
   },
   judge: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
-  category: { type: String, required: true },
+  category: String,
   created: { type: Date, default: Date.now },
 });
 

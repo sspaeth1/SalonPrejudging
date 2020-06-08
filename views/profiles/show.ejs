@@ -20,10 +20,9 @@
                 <h3>My judging Categories</h3>
                 <hr>
                 <ul>
-                    <li>Professional Media Topic 1</li>
-                    <li>Professional Media Topic 2</li>
-                    <li>Professional Media Topic 3</li>
-                    <li>Professional Media Topic 4</li>
+                <% currentUser.assignedCategories.forEach(category => { %>
+                    <li><%= category.name %></li>
+                <% }); %>
                 </ul>
             </div>
         </div>

@@ -17,7 +17,7 @@
 
  
 
-<h1  class="fullSpan">My judging category: <%= artentries.category %>  </h1>
+<h1  class="fullSpan">My judging category: <span><%= artentries.category %></span>   </h1>
   
 <button type="button" class="btn btn-primary m-2  btn-lg  buttonReturn" style="margin-left:5%;" ><a href="/artentries">Back to entries in this category</a></button>
 
@@ -63,10 +63,12 @@
             if(el.checked) {
                 const entryId = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
                 const selectedRadio = el.value; //el.id
-                const getQuestionNum = el.parentNode.parentNode.classList[0];
+                const getQuestionNum = el.parentElement.parentElement.classList[0];
                 const notes = $("#notes").val();
-                const complete = $("#buttonComplete").val();
                 const user =  $("#user").text;
+                const category = $('h1.fullspan span');
+                const changeColorLive = $('.ui-state-active').attr('style', 'background:rgb(89, 139, 75)')
+
 
                 console.log({ entryId, getQuestionNum, selectedRadio, notes, complete});
 
@@ -77,7 +79,8 @@
                         notes: notes,
                         entryId: entryId,
                         complete: complete,
-                        user: user
+                        user: user,
+
                      },
                 dataType: 'json',
                 success: function (data, status, xhr) {
@@ -95,7 +98,15 @@
 
   <script>
       $( function() {
-        $( "#accordion" ).accordion({
+        $( "#accordion1" ).accordion({
+            active:false,
+          collapsible: true,
+          heightStyle: "content"
+        });
+      });
+      $( function() {
+        $( "#accordion2" ).accordion({
+            active:false,
           collapsible: true,
           heightStyle: "content"
         });
@@ -110,11 +121,12 @@
         <span> Scoring   </span> 
         <hr>
    
-    <div id="accordion" class="<%= artentries.category %>"  >
-         <h3 class="" aria-expanded="false"> Part I: Communication/Problem Solving  </h3>
+        <p> Part I: Communication/Problem Solving: </p>
+    <div id="accordion1" class="<%= artentries.category %>"  >
+     
+         <h3 class="" aria-expanded="false">1: Conveys the message  </h3>
             <div class="ratingFormSubHeader " > 
                 <form action="/show" method="POST" class="gnrl_part1_1_message ">
-                    <h2>1: Conveys the message</h2>
                     <p>Generally, medical/life sciences art is produced to convey a specific message or idea. How well does the illustration tell the story identified in the statement of purpose?</p>
                   
                     <label for="1-0">
@@ -143,10 +155,9 @@
                     </label>
                  </form>
         </div>
-         <h3 class=""> Part I: Communication/Problem Solving </h3>
+         <h3 class="">2: Appropriate for the intended audience:</h3>
             <div class="ratingFormSubHeader"> 
                 <form action="/show" method="POST" class="gnrl_part1_2_audience">
-                    <h2>2: APPROPRIATE FOR THE INTENDED AUDIENCE:</h2>
                     <p>The simplicity or complexity of the artwork should be appropriate for the knowledge of the audience. For example, the medical/scientific content should match the background and knowledge of the intended end user, and informational complexity should be built on a foundation of relevance to that audience. Overloading with professional-level informational detail for the layman or the opposite, reduction of information into simplistic terms for an expert audience, would define an inappropriate content level.</p>
                   
                     <label for="2-0">
@@ -175,10 +186,9 @@
                     </label>
                  </form>
         </div>
-         <h3 class=""> Part I: Communication/Problem Solving  </h3>
+         <h3 class="">3: Degree of problem solving: </h3>
             <div class="ratingFormSubHeader">
                <form action="/show" method="POST" class="gnrl_part1_3_problemSolving">
-                    <h2>3: DEGREE OF PROBLEM SOLVING:</h2>
                     <p>Consider the degree of problem solving expressed in the illustration and/or the uniqueness of the concept in the pictorial solution. Take into account obstacles presented by the conceptual and technical parameters of the job, as per the entry’s statement of purpose.</p>
                   
                     <label for="3-0">
@@ -207,10 +217,10 @@
                     </label>
                  </form>
         </div>
-         <h3 class="">Part I: Communication/Problem Solving   </h3>
+         <h3 class="">4: Accuracy of medical or scientific information represented:</h3>
             <div class="ratingFormSubHeader">
                 <form action="/show" method="POST" class="gnrl_part1_4_accuracy">
-                    <h2>4: ACCURACY OF MEDICAL OR SCIENTIFIC INFORMATION REPRESENTED:</h2>
+               
                     <p>The information must be accurate, depicting currently accepted standards of biological and anatomical relationships, relative scale and proportions. Pictorial manipulation or distortion of anatomical/scientific information is sometimes necessary or even preferred, but it should be done clearly, with purpose and knowledge. It should not be misleading or cause confusion. Note: this criterion is double weighted.</p>
                   
                     <label for="4-0">
@@ -239,10 +249,9 @@
                     </label>
                  </form>
         </div>
-         <h3 class=""> Part I: Communication/Problem Solving  </h3>
+         <h3 class=""> 5: Clarity:</h3>
             <div class="ratingFormSubHeader">
                 <form action="/show" method="POST" class="gnrl_part1_5_clarity">
-                    <h2>5: CLARITY:</h2>
                     <p>The pictorial or dimensional (e.g. anatomical models) information should be clear, direct, precise, and easily read. It should be unencumbered with excessive, confusing, and distracting peripheral information. When the artwork is presented as part of a series, information flow and consistency are taken into consideration.</p>
                   
                     <label for="5-0">
@@ -271,10 +280,14 @@
                     </label>
                  </form>
         </div>
-         <h3 class=""> Part II: Technique </h3>
+    </div>
+
+        <p>  Part II: Technique </p>
+        <div id="accordion2" class="<%= artentries.category %>"  >
+         
+         <h3 class=""> 6: Effectiveness of technique and media for the intended presentation format:</h3>
             <div class="ratingFormSubHeader">
                 <form action="/show" method="POST" class="gnrl_part2_6_technique">
-                    <h2>6: EFFECTIVENESS OF TECHNIQUE AND MEDIA FOR THE INTENDED PRESENTATION FORMAT:</h2>
                     <p>All basic reproduction criteria for the intended presentation format should be met, including: appropriate aspect ratio; proper use of color, tone, line, and type within the reproduction limitations of the format; size of rendered original in relation to final format; appropriate level of (reproducible) graphic complexity.</p>
                   
                     <label for="6-0">
@@ -303,12 +316,11 @@
                     </label>
                  </form>
         </div>
-         <h3 class=""> Part II: Technique </h3>
+
+         <h3 class="">7: Composition: </h3>
             <div class="ratingFormSubHeader">
                 <form action="/show" method="POST" class="gnrl_part2_7_composition">
-                    <h2>7: COMPOSITION:</h2>
-                    <p>The effective use of design elements to focus attention via placement and use of color, tone, or line; contrast; dynamics of form and shape; balance; unity of elements; and use of space. In illustrations where mood and drama are part of the treatment used to enhance the message or storytelling, evaluate the effectiveness of color and scenic lighting to create special effects. If 3D software is used, how effective is the framing, choice of camera lens, camera view and/or lighting?</p>
-                  
+                    <p>The effective use of design elements to focus attention via placement and use of color, tone, or line; contrast; dynamics of form and shape; balance; unity of elements; and use of space. In illustrations where mood and drama are part of the treatment used to enhance the message or storytelling, evaluate the effectiveness of color and scenic lighting to create special effects. If 3D software is used, how effective is the framing, choice of camera lens, camera view and/or lighting?</p>               
                     <label for="7-0">
                         <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="7-0" name="rating" value="0"  <%=  gnrl_part2_7_composition == 0 ? 'checked' : '' %> />
                         0 Failure 
@@ -335,10 +347,9 @@
                     </label>
                  </form>
         </div>
-         <h3 class=""> Part II: Technique </h3>
+         <h3 class="">8: Draftsmanship: </h3>
             <div class="ratingFormSubHeader">
                 <form action="/show" method="POST" class="gnrl_part2_8_draftsmanship">
-                    <h2>8: DRAFTSMANSHIP:</h2>
                     <p>Overall drawing and rendering skill displayed in portraying objects and their setting, with attention to correct proportions and scale. When creating the illusion of depth, space and form, biological and medical art should exhibit dimensional quality, convincing perspective and effective use of form lighting and scenic lighting. If 3D software-based models are utilized in creation of the artwork, take into account whether or not objects appear properly proportioned and scaled with appropriate textures mapped to display the same qualities expected in non-3D media.</p>
                   
                     <label for="8-0">
@@ -367,10 +378,9 @@
                     </label>
                  </form>
         </div>
-         <h3 class=""> Part II: Technique </h3>
+         <h3 class="">9: Craftsmanship:</h3>
             <div class="ratingFormSubHeader">
                 <form action="/show" method="POST" class="gnrl_part2_9_craftsmanship">
-                    <h2>9: CRAFTSMANSHIP:</h2>
                     <p>The overall level of skill demonstrated in the application and handling of the technique and media.</p>
                   
                     <label for="9-0">
@@ -410,8 +420,12 @@
                     <label for="notes">
                         <textarea type="text" id="notes" name="notes" onclick=""   rows="15" cols="50" placeholder="Thoughts?"></textarea>
                     </label>
+                    <!-- <label for="winner">
+                        <input type="checkbox" id="winner" name="winner" >
+                        Winner (there can  be only one)
+                    </label> -->
               
-                    <button id="buttonComplete" type="button" class="scoreSubmitBtn btn btn-warning btn-block btn-lg" value='false'> Submit</button>
+                    <button id="buttonComplete" type="button" class="scoreSubmitBtn btn btn-warning btn-block btn-lg" value='false' > Submit</button>
                  </form>
         </div>
     </ul>
@@ -424,16 +438,24 @@
             
   function checkQuestionScored(){
    
-    const _h3 =  window.document.querySelectorAll('#accordion h3');
-    const inputs =  window.document.querySelectorAll('#accordion input');
-      for(let i = 0; i < inputs.length -1 ; i++ ){
+    const part1 =  window.document.querySelectorAll('#accordion1 input' );
+    const part2 =  window.document.querySelectorAll('#accordion2 input' );
+
+      for(let i = 0; i < part1.length -1 ; i++ ){
        
-        if(inputs[i].defaultChecked === true){
-          console.log(inputs[i]);
-          inputs[i].parentNode.parentNode.parentNode.previousSibling.previousSibling.setAttribute("class","green");
+        if(part1[i].defaultChecked === true){
+          part1[i].parentNode.parentNode.parentNode.previousSibling.previousSibling.setAttribute("class","green");
         }
     }
-  }     
+
+      for(let i = 0; i < part2.length -1 ; i++ ){
+       
+        if(part2[i].defaultChecked === true){
+          part2[i].parentNode.parentNode.parentNode.previousSibling.previousSibling.setAttribute("class","green");
+        }
+    }
+  } 
+
   window.document.onload = checkQuestionScored();
 
 
@@ -443,7 +465,7 @@
     
     <main style="width: 50%; margin:auto;" >
  <hr>
-
+      <div class="dbx_ViewFile"></div>
     <header  >
         <h1>
           Test Drop box integration
@@ -479,169 +501,32 @@
     </main>
   
 
-      <!-- <script src="DBindex.js" ></script> -->
-  
-  
+<!-- <script src="/js/dropboxFileThumbSort.js"></script> -->
+ 
+
 <script>
-              // const Dropbox = require('Dropbox').Dropbox;
+
   
-  
-  
-        // Dotenv.config();
-        //     // {path: path/filename}
-  
-        //     // process env PORT
-        // let port = process.env.PORT;
-        // let host = process.env.HOST;
-        // let DBkey = process.env.DB_API_KEY;
-        // let DBaccess = process.env.DB_ACCESS_KEY;
-  
-  
-        const dbx = new Dropbox.Dropbox({
-          accessToken: 'gvj_NKn0nmAAAAAAAAAArJNXCRgjoPJQMmOdWWs3Gw3OYl-HF2XH8vwY7hRXp8NE',
-          fetch
-      });
-  
-  
-  
-  
-  
-  
-        const fileListElem = document.querySelector('.js-file-list')
-        const loadingElem = document.querySelector('.js-loading')
-        const rootPathForm = document.querySelector('.js-root-path__form')
-        const rootPathInput = document.querySelector('.js-root-path__input')
-        const organizeBtn = document.querySelector('.js-organize-btn')
-  
-        rootPathForm.addEventListener('submit', e => {
-          e.preventDefault();
-          state.rootPath = rootPathInput.value === '/' ? '' : rootPathInput.value.toLowerCase()
-          state.files = []
-          loadingElem.classList.remove('hidden');
-          console.log('root path: ' + state.rootPath + " files: " +  state.files  );
-          init()
-        })
-  
-        organizeBtn.addEventListener('click', async e => {
-          const originalMsg = e.target.innerHTML
-          e.target.disabled = true
-          e.target.innerHTML = 'Working...'
-          await moveFilesToDatedFolders()
-          e.target.disabled = false
-          e.target.innerHTML = originalMsg
-      
-        })
-  
-        const state = {
-          files: [],
-          rootPath: ''
-        }
-  
-        const init = async () => {
-          const res = await dbx.filesListFolder({
-            path: state.rootPath,
-            include_media_info: false,
-            include_non_downloadable_files: true,
-            include_deleted: false,
-            include_has_explicit_shared_members: false,
-            include_mounted_folders: true,
-            recursive: true,
-            limit: 20
-          })
-          updateFiles(res.entries)
-          if (res.has_more) {
-            loadingElem.classList.remove('hidden')
-            await getMoreFiles(res.cursor, more => updateFiles(more.entries))
-            loadingElem.classList.add('hidden')
-          } else {
-            loadingElem.classList.add('hidden')
-          }
-        }
-  
-        const updateFiles = files => {
-          state.files = [...state.files, ...files]
-          renderFiles()
-          getThumbnails(files)
-        }
-  
-        const getMoreFiles = async (cursor, cb) => {
-          const res = await dbx.filesListFolderContinue({ cursor })
-          if (cb) cb(res)
-          if (res.has_more) {
-            await getMoreFiles(res.cursor, cb)
-          }
-        }
-  
-        const renderFiles = () => {
-          fileListElem.innerHTML = state.files.sort((a, b) => {
-            // sort alphabetically, folders first
-            if ((a['.tag'] === 'folder' || b['.tag'] === 'folder')
-              && !(a['.tag'] === b['.tag'])) {
-              return a['.tag'] === 'folder' ? -1 : 1;
-            } else {
-              return a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1
-            }
-          }).map(file => {
-            const type = file['.tag']
-            let thumbnail
-            if (type === 'file') {
-              thumbnail = file.thumbnail
-              ? `data:image/jpeg;base64, ${file.thumbnail}`
-              : `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0iZmVhdGhlciBmZWF0aGVyLWZpbGUiPjxwYXRoIGQ9Ik0xMyAySDZhMiAyIDAgMCAwLTIgMnYxNmEyIDIgMCAwIDAgMiAyaDEyYTIgMiAwIDAgMCAyLTJWOXoiPjwvcGF0aD48cG9seWxpbmUgcG9pbnRzPSIxMyAyIDEzIDkgMjAgOSI+PC9wb2x5bGluZT48L3N2Zz4=`
-            } else {
-              thumbnail = `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0iZmVhdGhlciBmZWF0aGVyLWZvbGRlciI+PHBhdGggZD0iTTIyIDE5YTIgMiAwIDAgMS0yIDJINGEyIDIgMCAwIDEtMi0yVjVhMiAyIDAgMCAxIDItMmg1bDIgM2g5YTIgMiAwIDAgMSAyIDJ6Ij48L3BhdGg+PC9zdmc+`
-            }
-            return `
-              <div class="dbx-list-item ${type}">
-                <img class="dbx-thumb" src="${thumbnail}">
-                ${file.name}
-              </div>
-            `
-          }).join('')
-        }
-  
-        const getThumbnails = async files => {
-          const paths = files.filter(file => file['.tag'] === 'file')
-          .map(file => ({
-            path: file.path_lower,
-            size: 'w32h32'
-          }))
-          const res = await dbx.filesGetThumbnailBatch({
-            entries: paths
-          })
-          const newStateFiles = [...state.files]
-          res.entries.forEach(file => {
-            let indexToUpdate = state.files.findIndex(
-              stateFile => file.metadata.path_lower === stateFile.path_lower
-            )
-            newStateFiles[indexToUpdate].thumbnail = file.thumbnail
-          })
-          state.files = newStateFiles
-          renderFiles()
-        }
-  
-        const moveFilesToDatedFolders = async () => {
-          const entries = state.files
-            .filter(file => file['.tag'] === 'file')
-            .map(file => {
-              const date = new Date(file.client_modified);
-              return {
-                from_path: file.path_lower,
-                to_path: `${state.rootPath}/${date.getFullYear()}/${date.getUTCMonth() + 1}/${file.name}`
-              }
-            })
-          dbx.filesMoveBatchV2({ entries })
-        }
-  
-        init()
-  
-        // export {
-        //   Dropbox as Dropbox
-        // }
-            </script>
+const dbx = new Dropbox.Dropbox({
+  accessToken:
+    "gvj_NKn0nmAAAAAAAAAAsN6qXFynvjYMbLLkTfDuzMsR9Fo67370GdPubgwG-JEX",
+  fetch,
+});
+
+const fileListElem = document.querySelector(".dbx_ViewFile");
+const newImg = document.createElement('img')
 
 
+dbx.filesListFolder({  
+  path: ''  
+}).then(response => {
+    const image1 = response.entries[1].path_lower;
+    fileListElem.appendChild(newImg).setAttribute('src', image1);
+    console.log(image1);
+});
 
+</script>
+ 
 <%- include('partials/footer') %>
 
 

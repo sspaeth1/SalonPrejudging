@@ -1,171 +1,171 @@
-  const express = require("express"),
-    router = express.Router(),
-    passport = require("passport"),
-    LocalStrategy = require("passport-local"),
-    bodyParser = require("body-parser"),
-    methodOverride = require("method-override"),
-    mongoose = require("mongoose"),
-    expressSanitizer = require("express-sanitizer"),
-    User = require("../models/user"),
-    ArtEntry = require("../models/artEntry");
-  const { isLoggedIn } = require("../middleware");
+const express = require("express"),
+  router = express.Router(),
+  passport = require("passport"),
+  LocalStrategy = require("passport-local"),
+  bodyParser = require("body-parser"),
+  methodOverride = require("method-override"),
+  mongoose = require("mongoose"),
+  expressSanitizer = require("express-sanitizer"),
+  User = require("../models/user"),
+  ArtEntry = require("../models/artEntry");
+const { isLoggedIn } = require("../middleware");
 
-  // ===================
-  // Authenticate routes
-  // ===================
+// ===================
+// Authenticate routes
+// ===================
 
-  // show register form
-  router.get("/register", function (req, res) {
-    res.render("register");
+// show register form
+router.get("/register", function (req, res) {
+  res.render("register");
+});
+
+router.get("/registerAdmin", function (req, res) {
+  res.render("registerAdmin");
+});
+
+//handle sign up logic
+
+//Show register form
+router.post("/register", function (req, res) {
+  req.body.password = req.sanitize(req.body.password);
+  var newUser = new User({
+    username: req.body.username,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    avatar: req.body.avatar,
   });
 
-  router.get("/registerAdmin", function (req, res) {
-    res.render("registerAdmin");
-  });
-
-  //handle sign up logic
-
-  //Show register form
-  router.post("/register", function (req, res) {
-    req.body.password = req.sanitize(req.body.password);
-    var newUser = new User({
-      username: req.body.username,
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      email: req.body.email,
-      avatar: req.body.avatar,
-    });
-
-    User.register(newUser, req.body.password, isLoggedIn, function (err, user) {
-      if (err) {
-        console.log(err);
-        req.flash("error", err);
-        return res.render("register");
-      }
-      passport.authenticate("local")(req, res, function () {
-        res.redirect("/index");
-        req.flash("success", "Welcome " + user.username);
-      });
-    });
-  });
-
-  // admin register POST
-  router.post("/registerAdmin", isLoggedIn, function (req, res) {
-    var newUser = new User({
-      username: req.body.username,
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      email: req.body.email,
-      avatar: req.body.avatar,
-      isAdmin: req.body.isAdmin,
-      assignedCategories: req.body.assignedCategories,
-    });
-    if (req.body.adminCode === "12cranialnerves") {
-      newUser.isAdmin = true;
+  User.register(newUser, req.body.password, isLoggedIn, function (err, user) {
+    if (err) {
+      console.log(err);
+      req.flash("error", err);
+      return res.render("register");
     }
-    User.register(newUser, req.body.password, function (err, user) {
-      if (err) {
-        console.log(err);
-        return res.render("registerAdmin");
-      }
-      passport.authenticate("local")(req, res, function () {
-        res.redirect("/index");
-      });
+    passport.authenticate("local")(req, res, function () {
+      res.redirect("/index");
+      req.flash("success", "Welcome " + user.username);
     });
   });
+});
 
-  //User Profiles
-
-  router.get("/profile/:id", isLoggedIn, function (req, res) {
-    User.findById(req.params.id, function (err, foundProfile) {
-      if (err) {
-        req.flash("error", "Urp, issue with your profile");
-        res.redirect("/login");
-      }
-      res.render("profiles/show", { user: foundProfile });
+// admin register POST
+router.post("/registerAdmin", isLoggedIn, function (req, res) {
+  var newUser = new User({
+    username: req.body.username,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    avatar: req.body.avatar,
+    isAdmin: req.body.isAdmin,
+    assignedCategories: req.body.assignedCategories,
+  });
+  if (req.body.adminCode === "12cranialnerves") {
+    newUser.isAdmin = true;
+  }
+  User.register(newUser, req.body.password, function (err, user) {
+    if (err) {
+      console.log(err);
+      return res.render("registerAdmin");
+    }
+    passport.authenticate("local")(req, res, function () {
+      res.redirect("/index");
     });
   });
+});
 
-  //EDIT User
-  router.get("/profile/:id/edit", function (req, res) {
-    User.findById(req.params.id, function (err, foundProfile) {
-      if (err) {
-        console.log("redirect id edit");
-        res.redirect("/artentries");
-      }
-      res.render("editUser", { user: foundProfile });
-    });
-  });
+//User Profiles
 
-  //Update user
-  router.put("/profile/:id/", function (req, res) {
-    // (id, new data, callback )
-    User.findByIdAndUpdate(req.params.id, req.body.user, function (
-      err,
-      foundPage
-    ) {
-      if (err) {
-        console.log("error");
-        res.render("/");
-      }
-
-      res.redirect("/login/" + req.params.id);
-    });
-  });
-
-  //Destroy user
-  router.delete("/profile/:id", function (req, res) {
-    //destroy
-    User.deleteOne(req.params.id, function (err) {
-      if (err) {
-        res.redirect("/login");
-      }
-
-      console.log("Deleted user");
+router.get("/profile/:id", isLoggedIn, function (req, res) {
+  User.findById(req.params.id, function (err, foundProfile) {
+    if (err) {
+      req.flash("error", "Urp, issue with your profile");
       res.redirect("/login");
-    });
+    }
+    res.render("profiles/show", { user: foundProfile });
   });
+});
 
-  //======
-  //LOGIN
-  //======
-  router.get("/login", function (req, res) {
-    res.render("login");
+//EDIT User
+router.get("/profile/:id/edit", function (req, res) {
+  User.findById(req.params.id, function (err, foundProfile) {
+    if (err) {
+      console.log("redirect id edit");
+      res.redirect("/artentries");
+    }
+    res.render("editUser", { user: foundProfile });
   });
+});
 
-  router.post(
-    "/login",
-    passport.authenticate("local", {
-      successRedirect: "index",
-      failureFlash: "Login failed",
-      failureRedirect: "/login",
-    }),
-    function (req, res) {}
-  );
+//Update user
+router.put("/profile/:id/", function (req, res) {
+  // (id, new data, callback )
+  User.findByIdAndUpdate(req.params.id, req.body.user, function (
+    err,
+    foundPage
+  ) {
+    if (err) {
+      console.log("error");
+      res.render("/");
+    }
 
-  router.get("/", function (req, res) {
-    res.redirect("/index");
+    res.redirect("/login/" + req.params.id);
   });
+});
 
-  //Logout ROUTE
+//Destroy user
+router.delete("/profile/:id", function (req, res) {
+  //destroy
+  User.deleteOne(req.params.id, function (err) {
+    if (err) {
+      res.redirect("/login");
+    }
 
-  router.get("/logout", function (req, res) {
-    req.logout();
-    req.flash("success", "Successfully logged out");
+    console.log("Deleted user");
     res.redirect("/login");
   });
+});
 
-  //Get judges list:  ROUTE
+//======
+//LOGIN
+//======
+router.get("/login", function (req, res) {
+  res.render("login");
+});
 
-  router.get("/profiles/_judges", (req, res) => {
-    User.find(req.params.id, function (err, foundUser) {
-      if (err) {
-        console.log("catch err: " + err.message);
-        redirect("/index");
-      }
-      console.log(foundUser);
-      res.render("profiles/_judges", { user: foundUser });
-    });
+router.post(
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "artentries",
+    failureFlash: "Login failed",
+    failureRedirect: "/login",
+  }),
+  function (req, res) {}
+);
+
+router.get("/", function (req, res) {
+  res.redirect("/index");
+});
+
+//Logout ROUTE
+
+router.get("/logout", function (req, res) {
+  req.logout();
+  req.flash("success", "Successfully logged out");
+  res.redirect("/login");
+});
+
+//Get judges list:  ROUTE
+
+router.get("/profiles/_judges", (req, res) => {
+  User.find(req.params.id, function (err, foundUser) {
+    if (err) {
+      console.log("catch err: " + err.message);
+      redirect("/index");
+    }
+    console.log(foundUser);
+    res.render("profiles/_judges", { user: foundUser });
   });
+});
 
-  module.exports = router;
+module.exports = router;

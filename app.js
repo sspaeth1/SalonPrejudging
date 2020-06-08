@@ -50,7 +50,7 @@ mongoose
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(
   require("express-session")({
@@ -70,9 +70,34 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+const Category = require("./models/category");
+
 //User Flash: site specific middleware  sets a currentUser check on every Route //returns user feedback
-app.use(function (req, res, next) {
+app.use(async function (req, res, next) {
   res.locals.currentUser = req.user;
+  console.log(req.user);
+  if (req.user) {
+    try {
+      req.user.assignedCategories = [
+        //temp assigned categories need to be assigned
+        {
+          name: "Still Media Editorial",
+          letter: "B",
+        },
+        {
+          name: "Didactic/Instructional - Non-Commercial",
+          letter: "A1",
+        },
+        {
+          name: "Didactic/Instructional - Commercial",
+          letter: "A2",
+        },
+      ];
+      await req.user.save();
+    } catch (err) {
+      console.log("assigned categories ERROR: ", err.message);
+    }
+  }
   res.locals.isAdmin = req.isAdmin;
   res.locals.error = req.flash("error");
   res.locals.success = req.flash("success");

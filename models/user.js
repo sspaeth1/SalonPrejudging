@@ -11,7 +11,10 @@ var UserSchema = new mongoose.Schema({
   // artEntry: { type: mongoose.Schema.Types.ObjectId, ref: "ArtEntry" },
   judge: { type: Boolean, default: true },
   assignedCategories: [
-    { type: mongoose.Schema.Types.ObjectId, ref: "Category" },
+    {
+      name: String, //'Still Media Editorial'
+      letter: String //'B'
+    }
   ],
   isAdmin: { type: Boolean, default: false },
   created: { type: Date, default: Date.now },
@@ -19,3 +22,11 @@ var UserSchema = new mongoose.Schema({
 
 UserSchema.plugin(passportLocalMongoose);
 module.exports = mongoose.model("User", UserSchema);
+
+// for(const userId of req.body.users) {
+//   let user = await User.findById(userId);
+//   user.assignedCategories = req.body.categories;
+//   await user.save();
+// }
+
+// <select name="categories[]">

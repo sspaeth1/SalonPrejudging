@@ -16,7 +16,7 @@ const { isLoggedIn } = require("../middleware");
 router.get("/index", function (req, res) {
   ArtEntry.find({}, function (err, artentries) {
     if (err) {
-      console.log(err);
+      console.log("index page error: ", err.message);
     }
     res.render("index", { artentries: artentries });
   });
@@ -41,6 +41,55 @@ router.get("/guidelinesPrejudging", isLoggedIn, (req, res) =>
 router.get("/judgingGroups", isLoggedIn, (req, res) =>
   res.render("judgingGroups")
 );
+
+// add users to judging group
+router.post("/judgingGroups", isLoggedIn, async (req, res) => {
+  // POST route for create judgingGroups
+
+  const categories = {
+    A1: "Didactic/Instructional - Non-Commercial",
+    A2: "Didactic/Instructional - Commercial",
+    B: "Still Media - Editorial",
+    C: "Still Media - Advertising and Marketing/Promotional",
+    D: "Still Media - Medical Legal",
+    E: "Still Media - Illustrated Textbook (Traditionally printed book)",
+    F1: "Animation-Didactic/Instructional - Non-Commercial",
+    F2: "Animation-Didactic/Instructional - Commercial",
+    G1: "Interactive Media - Didactic/Instructional-Non-Commercial",
+    G2: "Interactive Media - Didactic/Instructional-Commercial",
+    G3: "Interactive Media - Advertising and Marketing/Promotional",
+    G4: "Interactive Media – Gaming",
+    G5: "Interactive Media – Interactive Textbook",
+    I2: "Didactic/Instructional – Surgical/Clinical Procedures",
+    I1: "Didactic/Instructional – Anatomical/ Pathological",
+    I3: "Didactic/Instructional – Molecular/Biological/Life Sciences",
+    J: "Didactic/Instructional – Editorial",
+    K: "Didactic/Instructional – Advertising and Marketing/Promotional",
+    L: "Student Motion Media – Animation",
+    M: "Student Interactive Section – Interactive",
+  };
+
+  // find the user by his/her email
+  let user = await User.findOne({ email: req.body.email });
+  // iterate over category letters
+  req.body.categories.forEach(function (letter) {
+    // push category info into user's assignedCategories array
+    // be sure to check if user assignedCategories already has
+    // that category
+    let existsAlready = user.assignedCategories.find(
+      (category) => category.letter === letter
+    );
+    if (!existsAlready) {
+      user.assignedCategories.push({
+        name: categories[category],
+        letter: letter,
+      });
+    }
+  });
+  // save user
+  await user.save();
+  res.render("judgingGroups");
+});
 // create POST route
 
 // Award Winners
@@ -58,7 +107,7 @@ router.get("/appendixB", (req, res) => res.render("appendixB"));
 router.get("/artentries", isLoggedIn, function (req, res) {
   ArtEntry.find({}, function (err, artentries) {
     if (err) {
-      console.log(err);
+      console.log("Art Entries page: ", err.message);
     }
     res.render("artentries", { artentries: artentries });
     // console.log(ArtEntry.find({ category: "A-1" }));
@@ -68,55 +117,67 @@ router.get("/artentries", isLoggedIn, function (req, res) {
 // Idividual art entries
 
 router.get("/artentries/:id", isLoggedIn, async (req, res) => {
+  console.log(
+    "user/req.user.id: " +
+      req.user.id +
+      " entryId/req.prams.id:  " +
+      req.params.id
+  );
   try {
     const findScore = await GeneralScore.findOne({
-      judge: req.user,
-    });
-    // findScore.$where({entryId: req.entryId});  // entryId: `${entryId._id}`,
-    // if (!findScore || findScore === null) {
-    //   console.log("No existing score, creating new score");
-    //   await GeneralScore.insert({
-    //     judge: req.user,
-    //     entryId: req.entryId,
-    //     //[getQuestionNum]: Number(selectedRadio),
-    //     category: "B", ////  MUST COME FROM SCHEMA
-    //   }).exec();
-    // } else {
-    console.log("score: " + findScore);
+      judge: req.user.id,
+      entryId: req.params.id,
+    }).exec();
+
+    // findScore.$where({ entryId: req.params }); // entryId: `${entryId._id}`,
+    if (!findScore || findScore === null) {
+      console.log("No existing score, creating new score");
+      await GeneralScore.create({
+        judge: req.user.id,
+        entryId: req.params.id,
+        //[getQuestionNum]: Number(selectedRadio),
+        // category: "B", ////  MUST COME FROM SCHEMA
+      });
+    }
+
+    // console.log("score: " + findScore);
+
     const {
       judge,
-      complete,
       id,
-      gnrl_part1_1_message,
-      gnrl_part1_2_audience,
-      gnrl_part1_3_problemSolving,
-      gnrl_part1_4_accuracy,
-      gnrl_part1_5_clarity,
-      gnrl_part2_6_technique,
-      gnrl_part2_7_composition,
-      gnrl_part2_8_draftsmanship,
-      gnrl_part2_9_craftsmanship,
-      book_part1_1_message,
-      book_part1_2_audience,
-      book_part1_3_MedIlliUse,
-      book_part1_4_accuracy,
-      book_part1_5_clarity,
-      book_part2_6_technique,
-      book_part2_7_cmpstionDrftsmnshpCrftmnshp,
-      book_part2_8_consistencyRendering,
-      book_part2_9_layoutIntegration,
-      anim_part1_1_message,
-      anim_part1_2_audience,
-      anim_part1_3_problemSolving,
-      anim_part1_4_accuracy,
-      anim_part1_5_clarity,
-      anim_part2_6_technique,
-      anim_part2_7_composition,
-      anim_part2_8_draftsmanship,
-      anim_part2_9_craftsmanship,
-      anim_part2_10_motion_fx,
-      anim_part2_11_sound,
+      gnrl_part1_1_message = null,
+      gnrl_part1_2_audience = null,
+      gnrl_part1_3_problemSolving = null,
+      gnrl_part1_4_accuracy = null,
+      gnrl_part1_5_clarity = null,
+      gnrl_part2_6_technique = null,
+      gnrl_part2_7_composition = null,
+      gnrl_part2_8_draftsmanship = null,
+      gnrl_part2_9_craftsmanship = null,
+      book_part1_1_message = null,
+      book_part1_2_audience = null,
+      book_part1_3_MedIlliUse = null,
+      book_part1_4_accuracy = null,
+      book_part1_5_clarity = null,
+      book_part2_6_technique = null,
+      book_part2_7_cmpstionDrftsmnshpCrftmnshp = null,
+      book_part2_8_consistencyRendering = null,
+      book_part2_9_layoutIntegration = null,
+      anim_part1_1_message = null,
+      anim_part1_2_audience = null,
+      anim_part1_3_problemSolving = null,
+      anim_part1_4_accuracy = null,
+      anim_part1_5_clarity = null,
+      anim_part2_6_technique = null,
+      anim_part2_7_composition = null,
+      anim_part2_8_draftsmanship = null,
+      anim_part2_9_craftsmanship = null,
+      anim_part2_10_motion_fx = null,
+      anim_part2_11_sound = null,
+      notes,
+      complete,
     } = findScore;
+
     // }
     const foundPage = await ArtEntry.findById(req.params.id);
     res.render("show", {
@@ -151,10 +212,12 @@ router.get("/artentries/:id", isLoggedIn, async (req, res) => {
       anim_part2_9_craftsmanship,
       anim_part2_10_motion_fx,
       anim_part2_11_sound,
+      notes,
+      complete,
     });
-    console.log("found page: " + foundPage);
+    // console.log("found page: " + foundPage);
   } catch (err) {
-    console.log("catch err: " + err.message);
+    console.log("go to :id page catch err: " + err.message);
     res.redirect("/artentries");
   }
 });
@@ -203,7 +266,7 @@ router.put("/artentries/:id", function (req, res) {
     foundPage
   ) {
     if (err) {
-      console.log("error");
+      console.log("update error: ", err.message);
       res.render("/");
     }
 
