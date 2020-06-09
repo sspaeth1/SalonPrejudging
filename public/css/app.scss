@@ -524,7 +524,7 @@ h1.formField{
     background-color: #e3e6e9;
     border-color: #4e555b;
 }
-//// accordian
+//// accordion
 
 div#accordion {
     width: 90%;
@@ -536,6 +536,15 @@ div#accordion {
 	margin: auto;
 	padding-bottom: 30px;
 }
+
+
+h3[aria-expanded="true"]{
+	background-color: #ffa100  !important;
+	outline:none;
+	color: #fff;
+  
+  }
+  
 
 .card-header h5::before {
     content:  "[+]" ;
@@ -660,6 +669,22 @@ textarea{
     margin-top: 0;
 }
 
+
+
+  h1.ratingFormHeader p {
+	padding-top: 19px;
+  }
+  
+  h1.ratingFormHeader > span {
+	left: 0;
+	top: 10;
+	position: relative;
+	font-weight: bold;
+	font-size: 2rem;
+  }
+  h1.ratingFormHeader hr{
+	background-color: rgb(126, 126, 126);
+  } 
 
 
 .ratingItemTitle{

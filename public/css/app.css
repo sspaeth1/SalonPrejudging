@@ -9956,6 +9956,22 @@ div[class="My judging Categories"] ul li:nth-of-type(2n) {
   background-color: #eee;
 }
 
+select[name="categories"] {
+  min-height: 420px;
+  overflow: hidden;
+  width: 40%;
+  padding: 1% 0 2% 15%;
+  border: 2px #ffa100 solid;
+}
+
+select[name="categories"] {
+  min-height: 420px;
+  overflow: hidden;
+  width: 40%;
+  padding: 1% 0 2% 15%;
+  border: 2px #ffa100 solid;
+}
+
 .groups, .assignGroup {
   display: inline-block;
   margin-left: 5%;
@@ -10111,6 +10127,12 @@ div#accordion {
   padding-bottom: 30px;
 }
 
+h3[aria-expanded="true"] {
+  background-color: #ffa100 !important;
+  outline: none;
+  color: #fff;
+}
+
 .card-header h5::before {
   content: "[+]";
 }
@@ -10224,6 +10246,22 @@ textarea {
   border-top: 1px #ffa100 solid !important;
   padding: .5%;
   margin-top: 0;
+}
+
+h1.ratingFormHeader p {
+  padding-top: 19px;
+}
+
+h1.ratingFormHeader > span {
+  left: 0;
+  top: 10;
+  position: relative;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+h1.ratingFormHeader hr {
+  background-color: #7e7e7e;
 }
 
 .ratingItemTitle {

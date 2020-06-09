@@ -30,10 +30,8 @@ router.get("/index", function (req, res) {
 router.get("/home", (req, res) => res.render("home"));
 
 // guidelines
-router.get("/generalGuidelines", isLoggedIn, (req, res) =>
-  res.render("generalGuidelines")
-);
-router.get("/guidelinesPrejudging", isLoggedIn, (req, res) =>
+router.get("/generalGuidelines", (req, res) => res.render("generalGuidelines"));
+router.get("/guidelinesPrejudging", (req, res) =>
   res.render("guidelinesPrejudging")
 );
 

@@ -14,6 +14,7 @@ var artEntrySchema = new mongoose.Schema({
   intended_purpose: String,
   rating: Number,
   category: String,
+  star: { type: Boolean, default: false },
   excellenceWinner: { type: Boolean, default: false },
   meritWinner: { type: Boolean, default: false }, //ArtEntry.find({meritWinner: true})
   judge: { type: mongoose.Schema.Types.ObjectId, ref: "User" },

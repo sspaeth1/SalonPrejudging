@@ -62,22 +62,25 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown myCategories">
-            <a class="nav-link dropdown-toggle myCategories" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      
               <% if(!currentUser){ %>
-                My Judging Categories
+
               <%  } else{   %>
+                <li class="nav-item dropdown myCategories">
+                  <a class="nav-link dropdown-toggle myCategories" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <%= currentUser.username %>'s Judging Catergories
               <% } %>
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+           
               <% if(currentUser){ %>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
                 <% currentUser.assignedCategories.forEach(category => { %>
                   <a class="dropdown-item" href="/artentries"><%= category.letter %>: <%= category.name %> </a> 
-               <%  }); %>
+               <% }); %>
+              </div>
               <%  } %>    
                   
-            </div>
+         
           </li>
           <li class="nav-item dropdown guidelines">
             <a class="nav-link dropdown-toggle guidelines" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
