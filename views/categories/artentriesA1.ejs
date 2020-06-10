@@ -1,4 +1,4 @@
-<%- include('partials/header')%>
+<%- include('../partials/header')%>
 
 
 
@@ -10,7 +10,7 @@
     });
   </script>
 
-<h1  class="fullSpan">My judging category:  <%= artentries[0].category %> </h1>
+<h1  class="fullSpan">A1: Didactic/Instructional - Non-Commercial   </h1>
 <article class="appendixContainer">
   <p class="alert alert-warning alert-dismissible fade show" role="alert">The goal is to have this page dynamically populate from the submissions on AMI.org via the dropbox folders  
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -22,7 +22,7 @@
  <script> console.log($('div.winVar').attr('data')) </script>
    <div class="row entries">
     <% artentries.forEach(function(artentries){ 
-      if( artentries.category === "B"){ %>
+      if( artentries.category === "A1"){ %>
 
       <div class="col-md-4 `col-sm-6 mt-5">
         <div class="img-thumbnail " >
@@ -50,4 +50,4 @@
 </article>
 
 
-<%- include ('partials/footer') %>
+<%- include ('../partials/footer') %>

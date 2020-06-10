@@ -21,7 +21,7 @@
     <nav class="navbar navbar-expand-sm  headerNav">
      <div class="container-fluid">
        <div class="col-10">
-            <div class="navbar-brand"> <img src="/images/logo.png" href="/home"></div>
+            <div class="navbar-brand"> <a href="/">  <img src="/images/logo.png" href="/home"></a></div>
             <h3 class="navbar-text text-center"> AMI Salon Judging Portal</h3>
        </div>
        <div class="col-2">
@@ -71,14 +71,16 @@
                 <%= currentUser.username %>'s Judging Catergories
               <% } %>
             </a>
-           
+
+   
+            
               <% if(currentUser){ %>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
                 <% currentUser.assignedCategories.forEach(category => { %>
-                  <a class="dropdown-item" href="/artentries"><%= category.letter %>: <%= category.name %> </a> 
+                  <a class="dropdown-item" href="../categories/artentries<%= category.letter %>"> <%= category.letter %>: <%= category.name %> </a> 
                <% }); %>
               </div>
-              <%  } %>    
+              <%  } %>   
                   
          
           </li>

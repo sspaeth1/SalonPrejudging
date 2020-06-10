@@ -15,6 +15,7 @@ const newItemRoutes = require("./routes/newItem");
 const auth = require("./routes/auth");
 const indexRoutes = require("./routes/index");
 const rating = require("./routes/rating");
+const ArtEntryCategoryPages = require("./routes/categoryArtEntryPages");
 
 const app = express();
 
@@ -109,6 +110,7 @@ app.use(indexRoutes);
 app.use(auth);
 app.use(newItemRoutes);
 app.use(rating);
+app.use(ArtEntryCategoryPages);
 
 //App listen
 var port = process.env.PORT || 3000;
