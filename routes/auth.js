@@ -136,7 +136,7 @@ router.get("/login", function (req, res) {
 router.post(
   "/login",
   passport.authenticate("local", {
-    successRedirect: "artentries",
+    successRedirect: "index",
     failureFlash: "Login failed",
     failureRedirect: "/login",
   }),
