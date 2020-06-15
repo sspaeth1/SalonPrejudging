@@ -77,7 +77,7 @@
               <% if(currentUser){ %>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
                 <% currentUser.assignedCategories.forEach(category => { %>
-                  <a class="dropdown-item" href="../categories/artentries<%= category.letter %>"> <%= category.letter %>: <%= category.name %></a>  
+                  <a class="dropdown-item" href="../categories/artentries<%= category.letter %>"> <%= category.letter %>: <%= category.name %> </a> 
                <% }); %>
               </div>
               <%  } %>   

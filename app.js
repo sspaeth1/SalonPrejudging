@@ -46,21 +46,42 @@ mongoose
     });
     console.log("Connected to mongoDB Atlas DB");
   });
-Category.find()
-  .then((res) => {
-    if (res.length == 0) {
-      //manually populate
-      let newEntry = new Category({
-        name: "",
-        letter: "",
-        folderId: "",
-      });
-      newEntry.save();
-    }
-  })
-  .catch((err) => {
-    console.log("Error: " + err.message);
-  });
+Category.find().then((res) => {
+  if (res.length == 0) {
+    //manually populate
+    let newEntry = new Category({
+      name: "",
+      letter: "",
+      folderId: "",
+    });
+    newEntry.save();
+  }
+})
+// User.findOneAndUpdate(
+//   { username: "sixthuser" },
+//   {
+//     assignedCategories: [
+//       {
+//         name: "Didactic/Instructional - Non-Commercial",
+//         letter: "A1",
+//         folderId: "rgrnbhzfk88o7yk",
+//       },
+//       {
+//         name: "Didactic/Instructional - Commercial",
+//         letter: "A2",
+//         folderId: "w3b6n92ir1l32mz",
+//       },
+//       {
+//         name: "Still Media Editorial",
+//         letter: "B",
+//         folderId: "96kxlhguj7fxb60",
+//       },
+//     ],
+//   }
+// )
+.catch((err) => {
+  console.log("Error: " + err.message);
+});
 // mongoose.Promise = global.Promise;
 
 // Add Judge categries, this will eventually come from an input page

@@ -20,6 +20,7 @@
 
 
 <h1  class="fullSpan">My judging category: <span><%= artentries.category %></span>   </h1>
+
   
 <button type="button" class="btn btn-primary m-2  btn-lg  buttonReturn" style="margin-left:5%;" ><a href="/artentries">Back to entries in this category</a></button>
 
@@ -35,14 +36,10 @@
     <div class="row">
        
         <div class="col-8">
-            <a href="https://www.dropbox.com/s/rgrnbhzfk88o7yk/A1-001.jpg?dl=0"
-                class="dropbox-embed img-fluid imgScore"
-           
-                alt="<%= artentries.title %>"
-                >
-            </a>
+            <!-- // <%= currentUser.assignedCategories[0].folderId %>  <%= artentries.title %>  -->
+ 
       
-  
+ 
            
         </div>
         <div class="col-4 mt-4" >
@@ -78,16 +75,16 @@
                 const changeColorLive = $('.ui-state-active').attr('style', 'background: #467946')
 
 
-                console.log({ entryId, getQuestionNum, selectedRadio, notes, complete});
+                console.log({ entryId, getQuestionNum, selectedRadio, notes});
 
+                console.log('firstAPI')
                 $.ajax('/score', {
                 type: 'POST', 
                 data: { getQuestionNum: getQuestionNum,
                         selectedRadio: selectedRadio,
                         entryId: entryId,
                         category: category,
-                        complete: complete? true: false,
-                        notes: notes ? notes : "" ,
+
                      },
                 dataType: 'json',
                 success: function (data, status, xhr) {
@@ -457,7 +454,7 @@
         // $('button#buttonComplete')[0].remove("class",true);
 
 
-
+  console.log('secondAPI')
               $.ajax('/score', {
               type: 'POST', 
               data: {entryId: entryId,
@@ -556,9 +553,13 @@
     </main>
   
 
-<script src="/js/dropboxFileThumbSort.js"   type="module"> </script>
+<script src="/js/dropboxFileThumbSort.js"  id="helper" data-name="<%= DBX_API_KEY %>"
+ type="module"> </script>
  
+<!-- var this_js_script = $("script[src*=somefile]");
+var my_var_1 = this_js_script.attr("data-my_var_1");
 
+console.log(my_var_1); -->
 
 <!-- <script>
 

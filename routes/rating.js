@@ -70,14 +70,17 @@ router.post("/score", isLoggedIn, async function (req, res) {
         category: category,
       });
     } else {
+      let query = {
+        [getQuestionNum]: Number(selectedRadio),
+      };
+      if (complete) {
+        query.notes = notes;
+        query.complete = complete;
+      }
       console.log("Score already exists, updating score");
       await GeneralScore.update(
         { entryId: entryId, judge: req.user },
-        {
-          [getQuestionNum]: Number(selectedRadio),
-          complete: complete,
-          notes: notes,
-        }
+        query
       ).exec();
     }
     console.log("Score created/updated");

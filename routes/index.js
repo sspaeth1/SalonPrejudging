@@ -153,7 +153,7 @@ router.get("/artentries/:id", isLoggedIn, async (req, res) => {
       JSON.stringify(req.params.id, null, 2)
   );
   try {
-    const findScore = await GeneralScore.findOne({
+    let findScore = await GeneralScore.findOne({
       judge: req.user.id,
       entryId: req.params.id,
     })
@@ -169,86 +169,8 @@ router.get("/artentries/:id", isLoggedIn, async (req, res) => {
     //     req.params.id
     // );
     // findScore.$where({ entryId: req.params }); // entryId: `${entryId._id}`,
-
-    if (findScore) {
-      // console.log("score: " + findScore);
-
-      const {
-        judge: { judge },
-        id,
-        gnrl_part1_1_message = null,
-        gnrl_part1_2_audience = null,
-        gnrl_part1_3_problemSolving = null,
-        gnrl_part1_4_accuracy = null,
-        gnrl_part1_5_clarity = null,
-        gnrl_part2_6_technique = null,
-        gnrl_part2_7_composition = null,
-        gnrl_part2_8_draftsmanship = null,
-        gnrl_part2_9_craftsmanship = null,
-        book_part1_1_message = null,
-        book_part1_2_audience = null,
-        book_part1_3_MedIlliUse = null,
-        book_part1_4_accuracy = null,
-        book_part1_5_clarity = null,
-        book_part2_6_technique = null,
-        book_part2_7_cmpstionDrftsmnshpCrftmnshp = null,
-        book_part2_8_consistencyRendering = null,
-        book_part2_9_layoutIntegration = null,
-        anim_part1_1_message = null,
-        anim_part1_2_audience = null,
-        anim_part1_3_problemSolving = null,
-        anim_part1_4_accuracy = null,
-        anim_part1_5_clarity = null,
-        anim_part2_6_technique = null,
-        anim_part2_7_composition = null,
-        anim_part2_8_draftsmanship = null,
-        anim_part2_9_craftsmanship = null,
-        anim_part2_10_motion_fx = null,
-        anim_part2_11_sound = null,
-        notes,
-        complete,
-      } = findScore;
-
-      // }
-      const foundPage = await ArtEntry.findById(req.params.id);
-      res.render("show", {
-        artentries: foundPage,
-        score: findScore,
-        DBX_API_KEY: DBX_API_KEY,
-        notes,
-        complete,
-        gnrl_part1_1_message,
-        gnrl_part1_2_audience,
-        gnrl_part1_3_problemSolving,
-        gnrl_part1_4_accuracy,
-        gnrl_part1_5_clarity,
-        gnrl_part2_6_technique,
-        gnrl_part2_7_composition,
-        gnrl_part2_8_draftsmanship,
-        gnrl_part2_9_craftsmanship,
-        book_part1_1_message,
-        book_part1_2_audience,
-        book_part1_3_MedIlliUse,
-        book_part1_4_accuracy,
-        book_part1_5_clarity,
-        book_part2_6_technique,
-        book_part2_7_cmpstionDrftsmnshpCrftmnshp,
-        book_part2_8_consistencyRendering,
-        book_part2_9_layoutIntegration,
-        anim_part1_1_message,
-        anim_part1_2_audience,
-        anim_part1_3_problemSolving,
-        anim_part1_4_accuracy,
-        anim_part1_5_clarity,
-        anim_part2_6_technique,
-        anim_part2_7_composition,
-        anim_part2_8_draftsmanship,
-        anim_part2_9_craftsmanship,
-        anim_part2_10_motion_fx,
-        anim_part2_11_sound,
-      });
-      // console.log("found page: " + foundPage);
-    } else {
+    var foundPage = {};
+    if (!findScore) {
       // if (!findScore || findScore === null || findScore == undefined) {
       console.log("No existing score, creating new score");
       await GeneralScore.create({
@@ -270,6 +192,80 @@ router.get("/artentries/:id", isLoggedIn, async (req, res) => {
         " after  create new General and new findscore creation: " + findScore
       );
     }
+    let {
+      judge: { judge },
+      id,
+      gnrl_part1_1_message = null,
+      gnrl_part1_2_audience = null,
+      gnrl_part1_3_problemSolving = null,
+      gnrl_part1_4_accuracy = null,
+      gnrl_part1_5_clarity = null,
+      gnrl_part2_6_technique = null,
+      gnrl_part2_7_composition = null,
+      gnrl_part2_8_draftsmanship = null,
+      gnrl_part2_9_craftsmanship = null,
+      book_part1_1_message = null,
+      book_part1_2_audience = null,
+      book_part1_3_MedIlliUse = null,
+      book_part1_4_accuracy = null,
+      book_part1_5_clarity = null,
+      book_part2_6_technique = null,
+      book_part2_7_cmpstionDrftsmnshpCrftmnshp = null,
+      book_part2_8_consistencyRendering = null,
+      book_part2_9_layoutIntegration = null,
+      anim_part1_1_message = null,
+      anim_part1_2_audience = null,
+      anim_part1_3_problemSolving = null,
+      anim_part1_4_accuracy = null,
+      anim_part1_5_clarity = null,
+      anim_part2_6_technique = null,
+      anim_part2_7_composition = null,
+      anim_part2_8_draftsmanship = null,
+      anim_part2_9_craftsmanship = null,
+      anim_part2_10_motion_fx = null,
+      anim_part2_11_sound = null,
+      notes,
+      complete,
+    } = findScore;
+
+    // }
+    foundPage = await ArtEntry.findById(req.params.id);
+    res.render("show", {
+      artentries: foundPage,
+      score: findScore,
+      DBX_API_KEY: DBX_API_KEY,
+      notes,
+      complete,
+      gnrl_part1_1_message,
+      gnrl_part1_2_audience,
+      gnrl_part1_3_problemSolving,
+      gnrl_part1_4_accuracy,
+      gnrl_part1_5_clarity,
+      gnrl_part2_6_technique,
+      gnrl_part2_7_composition,
+      gnrl_part2_8_draftsmanship,
+      gnrl_part2_9_craftsmanship,
+      book_part1_1_message,
+      book_part1_2_audience,
+      book_part1_3_MedIlliUse,
+      book_part1_4_accuracy,
+      book_part1_5_clarity,
+      book_part2_6_technique,
+      book_part2_7_cmpstionDrftsmnshpCrftmnshp,
+      book_part2_8_consistencyRendering,
+      book_part2_9_layoutIntegration,
+      anim_part1_1_message,
+      anim_part1_2_audience,
+      anim_part1_3_problemSolving,
+      anim_part1_4_accuracy,
+      anim_part1_5_clarity,
+      anim_part2_6_technique,
+      anim_part2_7_composition,
+      anim_part2_8_draftsmanship,
+      anim_part2_9_craftsmanship,
+      anim_part2_10_motion_fx,
+      anim_part2_11_sound,
+    });
   } catch (err) {
     console.log("go to :id page catch err: " + err.message);
     res.redirect("/artentries");

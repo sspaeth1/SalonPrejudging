@@ -11,9 +11,11 @@
 
 // import "../../node_modules/dropbox";
 
+var name = document.getElementById("helper").getAttribute("data-name");
+console.log("testing name", name);
+
 const dbx = new Dropbox.Dropbox({
-  accessToken:
-    "DBX_API_KEY",
+  accessToken: name,
   fetch,
 });
 

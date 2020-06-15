@@ -30,7 +30,7 @@
       <div class="col-md-4 `col-sm-6 mt-5" id="item<%= i %>">
         <div class="img-thumbnail " >
       
-          <a href="/artentries/<%= artentries[i]._id %>">  
+          <a src="/artentries/<%= artentries[i]._id %>">  
             <img src="<%= artentries[i].image%>" class="card-img-top" alt="Image for scoring" > </a> 
         </div>
         <div class="artEntriesTitle">
@@ -47,7 +47,9 @@
 
           <%  for( let j = 0 ; j < score.length -1 ; j++){  
               if(artentries[i]._id === score[j].entryId){   %>
+             
          <%   }else{  //} if(score[j].complete !== true ){ %>
+        
             <div class="scoreThisEntry">   <a href="/artentries/<%= artentries[i]._id %>"  name="<%= artentries[i]._id %>"  class="btn btn-primary lg"> Score this entry</a></div> 
             <% }
            } %>

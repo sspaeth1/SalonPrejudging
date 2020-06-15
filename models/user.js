@@ -13,8 +13,9 @@ var UserSchema = new mongoose.Schema({
   assignedCategories: [
     {
       name: String, //'Still Media Editorial'
-      letter: String //'B'
-    }
+      letter: String, //'B'
+      folderId: String, //DBX folder viewed in file endpoint or from created link from file
+    },
   ],
   isAdmin: { type: Boolean, default: false },
   created: { type: Date, default: Date.now },
@@ -22,4 +23,3 @@ var UserSchema = new mongoose.Schema({
 
 UserSchema.plugin(passportLocalMongoose);
 module.exports = mongoose.model("User", UserSchema);
-
