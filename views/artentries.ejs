@@ -47,10 +47,7 @@
 
           <%  for( let j = 0 ; j < score.length -1 ; j++){  
               if(artentries[i]._id === score[j].entryId){   %>
-                 <%=  artentries[i]._id %>  <%=  score[j].entryId %> ;
-               <p> EQUAL EQUAL </p> 
          <%   }else{  //} if(score[j].complete !== true ){ %>
-          <p>   artentries ID:  <%=  artentries[i].id %>....................score EntryId:  <%=   score[j].entryId  %>     </p> ;
             <div class="scoreThisEntry">   <a href="/artentries/<%= artentries[i]._id %>"  name="<%= artentries[i]._id %>"  class="btn btn-primary lg"> Score this entry</a></div> 
             <% }
            } %>
