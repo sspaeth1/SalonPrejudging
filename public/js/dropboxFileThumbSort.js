@@ -9,9 +9,11 @@
 // let DBkey = process.env.DB_API_KEY;
 // let DBaccess = process.env.DB_ACCESS_KEY;
 
+// import "../../node_modules/dropbox";
+
 const dbx = new Dropbox.Dropbox({
   accessToken:
-    "gvj_NKn0nmAAAAAAAAAAsN6qXFynvjYMbLLkTfDuzMsR9Fo67370GdPubgwG-JEX",
+    "DBX_API_KEY",
   fetch,
 });
 
@@ -64,6 +66,7 @@ const init = async () => {
   } else {
     loadingElem.classList.add("hidden");
   }
+  console.log(res);
 };
 
 const updateFiles = (files) => {

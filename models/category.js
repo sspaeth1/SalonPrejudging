@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
 
 const CategorySchema = new mongoose.Schema({
-  categoryName: String,
+  name: String,
+  letter: String,
+  folderId: String,
   created: { type: Date, default: Date.now },
 });
 

@@ -8,6 +8,7 @@ const bodyParser = require("body-parser"),
   LocalStrategy = require("passport-local"),
   User = require("./models/user"),
   ArtEntry = require("./models/artEntry"),
+  Category = require("./models/category"),
   alt = "acdNGY4RKoPe",
   entrants2019 = require("./public/json/entrants2019.js"); // js file with all entries  converted from excel> CSV > Json > js
 
@@ -16,7 +17,6 @@ const auth = require("./routes/auth");
 const indexRoutes = require("./routes/index");
 const rating = require("./routes/rating");
 const ArtEntryCategoryPages = require("./routes/categoryArtEntryPages");
-
 const app = express();
 
 //App config//
@@ -35,6 +35,7 @@ mongoose
     }
   )
   .then(() => {
+    //Populate Art Entries from Js/JSON file. created from spreadsheet
     ArtEntry.find().then((res) => {
       if (res.length == 0) {
         for (let i = 0; i < entrants2019.length; i++) {
@@ -44,10 +45,32 @@ mongoose
       }
     });
     console.log("Connected to mongoDB Atlas DB");
+  });
+Category.find()
+  .then((res) => {
+    if (res.length == 0) {
+      //manually populate
+      let newEntry = new Category({
+        name: "",
+        letter: "",
+        folderId: "",
+      });
+      newEntry.save();
+    }
   })
   .catch((err) => {
     console.log("Error: " + err.message);
   });
+// mongoose.Promise = global.Promise;
+
+// Add Judge categries, this will eventually come from an input page
+// <select name="categories[]">
+
+//     for(const userId of req.body.users) {
+//   let user = await User.findById(userId);
+//   user.assignedCategories = req.body.categories;
+//   await user.save();
+// }
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
@@ -71,27 +94,27 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-const Category = require("./models/category");
-
 //User Flash: site specific middleware  sets a currentUser check on every Route //returns user feedback
 app.use(async function (req, res, next) {
   res.locals.currentUser = req.user;
-  console.log(req.user);
   if (req.user) {
     try {
       req.user.assignedCategories = [
         //temp assigned categories need to be assigned
         {
-          name: "Still Media Editorial",
-          letter: "B",
-        },
-        {
           name: "Didactic/Instructional - Non-Commercial",
           letter: "A1",
+          folderId: "rgrnbhzfk88o7yk",
         },
         {
           name: "Didactic/Instructional - Commercial",
           letter: "A2",
+          folderId: "w3b6n92ir1l32mz",
+        },
+        {
+          name: "Still Media Editorial",
+          letter: "B",
+          folderId: "96kxlhguj7fxb60",
         },
       ];
       await req.user.save();

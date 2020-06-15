@@ -8,7 +8,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Pathogenic Aspects of Rheumatoid Arthritis",
+    title: "A1-001 Pathogenic Aspects of Rheumatoid Arthritis",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -19,7 +19,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Injury to the Eye and Orbit",
+    title: "A1-002 Injury to the Eye and Orbit",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -30,7 +30,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Optogenetic Neuromodulation of Urinary Tract Function",
+    title: "A1-003 Optogenetic Neuromodulation of Urinary Tract Function",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -42,7 +42,7 @@ const entrants = [
     intended_purpose: "to be determined",
     rating: 0,
     title:
-      "Sedimentary trace fossil record of predation by Cambrian trilobites",
+      "A1-004 Sedimentary trace fossil record of predation by Cambrian trilobites",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -53,7 +53,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Canine shoulder model for biceps tenodesis surgery",
+    title: "A1-005 Canine shoulder model for biceps tenodesis surgery",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -64,7 +64,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Rotationplasty",
+    title: "A1-006 Rotationplasty",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -75,7 +75,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "What is PKU?",
+    title: "A1-007 What is PKU?",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -87,7 +87,7 @@ const entrants = [
     intended_purpose: "to be determined",
     rating: 0,
     title:
-      "The Four Pitfalls: areas of possible nerve injury during radical cystectomy, an anterolateral view of applied pelvic surgical anatomy.",
+      "A1-008 The Four Pitfalls: areas of possible nerve injury during radical cystectomy, an anterolateral view of applied pelvic surgical anatomy.",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -98,7 +98,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "PS Knee Exam: Forces and Torques of the Pivot Shift Exam",
+    title: "A1-009 PS Knee Exam: Forces and Torques of the Pivot Shift Exam",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -109,7 +109,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Abdominal Pregnancy: A Case Report",
+    title: "A1-010 Abdominal Pregnancy: A Case Report",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -121,7 +121,7 @@ const entrants = [
     intended_purpose: "to be determined",
     rating: 0,
     title:
-      "bartonella henselae neuroretinitis: a star is born'\n(Cat Scratch disease)",
+      "A1-011 bartonella henselae neuroretinitis: a star is born'\n(Cat Scratch disease)",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -132,7 +132,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Botulinum Neurotoxin for Radiation-Induced Spasm and Pain",
+    title: "A1-012 Botulinum Neurotoxin for Radiation-Induced Spasm and Pain",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -144,7 +144,7 @@ const entrants = [
     intended_purpose: "to be determined",
     rating: 0,
     title:
-      "Genesis of high-grade serous carcinoma from fallopian tube cell populations",
+      "A1-013 Genesis of high-grade serous carcinoma from fallopian tube cell populations",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -155,7 +155,8 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Repair of Internal Carotid Artery - Internal Jugular Vein Fistula",
+    title:
+      "A1-014 Repair of Internal Carotid Artery - Internal Jugular Vein Fistula",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -166,7 +167,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Repair of Middle Cerebral Aneurysm",
+    title: "A1-015 Repair of Middle Cerebral Aneurysm",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -177,7 +178,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Meningeal Hematomas",
+    title: "A1-016 Meningeal Hematomas",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -188,7 +189,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "The Roots of Human Aggression",
+    title: "A1-017 The Roots of Human Aggression",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -200,7 +201,7 @@ const entrants = [
     intended_purpose: "to be determined",
     rating: 0,
     title:
-      "Disruption of Irradiated Cervical Esophageal Mucosa During Bougie Dilation",
+      "A1-018 Disruption of Irradiated Cervical Esophageal Mucosa During Bougie Dilation",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -211,7 +212,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "The Physiology of a Mosquito Bite",
+    title: "A1-019 The Physiology of a Mosquito Bite",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -222,7 +223,8 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Autologous Complete Tracheal Replacement in a 12-Year-Old Girl",
+    title:
+      "A1-020 Autologous Complete Tracheal Replacement in a 12-Year-Old Girl",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -233,7 +235,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Surgical and Endovascular Revascularization Techniques",
+    title: "A1-021 Surgical and Endovascular Revascularization Techniques",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -244,7 +246,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Ischemic heart disease",
+    title: "A1-022 Ischemic heart disease",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -255,7 +257,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Sigmoid Volvulus",
+    title: "A1-023 Sigmoid Volvulus",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -266,7 +268,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Sigmoid Volvulus",
+    title: "A1-024 Sigmoid Volvulus",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -277,7 +279,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Necrotizing Soft Tissue Infections",
+    title: "A1-025 Necrotizing Soft Tissue Infections",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -288,7 +290,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Wax On Wax Off: Proper Earwax Removal",
+    title: "A1-026 Wax On Wax Off: Proper Earwax Removal",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -299,7 +301,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Split Liver Transplant",
+    title: "A1-027 Split Liver Transplant",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -310,7 +312,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Blue Light Exposure",
+    title: "A1-028 Blue Light Exposure",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -321,7 +323,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Clinoidectomy using Ultrasonic Bone Curette",
+    title: "A1-029 Clinoidectomy using Ultrasonic Bone Curette",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -332,7 +334,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Bartholin�s Cyst and Abscess Formation",
+    title: "A1-030 Bartholin�s Cyst and Abscess Formation",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -343,7 +345,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Migration of Orbital Axes in Developing Embryo",
+    title: "A1-031 Migration of Orbital Axes in Developing Embryo",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -354,7 +356,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "PCOS- Insulin - BPA - Androgens",
+    title: "A1-032 PCOS- Insulin - BPA - Androgens",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -365,7 +367,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Frontline Medicine",
+    title: "A1-033 Frontline Medicine",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -376,7 +378,7 @@ const entrants = [
     category: "A1",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Blepharoplasty Teacher",
+    title: "A1-034 Blepharoplasty Teacher",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -387,7 +389,7 @@ const entrants = [
     category: "A2",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Canine Dental Disease",
+    title: "A2-001 Canine Dental Disease",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -398,7 +400,7 @@ const entrants = [
     category: "A2",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Gene therapy delivery for inner ear hearing disorders.",
+    title: "A2-002 Gene therapy delivery for inner ear hearing disorders.",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -409,7 +411,7 @@ const entrants = [
     category: "A2",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Cochlear duct structures and anatomy of the inner ear.",
+    title: "A2-003 Cochlear duct structures and anatomy of the inner ear.",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -420,7 +422,7 @@ const entrants = [
     category: "A2",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Duodenal Ulcers and Surrounding Anatomy",
+    title: "A2-004 Duodenal Ulcers and Surrounding Anatomy",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -431,7 +433,7 @@ const entrants = [
     category: "A2",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Bone Metabolism Science Communications",
+    title: "A2-005 Bone Metabolism Science Communications",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -442,7 +444,7 @@ const entrants = [
     category: "A2",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Hiatal Hernia Repair Surgical Technique Guide",
+    title: "A2-006 Hiatal Hernia Repair Surgical Technique Guide",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -453,7 +455,7 @@ const entrants = [
     category: "A2",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "The Pupillary Light Reflex Constriction Pathways",
+    title: "A2-007 The Pupillary Light Reflex Constriction Pathways",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -464,7 +466,7 @@ const entrants = [
     category: "A2",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "External ventricular drainage device",
+    title: "A2-008 External ventricular drainage device",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -475,7 +477,7 @@ const entrants = [
     category: "A2",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Immune Thrombocytopenia (ITP) Poster Brochure",
+    title: "A2-009  Immune Thrombocytopenia (ITP) Poster Brochure",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -486,7 +488,7 @@ const entrants = [
     category: "A2",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Lung Transplantation",
+    title: "A2-010 Lung Transplantation",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -498,7 +500,7 @@ const entrants = [
     intended_purpose: "to be determined",
     rating: 0,
     title:
-      "APC Dendritic Cell Initiates T Cell Activation for Tumor Cell Attack",
+      "B-001 APC Dendritic Cell Initiates T Cell Activation for Tumor Cell Attack",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -509,7 +511,7 @@ const entrants = [
     category: "B",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Introducing the Clinical Arcade",
+    title: "B-002 Introducing the Clinical Arcade",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -520,7 +522,7 @@ const entrants = [
     category: "B",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "T cells fighting Cancer",
+    title: "B-003 T cells fighting Cancer",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -531,7 +533,7 @@ const entrants = [
     category: "B",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Crohn's Disease",
+    title: "B-004 Crohn's Disease",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -543,7 +545,7 @@ const entrants = [
     intended_purpose: "to be determined",
     rating: 0,
     title:
-      "How the Brain Decides Whether to Hold�Em or Fold�Em: Risk-taking bias in human decision-making is encoded via a right�left brain push�pull system",
+      "B-005 How the Brain Decides Whether to Hold�Em or Fold�Em: Risk-taking bias in human decision-making is encoded via a right�left brain push�pull system",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -555,7 +557,7 @@ const entrants = [
     intended_purpose: "to be determined",
     rating: 0,
     title:
-      "Minimally Invasive Surgery Plus Thrombolysis for Intracerebral Hemorrhage Evacuation�(MISTIE)",
+      "B-006 Minimally Invasive Surgery Plus Thrombolysis for Intracerebral Hemorrhage Evacuation�(MISTIE)",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -566,7 +568,7 @@ const entrants = [
     category: "B",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "The Loopy Genome",
+    title: "B-007 The Loopy Genome",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -577,7 +579,7 @@ const entrants = [
     category: "B",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Acute Hand Infections",
+    title: "B-008 Acute Hand Infections",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -589,7 +591,7 @@ const entrants = [
     intended_purpose: "to be determined",
     rating: 0,
     title:
-      "Immunization with a Nanoparticle Vaccine Containing an Epstein-Barr Virus (EBV) Glycoprotein Complex",
+      "B-009 Immunization with a Nanoparticle Vaccine Containing an Epstein-Barr Virus (EBV) Glycoprotein Complex",
   },
   {
     image: "Only .mp4, no thumb or .jpg",
@@ -600,7 +602,7 @@ const entrants = [
     category: "L",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "X Marks the Smell",
+    title: "L-001 X Marks the Smell",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -611,7 +613,7 @@ const entrants = [
     category: "L",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "'3D Printing a Chemo Sponge'",
+    title: "L-002 3D Printing a Chemo Sponge",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -622,7 +624,7 @@ const entrants = [
     category: "L",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "The Lymphatic System",
+    title: "L-003 The Lymphatic System",
   },
   {
     image: ".mp4 only, no .jpeg or thumb",
@@ -633,7 +635,7 @@ const entrants = [
     category: "L",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "The Type VI Secretion System",
+    title: "L-004 The Type VI Secretion System",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -644,7 +646,7 @@ const entrants = [
     category: "L",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "SlideBoxVR: A microscope-focused virtual reality app",
+    title: "L-005 SlideBoxVR: A microscope-focused virtual reality app",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -655,7 +657,7 @@ const entrants = [
     category: "L",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "Frostbite: Pathophysiology and Prevention",
+    title: "L-006 Frostbite: Pathophysiology and Prevention",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -667,7 +669,7 @@ const entrants = [
     intended_purpose: "to be determined",
     rating: 0,
     title:
-      "Kinundrum: a problem-based multimedia learning application for undergraduate kinesiology education",
+      "M-001 Kinundrum: a problem-based multimedia learning application for undergraduate kinesiology education",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",
@@ -678,7 +680,7 @@ const entrants = [
     category: "M",
     intended_purpose: "to be determined",
     rating: 0,
-    title: "3D Interactive Surgical Module on Orthognathic Osteotomies",
+    title: "M-002 3D Interactive Surgical Module on Orthognathic Osteotomies",
   },
   {
     image: "https://i.imgur.com/33E6CfN.jpg",

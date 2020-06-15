@@ -17,7 +17,7 @@
 
 
 const dbx = new Dropbox.Dropbox({
-  accessToken: 'VqJ_FOuvvXAAAAAAAAAARR1se66VKDemTdReecsQmV8GZB7YGTEQtq13Kv2zMglQ',
+  accessToken: 'DBX_API_KEY',
   fetch
 })
 

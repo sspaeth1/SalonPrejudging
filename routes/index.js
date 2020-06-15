@@ -5,8 +5,12 @@ const express = require("express"),
   ArtEntry = require("../models/artEntry"),
   Category = require("../models/category"),
   GeneralScore = require("../models/score_general"),
-  auth = require("../routes/auth");
+  auth = require("../routes/auth"),
+  Dotenv = require("dotenv");
 const { isLoggedIn } = require("../middleware");
+
+Dotenv.config({ debug: process.env.DEBUG });
+const DBX_API_KEY = process.env.DBX_API_KEY;
 
 //==============
 //RESTful routes
@@ -81,6 +85,7 @@ router.post("/judgingGroups", isLoggedIn, async (req, res) => {
       user.assignedCategories.push({
         name: categories[category],
         letter: letter,
+        folderId: req.user.assignedCategories.folderId,
       });
     }
   });
@@ -91,9 +96,18 @@ router.post("/judgingGroups", isLoggedIn, async (req, res) => {
 // create POST route
 
 // Award Winners
-router.get("/awardWinners", isLoggedIn, (req, res) =>
-  res.render("awardWinnersFinal")
-);
+router.get("/awardWinners", isLoggedIn, async (req, res) => {
+  await GeneralScore.find({}, (err, scores) => {
+    GeneralScore.aggregate([
+      { avg_Gnrl_part1_1_message: { $avg: "$gnrl_part1_1_message" } },
+    ]);
+
+    if (err) {
+      console.log(err.message);
+    }
+    res.render("awardWinnersFinal", { scores: scores });
+  });
+});
 
 // appendix A
 router.get("/appendixA", (req, res) => res.render("appendixA"));
@@ -102,14 +116,31 @@ router.get("/appendixA", (req, res) => res.render("appendixA"));
 router.get("/appendixB", (req, res) => res.render("appendixB"));
 
 // My Judging Categories
-router.get("/artentries", isLoggedIn, function (req, res) {
+router.get("/artentries", isLoggedIn, async function (req, res) {
+  let score = await GeneralScore.find({}, function (err, score) {
+    if (err) {
+      console.log(err.message);
+    }
+  });
+
   ArtEntry.find({}, function (err, artentries) {
     if (err) {
       console.log("Art Entries page: ", err.message);
     }
-    res.render("artentries", { artentries: artentries });
+    res.render("artentries", {
+      artentries: artentries,
+      score: score,
+      DBX_API_KEY: DBX_API_KEY,
+    });
     // console.log(ArtEntry.find({ category: "A-1" }));
-  });
+  })
+    .populate("judge")
+    .populate("score_general")
+    .exec((err, artEntryFound) => {
+      if (err) {
+        console.log("art etry populate: " + err.message);
+      }
+    });
 });
 
 // Idividual art entries
@@ -117,18 +148,108 @@ router.get("/artentries", isLoggedIn, function (req, res) {
 router.get("/artentries/:id", isLoggedIn, async (req, res) => {
   console.log(
     "user/req.user.id: " +
-      req.user.id +
-      " entryId/req.prams.id:  " +
-      req.params.id
+      JSON.stringify(req.user.id, null, 2) +
+      " entryId/req.params.id:  " +
+      JSON.stringify(req.params.id, null, 2)
   );
   try {
     const findScore = await GeneralScore.findOne({
       judge: req.user.id,
       entryId: req.params.id,
-    }).exec();
-
+    })
+      .populate("judge")
+      .populate("entryId")
+      .exec();
+    // console.log(
+    //   "findscore: " +
+    //     findScore +
+    //     " before  create new General Score:  user/req.user.id: " +
+    //     req.user.id +
+    //     " entryId/req.params.id:  " +
+    //     req.params.id
+    // );
     // findScore.$where({ entryId: req.params }); // entryId: `${entryId._id}`,
-    if (!findScore || findScore === null) {
+
+    if (findScore) {
+      // console.log("score: " + findScore);
+
+      const {
+        judge: { judge },
+        id,
+        gnrl_part1_1_message = null,
+        gnrl_part1_2_audience = null,
+        gnrl_part1_3_problemSolving = null,
+        gnrl_part1_4_accuracy = null,
+        gnrl_part1_5_clarity = null,
+        gnrl_part2_6_technique = null,
+        gnrl_part2_7_composition = null,
+        gnrl_part2_8_draftsmanship = null,
+        gnrl_part2_9_craftsmanship = null,
+        book_part1_1_message = null,
+        book_part1_2_audience = null,
+        book_part1_3_MedIlliUse = null,
+        book_part1_4_accuracy = null,
+        book_part1_5_clarity = null,
+        book_part2_6_technique = null,
+        book_part2_7_cmpstionDrftsmnshpCrftmnshp = null,
+        book_part2_8_consistencyRendering = null,
+        book_part2_9_layoutIntegration = null,
+        anim_part1_1_message = null,
+        anim_part1_2_audience = null,
+        anim_part1_3_problemSolving = null,
+        anim_part1_4_accuracy = null,
+        anim_part1_5_clarity = null,
+        anim_part2_6_technique = null,
+        anim_part2_7_composition = null,
+        anim_part2_8_draftsmanship = null,
+        anim_part2_9_craftsmanship = null,
+        anim_part2_10_motion_fx = null,
+        anim_part2_11_sound = null,
+        notes,
+        complete,
+      } = findScore;
+
+      // }
+      const foundPage = await ArtEntry.findById(req.params.id);
+      res.render("show", {
+        artentries: foundPage,
+        score: findScore,
+        DBX_API_KEY: DBX_API_KEY,
+        notes,
+        complete,
+        gnrl_part1_1_message,
+        gnrl_part1_2_audience,
+        gnrl_part1_3_problemSolving,
+        gnrl_part1_4_accuracy,
+        gnrl_part1_5_clarity,
+        gnrl_part2_6_technique,
+        gnrl_part2_7_composition,
+        gnrl_part2_8_draftsmanship,
+        gnrl_part2_9_craftsmanship,
+        book_part1_1_message,
+        book_part1_2_audience,
+        book_part1_3_MedIlliUse,
+        book_part1_4_accuracy,
+        book_part1_5_clarity,
+        book_part2_6_technique,
+        book_part2_7_cmpstionDrftsmnshpCrftmnshp,
+        book_part2_8_consistencyRendering,
+        book_part2_9_layoutIntegration,
+        anim_part1_1_message,
+        anim_part1_2_audience,
+        anim_part1_3_problemSolving,
+        anim_part1_4_accuracy,
+        anim_part1_5_clarity,
+        anim_part2_6_technique,
+        anim_part2_7_composition,
+        anim_part2_8_draftsmanship,
+        anim_part2_9_craftsmanship,
+        anim_part2_10_motion_fx,
+        anim_part2_11_sound,
+      });
+      // console.log("found page: " + foundPage);
+    } else {
+      // if (!findScore || findScore === null || findScore == undefined) {
       console.log("No existing score, creating new score");
       await GeneralScore.create({
         judge: req.user.id,
@@ -136,84 +257,19 @@ router.get("/artentries/:id", isLoggedIn, async (req, res) => {
         //[getQuestionNum]: Number(selectedRadio),
         // category: "B", ////  MUST COME FROM SCHEMA
       });
+
+      findScore = await GeneralScore.findOne({
+        judge: req.user.id,
+        entryId: req.params.id,
+      })
+        // .populate("judge")
+        // .populate("entryId")
+        .exec();
+
+      console.log(
+        " after  create new General and new findscore creation: " + findScore
+      );
     }
-
-    // console.log("score: " + findScore);
-
-    const {
-      judge,
-      id,
-      gnrl_part1_1_message = null,
-      gnrl_part1_2_audience = null,
-      gnrl_part1_3_problemSolving = null,
-      gnrl_part1_4_accuracy = null,
-      gnrl_part1_5_clarity = null,
-      gnrl_part2_6_technique = null,
-      gnrl_part2_7_composition = null,
-      gnrl_part2_8_draftsmanship = null,
-      gnrl_part2_9_craftsmanship = null,
-      book_part1_1_message = null,
-      book_part1_2_audience = null,
-      book_part1_3_MedIlliUse = null,
-      book_part1_4_accuracy = null,
-      book_part1_5_clarity = null,
-      book_part2_6_technique = null,
-      book_part2_7_cmpstionDrftsmnshpCrftmnshp = null,
-      book_part2_8_consistencyRendering = null,
-      book_part2_9_layoutIntegration = null,
-      anim_part1_1_message = null,
-      anim_part1_2_audience = null,
-      anim_part1_3_problemSolving = null,
-      anim_part1_4_accuracy = null,
-      anim_part1_5_clarity = null,
-      anim_part2_6_technique = null,
-      anim_part2_7_composition = null,
-      anim_part2_8_draftsmanship = null,
-      anim_part2_9_craftsmanship = null,
-      anim_part2_10_motion_fx = null,
-      anim_part2_11_sound = null,
-      notes,
-      complete,
-    } = findScore;
-
-    // }
-    const foundPage = await ArtEntry.findById(req.params.id);
-    res.render("show", {
-      artentries: foundPage,
-      score: findScore,
-      gnrl_part1_1_message,
-      gnrl_part1_2_audience,
-      gnrl_part1_3_problemSolving,
-      gnrl_part1_4_accuracy,
-      gnrl_part1_5_clarity,
-      gnrl_part2_6_technique,
-      gnrl_part2_7_composition,
-      gnrl_part2_8_draftsmanship,
-      gnrl_part2_9_craftsmanship,
-      book_part1_1_message,
-      book_part1_2_audience,
-      book_part1_3_MedIlliUse,
-      book_part1_4_accuracy,
-      book_part1_5_clarity,
-      book_part2_6_technique,
-      book_part2_7_cmpstionDrftsmnshpCrftmnshp,
-      book_part2_8_consistencyRendering,
-      book_part2_9_layoutIntegration,
-      anim_part1_1_message,
-      anim_part1_2_audience,
-      anim_part1_3_problemSolving,
-      anim_part1_4_accuracy,
-      anim_part1_5_clarity,
-      anim_part2_6_technique,
-      anim_part2_7_composition,
-      anim_part2_8_draftsmanship,
-      anim_part2_9_craftsmanship,
-      anim_part2_10_motion_fx,
-      anim_part2_11_sound,
-      notes,
-      complete,
-    });
-    // console.log("found page: " + foundPage);
   } catch (err) {
     console.log("go to :id page catch err: " + err.message);
     res.redirect("/artentries");

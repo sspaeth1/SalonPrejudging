@@ -24,7 +24,7 @@
     <% artentries.forEach(function(artentries){ 
       if( artentries.category === "L"){ %>
 
-      <div class="col-md-4 `col-sm-6 mt-5">
+      <div class="col-md-4 `col-sm-6 mt-5" id="<%= artentries.name %>"> 
         <div class="img-thumbnail " >
           <a href="/artentries/<%= artentries._id %>">  
             <img src="<%= artentries.image%>" class="card-img-top" alt="Image for scoring" > </a> 

@@ -53,32 +53,43 @@ router.post("/score", isLoggedIn, async function (req, res) {
     selectedRadio,
     notes,
     complete,
-    user,
+    category,
   } = req.body;
   try {
     let score = await GeneralScore.findOne({
       entryId: entryId,
       judge: req.user,
     }).exec();
-    console.log(entryId, selectedRadio, getQuestionNum, notes, complete);
+
     if (!score) {
       console.log("No existing score, creating new score");
       await GeneralScore.create({
         judge: req.user,
         entryId: entryId,
         [getQuestionNum]: Number(selectedRadio),
-
-        category: "B", ////  MUST COME FROM SCHEMA
+        category: category,
       });
     } else {
       console.log("Score already exists, updating score");
-      await GeneralScore.updateOne(
+      await GeneralScore.update(
         { entryId: entryId, judge: req.user },
-        { [getQuestionNum]: Number(selectedRadio) }
+        {
+          [getQuestionNum]: Number(selectedRadio),
+          complete: complete,
+          notes: notes,
+        }
       ).exec();
     }
     console.log("Score created/updated");
     res.send({ message: "Scored successfully" });
+    console.log(
+      "route: rating POST score: " + entryId,
+      getQuestionNum,
+      selectedRadio,
+      notes,
+      complete,
+      category
+    );
   } catch (err) {
     console.log("score ERROR: ", err.message);
   }

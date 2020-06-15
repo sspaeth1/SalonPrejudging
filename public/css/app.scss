@@ -544,6 +544,20 @@ h3[aria-expanded="true"]{
 	color: #fff;
   
   }
+
+
+  
+textarea#notes {
+	padding: 2%;
+	position: relative;
+	margin: 0 10%;
+	width: 80%;
+  }
+  
+  button#buttonComplete {
+	width: 80%;
+	margin: 2% 10%;
+  }
   
 
 .card-header h5::before {
@@ -607,11 +621,6 @@ span.labelAward{
 .centerTextContainer .awardBgRow.bg:nth-child(even){
 	background-color: #eee;
     padding: 30px 0;
-}
-
-textarea{
-	padding: 2%;
-	color: rgb(196, 196, 196);
 }
 
 ///// Appendix

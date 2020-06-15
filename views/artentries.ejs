@@ -1,12 +1,12 @@
 <%- include('partials/header')%>
 
 
-
 <script>
     //active menu highlight
     $(document).ready(function(){
       $('li.nav-item.dropdown.myCategories').attr("style", "background-color:orange;");
       $('a.nav-link.dropdown-toggle.myCategories').attr("style", "color:#fff;");
+      // document.querySelector('div#item36 img').parentElement.parentElement.style.border = "thin solid #467946";
     });
   </script>
 
@@ -17,33 +17,47 @@
       <span aria-hidden="true">&times;</span>
     </button>
   </p>
- 
-   <div class="winVar" data="window.localStorage.getItem('category')"></div>
- <script> console.log($('div.winVar').attr('data')) </script>
-   <div class="row entries">
-    <% artentries.forEach(function(artentries){ 
-      if( artentries.category === "B"){ %>
 
-      <div class="col-md-4 `col-sm-6 mt-5">
+
+
+   <!-- <div class="winVar" data=""> <script>window.localStorage.getItem('category')</script></div>
+ <script> console.log($('div.winVar').html())</script> -->
+   <div class="row entries">
+    <% for( let i = 0 ; i < artentries.length -1 ; i++){  
+       if( artentries[i].category === "B"){   %>
+
+       
+      <div class="col-md-4 `col-sm-6 mt-5" id="item<%= i %>">
         <div class="img-thumbnail " >
-          <a href="/artentries/<%= artentries._id %>">  
-            <img src="<%= artentries.image%>" class="card-img-top" alt="Image for scoring" > </a> 
+      
+          <a href="/artentries/<%= artentries[i]._id %>">  
+            <img src="<%= artentries[i].image%>" class="card-img-top" alt="Image for scoring" > </a> 
         </div>
         <div class="artEntriesTitle">
+           
             <h5>
-               <%=  artentries.title.substring(0,50) %>...
+               <%=  artentries[i].title.substring(0,50) %>...
             </h5>
-            <p> <div class="orange font-weight-bolder threeQuarterRem ">Primary Audience: </div> <%= artentries.primaryAudience %></p>
-            <!-- <p> <div class="orange font-weight-bolder threeQuarterRem ">Medium/Software: </div><%= artentries.medium_software %></p> -->
-            <p> <div class="orange font-weight-bolder threeQuarterRem ">Category: </div><%= artentries.category %></p>
-            <p> <div class="orange font-weight-bolder threeQuarterRem ">Intended purpose: </div><%= artentries.intended_purpose.substring(0,50) %>... </p> 
-            <!-- <div class="scoreThisEntry">   <a href="/artentries/<%= artentries._id %>" class="btn btn-success lg"> Scored</a>   -->
-            <div class="scoreThisEntry">   <a href="/artentries/<%= artentries._id %>"  name="{{this.id}}"  class="btn btn-primary lg"> Score this entry</a>  
-              </div>       
+            <p> <div class="orange font-weight-bolder threeQuarterRem ">Primary Audience: </div> <%= artentries[i].primaryAudience %></p>
+            <!-- <p> <div class="orange font-weight-bolder threeQuarterRem ">Medium/Software: </div><%= artentries[i].medium_software %></p> -->
+            <p> <div class="orange font-weight-bolder threeQuarterRem ">Category: </div><%= artentries[i].category %></p>
+            <p> <div class="orange font-weight-bolder threeQuarterRem ">Intended purpose: </div><%= artentries[i].intended_purpose.substring(0,50) %>... </p> 
+           
+         
+
+          <%  for( let j = 0 ; j < score.length -1 ; j++){  
+              if(artentries[i]._id === score[j].entryId){   %>
+                 <%=  artentries[i]._id %>  <%=  score[j].entryId %> ;
+               <p> EQUAL EQUAL </p> 
+         <%   }else{  //} if(score[j].complete !== true ){ %>
+          <p>   artentries ID:  <%=  artentries[i].id %>....................score EntryId:  <%=   score[j].entryId  %>     </p> ;
+            <div class="scoreThisEntry">   <a href="/artentries/<%= artentries[i]._id %>"  name="<%= artentries[i]._id %>"  class="btn btn-primary lg"> Score this entry</a></div> 
+            <% }
+           } %>
         </div>
       </div>
       <% } %>
-    <% });  %>  
+    <% };  %>  
     
   </div>
 </div>

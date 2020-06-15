@@ -23,10 +23,3 @@ var UserSchema = new mongoose.Schema({
 UserSchema.plugin(passportLocalMongoose);
 module.exports = mongoose.model("User", UserSchema);
 
-// for(const userId of req.body.users) {
-//   let user = await User.findById(userId);
-//   user.assignedCategories = req.body.categories;
-//   await user.save();
-// }
-
-// <select name="categories[]">

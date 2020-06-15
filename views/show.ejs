@@ -1,8 +1,9 @@
 <%- include('partials/header') %>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.js"></script>
 <script type="text/javascript" src="/js/Dropbox-sdk.min.js"></script>
+<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="91x0vhk5lkdccy5"></script>
+
 <link rel="stylesheet" href="/css/db.css" type="text/css">
 
 
@@ -16,6 +17,7 @@
   </script>
 
  
+
 
 <h1  class="fullSpan">My judging category: <span><%= artentries.category %></span>   </h1>
   
@@ -33,9 +35,14 @@
     <div class="row">
        
         <div class="col-8">
-            <a href="<%= artentries.image %>" target="_blank" class="expandWinIcon orange halfRem" >  Enlarge <img src="/images/svg/expandWindow.svg" class="expandWinIcon" alt="expand Image">
+            <a href="https://www.dropbox.com/s/rgrnbhzfk88o7yk/A1-001.jpg?dl=0"
+                class="dropbox-embed img-fluid imgScore"
+           
+                alt="<%= artentries.title %>"
+                >
             </a>
-           <img src="<%= artentries.image %>" class="img-fluid imgScore" alt="<%= artentries.title %>">
+      
+  
            
         </div>
         <div class="col-4 mt-4" >
@@ -60,14 +67,15 @@
             const el =  event.target;
             //console.log({  el })
 
+         
+
             if(el.checked) {
                 const entryId = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
                 const selectedRadio = el.value; //el.id
                 const getQuestionNum = el.parentElement.parentElement.classList[0];
-                const notes = $("#notes").val();
-                const user =  $("#user").text;
-                const category = $('h1.fullspan span');
-                const changeColorLive = $('.ui-state-active').attr('style', 'background:rgb(89, 139, 75)')
+                const user =  $("#user").text();
+                const category = $('h1.fullSpan span').text();
+                const changeColorLive = $('.ui-state-active').attr('style', 'background: #467946')
 
 
                 console.log({ entryId, getQuestionNum, selectedRadio, notes, complete});
@@ -76,11 +84,10 @@
                 type: 'POST', 
                 data: { getQuestionNum: getQuestionNum,
                         selectedRadio: selectedRadio,
-                        notes: notes,
                         entryId: entryId,
-                        complete: complete,
-                        user: user,
-
+                        category: category,
+                        complete: complete? true: false,
+                        notes: notes ? notes : "" ,
                      },
                 dataType: 'json',
                 success: function (data, status, xhr) {
@@ -92,9 +99,11 @@
                     }
                     });    
             }
+
+          
          }
 
-  </script>
+</script>
 
   <script>
       $( function() {
@@ -409,28 +418,74 @@
                     </label>
                  </form>
         </div>
-
-
-
-         <h3 class=""> Notes and Submit </h3>
-            <div class="ratingFormSubHeader">
-                <form action="/show" method="POST" class="gnrl_part2_9_craftsmanship">
-                    <h2>Notes</h2>
-
-                    <label for="notes">
-                        <textarea type="text" id="notes" name="notes" onclick=""   rows="15" cols="50" placeholder="Thoughts?"></textarea>
-                    </label>
-                    <!-- <label for="winner">
-                        <input type="checkbox" id="winner" name="winner" >
-                        Winner (there can  be only one)
-                    </label> -->
-              
-                    <button id="buttonComplete" type="button" class="scoreSubmitBtn btn btn-warning btn-block btn-lg" value='false' > Submit</button>
-                 </form>
-        </div>
     </ul>
+</div>
+
+<p> Notes and Submit </p>
+
+        <form action="/show" method="POST" class="notesSubmit">
+<p> <%= artentries.score_general %> </p>
+            <label for="notes">
+                <textarea type="text" id="notes" name="notes" rows="15" cols="50" placeholder="Thoughts?"><%= complete === true? notes : '' %></textarea>
+            </label>
+            <!-- <label for="winner">
+                <input type="checkbox" id="winner" name="winner" >
+                Winner (there can  be only one)
+            </label> -->
+      
+            <% if(complete === true){ %>
+                <button id="buttonComplete" type="button" class="scoreSubmitBtn btn btn-success btn-block btn-lg" onclick="notesAndComplete()" true> Marked as Complete</button>
+
+             <% } else{ %>
+                    <button id="buttonComplete" type="button" class="scoreSubmitBtn btn btn-warning btn-block btn-lg" onclick="notesAndComplete()"  > Submit & mark complete</button>            
+              <%  } %>
+
+         </form>
+
 </h1>
 </section>
+<script>
+    function notesAndComplete(){  
+       const entryId = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+       const category = $('h1.fullSpan span').text();
+       const complete =   document.querySelector('button#buttonComplete').toggleAttribute('true')
+       const notes = $("#notes").val();
+       const changeColorLive = $('.ui-state-active').attr('style', 'background: #467946');
+       document.querySelector('button#buttonComplete').toggleAttribute('true')
+
+       //to to toggle button completed <-> complete
+        // $('button#buttonComplete')[0].remove("class",true);
+
+
+
+              $.ajax('/score', {
+              type: 'POST', 
+              data: {entryId: entryId,
+                    category: category,
+                    complete: complete ? true: false,
+                    notes: notes ? notes : "" ,
+                   },
+              dataType: 'json',
+              success: function (data, status, xhr) {
+                //   console.log("data: " + JSON.stringify(data));
+                //   console.log(data);
+                //     console.log(user);
+              },
+              error: function (jqXhr, textStatus, err) {
+                  console.log("ajax  notes and submit: " + err.message);
+                  }
+              });
+        
+              $( document ).ajaxComplete(function() {
+                //  document.querySelectorAll('input[name="rating"]').forEach( e =>e.disabled = true);
+                //  document.querySelectorAll('input[type="radio"]:checked').classList.add();
+                    //    $('button#buttonComplete').prop('value', true);
+                   
+                 console.log(document.querySelector('button#buttonComplete').toggleAttribute('true'))
+            
+             });
+          }
+</script>
 
 
 
@@ -501,17 +556,20 @@
     </main>
   
 
-<!-- <script src="/js/dropboxFileThumbSort.js"></script> -->
+<script src="/js/dropboxFileThumbSort.js"   type="module"> </script>
  
 
-<script>
+
+<!-- <script>
 
   
 const dbx = new Dropbox.Dropbox({
   accessToken:
-    "gvj_NKn0nmAAAAAAAAAAsN6qXFynvjYMbLLkTfDuzMsR9Fo67370GdPubgwG-JEX",
+    "",
   fetch,
 });
+
+
 
 const fileListElem = document.querySelector(".dbx_ViewFile");
 const newImg = document.createElement('img')
@@ -525,43 +583,6 @@ dbx.filesListFolder({
     console.log(image1);
 });
 
-</script>
+</script> -->
  
 <%- include('partials/footer') %>
-
-
-  <!-- <article class="container radio"></article>
-                       <ul>
-                            <li>
-                                <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="0" name="rating" value="0" onclick="vote()" >
-                                <label for="0"> 0 Failure </label>
-                                <div class="check"><div class="inside"></div>
-                            </li>
-                            <li>
-                                <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="1" name="rating" value="1" >
-                                <label for="1"> 1 Minimal/Poor  </label>
-                                <div class="check"><div class="inside"></div>
-                            </li>
-                            <li>
-                                <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="2" name="rating" value="2" />
-                                <label for="2">2 &nbsp Fair/low </label>
-                                <div class="check"><div class="inside"></div>
-                            </li>
-                            <li>
-                                <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="3" name="rating" value="3" />
-                                <label for="3"> 3 Average / Adequate</label>
-                                <div class="check"><div class="inside"></div>
-                            </li>
-                            <li>
-                                <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="4" name="rating" value="4" />
-                                <label for="4"> 4 Very Good / High   </label>
-                                <div class="check"><div class="inside"></div>
-                            </li>
-                            <li>
-                                <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="5" name="rating" value="5" />
-                                <label for="5">  5 Excellent / Very High  </label>
-                                <div class="check"><div class="inside"></div>
-                            </li>
-                        </ul> -->
-
-
