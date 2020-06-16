@@ -12,7 +12,6 @@
   --pink: #e83e8c;
   --red: #dc3545;
   --orange: #ffa100;
-  --darkOrange: #e66700;
   --yellow: #ffc107;
   --green: #28a745;
   --teal: #20c997;
@@ -301,12 +300,6 @@ fieldset {
   padding: 0;
   margin: 0;
   border: 0;
-}
-
-.myCategorySpecific{
-  color: #fff;
-  font-size: 2rem;
-  font-weight: 700;
 }
 
 legend {
@@ -9677,10 +9670,6 @@ body {
 
 .orange, a.orange {
   color: #ffa100;
-}
-
-.darkOrange{
-  color: var(--darkOrange);
 }
 
 .indent {

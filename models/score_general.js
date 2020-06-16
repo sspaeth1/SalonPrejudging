@@ -39,6 +39,7 @@ const GeneralScoreSchema = new mongoose.Schema({
   },
   judge: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
   category: String,
+  categoryInfo: { type: mongoose.Schema.ObjectId, ref: "Category",  required: true  },
   created: { type: Date, default: Date.now },
 });
 

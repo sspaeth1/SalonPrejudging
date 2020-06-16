@@ -1,18 +1,4 @@
-// const Dropbox = require('Dropbox').Dropbox;
-
-// Dotenv.config();
-//     // {path: path/filename}
-
-//     // process env PORT
-// let port = process.env.PORT;
-// let host = process.env.HOST;
-// let DBkey = process.env.DB_API_KEY;
-// let DBaccess = process.env.DB_ACCESS_KEY;
-
-// import "../../node_modules/dropbox";
-
 var name = document.getElementById("helper").getAttribute("data-name");
-console.log("testing name", name);
 
 const dbx = new Dropbox.Dropbox({
   accessToken: name,
@@ -68,7 +54,6 @@ const init = async () => {
   } else {
     loadingElem.classList.add("hidden");
   }
-  console.log(res);
 };
 
 const updateFiles = (files) => {

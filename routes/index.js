@@ -6,7 +6,9 @@ const express = require("express"),
   Category = require("../models/category"),
   GeneralScore = require("../models/score_general"),
   auth = require("../routes/auth"),
-  Dotenv = require("dotenv");
+  categorySpecifics = require("../public/json/categorySpecifics3.json"),
+  letterIndex = require("../public/json/LetterIndex.js");
+Dotenv = require("dotenv");
 const { isLoggedIn } = require("../middleware");
 
 Dotenv.config({ debug: process.env.DEBUG });
@@ -22,6 +24,8 @@ router.get("/index", function (req, res) {
     if (err) {
       console.log("index page error: ", err.message);
     }
+    let sdf = 0;
+    console.log(categorySpecifics[sdf].letter);
     res.render("index", { artentries: artentries });
   });
 });
@@ -47,29 +51,6 @@ router.get("/judgingGroups", isLoggedIn, (req, res) =>
 // add users to judging group
 router.post("/judgingGroups", isLoggedIn, async (req, res) => {
   // POST route for create judgingGroups
-
-  const categories = {
-    A1: "Didactic/Instructional - Non-Commercial",
-    A2: "Didactic/Instructional - Commercial",
-    B: "Still Media - Editorial",
-    C: "Still Media - Advertising and Marketing/Promotional",
-    D: "Still Media - Medical Legal",
-    E: "Still Media - Illustrated Textbook (Traditionally printed book)",
-    F1: "Animation-Didactic/Instructional - Non-Commercial",
-    F2: "Animation-Didactic/Instructional - Commercial",
-    G1: "Interactive Media - Didactic/Instructional-Non-Commercial",
-    G2: "Interactive Media - Didactic/Instructional-Commercial",
-    G3: "Interactive Media - Advertising and Marketing/Promotional",
-    G4: "Interactive Media – Gaming",
-    G5: "Interactive Media – Interactive Textbook",
-    I2: "Didactic/Instructional – Surgical/Clinical Procedures",
-    I1: "Didactic/Instructional – Anatomical/ Pathological",
-    I3: "Didactic/Instructional – Molecular/Biological/Life Sciences",
-    J: "Didactic/Instructional – Editorial",
-    K: "Didactic/Instructional – Advertising and Marketing/Promotional",
-    L: "Student Motion Media – Animation",
-    M: "Student Interactive Section – Interactive",
-  };
 
   // find the user by his/her email
   let user = await User.findOne({ email: req.body.email });
@@ -143,15 +124,7 @@ router.get("/artentries", isLoggedIn, async function (req, res) {
     });
 });
 
-// Idividual art entries
-
 router.get("/artentries/:id", isLoggedIn, async (req, res) => {
-  console.log(
-    "user/req.user.id: " +
-      JSON.stringify(req.user.id, null, 2) +
-      " entryId/req.params.id:  " +
-      JSON.stringify(req.params.id, null, 2)
-  );
   try {
     let findScore = await GeneralScore.findOne({
       judge: req.user.id,
@@ -160,37 +133,19 @@ router.get("/artentries/:id", isLoggedIn, async (req, res) => {
       .populate("judge")
       .populate("entryId")
       .exec();
-    // console.log(
-    //   "findscore: " +
-    //     findScore +
-    //     " before  create new General Score:  user/req.user.id: " +
-    //     req.user.id +
-    //     " entryId/req.params.id:  " +
-    //     req.params.id
-    // );
-    // findScore.$where({ entryId: req.params }); // entryId: `${entryId._id}`,
+
     var foundPage = {};
     if (!findScore) {
-      // if (!findScore || findScore === null || findScore == undefined) {
       console.log("No existing score, creating new score");
       await GeneralScore.create({
         judge: req.user.id,
         entryId: req.params.id,
-        //[getQuestionNum]: Number(selectedRadio),
-        // category: "B", ////  MUST COME FROM SCHEMA
       });
 
       findScore = await GeneralScore.findOne({
         judge: req.user.id,
         entryId: req.params.id,
-      })
-        // .populate("judge")
-        // .populate("entryId")
-        .exec();
-
-      console.log(
-        " after  create new General and new findscore creation: " + findScore
-      );
+      }).exec();
     }
     let {
       judge: { judge },
@@ -228,14 +183,16 @@ router.get("/artentries/:id", isLoggedIn, async (req, res) => {
       complete,
     } = findScore;
 
-    // }
     foundPage = await ArtEntry.findById(req.params.id);
     res.render("show", {
       artentries: foundPage,
       score: findScore,
       DBX_API_KEY: DBX_API_KEY,
+      id,
       notes,
       complete,
+      letterIndex,
+      categorySpecifics,
       gnrl_part1_1_message,
       gnrl_part1_2_audience,
       gnrl_part1_3_problemSolving,
@@ -271,30 +228,6 @@ router.get("/artentries/:id", isLoggedIn, async (req, res) => {
     res.redirect("/artentries");
   }
 });
-
-// router.get("/artentries/:id", isLoggedIn, function (req, res) {
-//   ArtEntry.findById(req.params.id, function (err, foundPage) {
-//     if (err) {
-//       console.log("redirect show route");
-//       res.redirect("/artentries");
-//     }
-//     console.log(foundPage);
-//     res.render("show", { artentries: foundPage });
-//   });
-// });
-
-//   try {
-//     User.find({ assignedCategories }, function (err, AssignedCategories) {
-//       if (err) {
-//         console.log("error: " + err.message);
-//       }
-//       res.render("show", { AssignedCategories });
-//     });
-
-//   } catch (err) {
-//     console.log("error message: " + err.message);
-//   }
-// });
 
 //EDIT ROUTE
 router.get("/artentries/:id/edit", function (req, res) {

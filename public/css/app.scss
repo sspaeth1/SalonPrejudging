@@ -3,6 +3,7 @@ $theme-colors:(
 	"danger": rgb(212, 87, 87)
 );
 $orange:#ffa100;
+$darkOrange: #e66700;
 $blueDark:#002632;
 $blueAMI: #00a8b4;
 $white: #ffffff;
@@ -51,6 +52,10 @@ body{
 .orange, a.orange{
 	color:$orange;
 }
+
+.darkOrange{
+	color: $darkOrange);
+  }
 
 
 .indent{
@@ -359,6 +364,13 @@ div[class="My judging Categories"] ul li:nth-of-type(2n){
 	margin-left: 5%;
   }
   
+  .myCategorySpecific{
+	color: $white;
+	font-size: 2rem;
+	font-weight: 700;
+	
+  }
+
   select#categories {
 	width: 50%;
 	height: 420;

@@ -23,9 +23,6 @@ const dbx = new Dropbox.Dropbox({
 
 
 
-
-
-
 const fileListElem = document.querySelector('.js-file-list')
 const loadingElem = document.querySelector('.js-loading')
 const rootPathForm = document.querySelector('.js-root-path__form')
