@@ -9,10 +9,11 @@
   </script>
 
 
+
 <h1  class="fullSpan"> Award Winners</h1>
+<h1>PAGE DEVELOPEMENT IN PROGRESS </h1>
 
-
-<% if( currentUser == Admin){ %>
+<% if( currentUser != currentUser.Admin){ %>
     <div class="centerTextContainer p-3 ">
         <h1 class="text-left">Group 1</h1>
         <div class="awardBgRow bg">
@@ -115,7 +116,7 @@
          
 </div>
 
-<script src="/js/addAwardMeritField.js" type="text/javascript"></script>
+<script src="../public/js/addAwardMeritField.js" type="text/javascript"></script>
 
 
     <%- include('partials/footer.ejs') %>

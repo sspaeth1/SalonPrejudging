@@ -115,9 +115,3 @@ router.post("/score", isLoggedIn, async function (req, res) {
 });
 
 //update
-
-/// Winners   admin vs. user view based on login in page
-
-router.get("/awardWinners", function (req, res) {
-  res.render("awardWinners");
-});

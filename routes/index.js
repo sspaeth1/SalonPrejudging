@@ -76,16 +76,17 @@ router.post("/judgingGroups", isLoggedIn, async (req, res) => {
 
 // Award Winners
 router.get("/awardWinners", isLoggedIn, async (req, res) => {
-  await GeneralScore.find({}, (err, scores) => {
-    GeneralScore.aggregate([
-      { avg_Gnrl_part1_1_message: { $avg: "$gnrl_part1_1_message" } },
-    ]);
+  // await GeneralScore.find({}, (err, scores) => {
+  //   GeneralScore.aggregate([
+  //     { avg_Gnrl_part1_1_message: { $avg: "$gnrl_part1_1_message" } },
+  //   ]);
 
-    if (err) {
-      console.log(err.message);
-    }
-    res.render("awardWinnersFinal", { scores: scores });
-  });
+  //   if (err) {
+  //     console.log(err.message);
+  //   }
+  //   res.render("awardWinnersFinal", { scores: scores });
+  // });
+  res.render("awardWinners");
 });
 
 // appendix A
