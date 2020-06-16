@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 // Mongoose model ART ENTRIES SCHEMA config
 var artEntrySchema = new mongoose.Schema({
   firstName: String,
-  LastName: String,
+  lastName: String,
   email: String,
   title: String,
   image: { type: String, default: "https://i.imgur.com/33E6CfN.jpg" },

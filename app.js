@@ -10,7 +10,7 @@ const bodyParser = require("body-parser"),
   ArtEntry = require("./models/artEntry"),
   Category = require("./models/category"),
   alt = "acdNGY4RKoPe",
-  entrants2019 = require("./public/json/entrants2019.js"); // js file with all entries  converted from excel> CSV > Json > js
+  entrants2019 = require("./public/data/2019/2019AllEntrants"); // js file with all entries  converted from excel> CSV > Json > js
 
 const newItemRoutes = require("./routes/newItem");
 const auth = require("./routes/auth");
@@ -46,42 +46,58 @@ mongoose
     });
     console.log("Connected to mongoDB Atlas DB");
   });
-Category.find().then((res) => {
-  if (res.length == 0) {
-    //manually populate
-    let newEntry = new Category({
-      name: "",
-      letter: "",
-      folderId: "",
-    });
-    newEntry.save();
-  }
-})
-// User.findOneAndUpdate(
-//   { username: "sixthuser" },
-//   {
-//     assignedCategories: [
-//       {
-//         name: "Didactic/Instructional - Non-Commercial",
-//         letter: "A1",
-//         folderId: "rgrnbhzfk88o7yk",
-//       },
-//       {
-//         name: "Didactic/Instructional - Commercial",
-//         letter: "A2",
-//         folderId: "w3b6n92ir1l32mz",
-//       },
-//       {
-//         name: "Still Media Editorial",
-//         letter: "B",
-//         folderId: "96kxlhguj7fxb60",
-//       },
-//     ],
-//   }
-// )
-.catch((err) => {
-  console.log("Error: " + err.message);
-});
+Category.find()
+  .then((res) => {
+    if (res.length == 0) {
+      //manually populate
+      let newEntry = new Category({
+        name: "",
+        letter: "",
+        folderId: "",
+      });
+      newEntry.save();
+    }
+  })
+  // User.findOneAndUpdate(
+  //   { username: "sixthuser" },
+  //   {
+  //     assignedCategories: [
+  //       {
+  //         name: "Didactic/Instructional - Non-Commercial",
+  //         letter: "A1",
+  //         folderId: "rgrnbhzfk88o7yk",
+  //       },
+  //       {
+  //         name: "Didactic/Instructional - Commercial",
+  //         letter: "A2",
+  //         folderId: "w3b6n92ir1l32mz",
+  //       },
+  //       {
+  //         name: "Still Media Editorial",
+  //         letter: "B",
+  //         folderId: "96kxlhguj7fxb60",
+  //       },
+  //       {
+  //         name: "Animation - Didactic/Instructional - Non-commercial",
+  //         letter: "F1",
+  //         folderId: "",
+  //       },
+  //       {
+  //         name: "Animation - Didactic/Instructional - Commercial",
+  //         letter: "F2",
+  //         folderId: "",
+  //       },
+  //       {
+  //         name: "Interactive - Didactic/Instructional - Non-commercial",
+  //         letter: "G1",
+  //         folderId: "",
+  //       },
+  //     ],
+  //   }
+  // )
+  .catch((err) => {
+    console.log("Error: " + err.message);
+  });
 // mongoose.Promise = global.Promise;
 
 // Add Judge categries, this will eventually come from an input page

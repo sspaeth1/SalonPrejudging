@@ -24,8 +24,6 @@ router.get("/index", function (req, res) {
     if (err) {
       console.log("index page error: ", err.message);
     }
-    let sdf = 0;
-    console.log(categorySpecifics[sdf].letter);
     res.render("index", { artentries: artentries });
   });
 });

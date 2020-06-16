@@ -12,7 +12,6 @@
   --pink: #e83e8c;
   --red: #dc3545;
   --orange: #ffa100;
-  --darkOrange: #e66700;
   --yellow: #ffc107;
   --green: #28a745;
   --teal: #20c997;
@@ -301,12 +300,6 @@ fieldset {
   padding: 0;
   margin: 0;
   border: 0;
-}
-
-.myCategorySpecific{
-  color: #fff;
-  font-size: 2rem;
-  font-weight: 700;
 }
 
 legend {
@@ -9679,8 +9672,8 @@ body {
   color: #ffa100;
 }
 
-.darkOrange{
-  color: var(--darkOrange);
+.darkOrange {
+  color: #e66700;
 }
 
 .indent {
@@ -9972,6 +9965,12 @@ div[class="My judging Categories"] ul li:nth-of-type(2n) {
   margin-left: 5%;
 }
 
+.myCategorySpecific {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
 select#categories {
   width: 50%;
   height: 420;
@@ -10029,6 +10028,35 @@ div.centerTextContainer h3 {
   margin: 20px;
   padding: 20px;
   border: 1px #6c757d;
+}
+
+#displayDescriptions {
+  width: 30%;
+}
+
+#displayImage {
+  width: 66%;
+}
+
+#displayDescriptions p {
+  padding-right: 22px;
+}
+
+@media (max-width: 950px) {
+  #displayDescriptions {
+    width: 100%;
+  }
+  #displayImage {
+    width: 95%;
+    min-height: 400px;
+    margin: 4%;
+  }
+}
+
+.entryDescriptors {
+  font-size: 1.1rem;
+  border-bottom: 1px solid #ffecdc;
+  margin-bottom: 8px;
 }
 
 label {
@@ -10224,6 +10252,7 @@ span.labelAward {
   box-shadow: 2px 2px 10px #d85102;
   margin-bottom: 0;
   font-size: 1.5rem;
+  line-height: 2.5rem;
 }
 
 .appendixA {

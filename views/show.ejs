@@ -20,7 +20,7 @@
 
 <h1  class="fullSpan">
     <span class="darkOrange font-weight-bold"><%= artentries.category %>: <%= categorySpecifics[letterIndex.indexOf(artentries.category)].type  %> </span>
-     <hr>
+ <br>
     <span  class="myCategorySpecific" ><%= categorySpecifics[letterIndex.indexOf(artentries.category)].subtype  %></span>        
      <span class=""><%= categorySpecifics[letterIndex.indexOf(artentries.category)].specific  %></span>       
 
@@ -36,42 +36,45 @@
 
     <div class="row">
        
-        <div class="col-8">
-            <a href="https://www.dropbox.com/s/rgrnbhzfk88o7yk/A1-001.jpg?dl=0"
-            class="dropbox-embed img-fluid imgScore"
 
-            alt="<%= artentries.title %>"
-            >
-        </a>	   
-            <!-- // <%= currentUser.assignedCategories[0].folderId %>  <%= artentries.title %>  -->
- 
-      
- 
-           
-        </div>
-        <div class="col-4 mt-4" >
-            <h2 class=""><div class="orange threeQuarterRem">
+        <div id="displayDescriptions" class=" mt-4 ml-4" >
+            <h2 ><div class="orange entryDescriptors">
                 Title: 
             </div><%= artentries.title %> </h2>
-            <p> <div class="orange threeQuarterRem">Client: </div> <%= artentries.client %> </p>
-            <p> <div class="orange threeQuarterRem">Format: </div> <%= artentries.format %> </p>
-            <p> <div class="orange threeQuarterRem">Medium or Software Used: </div><%= artentries.medium_software %></p>
-            <p> <div class="orange threeQuarterRem">Presentation format: </div><%= artentries.presentation_format %></p>
-            <p> <div class="orange threeQuarterRem">Primary audience: </div><%= artentries.primaryAudience %></p>
-            <p> <div class="orange threeQuarterRem">Intended purpose: </div><%= artentries.intended_purpose %></p>
+            <!-- <p> <div class="orange entryDescriptors">Client: </div> <%= artentries.client %> </p> -->
+           <div class="orange entryDescriptors">Format: </div>  <p> <%= artentries.format %> </p>
+          <div class="orange entryDescriptors">Medium or Software Used: </div>  <p> <%= artentries.medium_software %></p>
+            <div class="orange entryDescriptors">Presentation format: </div><p> <%= artentries.presentation_format %></p>
+            <div class="orange entryDescriptors">Primary audience: </div> <p><%= artentries.primaryAudience %></p>
+            <div class="orange entryDescriptors">Intended purpose: </div><p> <%= artentries.intended_purpose %></p>
        </div>
+
+       <div id="displayImage">
+        <a href="https://www.dropbox.com/s/rgrnbhzfk88o7yk/A1-001.jpg?dl=0"
+        class="dropbox-embed img-fluid imgScore"
+
+        alt="<%= artentries.title %>"
+        >
+    </a>	   
+        <!-- // <%= currentUser.assignedCategories[0].folderId %>  <%= artentries.title %>  -->
+
+  
+
+       
+    </div>
+
     </div>
 
     <div id="user"><%= artentries.judge %></div>
 
 
 
-    <% if(artentries.category === 'A1' || artentries.category === 'A2' || 
-            artentries.category === 'F1' || artentries.category === 'F2' ||
+    <% if( artentries.category === 'F1' || artentries.category === 'F2' ||
             artentries.category === 'F3' || artentries.category === 'F4' ||
             artentries.category === 'L'  ){ %>
          <%- include('partials/questions_animation') %>
-    <% } else if(artentries.category === 'B' || artentries.category === 'C' || 
+    <% } else if(artentries.category === 'A1' || artentries.category === 'A2' || 
+                  artentries.category === 'B' || artentries.category === 'C' || 
                 artentries.category === 'D' || artentries.category === 'I1' ||
                 artentries.category === 'I2' || artentries.category === 'I3' || 
                 artentries.category === 'J' || artentries.category === 'K' ){ %>
@@ -84,76 +87,12 @@
         <%- include('partials/questions_interactive') %>  
    <% } %> 
 
-    
-    <main style="width: 50%; margin:auto;" >
- <hr>
-      <div class="dbx_ViewFile"></div>
-    <header  >
-        <h1>
-          Test Drop box integration
-        </h1>
-        <form class="root-path-wrap js-root-path__form">
-          <h2><label for="root-path"> Folder Path</label></h2>
-          <input
-            type="text"
-            name="root-path"
-            id="root-path"
-            class="js-root-path__input"
-            value="/"
-          />
-          <button aria-label="Load path" class="dbx-btn" type="submit">
-            &rarr;
-          </button>
-        </form>
-      </header>
-    
-       <button type="button" class="dbx-btn js-organize-btn">Organize</button>
-  
-        <div class="dbx-list js-file-list">Nothing to see here</div>
-         <footer>
-          <ul class="log js-log hidden"></ul>
-          <div class="date-range">
-            <h2>Date Range</h2>
-            <div class="js-date-range"></div>
-          </div>
-        </footer>
 
-      <div class="loading js-loading">Loading...</div>
+<button type="button" class="btn btn-primary m-2  btn-lg  buttonReturn" style="margin-left:5%;" ><a href="/artentries">Back to entries in this category</a></button>
 
-    </main>
-  
 
-<script src="/js/dropboxFileThumbSort.js"  id="helper" data-name="<%= DBX_API_KEY %>"
- type="module"> </script>
+
+<script src="/js/dropboxFileThumbSort.js"  id="helper" data-name="<%= DBX_API_KEY %>"  type="module"> </script>
  
-<!-- var this_js_script = $("script[src*=somefile]");
-var my_var_1 = this_js_script.attr("data-my_var_1");
-
-console.log(my_var_1); -->
-
-<!-- <script>
-
-  
-const dbx = new Dropbox.Dropbox({
-  accessToken:
-    "",
-  fetch,
-});
-
-
-
-const fileListElem = document.querySelector(".dbx_ViewFile");
-const newImg = document.createElement('img')
-
-
-dbx.filesListFolder({  
-  path: ''  
-}).then(response => {
-    const image1 = response.entries[1].path_lower;
-    fileListElem.appendChild(newImg).setAttribute('src', image1);
-    console.log(image1);
-});
-
-</script> -->
  
 <%- include('partials/footer') %>

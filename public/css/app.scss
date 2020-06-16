@@ -54,7 +54,7 @@ body{
 }
 
 .darkOrange{
-	color: $darkOrange);
+	color: $darkOrange;
   }
 
 
@@ -447,6 +447,34 @@ div.centerTextContainer h3 {
 	padding:20px;
 	border: 1px $gray-600;
 }
+#displayDescriptions{
+	width:30%;
+}
+#displayImage{
+	width:66%;
+}
+
+#displayDescriptions p {
+    padding-right: 22px;
+}
+
+@media (max-width: 950px){
+	#displayDescriptions{
+		width:100%;
+	}
+	#displayImage{
+		width:95%;
+		min-height: 400px;
+		margin: 4%;
+	}	
+}
+
+
+.entryDescriptors{
+    font-size: 1.1rem;
+    border-bottom: 1px solid #ffecdc;
+    margin-bottom: 8px;
+}
 
 
 label{
@@ -662,7 +690,8 @@ span.labelAward{
     padding: 1% 8%;
     box-shadow: 2px 2px 10px #d85102;
     margin-bottom: 0;
-    font-size: 1.5rem;
+	font-size: 1.5rem;
+	line-height: 2.5rem;
 }
 
 .appendixA{

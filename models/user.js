@@ -17,6 +17,12 @@ var UserSchema = new mongoose.Schema({
       folderId: String, //DBX folder viewed in file endpoint or from created link from file
     },
   ],
+  // assignedCategories: [
+  //   {
+  //     type: mongoose.Schema.Types.ObjectId,
+  //     ref: "user",
+  //   },
+  // ],
   isAdmin: { type: Boolean, default: false },
   created: { type: Date, default: Date.now },
 });
