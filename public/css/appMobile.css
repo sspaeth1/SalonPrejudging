@@ -9731,6 +9731,12 @@ body {
   visibility: hidden;
 }
 
+
+.indexLinks{
+  font-size: 3rem;
+  margin-left: 3%;
+}
+
 .nobullet {
   list-style: none;
 }
@@ -10125,7 +10131,7 @@ button.btn{
 }
 
 
-form.form-group input[type="button"]{
+form.form-group input[type="submit"]{
   min-height: 100px;
   font-size: 2rem;
   max-width: 92%;
