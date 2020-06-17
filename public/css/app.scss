@@ -29,6 +29,8 @@ $white: #ffffff;
 	padding:0;	
 }
 
+
+
 body{
 	background-color:#F6F8F9;
 	font-family: 'Raleway', sans-serif;
@@ -118,6 +120,7 @@ body{
     color: #bd4747;
 	background-color: #ffba43;
 	margin-top: 20px;
+
 }
 
 .alert-success {
@@ -168,7 +171,7 @@ section#scoring h1 span{
 } 
 
 .artEntriesTitle{
-	min-height: 350px;
+	min-height: 405px;
     background-color: #eee;
     padding: 5%;
 }
@@ -316,13 +319,14 @@ input.form-control-lg.m-2:focus{
     left: 30px;
 }
 
-.signInBox {
-    background-color: #fff;
-    padding: 30px 30px 30px 40px;
-    border: 1px solid $blueDark;
+	.signInBox {
+	background-color: #fff;
+	padding: 30px 30px 30px 40px;
+	border: 1px solid $blueDark;
 	color: $orange;
 	min-width: 350px;
 }
+
 
 .form-control-lg{
 	border-radius: 0;
@@ -340,6 +344,9 @@ input.form-control-lg.m-2:focus{
 
 .dropdown-item{
 	font-family: 'ProximaNova_reg', sans-serif;
+	min-width: 500px;
+	font-size: 1.25rem;
+	border-bottom: 1px solid #ccc;
 }
 
 img[alt="avatar"]{
@@ -353,6 +360,10 @@ img[alt="user profile pic"]{
 	position: relative;
 	display: inline;
 	border: 1px solid $blueDark;
+}
+
+.navbar-expand-md .navbar-nav .dropdown-menu {
+    position: absolute;
 }
 
 div[class="My judging Categories"] ul li:nth-of-type(2n){
@@ -516,10 +527,21 @@ h1.formField{
 	  text-align: center;
   }
 
-  .navbar .nav-item:not(:last-child) {
-	margin-right: 35px;
+.navbar .nav-item{
+	padding-left: 50px;
+}
+
+.navbar .nav-item:not(:last-child) {
 	font-family: 'roboto', sans-serif;
   }
+
+  
+  @media screen and (min-width: 990){
+	.navbar .nav-item:not(:last-child) {
+		margin-right: 35px;
+	  }
+	
+}
 
   .navbar-toggler-icon{
 	  background-image: url('../images/svg/hamburger.svg');
@@ -538,19 +560,23 @@ h1.formField{
 	border-radius: 0;
 	box-shadow: 4px 4px $blueDark;
 	font-family: roboto, sans-serif;
+	padding-bottom: 0;
   }
 
   .dropdown-toggle {
     white-space: nowrap;
     width: 90%;
 }
-
-	img[alt="Home button"]{
+@media screen and (min-width: 990){
+		img[alt="Home button"]{
 	  margin-left: 10px;
 	  height:35px;
 	  width: 25px;
-
   }
+}
+img[alt="Home button"]{
+	visibility: collapse;
+}
 
   .btn-secondary:focus, .btn-secondary.focus {
     color: $blueDark;

@@ -7,6 +7,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <link href="/css/app.css" rel="stylesheet" type="text/css" >
+    <link  href="/css/appMobile.css"  rel="stylesheet" type="text/css" media="only screen and (max-device-width: 480px)"/>
+
 
 
     <script  type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -18,8 +20,8 @@
 
   <body>
 
-    <nav class="navbar navbar-expand-sm  headerNav">
-     <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg  headerNav" role="navigation">
+     <div class="container-fluid" id="navfluid">
        <div class="col-10">
             <div class="navbar-brand"> <a href="/">  <img src="/images/logo.png" href="/home"></a></div>
             <h3 class="navbar-text text-center"> AMI Salon Judging Portal</h3>
@@ -54,7 +56,7 @@
     </div>
   </nav>
 
-  <nav id="pageNav" class="navbar navbar-expand-md ">
+  <nav id="pageNav" class="navbar navbar-expand-lg">
     <div class="container-fluid">
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

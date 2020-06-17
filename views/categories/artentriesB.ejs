@@ -24,7 +24,7 @@
     <% artentries.forEach(function(artentries){ 
       if( artentries.category === "B"){ %>
 
-      <div class="col-md-4 `col-sm-6 mt-5">
+      <div class="col-lg-4 col-md-6 col-sm-6 mt-5">
         <div class="img-thumbnail " >
           <a href="/artentries/<%= artentries._id %>">  
             <img src="<%= artentries.image%>" class="card-img-top" alt="Image for scoring" > </a> 
@@ -34,8 +34,6 @@
                <%=  artentries.title.substring(0,50) %>...
             </h5>
             <p> <div class="orange font-weight-bolder threeQuarterRem ">Primary Audience: </div> <%= artentries.primaryAudience %></p>
-            <!-- <p> <div class="orange font-weight-bolder threeQuarterRem ">Medium/Software: </div><%= artentries.medium_software %></p> -->
-            <p> <div class="orange font-weight-bolder threeQuarterRem ">Category: </div><%= artentries.category %></p>
             <p> <div class="orange font-weight-bolder threeQuarterRem ">Intended purpose: </div><%= artentries.intended_purpose.substring(0,50) %>... </p> 
             <!-- <div class="scoreThisEntry">   <a href="/artentries/<%= artentries._id %>" class="btn btn-success lg"> Scored</a>   -->
             <div class="scoreThisEntry">   <a href="/artentries/<%= artentries._id %>"  name="{{this.id}}"  class="btn btn-primary lg"> Score this entry</a>  

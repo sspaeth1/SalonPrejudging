@@ -27,7 +27,7 @@
        if( artentries[i].category === "B"){   %>
 
        
-      <div class="col-md-4 `col-sm-6 mt-5" id="item<%= i %>">
+      <div class="col-lg-4 col-md-6 col-sm-6 mt-5" id="item<%= i %>">
         <div class="img-thumbnail " >
       
           <a src="/artentries/<%= artentries[i]._id %>">  
@@ -39,8 +39,6 @@
                <%=  artentries[i].title.substring(0,50) %>...
             </h5>
             <p> <div class="orange font-weight-bolder threeQuarterRem ">Primary Audience: </div> <%= artentries[i].primaryAudience %></p>
-            <!-- <p> <div class="orange font-weight-bolder threeQuarterRem ">Medium/Software: </div><%= artentries[i].medium_software %></p> -->
-            <p> <div class="orange font-weight-bolder threeQuarterRem ">Category: </div><%= artentries[i].category %></p>
             <p> <div class="orange font-weight-bolder threeQuarterRem ">Intended purpose: </div><%= artentries[i].intended_purpose.substring(0,50) %>... </p> 
            
          
