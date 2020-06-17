@@ -115,9 +115,6 @@ body{
     margin:  auto;
 }
 
-.lineSpaceing2{
-    line-height: 2rem;
-}
 
 ///// Alert
 .alert-danger {
@@ -125,6 +122,22 @@ body{
 	background-color: #ffba43;
 	margin-top: 20px;
 
+}
+
+
+.container-logIn{
+	background-color: orange;
+	border: #002632 solid 1px;
+	padding: 50px;
+	margin: auto;
+	max-width: 100%;
+	min-height: calc(80vh);
+	padding-bottom: 5px;
+	line-height: 1.25rem;
+  }
+
+section.loginLinks li {
+    padding-bottom: 15px;
 }
 
 .alert-success {
@@ -338,6 +351,17 @@ input.form-control-lg.m-2:focus{
 
 .navbar{
 	padding:0;
+}
+
+li.nav-item.dropdown, li.nav-item.nav-border {
+    font-size: 2rem;
+    border-bottom: 1px solid orange;
+    width: 100%;
+}
+li.nav-item.dropdown:first-of-type{
+	border-top: 1px solid orange;
+	width: 100%;
+	margin-top:5px;
 }
 
 .userProfileStatus{
@@ -836,6 +860,16 @@ button[class="btn btn-link"]{
 .buttonReturn{
 	margin: .5rem 0 .5rem 5% !important;
 }
+
+.forgotPassword{
+	font-size: .75rem;
+	margin-left: 4%;
+  }
+  
+  form.form-group input[type="button"]{
+    max-width: 92%;
+    margin: 0 2% !important;
+  }
 
 // .img-thumbnail.m-2{
 // 	margin: 10px;

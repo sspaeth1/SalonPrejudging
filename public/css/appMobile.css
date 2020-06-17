@@ -62,6 +62,7 @@ body {
   color: #212529;
   text-align: left;
   background-color: #ffffff;
+  min-height: 100vh;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -1974,6 +1975,7 @@ textarea.form-control {
 
 .form-group {
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .form-text {
@@ -3974,18 +3976,37 @@ input[type="button"].btn-block {
   list-style: none;
 }
 
-.nav-link, a#navbarDropdown3, .dropdown-item {
+.nav-link{
   display: block;
   padding: 0.5rem 1rem;
   margin-left: 5%;
+
+}
+
+.dropdown-item{
+  font-size: 2.25rem;
+  font-family: 'ProximaNova_reg', sans-serif;
+  line-height: 3rem;
+  padding-left: 13%;
+  border-bottom: 1px solid rgb(148, 148, 148);
+  max-width:100%;
+  margin:0;
+}
+
+
+a#navbarDropdown, .nav-link.dropdown-toggle-off {
   font-size: 1.75rem;
-  border-bottom: 1px solid orange;
+  max-width:80%;
 }
 
 .navbar-nav .dropdown-menu {
     position: static;
     float: none;
     transform: translateX(-50px);
+}
+.dropdown-menu{
+  padding-bottom: 0;
+  line-height: 2rem;
 }
 
 .navbar-nav {
@@ -9638,11 +9659,28 @@ a.text-dark:hover, a.text-dark:focus {
   }
 
 
-  input.form-control-lg {
-    min-height: 75px;
+  input.form-control-lg,  input.form-control-lg.m-2  {
+    /* border: 1px solid orange; */
+    /* border-bottom: 5px solid orange; */
+    min-height: 5rem;
+    font-size: 2rem;
+
   }
+
+  form.form-group label input[type="text"]{
+      padding-bottom: 10px;
+  }
+
+
+  .navbar-toggler-icon {
+    display: inline-block;
+    width: 2.5em ;
+    height: 2.5em;
+  }
+
   button {
     min-height: 100px;
+    font-size: 2rem;;
   }
 
 
@@ -9729,7 +9767,8 @@ body {
 }
 
 .lineSpaceing2 {
-  line-height: 2rem;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
 }
 
 .alert-danger {
@@ -9952,10 +9991,7 @@ input.form-control-lg.m-2:focus {
   list-style: none;
 }
 
-.dropdown-item {
-  font-family: 'ProximaNova_reg', sans-serif;
-  line-height: 2.5rem;
-}
+
 
 img[alt="avatar"] {
   width: 20px;
@@ -10072,13 +10108,33 @@ label {
   display: block;
 }
 
+div#navbarSupportedContent {
+  background: #edf0ff;
+}
+
 .navbar-light {
   background: #002632 !important;
+}
+button.btn{
+  font-size: 2rem;;
+}
+
+.forgotPassword{
+  font-size: 1.5rem;
+  margin-left: 4%;
+}
+
+
+form.form-group input[type="button"]{
+  min-height: 100px;
+  font-size: 2rem;
+  max-width: 92%;
+  margin: 0 4% !important;
 }
 
 h1.formField {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 3.5rem;
 }
 
 .midgrey {
@@ -10100,6 +10156,17 @@ nav h1 {
 .navbar .nav-item:not(:last-child) {
   font-family: 'roboto', sans-serif;
 }
+
+li.nav-item.dropdown, li.nav-item.nav-border{
+  font-size: 2.5rem;
+  border-bottom: 1px solid orange;
+  width: 100%;
+}
+.nav-link.dropdown-toggle-off{
+  font-size: 2.5rem;
+}
+
+
 
 .navbar-toggler-icon {
   background-image: url("../images/svg/hamburger.svg");
@@ -10383,12 +10450,12 @@ button[class="btn btn-link"] {
 
 span.regAdmin {
   color: #bbb;
-  font-size: .75rem;
+  font-size: 1rem;
   font-weight: 600;
   padding-left: 10px;
   margin-bottom: 30px;
   position: absolute;
-  transform: translate(0, -10px);
+  transform: translate(0, -28px);
 }
 
 p.more {
@@ -10435,7 +10502,7 @@ article.appendixBcontainer h2::before {
   margin: 0px;
   padding: 20px;
   width: 100%;
-  
+  position: absolute;  
 }
 
 .footer a, .footer:visited {
@@ -10453,6 +10520,17 @@ article.appendixBcontainer h2::before {
   width: 100%;
   padding-top: 56.25%;
   /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+.container-logIn{
+  background-color: orange;
+  border: #002632 solid 1px;
+  padding: 50px;
+  margin: auto;
+  max-width: 100%;
+  min-height: calc(80vh);
+  font-size: 2.3rem;
+  line-height: 2.85rem;
 }
 
 /* Then style the iframe to fit in the container div with full height and width */

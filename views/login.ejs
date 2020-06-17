@@ -1,7 +1,6 @@
 <%- include('partials/header.ejs') %>
 
-<style> body{background-color:#FFA100} </style>
-
+<div class="container-logIn">
 <main class="d-flex justify-content-center m-4 singlePage align-items-center">
     <div class="col-md-4 signInBox">
         <h1 class="formField">Login</h1>
@@ -11,27 +10,31 @@
             </label>
            <label for="">  <span class="regAdmin">Password</span>
                <input type="password" name="password" placeholder="Password" class="form-control-lg m-2"></label>
-           "></label>
+           </label>
             
-            <button class="btn btn-primary btn-lg m-2 btn-block">Submit</button>
+            <input type="button" class="btn btn-primary btn-lg btn-block" value="Submit">
         </form>
-        <a href="#"><p class="midgrey">Forgot password?</p></a>
+        <a href="#"><p class="midgrey forgotPassword">Forgot password?</p></a>
         <!-- <a href="/" %> ><p class="midgrey">Register</p></a> -->
     </div>
 </main>
-<section class="loginLinks container ">
+
+   <section class="loginLinks container ">
     <hr>
     <div class="row">
         <div class="col-6">
-            <li><a href="/generalGuidelines" class="lineSpaceing2 white">Salon Judging Guidelines</a></li>
-            <li><a href="/guidelinesPrejudging"  class=" lineSpaceing2 white">Salon Prejudging Guidelines</a></li>
-        </div>
+                    <li><a href="/guidelinesPrejudging"  class=" lineSpaceing2 white">Salon Prejudging Guidelines</a></li>
+    <li><a href="/appendixA"  class=" lineSpaceing2 white">Appendix A – Salon Categories</a></li>
+                </div>
         <div class="col-6 justify-content-center">
-            <li><a href="/appendixA"  class=" lineSpaceing2 white">Appendix A – Salon Categories</a></li>
+
+            <li><a href="/generalGuidelines" class="lineSpaceing2 white">Salon Judging Guidelines</a></li>
             <li><a href="/appendixB"  class=" lineSpaceing2 white"> Appendix B – History of Salon Judging</a></li>
         </div>
     </div>
-</section>
+</section> 
+
+</div>
 
 
 <%- include('partials/footer.ejs') %>
