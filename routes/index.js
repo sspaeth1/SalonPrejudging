@@ -97,34 +97,45 @@ router.get("/appendixB", (req, res) => res.render("appendixB"));
 
 // My Judging Categories
 router.get("/artentries", isLoggedIn, async function (req, res) {
-  let score = await GeneralScore.find({}, function (err, score) {
-    if (err) {
-      console.log(err.message);
-    }
-  });
-
-  ArtEntry.find({}, function (err, artentries) {
-    if (err) {
-      console.log("Art Entries page: ", err.message);
-    }
-    res.render("artentries", {
-      artentries: artentries,
-      score: score,
-      DBX_API_KEY: DBX_API_KEY,
-    });
-    // console.log(ArtEntry.find({ category: "A-1" }));
-  })
-    .populate("judge")
-    .populate("score_general")
-    .exec((err, artEntryFound) => {
+  try {
+    let pageCategoryId = req.query;
+    let score = await GeneralScore.find({}, function (err, score) {
       if (err) {
-        console.log("art etry populate: " + err.message);
+        console.log(err);
       }
+      return score;
     });
+
+    ArtEntry.find({}, function (err, artentries) {
+      if (err) {
+        console.log("Art Entries page: ", err.message);
+      }
+      res.render("artentries", {
+        artentries,
+        score,
+        DBX_API_KEY,
+        pageCategoryId,
+        categorySpecifics,
+        letterIndex,
+      });
+      console.log(pageCategoryId);
+    })
+      .populate("judge")
+      .populate("score_general")
+      .exec((err, artEntryFound) => {
+        if (err) {
+          console.log("art etry populate: " + err.message);
+        }
+      });
+  } catch (err) {
+    console.log("go to artentries page catch err: " + err.message);
+    res.redirect("/index");
+  }
 });
 
 router.get("/artentries/:id", isLoggedIn, async (req, res) => {
   try {
+    let pageCategoryId = req.query;
     let findScore = await GeneralScore.findOne({
       judge: req.user.id,
       entryId: req.params.id,
@@ -191,6 +202,7 @@ router.get("/artentries/:id", isLoggedIn, async (req, res) => {
       notes,
       complete,
       letterIndex,
+      pageCategoryId,
       categorySpecifics,
       gnrl_part1_1_message,
       gnrl_part1_2_audience,

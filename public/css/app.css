@@ -9797,7 +9797,7 @@ section#scoring h1 span {
 }
 
 .artEntriesTitle {
-  min-height: 405px;
+  min-height: 390px;
   background-color: #eee;
   padding: 5%;
 }
@@ -10177,16 +10177,16 @@ nav h1 {
   width: 90%;
 }
 
-@media screen and (min-width: 990) {
+@media only screen and (max-width: 990px) {
   img[alt="Home button"] {
-    margin-left: 10px;
-    height: 35px;
-    width: 25px;
+    visibility: collapse;
   }
 }
 
 img[alt="Home button"] {
-  visibility: collapse;
+  margin-left: 10px;
+  height: 35px;
+  width: 25px;
 }
 
 .btn-secondary:focus, .btn-secondary.focus {

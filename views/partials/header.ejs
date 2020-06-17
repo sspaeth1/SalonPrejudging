@@ -20,7 +20,7 @@
 
   <body>
 
-    <nav class="navbar navbar-expand-lg  headerNav" role="navigation">
+    <nav class="navbar navbar-expand-md  headerNav" role="navigation">
      <div class="container-fluid" id="navfluid">
        <div class="col-10">
             <div class="navbar-brand"> <a href="/">  <img src="/images/logo.png" href="/home"></a></div>
@@ -79,7 +79,7 @@
               <% if(currentUser){ %>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
                 <% currentUser.assignedCategories.forEach(category => { %>
-                  <a class="dropdown-item" href="../categories/artentries<%= category.letter %>"> <%= category.letter %>: <%= category.name %> </a> 
+                  <a class="dropdown-item" href="../artentries?categoryId=<%= category.letter %>"> <%= category.letter %>: <%= category.name %> </a> 
                <% }); %>
               </div>
               <%  } %>   

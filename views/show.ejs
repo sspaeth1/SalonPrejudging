@@ -27,7 +27,7 @@
      </h1>
 
   
-<button type="button" class="btn btn-primary m-2  btn-lg  buttonReturn" style="margin-left:5%;" ><a href="/artentries">Back to entries in this category</a></button>
+     <button type="button" class="btn btn-primary m-2  btn-lg  buttonReturn" style="margin-left:5%;" ><a href="/artentries?categoryId=<%= artentries.category%>">Back to entries in this category</a></button>
 
 <main class="centerRatingPage">
  
@@ -88,8 +88,7 @@
    <% } %> 
 
 
-<button type="button" class="btn btn-primary m-2  btn-lg  buttonReturn" style="margin-left:5%;" ><a href="/artentries">Back to entries in this category</a></button>
-
+   <button type="button" class="btn btn-primary m-2  btn-lg  buttonReturn" style="margin-left:5%;" ><a href="/artentries?categoryId=<%= artentries.category%>">Back to entries in this category</a></button>
 
 
 <script src="/js/dropboxFileThumbSort.js"  id="helper" data-name="<%= DBX_API_KEY %>"  type="module"> </script>
