@@ -9710,11 +9710,14 @@ body {
 }
 
 .centerTextContainer {
-  width: 90%;
   background-color: #fff;
   border: #002632 solid 1px;
-  padding: 30px;
+  padding: 50px;
   margin: auto;
+  max-width: 100%;
+  min-height: calc(80vh);
+  font-size: 2.3rem;
+  line-height: 2.85rem;
 }
 
 .centerRatingPage {
@@ -9998,20 +10001,20 @@ select#categories {
 }
 
 div.centerTextContainer h1 {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 
 div.centerTextContainer h2 {
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
 div.centerTextContainer h3 {
-  font-size: .75rem;
+  font-size: 1.75rem;
   font-weight: bold;
   border-bottom: 1px solid #ffa100;
-  width: 10%;
+  width: 30%;
 }
 
 @media only screen and (max-width: 769px) {

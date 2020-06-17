@@ -9684,6 +9684,10 @@ body {
   font-size: 1rem;
 }
 
+.oneAndHalfrem {
+  font-size: 1.5rem;
+}
+
 .halfRem {
   font-size: .5rem;
 }
