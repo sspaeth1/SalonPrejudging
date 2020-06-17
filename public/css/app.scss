@@ -353,16 +353,33 @@ input.form-control-lg.m-2:focus{
 	padding:0;
 }
 
-li.nav-item.dropdown, li.nav-item.nav-border {
-    font-size: 2rem;
-    border-bottom: 1px solid orange;
-    width: 100%;
+@media screen and (min-width: 1280){
+.navbar li:last-of-type {
+	font-family: 'roboto', sans-serif;
+	margin-left:10%;
+  }
 }
-li.nav-item.dropdown:first-of-type{
-	border-top: 1px solid orange;
-	width: 100%;
-	margin-top:5px;
+
+
+
+@media only screen and (max-width: 800px){
+
+	
+	li.nav-item.dropdown, li.nav-item.nav-border {
+		font-size: 2rem;
+		border-bottom: 1px solid orange;
+		width: 100%;
+	}
+	li.nav-item.dropdown:first-of-type{
+		border-top: 1px solid orange;
+		width: 100%;
+		margin-top:5px;
+	}
+
 }
+
+
+
 
 .userProfileStatus{
 	text-align: right;
