@@ -672,7 +672,7 @@ textarea#notes {
 	width: 80%;
   }
   
-  button#buttonComplete {
+  button#buttonComplete, button#buttonCompleteChecked {
 	width: 80%;
 	margin: 2% 10%;
   }
@@ -785,6 +785,7 @@ span.labelAward{
 	border-left: 5px $orange solid !important;
 	padding: 1%;
 	margin-bottom: 0;
+	padding-top: 20px;
 }
 
 .ratingFormSubHeader{
