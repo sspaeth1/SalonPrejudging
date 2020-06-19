@@ -18,6 +18,8 @@
 
    </h1>
 
+
+
 <script>
     let url = new URLSearchParams(window.location.search);
   let pageCategoryId = url.get("categoryId");
@@ -41,15 +43,27 @@
    <!-- <div class="winVar" data=""> <script>window.localStorage.getItem('category')</script></div>
  <script> console.log($('div.winVar').html())</script> -->
    <div class="row entries">
-    <% for( let i = 0 ; i < artentries.length -1 ; i++){  
+    <% for( let i = 0 ; i < artentries.length -1 ; i++){   
        if( artentries[i].category ===  pageCategoryId.categoryId ){   %>
 
-       
-      <div class="col-lg-4 col-md-6 col-sm-6 mt-5" id="item<%= i %>">
+
+      <div class="col-lg-4 col-md-6 col-sm-6 mt-5 <%= findScore.id %>" id="item<%= i %>" >
         <div class="img-thumbnail " >
       
-          <a src="/artentries/<%= artentries[i]._id %>">  
-            <img src="<%= artentries[i].image%>" class="card-img-top" alt="Image for scoring" > </a> 
+
+         
+
+        <a href="/artentries/<%= artentries[i]._id %>?<%= pageCategoryId.categoryId %>" >  
+            <img src="<%= artentries[i].link %>" class="card-img-top" alt="Image for scoring" > </a>
+
+  
+<!--
+//             <video width="320" height="240" controls>
+//   <source src="https://dl.dropboxusercontent.com/apitl/1/AcA3IJewZChcApqreikqF5YaCGRiFZ0dQkFi3EywmjQq3wNodI-11TUOdvejiBbKiRrBSIOyaz_BY5XxcX1-ojoyOVPg4RJctITGGbLLJlORGlMBLikCp0lw6f5SgrzJPDvYbiHU14iU7RVh173mLG8ldgwQ3Jyu2ujlwvzVb6-thYEE1tXEvcU5VVGXw0uF7d5e2CVf52maW8qSdvuxg7QglnReVawVbtAJGlvQqH3K8cDzZzIURwYJohyAH-0h-HDdkYIxEG8DXgGq1Rv_h7t-__vf7QGEtpcfWt_yQxgP6Yf8EuSWzLy_niSCTKgS6IX7_f6sSyyitvvBzDr4eWCy_nYY6dRAi3TEewCqilweA5p4uPr6f6vQ9rEid_aVodY" type="video/mp4">
+
+//   Your browser does not support the video tag.
+// </video>
+-->
         </div>
         <div class="artEntriesTitle">  
            
@@ -59,20 +73,27 @@
             <p> <div class="orange font-weight-bolder threeQuarterRem ">Primary Audience: </div> <%= artentries[i].primaryAudience %></p>
             <p> <div class="orange font-weight-bolder threeQuarterRem ">Intended purpose: </div><%= artentries[i].intended_purpose.substring(0,50) %>... </p> 
            
-         
 
-          <%  for( let j = 0 ; j < score.length -1 ; j++){  
-              if(artentries[i]._id === score[j].entryId){   %>
-             
-         <%   }else{  //} if(score[j].complete !== true ){ %>
-        
-            <div class="scoreThisEntry">   <a href="/artentries/<%= artentries[i]._id %>?<%= pageCategoryId.categoryId%>"  name="<%= artentries[i]._id %>"  class="btn btn-primary lg"> Score this entry</a></div> 
-            <% }
-           } %>
+
+
+          <%  for( let j = 0 ; j <  findComplete.length  ; j++){ %>
+         <%    let buttonTruth = []; 
+            buttonTruth.push(JSON.stringify(findComplete[j].entryId).substring(1,25) ===  artentries[i].id);
+           
+            console.log(buttonTruth, '\n')  %> 
+            <% if( buttonTruth.some( e=>e === true) ){ %>
+             <div class="">   <a href="/artentries/<%= artentries[i]._id %>?<%= pageCategoryId.categoryId %>"  name="<%= artentries[i]._id %>"  class="btn btn-success lg scoreThisEntryComplete"> Entry Scored</a></div> 
+            <% } else{  %>
+              <div class="scoreThisEntry" id="unscored<%= artentries[i]._id %>" >   <a href="/artentries/<%= artentries[i]._id %>?<%= pageCategoryId.categoryId %>"  name="<%= artentries[i]._id %>"  class="btn btn-primary lg"> Score this entry</a></div> 
+
+          <% } %>
+          <% } %>
+
+          
         </div>
       </div>
       <% } %>
-    <% };  %>  
+    <% } %>  
     
   </div>
 </div>

@@ -454,51 +454,56 @@
      <% } else{ %>
             <button id="buttonComplete" type="button" class="scoreSubmitBtn btn btn-warning btn-block btn-lg" onclick="notesAndComplete()"  > Submit & mark complete</button>            
       <%  } %>
+      <button id="buttonCompleteChecked" type="button" class="scoreSubmitBtn btn btn-success btn-block btn-lg" onclick="notesAndComplete()" style="display:none" > Marked as Complete</button>
 
  </form>
 
 </h1>
 </section>
+
+
+
+
 <script>
-function notesAndComplete(){  
-const entryId = window.location.pathname.substring(12);
-const category = $('h1.fullSpan span').text();
-const complete =   document.querySelector('button#buttonComplete').toggleAttribute('true')
-const notes = $("#notes").val();
-const changeColorLive = $('.ui-state-active').attr('style', 'background: #467946');
-document.querySelector('button#buttonComplete').toggleAttribute('true')
+    function notesAndComplete(){  
+       const entryId = window.location.pathname.substring(12);
+       const category = $('h1.fullSpan span').text();
+       const complete =   document.querySelector('button#buttonComplete').toggleAttribute('true')
+       const notes = $("#notes").val();
+       const changeColorLive = $('.ui-state-active').attr('style', 'background: #467946');
+       document.querySelector('button#buttonComplete').toggleAttribute('true')
 
-//to to toggle button completed <-> complete
-// $('button#buttonComplete')[0].remove("class",true);
+       //to to toggle button completed <-> complete
+        // $('button#buttonComplete')[0].remove("class",true);
 
-
-      $.ajax('/score', {
-      type: 'POST', 
-      data: {entryId: entryId,
-            category: category,
-            complete: complete ? true: false,
-            notes: notes ? notes : "" ,
-           },
-      dataType: 'json',
-      success: function (data, status, xhr) {
-        //   console.log("data: " + JSON.stringify(data));
-        //   console.log(data);
-        //     console.log(user);
-      },
-      error: function (jqXhr, textStatus, err) {
-          console.log("ajax  notes and submit: " + err.message);
+              $.ajax('/score', {
+              type: 'POST', 
+              data: {entryId: entryId,
+                    category: category,
+                    complete: complete ? true: false,
+                    notes: notes ? notes : "" ,
+                   },
+              dataType: 'json',
+              success: function (data, status, xhr) {
+                //   console.log("data: " + JSON.stringify(data));
+                //   console.log(data);
+                //     console.log(user);
+              },
+              error: function (jqXhr, textStatus, err) {
+                  console.log("ajax  notes and submit: " + err.message + "id:" + entryId);
+                  }
+              });
+        
+              $( document ).ajaxComplete(function() {
+                //  document.querySelectorAll('input[name="rating"]').forEach( e =>e.disabled = true);
+                //  document.querySelectorAll('input[type="radio"]:checked').classList.add();
+                     
+                $('button#buttonComplete').prop('style', "display:none");
+                $('button#buttonCompleteChecked').prop('style', "display:inline-block");
+                //  console.log(document.querySelector('button#buttonComplete').toggleAttribute('true'))
+                 
+             });
           }
-      });
-
-      $( document ).ajaxComplete(function() {
-        //  document.querySelectorAll('input[name="rating"]').forEach( e =>e.disabled = true);
-        //  document.querySelectorAll('input[type="radio"]:checked').classList.add();
-            //    $('button#buttonComplete').prop('value', true);
-           
-         console.log(document.querySelector('button#buttonComplete').toggleAttribute('true'))
-    
-     });
-  }
 </script>
 
 

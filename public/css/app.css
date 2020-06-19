@@ -9808,6 +9808,13 @@ section#scoring h1 span {
   left: 10%;
 }
 
+.scoreThisEntryComplete {
+  position: absolute;
+  bottom: 3%;
+  left: 10%;
+  width: 144px;
+}
+
 .imgScore {
   max-width: 95%;
   padding: 2%;

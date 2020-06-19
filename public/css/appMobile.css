@@ -9842,6 +9842,12 @@ section#scoring h1 span {
   left: 10%;
 }
 
+.scoreThisEntryComplete {
+
+  font-size: 2rem;
+  width: 80%;
+}
+
 div.scoreThisEntry a.btn{
 
   font-size: 2rem;

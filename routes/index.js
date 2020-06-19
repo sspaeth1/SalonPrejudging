@@ -10,9 +10,19 @@ const express = require("express"),
   letterIndex = require("../public/json/LetterIndex.js");
 Dotenv = require("dotenv");
 const { isLoggedIn } = require("../middleware");
-
+var fetch = require("isomorphic-fetch");
 Dotenv.config({ debug: process.env.DEBUG });
 const DBX_API_KEY = process.env.DBX_API_KEY;
+
+const Dropbox = require("dropbox").Dropbox;
+
+const config = {
+  fetch: fetch,
+  accessToken: DBX_API_KEY,
+  clientId: "tjz5col6y0kyqcs",
+  clientSecret: "nmoi6fqpdg4de74",
+};
+var dbx = new Dropbox(config);
 
 //==============
 //RESTful routes
@@ -99,36 +109,91 @@ router.get("/appendixB", (req, res) => res.render("appendixB"));
 router.get("/artentries", isLoggedIn, async function (req, res) {
   try {
     let pageCategoryId = req.query;
-    let score = await GeneralScore.find({}, function (err, score) {
-      if (err) {
-        console.log(err);
-      }
-      return score;
-    });
 
-    ArtEntry.find({}, function (err, artentries) {
-      if (err) {
-        console.log("Art Entries page: ", err.message);
-      }
-      res.render("artentries", {
-        artentries,
-        score,
-        DBX_API_KEY,
-        pageCategoryId,
-        categorySpecifics,
-        letterIndex,
-      });
-      console.log(pageCategoryId);
-    })
+    let findScore = await GeneralScore.find({
+      judge: req.user.id,
+    }).exec();
+
+    let findComplete = await GeneralScore.find({
+      judge: req.user.id,
+      complete: true,
+    }).exec();
+
+    await ArtEntry.find({})
       .populate("judge")
       .populate("score_general")
-      .exec((err, artEntryFound) => {
-        if (err) {
-          console.log("art etry populate: " + err.message);
+      .then(async (artentries) => {
+        console.log(" req.query", req.query.categoryId);
+        for (var i = 0; i < artentries.length; i++) {
+          let sub =
+            "/" +
+            req.query.categoryId +
+            "/" +
+            artentries[i].title.split(" ", 1)[0] +
+            ".jpg";
+          // console.log(sub.split("-", 1)[0]);
+          // console.log("/" + req.query.categoryId + "/" + req.query.categoryId);
+          if (
+            sub.split("-", 1)[0] ==
+            "/" + req.query.categoryId + "/" + req.query.categoryId
+          ) {
+            try {
+              // console.log("substr", sub);
+              await dbx
+                .filesGetTemporaryLink({
+                  path: sub,
+                })
+                .then(function (response) {
+                  artentries[i].link = response.link;
+                  console.log(" linkr: ", response.link);
+                });
+            } catch (err) {
+              artentries[i].link = "https://i.imgur.com/33E6CfN.jpg";
+              console.log(" linkr: ", artentries[i].link);
+              console.log(" page catch err: ", err.message);
+            }
+          }
         }
+        res.render("artentries", {
+          artentries,
+          findScore,
+          findComplete,
+          DBX_API_KEY,
+          pageCategoryId,
+          categorySpecifics,
+          letterIndex,
+        });
       });
+
+    //  await ArtEntry.find({},async function (err, artentries) {
+    //     if (err) {
+    //       console.log("Art Entries page: ", err.message);
+    //     }
+    //     for (var i = 0; i < artentries.length; i++) {
+    //       if (artentries[i].folderId) {
+    //        await dbx.usersGetCurrentAccount().then(function (response) {
+    //           console.log("response", response);
+    //         });
+    //       }
+    //     }
+    //     res.render("artentries", {
+    //       artentries,
+    //       findScore,
+    //       DBX_API_KEY,
+    //       pageCategoryId,
+    //       categorySpecifics,
+    //       letterIndex,
+    //     });
+    //   })
+    //     .populate("judge")
+    //     .populate("score_general")
+    //     .exec((err, artEntryFound) => {
+    //       if (err) {
+    //         console.log("art etry populate: " + err.message);
+    //       }
+    //     });
   } catch (err) {
-    console.log("go to artentries page catch err: " + err.message);
+    console.log("go to artentries page catch err: ", err);
     res.redirect("/index");
   }
 });
@@ -136,6 +201,7 @@ router.get("/artentries", isLoggedIn, async function (req, res) {
 router.get("/artentries/:id", isLoggedIn, async (req, res) => {
   try {
     let pageCategoryId = req.query;
+
     let findScore = await GeneralScore.findOne({
       judge: req.user.id,
       entryId: req.params.id,
@@ -144,7 +210,7 @@ router.get("/artentries/:id", isLoggedIn, async (req, res) => {
       .populate("entryId")
       .exec();
 
-    var foundPage = {};
+    let foundPage = {};
     if (!findScore) {
       console.log("No existing score, creating new score");
       await GeneralScore.create({
@@ -157,6 +223,7 @@ router.get("/artentries/:id", isLoggedIn, async (req, res) => {
         entryId: req.params.id,
       }).exec();
     }
+
     let {
       judge: { judge },
       id,
