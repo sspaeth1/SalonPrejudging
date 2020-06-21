@@ -5,8 +5,9 @@ const express = require("express"),
   ArtEntry = require("../models/artEntry"),
   Category = require("../models/category"),
   GeneralScore = require("../models/score_general"),
+  JudgeGroups = require("../public/json/Groups2019 "),
   auth = require("../routes/auth"),
-  categorySpecifics = require("../public/json/categorySpecifics3.json"),
+  categorySpecifics = require("../public/json/categorySpecifics.js"),
   letterIndex = require("../public/json/LetterIndex.js");
 Dotenv = require("dotenv");
 const { isLoggedIn } = require("../middleware");
@@ -19,8 +20,6 @@ const Dropbox = require("dropbox").Dropbox;
 const config = {
   fetch: fetch,
   accessToken: DBX_API_KEY,
-  clientId: "tjz5col6y0kyqcs",
-  clientSecret: "nmoi6fqpdg4de74",
 };
 var dbx = new Dropbox(config);
 
@@ -29,13 +28,14 @@ var dbx = new Dropbox(config);
 //==============
 
 //INDEX route
-router.get("/index", function (req, res) {
+router.get("/index", async (req, res) => {
   ArtEntry.find({}, function (err, artentries) {
-    if (err) {
+    try {
+      res.render("index", { artentries, categorySpecifics });
+    } catch (err) {
       console.log("index page error: ", err.message);
     }
-    res.render("index", { artentries: artentries });
-  });
+  }).populate("assignedCategories");
 });
 
 //===========
@@ -47,14 +47,10 @@ router.get("/home", (req, res) => res.render("home"));
 
 // guidelines
 router.get("/generalGuidelines", (req, res) => res.render("generalGuidelines"));
-router.get("/guidelinesPrejudging", (req, res) =>
-  res.render("guidelinesPrejudging")
-);
+router.get("/guidelinesPrejudging", (req, res) => res.render("guidelinesPrejudging"));
 
 // Judging Groups
-router.get("/judgingGroups", isLoggedIn, (req, res) =>
-  res.render("judgingGroups")
-);
+router.get("/judgingGroups", isLoggedIn, (req, res) => res.render("judgingGroups"));
 
 // add users to judging group
 router.post("/judgingGroups", isLoggedIn, async (req, res) => {
@@ -67,14 +63,11 @@ router.post("/judgingGroups", isLoggedIn, async (req, res) => {
     // push category info into user's assignedCategories array
     // be sure to check if user assignedCategories already has
     // that category
-    let existsAlready = user.assignedCategories.find(
-      (category) => category.letter === letter
-    );
+    let existsAlready = user.assignedCategories.find((category) => category.letter === letter);
     if (!existsAlready) {
       user.assignedCategories.push({
         name: categories[category],
         letter: letter,
-        folderId: req.user.assignedCategories.folderId,
       });
     }
   });
@@ -86,17 +79,38 @@ router.post("/judgingGroups", isLoggedIn, async (req, res) => {
 
 // Award Winners
 router.get("/awardWinners", isLoggedIn, async (req, res) => {
-  // await GeneralScore.find({}, (err, scores) => {
-  //   GeneralScore.aggregate([
-  //     { avg_Gnrl_part1_1_message: { $avg: "$gnrl_part1_1_message" } },
-  //   ]);
+  let artentries = await ArtEntry.find({}).exec();
+  let score = await GeneralScore.find({}).populate("judge").populate("score_general").exec();
 
-  //   if (err) {
-  //     console.log(err.message);
-  //   }
-  //   res.render("awardWinnersFinal", { scores: scores });
-  // });
-  res.render("awardWinners");
+  res.render("awardWinners", { score, artentries, categorySpecifics, letterIndex, JudgeGroups });
+});
+
+// await GeneralScore.find({}, (err, scores) => {
+//   GeneralScore.aggregate([
+//     { avg_Gnrl_part1_1_message: { $avg: "$gnrl_part1_1_message" } },
+//   ]);
+
+//   if (err) {
+//     console.log(err.message);
+//   }
+//   res.render("awardWinnersFinal", { scores: scores });
+// });
+
+//Award Winners post
+
+router.post("/awardWinners", (req, res) => {
+  const { category, title } = req.body;
+
+  const update = title;
+
+  ArtEntry.findOneAndUpdate(req.params.title, update, (err, foundPAge) => {
+    if (err) {
+      console.log("update error: ", err.message);
+      res.render("/");
+    }
+
+    res.redirect("/artentries/" + req.params.id);
+  });
 });
 
 // appendix A
@@ -106,7 +120,7 @@ router.get("/appendixA", (req, res) => res.render("appendixA"));
 router.get("/appendixB", (req, res) => res.render("appendixB"));
 
 // My Judging Categories
-router.get("/artentries", isLoggedIn, async function (req, res) {
+router.get("/artentries/", isLoggedIn, async function (req, res) {
   try {
     let pageCategoryId = req.query;
 
@@ -119,24 +133,20 @@ router.get("/artentries", isLoggedIn, async function (req, res) {
       complete: true,
     }).exec();
 
+    // var page = req.params.page || 1;
+    // var r_limit = req.params.limit || 2;
+    // var limit = parseInt(r_limit);
+
     await ArtEntry.find({})
       .populate("judge")
       .populate("score_general")
       .then(async (artentries) => {
         console.log(" req.query", req.query.categoryId);
         for (var i = 0; i < artentries.length; i++) {
-          let sub =
-            "/" +
-            req.query.categoryId +
-            "/" +
-            artentries[i].title.split(" ", 1)[0] +
-            ".jpg";
+          let sub = "/" + req.query.categoryId + "/" + artentries[i].title.split(" ", 1)[0] + ".jpg";
           // console.log(sub.split("-", 1)[0]);
           // console.log("/" + req.query.categoryId + "/" + req.query.categoryId);
-          if (
-            sub.split("-", 1)[0] ==
-            "/" + req.query.categoryId + "/" + req.query.categoryId
-          ) {
+          if (sub.split("-", 1)[0] == "/" + req.query.categoryId + "/" + req.query.categoryId) {
             try {
               // console.log("substr", sub);
               await dbx
@@ -155,6 +165,12 @@ router.get("/artentries", isLoggedIn, async function (req, res) {
           }
         }
         res.render("artentries", {
+          // title: "pagination",
+          // result: result.docs,
+          // total: result.total,
+          // limit: result.limit,
+          // page: page,
+          // pages: result.pages,
           artentries,
           findScore,
           findComplete,
@@ -322,10 +338,7 @@ router.get("/artentries/:id/edit", function (req, res) {
 //Update route
 router.put("/artentries/:id", function (req, res) {
   // (id, new data, callback )
-  ArtEntry.findByIdAndUpdate(req.params.id, req.body.artentries, function (
-    err,
-    foundPage
-  ) {
+  ArtEntry.findByIdAndUpdate(req.params.id, req.body.artentries, function (err, foundPage) {
     if (err) {
       console.log("update error: ", err.message);
       res.render("/");

@@ -14,7 +14,6 @@ var UserSchema = new mongoose.Schema({
     {
       name: String, //'Still Media Editorial'
       letter: String, //'B'
-      folderId: String, //DBX folder viewed in file endpoint or from created link from file
     },
   ],
   // assignedCategories: [

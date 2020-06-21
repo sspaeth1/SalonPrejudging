@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const mongoosePaginate = require("mongoose-paginate-v2");
 
 // Mongoose model ART ENTRIES SCHEMA config
 var artEntrySchema = new mongoose.Schema({
@@ -14,7 +15,6 @@ var artEntrySchema = new mongoose.Schema({
   intended_purpose: String,
   rating: Number,
   category: String,
-  folderId: String,
   star: { type: Boolean, default: false },
   excellenceWinner: { type: Boolean, default: false },
   meritWinner: { type: Boolean, default: false }, //ArtEntry.find({meritWinner: true})
@@ -24,6 +24,8 @@ var artEntrySchema = new mongoose.Schema({
   ],
   created: { type: Date, default: Date.now },
 });
+
+artEntrySchema.plugin(mongoosePaginate);
 
 var ArtEntry = mongoose.model("ArtEntry", artEntrySchema);
 

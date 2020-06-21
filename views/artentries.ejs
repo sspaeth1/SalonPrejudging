@@ -1,14 +1,11 @@
 <%- include('partials/header')%>
 
-
 <script>
-    //active menu highlight
-    $(document).ready(function(){
-      $('li.nav-item.dropdown.myCategories').attr("style", "background-color:orange;");
-      $('a.nav-link.dropdown-toggle.myCategories').attr("style", "color:#fff;");
-      // document.querySelector('div#item36 img').parentElement.parentElement.style.border = "thin solid #467946";
-    });
-  </script>
+   $(document).ready(function(){
+          $("li.nav-item.dropdown.myCategories").attr("style", "background-color:orange;");
+          $("span.nav-link.dropdown-toggle.myCategories").attr("style", "color:#fff;");
+       });
+</script>
 
 <h1  class="fullSpan">
   <span class="darkOrange font-weight-bold"><%=  pageCategoryId.categoryId %>: <%= categorySpecifics[letterIndex.indexOf(pageCategoryId.categoryId)].type  %> </span>
@@ -80,7 +77,7 @@
          <%    let buttonTruth = []; 
             buttonTruth.push(JSON.stringify(findComplete[j].entryId).substring(1,25) ===  artentries[i].id);
            
-            console.log(buttonTruth, '\n')  %> 
+            %> 
             <% if( buttonTruth.some( e=>e === true) ){ %>
              <div class="">   <a href="/artentries/<%= artentries[i]._id %>?<%= pageCategoryId.categoryId %>"  name="<%= artentries[i]._id %>"  class="btn btn-success lg scoreThisEntryComplete"> Entry Scored</a></div> 
             <% } else{  %>

@@ -30,10 +30,8 @@
         <ul class="">
           <% if(!currentUser){ %>
             <li class=" userProfileStatus nav-link"> <a href="/login">Login</a></li>
-            <!-- <li class="nav-item"><a href="/register" class="nav-link">Register</a></li> -->
           <%  } else{   %>
             <li class=" userProfileStatus ">
-               <!-- <img src="/images/svg/avatar.svg" alt="avatar"> -->
               <a href="/profile/<%= currentUser.id %>" class="orange font-weight-bold nav-link">
               
                 <%= currentUser.username %>
@@ -55,7 +53,6 @@
      
     </div>
   </nav>
-
   <nav id="pageNav" class="navbar navbar-expand-lg">
     <div class="container-fluid">
 
@@ -64,52 +61,52 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-      
-              <% if(!currentUser){ %>
-
-              <%  } else{   %>
+          
+              <% if(currentUser){ %>  
                 <li class="nav-item dropdown myCategories">
-                  <a class="nav-link dropdown-toggle myCategories" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%= currentUser.username %>'s Judging Catergories
-              <% } %>
-            </a>
-
-   
-            
-              <% if(currentUser){ %>
+                  <span class="nav-link dropdown-toggle myCategories" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= currentUser.username %>'s Judging Categories  </span>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
                 <% currentUser.assignedCategories.forEach(category => { %>
-                  <a class="dropdown-item" href="../artentries?categoryId=<%= category.letter %>"> <%= category.letter %>: <%= category.name %> </a> 
-               <% }); %>
-              </div>
+               
+                  <a class="dropdown-item" href="../artentries?categoryId=<%= category.letter %>" ><%= category.letter %>: <%= category.name %> </a>  
+                 <% }); %>
+              
+                </div>  
+                </li>
+              <%  } else{   %>
+  
+                <li class="nav-item myCategories">
+                  <a class="nav-link  myCategories" href="../appendixA" id="" role="button"  aria-haspopup="true" >
+                     Categories   </a></li>
               <%  } %>   
                   
          
           </li>
           <li class="nav-item dropdown guidelines ">
-            <a class="nav-link dropdown-toggle guidelines" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="nav-link dropdown-toggle guidelines" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Guidelines
-            </a>
+            </span>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
               <a class="dropdown-item" href="guidelinesPrejudging">Guidelines for Salon Prejudging</a>
               <a class="dropdown-item" href="generalGuidelines">General Salon Judging Guidelines </a>
             </div>
           </li>
-          <li class="nav-item nav-border">
+          <li class="nav-item nav-border judgingGroups">
             <a class="nav-link dropdown-toggle-off" href="/judgingGroups">
             Judging Groups
             </a>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown awardWinners">
               <a class="nav-link dropdown-toggle-off" href="/awardWinners">
                 Award Winners
               </a>
           </li> 
           <li class="nav-item dropdown appendix">
-            <a class="nav-link dropdown-toggle appendix" href="#" id="navbarDropdown5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="nav-link dropdown-toggle appendix" href="#" id="navbarDropdown5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Appendices
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+            </span>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown5">
               <a class="dropdown-item" href="/appendixA">Appendix A</a>
               <a class="dropdown-item" href="/appendixB">Appendix B</a>
             </div>

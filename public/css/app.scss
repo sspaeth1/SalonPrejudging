@@ -342,6 +342,10 @@ input.form-control-lg.m-2:focus{
     left: 30px;
 }
 
+span#navbarDropdown1, span#navbarDropdown3, span#navbarDropdown5 {
+    color: #3faacc;
+}
+
 	.signInBox {
 	background-color: #fff;
 	padding: 30px 30px 30px 40px;
@@ -458,12 +462,11 @@ div.centerTextContainer h1 {
 }
 
 div.centerTextContainer h2 {
-    font-size: 1rem;
-	font-weight: bold;
-	width: 30%;
+    font-size: 1.5rem;
 }
+
 div.centerTextContainer h3 {
-    font-size: .75rem;
+    font-size: 1.5rem;
 	font-weight: bold;
 	border-bottom: 1px solid $orange;
 	width:30%;
@@ -479,7 +482,7 @@ div.centerTextContainer h3 {
 }
 
 .indexLinks{
-	font-size: 1rem;
+	font-size: 1.5rem;
 	margin-left: 3%;
 }
 
@@ -576,7 +579,6 @@ h1.formField{
 #pageNav{
 	font-family: 'proximaNova_reg', sans-serif;
 	font-size: 1.2rem;
-	font-weight: 300;
 	background-color:$gray-100;
     color: $blueDark;
 }
@@ -585,7 +587,7 @@ h1.formField{
   }
 
 .navbar .nav-item{
-	padding-left: 50px;
+	padding-left:15px;
 }
 
 .navbar .nav-item:not(:last-child) {
@@ -742,9 +744,28 @@ span.labelAward{
 	display: block;
 }
 
-.centerTextContainer .awardBgRow.bg:nth-child(even){
-	background-color: #eee;
+.centerTextContainer .awardBgRow{
     padding: 30px 0;
+}
+
+
+label[for="Award_of_Excelence"], label[for="Award_of_Merit"]{
+	font-size: 1.25rem;
+    text-transform: uppercase;
+    position: relative;
+    bottom: -4px;
+    padding-top: 20px;
+}
+
+select#Award_of_Excelence, select#Award_of_Merit{
+	border: 1px solid orange;
+	min-height: 52px;
+	max-width: 98%;
+	min-width: 98%;
+	
+}
+input.awardExcelence.btn.btn-primary, input.awardMerit.btn.btn-primary{
+	margin-top:15px;
 }
 
 ///// Appendix
@@ -900,6 +921,10 @@ button[class="btn btn-link"]{
   form.form-group input[type="submit"]{
     max-width: 92%;
     margin: 0 2% !important;
+  }
+
+  form.Award_of_Excelence{
+	  padding-left: 1.5rem;
   }
 
 // .img-thumbnail.m-2{

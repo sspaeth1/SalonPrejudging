@@ -10,69 +10,76 @@
 
 
 
+
 <h1  class="fullSpan"> Award Winners</h1>
-<h1>PAGE DEVELOPEMENT IN PROGRESS </h1>
 
 <% if( currentUser != currentUser.Admin){ %>
     <div class="centerTextContainer p-3 ">
-        <h1 class="text-left">Group 1</h1>
+        <h1 class="text-left">  <% for(let i =0 ; i < JudgeGroups.length  ; i++){  %>
+            <h1>Group <%= Object.keys(JudgeGroups[i]) %></h1>   
+      
+    </h1>
         <div class="awardBgRow bg">
-            <h2 class="text-left pt-3 pl-4">A1: String,  //  Didactic/Instructional - Non-Commercial   </h2>
+            <h2 class="text-left pt-3 pl-4">
+                <%=letterIndex[i]+ ": " + categorySpecifics[i].type.trim() + " " + categorySpecifics[i].subtype.trim() + " " +  categorySpecifics[i].specific.trim() %> </h2>
                 
-                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
-                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
-            <h2 class="text-left pt-3 pl-4">A2: String,  //  Didactic/Instructional - Commercial   </h2> 
-                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
-                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>                
-            <h2 class="text-left pt-3 pl-4">B: String,  //  Still Media - Editorial</h2>     
-                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
-                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
-            <h2 class="text-left pt-3 pl-4">C: String,  //  Still Media - Advertising and Marketing/Promotional</h2>     
-                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
-                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
-            <h2 class="text-left pt-3 pl-4"> D: String,  //  Still Media - Medical Legal</h2>     
-                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
-                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
-            <h2 class="text-left pt-3 pl-4"> E: String,  //  Still Media - Illustrated Textbook (Traditionally printed book)</h2>     
-                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
-                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
-            <h2 class="text-left pt-3 pl-4">  F1: String,  //  Animation-Didactic/Instructional - Non-Commercial</h2>     
-                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
-                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
-            <h2 class="text-left pt-3 pl-4"> G1: String,  //  Interactive Media - Didactic/Instructional-Non-Commercial</h2>     
-                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
-                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
-            <h2 class="text-left pt-3 pl-4"> G3: String,  //  Interactive Media - Advertising and Marketing/Promotional</h2>     
-                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
-                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
-             <h2 class="text-left pt-3 pl-4"> G4: String,  //  Interactive Media – Gaming</h2>     
-                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
-                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
-             <h2 class="text-left pt-3 pl-4">G5: String,  //  Interactive Media – Interactive Textbook</h2>     
-                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
-                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
-             <h2 class="text-left pt-3 pl-4">I1: String,  //  Didactic/Instructional – Anatomical/ Pathological </h2>     
-                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
-                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
-             <h2 class="text-left pt-3 pl-4"> I2: String,  //  Didactic/Instructional – Surgical/Clinical Procedures</h2>     
-                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
-                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
-            <h2 class="text-left pt-3 pl-4"> I3: String,  //  Didactic/Instructional – Molecular/Biological/Life Sciences</h2>     
-                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
-                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
-             <h2 class="text-left pt-3 pl-4"> J: String,  //  Didactic/Instructional – Editorial </h2>     
-                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
-                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
-             <h2 class="text-left pt-3 pl-4"> K: String,  //  Didactic/Instructional – Advertising and Marketing/Promotional</h2>     
-                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
-                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
-             <h2 class="text-left pt-3 pl-4"> L: String,  //  Student Motion Media -  Animation</h2>     
-                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
-                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
-             <h2 class="text-left pt-3 pl-4">  M: String,  //  Student Interactive Section - Interactive </h2>     
-                <h3> Award of Exceleence:  ENTER DYNAMIC WINNER HERE </h3>
-                <h3> Award of Merit:       ENTER DYNAMIC WINNER HERE</h3>
-        
+            <form action="/awardWinners" method="POST" class="Award_of_Excelence">
+                  <label for="Award_of_Excelence"> Award of Excelence:        </label>
+              <select name="Award_of_Excelence" id="Award_of_Excelence">
+                 <% for( let j = 0; j < artentries.length ; j++){ 
+                    if( letterIndex[i]  === artentries[j].category){ %>
+                  <option value=""> <%= artentries[j].title %> </option>
+                 <% } %> 
+                <% } %> 
+              </select>
+              <input type="submit" class="awardExcelence btn btn-primary">
+              
+            </form>
+            <h2><a href="">+ Additional Award of Excellence</a> </h2>
+
+            <br>
+        <div id="AwardOfMerit">
+            <form action="/awardWinners" method="POST" class="Award_of_Excelence">
+                  <label for="Award_of_Merit"> Award of Merit:      </label>
+              <select name="Award_of_Merit" id="Award_of_Merit">
+                 <% for( let j = 0; j < artentries.length ; j++){ 
+                    if( letterIndex[i]  === artentries[j].category){ %>
+                  <option value=""> <%= artentries[j].title %> </option>
+                 <% } %> 
+                <% } %> 
+              </select>
+              <input type="submit" class="awardMerit btn btn-primary">
+            </form>
+        </div>
+           
+
+<script>
+function addAwardMerit(){
+
+    <form action="/awardWinners" method="POST" class="Award_of_Excelence">
+                  <label for="Award_of_Merit"> Award of Merit:      </label>
+              <select name="Award_of_Merit" id="Award_of_Merit">
+                 <% for( let j = 0; j < artentries.length ; j++){ 
+                    if( letterIndex[i]  === artentries[j].category){ %>
+                  <option value=""> <%= artentries[j].title %> </option>
+                 <% } %> 
+                <% } %> 
+              </select>
+              <input type="submit" class="awardMerit btn btn-primary">
+              
+            </form>
+            <p><a href="#" onclick="removeAwardMerit()"> X </a>  </p>
+
+}    
+
+function removeAwardMerit(){
+    
+}
+</script>
+
+            <h2><a href=""  onclick="addAwardMerit()">+ Additional Award of Merit</a> </h2>
+            <hr>
+  <% } %>
         </div>
     </div>
 
