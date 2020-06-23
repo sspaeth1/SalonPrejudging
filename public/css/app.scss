@@ -188,10 +188,15 @@ section#scoring h1 span{
 } 
 
 .artEntriesTitle{
-	min-height: 390px;
+	min-height:425px;
     background-color: #eee;
     padding: 5%;
 }
+
+.artEntriesTitle h3{
+font-weight: 600;
+}
+
 
 .scoreThisEntry{
     position: absolute;
@@ -745,11 +750,27 @@ span.labelAward{
 }
 
 .centerTextContainer .awardBgRow{
-    padding: 30px 0;
+	padding: 30px 0;
+	background: #eee;
+}
+
+hr.award{
+	margin-bottom: 150px;
 }
 
 
-label[for="Award_of_Excelence"], label[for="Award_of_Merit"]{
+
+
+
+
+
+.additonalAward, .addAwardExcellence, .addAwardMerite{
+	padding-left: 1.5rem;
+	padding-top: 10px;
+}
+
+
+label[for="Award_of_Excellence"], label[for="Award_of_Merit"]{
 	font-size: 1.25rem;
     text-transform: uppercase;
     position: relative;
@@ -757,16 +778,25 @@ label[for="Award_of_Excelence"], label[for="Award_of_Merit"]{
     padding-top: 20px;
 }
 
-select#Award_of_Excelence, select#Award_of_Merit{
+select#Award_of_Excellence, select#Award_of_Merit{
 	border: 1px solid orange;
 	min-height: 52px;
-	max-width: 98%;
-	min-width: 98%;
+	max-width: 90%;
+	min-width: 95%;
 	
 }
-input.awardExcelence.btn.btn-primary, input.awardMerit.btn.btn-primary{
+input.awardExcellence.btn.btn-primary, input.awardMerit.btn.btn-primary{
 	margin-top:15px;
 }
+
+img.removeAward{
+	opacity: .5;
+}
+img.removeAward:hover{
+	opacity: 1;
+}
+
+
 
 ///// Appendix
 
@@ -923,7 +953,7 @@ button[class="btn btn-link"]{
     margin: 0 2% !important;
   }
 
-  form.Award_of_Excelence{
+  form.Award_of_Excellence,   form.Award_of_Merit{
 	  padding-left: 1.5rem;
   }
 
@@ -959,7 +989,18 @@ span.regAdmin{
 	transform: translate(0, -10px);
 }
 
+// register
+select#judgingGroup {
+    width: 90%;
+    min-height: 51px;
+    margin-left: 1.5%;
+    transform: translateY(10px);
+	margin-bottom: 20px;
+}
 
+form.form-group input {
+    border: 1px solid #535353;
+}
 
 
   //---- Appendix B read more

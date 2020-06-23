@@ -12,34 +12,38 @@
 
 
 <h1  class="fullSpan"> Award Winners</h1>
-
+  <div class="centerTextContainer p-3 ">
+  <h1>Group <%= Object.keys(JudgeGroups[0]) %></h1>  
 <% if( currentUser != currentUser.Admin){ %>
-    <div class="centerTextContainer p-3 ">
+  
         <h1 class="text-left">  <% for(let i =0 ; i < JudgeGroups.length  ; i++){  %>
-            <h1>Group <%= Object.keys(JudgeGroups[i]) %></h1>   
+           
       
     </h1>
         <div class="awardBgRow bg">
             <h2 class="text-left pt-3 pl-4">
                 <%=letterIndex[i]+ ": " + categorySpecifics[i].type.trim() + " " + categorySpecifics[i].subtype.trim() + " " +  categorySpecifics[i].specific.trim() %> </h2>
                 
-            <form action="/awardWinners" method="POST" class="Award_of_Excelence">
-                  <label for="Award_of_Excelence"> Award of Excelence:        </label>
-              <select name="Award_of_Excelence" id="Award_of_Excelence">
+            <form action="/awardWinners" method="POST" class="Award_of_Excellence">
+                  <label for="Award_of_Excellence"> Award of Excellence:        </label>
+              <select name="Award_of_Excellence" id="Award_of_Excellence">
                  <% for( let j = 0; j < artentries.length ; j++){ 
                     if( letterIndex[i]  === artentries[j].category){ %>
                   <option value=""> <%= artentries[j].title %> </option>
                  <% } %> 
                 <% } %> 
-              </select>
-              <input type="submit" class="awardExcelence btn btn-primary">
+              </select> 
+              <span><img src="/images/x.png" class="removeAward" onclick="removeAwardExcellence()"  alt="X remove item"> </span>
+              <input type="submit" class="awardExcellence btn btn-primary">
               
-            </form>
-            <h2><a href="">+ Additional Award of Excellence</a> </h2>
+            </form> 
+            
+            <h2 class="addAwardExcellence" onclick="addAwardExcellence()"><a href="#" >+ Additional Award of Excellence</a> </h2>
+        </div>
 
             <br>
         <div id="AwardOfMerit">
-            <form action="/awardWinners" method="POST" class="Award_of_Excelence">
+            <form action="/awardWinners" method="POST" class="Award_of_Merit">
                   <label for="Award_of_Merit"> Award of Merit:      </label>
               <select name="Award_of_Merit" id="Award_of_Merit">
                  <% for( let j = 0; j < artentries.length ; j++){ 
@@ -48,40 +52,45 @@
                  <% } %> 
                 <% } %> 
               </select>
+              <span><img src="/images/x.png"   class="removeAward"  onclick="removeAwardMerit()"  alt="X remove item"> </span>
               <input type="submit" class="awardMerit btn btn-primary">
             </form>
-        </div>
-           
-
+       
+            <h2 class="additonalAward" onclick="addAwardMerit()"><a href="#" >+ Additional Award of Merit</a> </h2>
+            <hr class="award">
+    </div>
 <script>
-function addAwardMerit(){
 
-    <form action="/awardWinners" method="POST" class="Award_of_Excelence">
-                  <label for="Award_of_Merit"> Award of Merit:      </label>
-              <select name="Award_of_Merit" id="Award_of_Merit">
-                 <% for( let j = 0; j < artentries.length ; j++){ 
-                    if( letterIndex[i]  === artentries[j].category){ %>
-                  <option value=""> <%= artentries[j].title %> </option>
-                 <% } %> 
-                <% } %> 
-              </select>
-              <input type="submit" class="awardMerit btn btn-primary">
-              
-            </form>
-            <p><a href="#" onclick="removeAwardMerit()"> X </a>  </p>
+function addAwardExcellence(){
+    let getLastEntry = document.querySelector('form.Award_of_Excellence');
+
+    let addAward = document.createElement('div');
+    let test = "test input";
+ 
+    addAward.innerHTML =  newExcellenceForm;
+      getLastEntry.appendChild(addAward);
+}  
+
+function removeAwardExcellence(){
+  let el = document.querySelector('form.Award_of_Excellence');
+   el.parentElement.removeChild(el)
+}
+
+
+
+function addAwardMerit(){
 
 }    
 
 function removeAwardMerit(){
-    
+    let el = document.querySelector('form.Award_of_Merit');
+   el.parentElement.removeChild(el)
 }
+
 </script>
 
-            <h2><a href=""  onclick="addAwardMerit()">+ Additional Award of Merit</a> </h2>
-            <hr>
   <% } %>
-        </div>
-    </div>
+        
 
 
 <% }else{ %>
@@ -90,35 +99,9 @@ function removeAwardMerit(){
 
 
 
-    <div class="centerTextContainer p-3 ">
-        <h1 class="text-left">Group 1</h1>
-        <div class="awardBgRow bg">
-            <h2 class="text-left pt-3 pl-4">G4:Interactive Media-Gaming</h2>
-            <div class="row row-cols-2 d-flex pb-2 pt-3 pl-5 justify-content-around">
-                <div class="">
-                <form class="award" action="/" method="POST">
-                    <label for="Award of Excellence" name="Award of Excellence" class="labelAward">
-                    <span class="labelAward">Award of Excellence</span> 
-                        <input type="text" class="inputBox">
-                    </label>
-                </form>
-                </div>
-                <div class="">
-                <form class="award" action="/" method="POST">
-                    <label for="G4:Interactive Media-Gaming" name="Award of merit" >
-                        <span class="labelAward">Award of merit</span> 
-                        <select class="pulldown" name="G4:Interactive Media-Gaming" id="">
-                            <option value="Entry 1"> Entry 1</option>
-                            <option value="Entry 2"> Entry 2</option>
-                            <option value="Entry 3"> Entry 3</option>
-                        </select>
-                    </label>
-                    <h2 class="addAwardMeritInput text-weight-bold pt-2"> <a href="#" class="orange"> + Additional Award of Merit </a></div>
-                </form>
-                </div>
-            </div>        
+    <h1>Is Admin</h1>     
 
-       <% } %>
+<% } %>
 
          
 </div>

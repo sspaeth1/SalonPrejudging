@@ -8,13 +8,19 @@
 </script>
 
 
+
+
 <h1  class="fullSpan">Judging Groups</h1>
 
   <article class="appendixContainer">
 
   <section>
     <h1 class="ratingFormHeader">2020 Groups</h1>
-    <h2> Admin viewBox</h2>
+    
+    
+    <% if(currentUser.Admin){ %>
+    
+      <h2> Admin viewBox</h2>
 
     
     <div class="groups">
@@ -200,8 +206,9 @@
 
 
 
-  <hr/>
 
+<% }else{ %>
+  <hr/>
 
   <h1 class="ratingFormHeader">2019 Groups</h1>
   <p></p>
@@ -249,6 +256,9 @@
     
     
   </p>
+
+
+<% } %>
   
 </article>
 

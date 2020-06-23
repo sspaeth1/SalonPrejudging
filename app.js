@@ -23,17 +23,12 @@ const app = express();
 
 // //mongoose connect mongo DB Atlas
 mongoose
-  .connect(
-    "mongodb+srv://spaeth2:" +
-      alt +
-      "@ss-apps-vtkpg.mongodb.net/ami_prejudge?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true,
-      useCreateIndex: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false,
-    }
-  )
+  .connect("mongodb+srv://spaeth2:" + alt + "@ss-apps-vtkpg.mongodb.net/ami_prejudge?retryWrites=true&w=majority", {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+  })
   .then(() => {
     //Populate Art Entries from Js/JSON file. created from spreadsheet
     ArtEntry.find().then((res) => {

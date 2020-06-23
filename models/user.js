@@ -16,12 +16,8 @@ var UserSchema = new mongoose.Schema({
       letter: String, //'B'
     },
   ],
-  // assignedCategories: [
-  //   {
-  //     type: mongoose.Schema.Types.ObjectId,
-  //     ref: "user",
-  //   },
-  // ],
+  judgingGroup: String,
+  // assignedCategories: [{ type: mongoose.Schema.Types.ObjectId, ref: "Category" }],
   isAdmin: { type: Boolean, default: false },
   created: { type: Date, default: Date.now },
 });

@@ -9727,6 +9727,18 @@ body {
   font-size: .75rem;
 }
 
+div.artEntriesTitle .threeQuarterRem {
+  font-size: 1.5rem;
+}
+
+div.artEntriesTitle p {
+  font-size: 2rem;
+}
+
+.artEntriesTitle h3{
+  font-weight: 600;
+  }
+
 .hidden {
   visibility: hidden;
 }
@@ -9836,7 +9848,7 @@ section#scoring h1 span {
 }
 
 .artEntriesTitle {
-  min-height: 405px;
+  min-height: 525px;
   background-color: #eee;
   padding: 5%;
 }

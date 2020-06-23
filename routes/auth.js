@@ -9,6 +9,7 @@ const express = require("express"),
   User = require("../models/user"),
   ArtEntry = require("../models/artEntry");
 const { isLoggedIn } = require("../middleware");
+const JudgeGroups = require("../public/json/Groups2019 ");
 
 // ===================
 // Authenticate routes
@@ -34,6 +35,8 @@ router.post("/register", function (req, res) {
     lastName: req.body.lastName,
     email: req.body.email,
     avatar: req.body.avatar,
+    judge: req.body.judge,
+    judgingGroup: req.body.judgingGroup,
   });
 
   User.register(newUser, req.body.password, isLoggedIn, function (err, user) {
@@ -100,10 +103,7 @@ router.get("/profile/:id/edit", function (req, res) {
 //Update user
 router.put("/profile/:id/", function (req, res) {
   // (id, new data, callback )
-  User.findByIdAndUpdate(req.params.id, req.body.user, function (
-    err,
-    foundPage
-  ) {
+  User.findByIdAndUpdate(req.params.id, req.body.user, function (err, foundPage) {
     if (err) {
       console.log("error");
       res.render("/");

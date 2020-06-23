@@ -51,10 +51,10 @@
          
 
         <a href="/artentries/<%= artentries[i]._id %>?<%= pageCategoryId.categoryId %>" >  
-            <img src="<%= artentries[i].link %>" class="card-img-top" alt="Image for scoring" > </a>
+         <img src="<%= artentries[i].link %>" class="card-img-top" alt="Image for scoring" > </a>
 
   
-<!--
+<!--  
 //             <video width="320" height="240" controls>
 //   <source src="https://dl.dropboxusercontent.com/apitl/1/AcA3IJewZChcApqreikqF5YaCGRiFZ0dQkFi3EywmjQq3wNodI-11TUOdvejiBbKiRrBSIOyaz_BY5XxcX1-ojoyOVPg4RJctITGGbLLJlORGlMBLikCp0lw6f5SgrzJPDvYbiHU14iU7RVh173mLG8ldgwQ3Jyu2ujlwvzVb6-thYEE1tXEvcU5VVGXw0uF7d5e2CVf52maW8qSdvuxg7QglnReVawVbtAJGlvQqH3K8cDzZzIURwYJohyAH-0h-HDdkYIxEG8DXgGq1Rv_h7t-__vf7QGEtpcfWt_yQxgP6Yf8EuSWzLy_niSCTKgS6IX7_f6sSyyitvvBzDr4eWCy_nYY6dRAi3TEewCqilweA5p4uPr6f6vQ9rEid_aVodY" type="video/mp4">
 
@@ -63,10 +63,14 @@
 -->
         </div>
         <div class="artEntriesTitle">  
-           
-            <h5>
-               <%=  artentries[i].title.substring(0,150) %>...
-            </h5>
+         
+           <h3>
+               <% if (artentries[i].title.toString().length <= 100){ %>
+                <%= artentries[i].title  %>
+                <% } else{ %>
+                  <%= artentries[i].title.substring(0,100)+"..." %>
+                <% } %>
+            </h3>
             <p> <div class="orange font-weight-bolder threeQuarterRem ">Primary Audience: </div> <%= artentries[i].primaryAudience %></p>
             <p> <div class="orange font-weight-bolder threeQuarterRem ">Intended purpose: </div><%= artentries[i].intended_purpose.substring(0,50) %>... </p> 
            
