@@ -323,6 +323,18 @@ router.get("/artentries/:id", isLoggedIn, async (req, res) => {
   }
 });
 
+//Sample entry
+router.get("/SampleEntry", function (req, res) {
+  ArtEntry.findById(req.params.id, function (err, foundPage) {
+    if (err) {
+      console.log("redirect id edit");
+      res.redirect("index");
+    }
+
+    res.render("categories/showSample", { artentries: foundPage, DBX_API_KEY });
+  });
+});
+
 //EDIT ROUTE
 router.get("/artentries/:id/edit", function (req, res) {
   ArtEntry.findById(req.params.id, function (err, foundPage) {
