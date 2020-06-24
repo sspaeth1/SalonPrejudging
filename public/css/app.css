@@ -10278,6 +10278,14 @@ div.ui-accordion-content li {
   border: 0 !important;
 }
 
+.awardContainer {
+  border: 1px solid #c8c8c8;
+  margin-bottom: 60px;
+  -webkit-box-shadow: 5px 13px 5px -2px #bdbdbd;
+  -moz-box-shadow: 5px 13px 5px -2px #bdbdbd;
+  box-shadow: 5px 13px 5px -2px #bdbdbd;
+}
+
 input.inputBox {
   border: 1px solid orange;
   height: 40px;
@@ -10299,11 +10307,7 @@ span.labelAward {
 
 .centerTextContainer .awardBgRow {
   padding: 30px 0;
-  background: #eee;
-}
-
-hr.award {
-  margin-bottom: 150px;
+  background: #f9f9f9;
 }
 
 .additonalAward, .addAwardExcellence, .addAwardMerite {
@@ -10326,7 +10330,7 @@ select#Award_of_Excellence, select#Award_of_Merit {
   min-width: 95%;
 }
 
-input.awardExcellence.btn.btn-primary, input.awardMerit.btn.btn-primary {
+input.awardExcellence.btn.btn-warning, input.awardMerit.btn.btn-warning {
   margin-top: 15px;
 }
 

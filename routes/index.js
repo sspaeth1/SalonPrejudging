@@ -5,10 +5,10 @@ const express = require("express"),
   ArtEntry = require("../models/artEntry"),
   Category = require("../models/category"),
   GeneralScore = require("../models/score_general"),
-  JudgeGroups = require("../public/json/Groups2019 "),
+  JudgeGroups = require("../public/json/Groups2019"),
   auth = require("../routes/auth"),
   categorySpecifics = require("../public/json/categorySpecifics.js"),
-  letterIndex = require("../public/json/LetterIndex.js");
+  letterIndex = require("../public/json/LetterIndex.json");
 Dotenv = require("dotenv");
 const { isLoggedIn } = require("../middleware");
 var fetch = require("isomorphic-fetch");
@@ -21,7 +21,7 @@ const config = {
   fetch: fetch,
   accessToken: DBX_API_KEY,
 };
-var dbx = new Dropbox(config);
+const dbx = new Dropbox(config);
 
 //==============
 //RESTful routes
@@ -31,7 +31,7 @@ var dbx = new Dropbox(config);
 router.get("/index", async (req, res) => {
   ArtEntry.find({}, function (err, artentries) {
     try {
-      res.render("index", { artentries, categorySpecifics });
+      res.render("index", { artentries, categorySpecifics, JudgeGroups });
     } catch (err) {
       console.log("index page error: ", err.message);
     }
@@ -46,11 +46,11 @@ router.get("/index", async (req, res) => {
 router.get("/home", (req, res) => res.render("home"));
 
 // guidelines
-router.get("/generalGuidelines", (req, res) => res.render("generalGuidelines"));
-router.get("/guidelinesPrejudging", (req, res) => res.render("guidelinesPrejudging"));
+router.get("/generalGuidelines", (req, res) => res.render("generalGuidelines", { JudgeGroups }));
+router.get("/guidelinesPrejudging", (req, res) => res.render("guidelinesPrejudging", { JudgeGroups }));
 
 // Judging Groups
-router.get("/judgingGroups", isLoggedIn, (req, res) => res.render("judgingGroups"));
+router.get("/judgingGroups", isLoggedIn, (req, res) => res.render("judgingGroups", { JudgeGroups }));
 
 // add users to judging group
 router.post("/judgingGroups", isLoggedIn, async (req, res) => {
@@ -73,7 +73,7 @@ router.post("/judgingGroups", isLoggedIn, async (req, res) => {
   });
   // save user
   await user.save();
-  res.render("judgingGroups");
+  res.render("judgingGroups", { JudgeGroups });
 });
 // create POST route
 
@@ -114,10 +114,10 @@ router.post("/awardWinners", (req, res) => {
 });
 
 // appendix A
-router.get("/appendixA", (req, res) => res.render("appendixA"));
+router.get("/appendixA", (req, res) => res.render("appendixA", { JudgeGroups }));
 
 // appendix B
-router.get("/appendixB", (req, res) => res.render("appendixB"));
+router.get("/appendixB", (req, res) => res.render("appendixB", { JudgeGroups }));
 
 // My Judging Categories
 router.get("/artentries/", isLoggedIn, async function (req, res) {
@@ -177,6 +177,7 @@ router.get("/artentries/", isLoggedIn, async function (req, res) {
           DBX_API_KEY,
           pageCategoryId,
           categorySpecifics,
+          JudgeGroups,
           letterIndex,
         });
       });
@@ -272,6 +273,17 @@ router.get("/artentries/:id", isLoggedIn, async (req, res) => {
       anim_part2_9_craftsmanship = null,
       anim_part2_10_motion_fx = null,
       anim_part2_11_sound = null,
+      intractv_part1_1_message = null,
+      intractv_part1_2_audience = null,
+      intractv_part1_3_problemSolving = null,
+      intractv_part1_4_intractvUse = null,
+      intractv_part1_5_accuracy = null,
+      intractv_part1_6_clarity = null,
+      intractv_part2_7_technique = null,
+      intractv_part2_8_UI = null,
+      intractv_part2_9_draftsman_craftsmanship = null,
+      intractv_part2_10_usability = null,
+      intractv_part2_11_functionality = null,
       notes,
       complete,
     } = findScore;
@@ -284,6 +296,7 @@ router.get("/artentries/:id", isLoggedIn, async (req, res) => {
       id,
       notes,
       complete,
+      JudgeGroups,
       letterIndex,
       pageCategoryId,
       categorySpecifics,
@@ -316,6 +329,17 @@ router.get("/artentries/:id", isLoggedIn, async (req, res) => {
       anim_part2_9_craftsmanship,
       anim_part2_10_motion_fx,
       anim_part2_11_sound,
+      intractv_part1_1_message,
+      intractv_part1_2_audience,
+      intractv_part1_3_problemSolving,
+      intractv_part1_4_intractvUse,
+      intractv_part1_5_accuracy,
+      intractv_part1_6_clarity,
+      intractv_part2_7_technique,
+      intractv_part2_8_UI,
+      intractv_part2_9_draftsman_craftsmanship,
+      intractv_part2_10_usability,
+      intractv_part2_11_functionality,
     });
   } catch (err) {
     console.log("go to :id page catch err: " + err.message);
@@ -331,7 +355,7 @@ router.get("/SampleEntry", function (req, res) {
       res.redirect("index");
     }
 
-    res.render("categories/showSample", { artentries: foundPage, DBX_API_KEY });
+    res.render("categories/showSample", { artentries: foundPage, DBX_API_KEY, JudgeGroups });
   });
 });
 
@@ -343,7 +367,7 @@ router.get("/artentries/:id/edit", function (req, res) {
       res.redirect("/artentries");
     }
 
-    res.render("edit", { artentries: foundPage });
+    res.render("edit", { artentries: foundPage, JudgeGroups });
   });
 });
 

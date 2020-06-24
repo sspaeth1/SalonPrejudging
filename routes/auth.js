@@ -8,26 +8,27 @@ const express = require("express"),
   expressSanitizer = require("express-sanitizer"),
   User = require("../models/user"),
   ArtEntry = require("../models/artEntry");
+
 const { isLoggedIn } = require("../middleware");
-const JudgeGroups = require("../public/json/Groups2019 ");
+const JudgeGroups = require("../public/json/Groups2019");
 
 // ===================
 // Authenticate routes
 // ===================
 
 // show register form
-router.get("/register", function (req, res) {
-  res.render("register");
+router.get("/register", async (req, res) => {
+  await res.render("register");
 });
 
-router.get("/registerAdmin", function (req, res) {
+router.get("/registerAdmin", async (req, res) => {
   res.render("registerAdmin");
 });
 
 //handle sign up logic
 
 //Show register form
-router.post("/register", function (req, res) {
+router.post("/register", async (req, res) => {
   req.body.password = req.sanitize(req.body.password);
   var newUser = new User({
     username: req.body.username,
@@ -39,16 +40,17 @@ router.post("/register", function (req, res) {
     judgingGroup: req.body.judgingGroup,
   });
 
-  User.register(newUser, req.body.password, isLoggedIn, function (err, user) {
-    if (err) {
+  User.register(newUser, req.body.password, isLoggedIn, async (err, user) => {
+    try {
+      await passport.authenticate("local", req, res, () => {
+        res.redirect("/index");
+        req.flash("success", "Welcome " + user.username);
+      });
+    } catch (err) {
       console.log(err);
       req.flash("error", err);
       return res.render("register");
     }
-    passport.authenticate("local")(req, res, function () {
-      res.redirect("/index");
-      req.flash("success", "Welcome " + user.username);
-    });
   });
 });
 
@@ -71,7 +73,7 @@ router.post("/registerAdmin", isLoggedIn, function (req, res) {
       console.log(err);
       return res.render("registerAdmin");
     }
-    passport.authenticate("local")(req, res, function () {
+    passport.authenticate("local", req, res, function () {
       res.redirect("/index");
     });
   });
@@ -101,15 +103,19 @@ router.get("/profile/:id/edit", function (req, res) {
 });
 
 //Update user
-router.put("/profile/:id/", function (req, res) {
+router.put("/profile/:id/", async (req, res) => {
   // (id, new data, callback )
-  User.findByIdAndUpdate(req.params.id, req.body.user, function (err, foundPage) {
+  User.findByIdAndUpdate(req.params.id, req.body.user, async (err, foundPage) => {
     if (err) {
       console.log("error");
       res.render("/");
     }
-
-    res.redirect("/login/" + req.params.id);
+    for (const userId of req.body.users) {
+      let user = await User.findById(userId);
+      user.assignedCategories = req.body.categories;
+      await user.save();
+      res.redirect("/login/" + req.params.id);
+    }
   });
 });
 

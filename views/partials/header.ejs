@@ -35,6 +35,7 @@
               <a href="/profile/<%= currentUser.id %>" class="orange font-weight-bold nav-link">
               
                 <%= currentUser.username %>
+
                   
                 <% if(currentUser.isAdmin){ %>
                   <span class="midgrey inline">Admin</span> 
@@ -60,18 +61,22 @@
         <span class="navbar-toggler-icon" ></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <a href="/index"> <img src="/images/svg/home.svg" alt="Home button"><a>
         <ul class="navbar-nav ml-auto">
-          
+    
               <% if(currentUser){ %>  
                 <li class="nav-item dropdown myCategories">
                   <span class="nav-link dropdown-toggle myCategories" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <%= currentUser.username %>'s Judging Categories  </span>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                <% currentUser.assignedCategories.forEach(category => { %>
+                 
+                  <% JudgeGroups[currentUser.judgingGroup].forEach( category => { %>
+
+                
+     
+                  <a class="dropdown-item" href="../artentries?categoryId=<%= category.letter %>" ><%= category.letter %>: <%= category.type %> </a>  
                
-                  <a class="dropdown-item" href="../artentries?categoryId=<%= category.letter %>" ><%= category.letter %>: <%= category.name %> </a>  
-                 <% }); %>
-              
+                  <%  }) %>
                 </div>  
                 </li>
               <%  } else{   %>
@@ -82,7 +87,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
             
                
-                  <a class="dropdown-item" href="../SampleEntry" > Nonjudge Sample Entry</a>  
+                  <a class="dropdown-item" href="../SampleEntry" > Non-judge Sample Entry</a>  
               
                 </div>  
                 </li>
@@ -119,7 +124,7 @@
             </div>
         </li>    
         </ul>
-        <a href="/index"> <img src="/images/svg/home.svg" alt="Home button"><a>
+     
 
       </div>
     </div>

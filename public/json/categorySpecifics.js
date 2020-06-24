@@ -128,7 +128,7 @@ const loadCategories = [
   {
     letter: "M",
     type: "Student Interactive Section",
-    subtype: "– Interactive",
+    subtype: "Interactive",
     specific: "",
   },
 ];

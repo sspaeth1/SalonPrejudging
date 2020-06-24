@@ -14,6 +14,9 @@ var UserSchema = new mongoose.Schema({
     {
       name: String, //'Still Media Editorial'
       letter: String, //'B'
+      type: String,
+      subtype: String,
+      specific: String,
     },
   ],
   judgingGroup: String,

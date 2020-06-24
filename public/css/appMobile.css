@@ -9771,7 +9771,7 @@ li a.linkOrange.lineSpaceing2 {
 }
 
 .centerTextContainer {
-  background-color: #fff;
+  background-color: #f9f9f9;
   border: #002632 solid 1px;
   padding: 50px;
   margin: auto;
@@ -10018,6 +10018,9 @@ input.form-control-lg.m-2:focus {
 .userProfileStatus {
   text-align: right;
   list-style: none;
+  position: relative;
+  top: 9px;
+  line-height: 1.75rem;
 }
 
 
@@ -10314,6 +10317,15 @@ select.pulldown {
   border: 1px solid orange;
   height: 40px;
   width: 80%;
+}
+
+
+.awardContainer{
+	border: 1px solid rgb(200, 200, 200);
+	margin-bottom: 60px;
+	-webkit-box-shadow: 5px 13px 5px -2px rgba(189,189,189,1);
+	-moz-box-shadow: 5px 13px 5px -2px rgba(189,189,189,1);
+	box-shadow: 5px 13px 5px -2px rgba(189,189,189,1);
 }
 
 span.labelAward {

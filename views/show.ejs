@@ -11,7 +11,7 @@
     //active menu highlight
     $(document).ready(function(){
       $('li.nav-item.dropdown.myCategories').attr("style", "background-color:orange;");
-      $('a.nav-link.dropdown-toggle.myCategories').attr("style", "color:#fff;");
+      $('span.nav-link.dropdown-toggle.myCategories').attr("style", "color:#fff;");
     });
   </script>
 
@@ -19,16 +19,16 @@
 
 
 <h1  class="fullSpan">
-    <span class="darkOrange font-weight-bold"><%= artentries.category %>: <%= categorySpecifics[letterIndex.indexOf(artentries.category)].type  %> </span>
+    <span class="darkOrange font-weight-bold"><%= artentries.category %>: <%= categorySpecifics[letterIndex[0][artentries.category]].type %> </span>
  <br>
-    <span  class="myCategorySpecific" ><%= categorySpecifics[letterIndex.indexOf(artentries.category)].subtype  %></span>        
-     <span class=""><%= categorySpecifics[letterIndex.indexOf(artentries.category)].specific  %></span>       
+    <span  class="myCategorySpecific" ><%= categorySpecifics[letterIndex[0][artentries.category]].subtype  %></span>        
+     <span class="white"><%= categorySpecifics[letterIndex[0][artentries.category]].specific  %></span>       
 
      </h1>
 
   
-     <button type="button" class="btn btn-primary m-2  btn-lg  buttonReturn" style="margin-left:5%;" ><a href="/artentries?categoryId=<%= artentries.category%>">Back to entries in this category</a></button>
-
+     <button  action="action" type="button" value="Back" onclick="window.history.go(-1); return false;"class="btn btn-primary m-2  btn-lg  buttonReturn" style="margin-left:5%;" >
+      Back to entries in this category</button>
 <main class="centerRatingPage">
  
 
@@ -85,10 +85,13 @@
    <% } %> 
 
 
-   <button type="button" class="btn btn-primary m-2  btn-lg  buttonReturn" style="margin-left:5%;" ><a href="/artentries?categoryId=<%= artentries.category%>">Back to entries in this category</a></button>
+   <button  action="action" type="button" value="Back" onclick="window.history.go(-1); return false;"class="btn btn-primary m-2  btn-lg  buttonReturn" style="margin-left:5%;" >
+    Back to entries in this category</button>
 
 
 <script src="/js/dropboxFileThumbSort.js"  id="helper" data-name="<%= DBX_API_KEY %>"  type="module"> </script>
  
- 
+</main>
 <%- include('partials/footer') %>
+
+ <input 

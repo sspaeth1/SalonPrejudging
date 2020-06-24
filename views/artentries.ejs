@@ -8,10 +8,10 @@
 </script>
 
 <h1  class="fullSpan">
-  <span class="darkOrange font-weight-bold"><%=  pageCategoryId.categoryId %>: <%= categorySpecifics[letterIndex.indexOf(pageCategoryId.categoryId)].type  %> </span>
+  <span class="darkOrange font-weight-bold"><%=  pageCategoryId.categoryId %>: <%= categorySpecifics[letterIndex[0][pageCategoryId.categoryId]] .type  %> </span>
 <br>
-  <span  class="myCategorySpecific" ><%= categorySpecifics[letterIndex.indexOf(pageCategoryId.categoryId)].subtype  %></span>        
-   <span class=""><%= categorySpecifics[letterIndex.indexOf(pageCategoryId.categoryId)].specific  %></span>       
+  <span  class="myCategorySpecific" ><%= categorySpecifics[letterIndex[0][pageCategoryId.categoryId]].subtype  %></span>        
+   <span class="white"><%=  categorySpecifics[letterIndex[0][pageCategoryId.categoryId]].specific  %></span>       
 
    </h1>
 
