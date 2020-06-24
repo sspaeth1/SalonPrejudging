@@ -6,11 +6,11 @@ const express = require("express"),
   methodOverride = require("method-override"),
   mongoose = require("mongoose"),
   expressSanitizer = require("express-sanitizer"),
+  JudgeGroups = require("../public/json/Groups2019"),
   User = require("../models/user"),
   ArtEntry = require("../models/artEntry");
 
 const { isLoggedIn } = require("../middleware");
-const JudgeGroups = require("../public/json/Groups2019");
 
 // ===================
 // Authenticate routes
@@ -43,8 +43,8 @@ router.post("/register", async (req, res) => {
   User.register(newUser, req.body.password, isLoggedIn, async (err, user) => {
     try {
       await passport.authenticate("local", req, res, () => {
-        res.redirect("/index");
         req.flash("success", "Welcome " + user.username);
+        res.redirect("/index");
       });
     } catch (err) {
       console.log(err);
@@ -87,7 +87,7 @@ router.get("/profile/:id", isLoggedIn, function (req, res) {
       req.flash("error", "Urp, issue with your profile");
       res.redirect("/login");
     }
-    res.render("profiles/show", { user: foundProfile });
+    res.render("profiles/show", { user: foundProfile, JudgeGroups });
   });
 });
 
@@ -98,7 +98,7 @@ router.get("/profile/:id/edit", function (req, res) {
       console.log("redirect id edit");
       res.redirect("/artentries");
     }
-    res.render("editUser", { user: foundProfile });
+    res.render("editUser", { user: foundProfile, JudgeGroups });
   });
 });
 
