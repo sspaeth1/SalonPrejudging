@@ -426,6 +426,10 @@ img[alt="user profile pic"]{
     position: absolute;
 }
 
+.navbar-collapse {
+	 flex-grow: 1 !important;
+}
+
 div[class="My judging Categories"] ul li:nth-of-type(2n){
 	background-color: #eee;
 }
@@ -639,6 +643,7 @@ h1.formField{
 
 img[alt="Home button"]{
 	margin-left: 10px;
+	margin-top: 20%;
 	height:35px;
 	width: 25px;
 }
@@ -692,7 +697,8 @@ textarea#notes {
   
 
 .card-header h5::before {
-    content:  "[+]" ;
+	content: url(../images/svg/caret-down.svg);
+	max-width: 10px;
 }
 
 div.card li:not(.ui-accordion-content li) {

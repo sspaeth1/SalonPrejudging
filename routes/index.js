@@ -42,27 +42,19 @@ router.get("/index", async (req, res) => {
 //SHOW Routes
 //===========
 
-// Home
+
 router.get("/home", (req, res) => res.render("home"));
 
-// guidelines
 router.get("/generalGuidelines", (req, res) => res.render("generalGuidelines", { JudgeGroups }));
+
 router.get("/guidelinesPrejudging", (req, res) => res.render("guidelinesPrejudging", { JudgeGroups }));
 
-// Judging Groups
 router.get("/judgingGroups", isLoggedIn, (req, res) => res.render("judgingGroups", { JudgeGroups }));
 
-// add users to judging group
 router.post("/judgingGroups", isLoggedIn, async (req, res) => {
-  // POST route for create judgingGroups
 
-  // find the user by his/her email
   let user = await User.findOne({ email: req.body.email });
-  // iterate over category letters
   req.body.categories.forEach(function (letter) {
-    // push category info into user's assignedCategories array
-    // be sure to check if user assignedCategories already has
-    // that category
     let existsAlready = user.assignedCategories.find((category) => category.letter === letter);
     if (!existsAlready) {
       user.assignedCategories.push({
@@ -71,13 +63,10 @@ router.post("/judgingGroups", isLoggedIn, async (req, res) => {
       });
     }
   });
-  // save user
   await user.save();
   res.render("judgingGroups", { JudgeGroups });
 });
-// create POST route
 
-// Award Winners
 router.get("/awardWinners", isLoggedIn, async (req, res) => {
   let artentries = await ArtEntry.find({}).exec();
   let score = await GeneralScore.find({}).populate("judge").populate("score_general").exec();
@@ -113,13 +102,12 @@ router.post("/awardWinners", (req, res) => {
   });
 });
 
-// appendix A
 router.get("/appendixA", (req, res) => res.render("appendixA", { JudgeGroups }));
 
-// appendix B
 router.get("/appendixB", (req, res) => res.render("appendixB", { JudgeGroups }));
 
-// My Judging Categories
+router.get("/ballots", (req, res) => res.render("ballots", { JudgeGroups }));
+
 router.get("/artentries/", isLoggedIn, async function (req, res) {
   try {
     let pageCategoryId = req.query;
