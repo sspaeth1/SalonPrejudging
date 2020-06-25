@@ -9997,6 +9997,10 @@ input.form-control-lg.m-2:focus {
   left: 30px;
 }
 
+li.nav-item.nav-border.Home {
+    visibility: collapse;
+    height: 0;
+}
 
   .signInBox {
     background-color: #fff;
@@ -10187,6 +10191,11 @@ nav h1 {
 
 .navbar .nav-item:not(:last-child) {
   font-family: 'roboto', sans-serif;
+  padding-left:15px;
+}
+
+.nav-item{
+  padding-left: 50px;
 }
 
 li.nav-item.dropdown, li.nav-item.nav-border{
