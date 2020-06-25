@@ -10162,11 +10162,6 @@ nav h1 {
   font-family: 'roboto', sans-serif;
 }
 
-li.nav-item.nav-border.Home {
-  visibility: collapse;
-  height: 0;
-}
-
 @media screen and (min-width: 990) {
   .navbar .nav-item:not(:last-child) {
     margin-right: 35px;
@@ -10204,6 +10199,10 @@ li.nav-item.nav-border.Home {
 @media only screen and (max-width: 990px) {
   img[alt="Home button"] {
     visibility: collapse;
+  }
+  li.nav-item.nav-border.Home {
+    visibility: collapse;
+    height: 0;
   }
 }
 
