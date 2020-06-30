@@ -8,7 +8,8 @@ const express = require("express"),
   JudgeGroups = require("../public/json/Groups2019"),
   auth = require("../routes/auth"),
   categorySpecifics = require("../public/json/categorySpecifics.js"),
-  letterIndex = require("../public/json/LetterIndex.json");
+  letterIndexKeys = require("../public/json/LetterIndexKeys.json");
+letterIndex = require("../public/json/LetterIndex");
 Dotenv = require("dotenv");
 const { isLoggedIn } = require("../middleware");
 var fetch = require("isomorphic-fetch");
@@ -42,7 +43,6 @@ router.get("/index", async (req, res) => {
 //SHOW Routes
 //===========
 
-
 router.get("/home", (req, res) => res.render("home"));
 
 router.get("/generalGuidelines", (req, res) => res.render("generalGuidelines", { JudgeGroups }));
@@ -52,7 +52,6 @@ router.get("/guidelinesPrejudging", (req, res) => res.render("guidelinesPrejudgi
 router.get("/judgingGroups", isLoggedIn, (req, res) => res.render("judgingGroups", { JudgeGroups }));
 
 router.post("/judgingGroups", isLoggedIn, async (req, res) => {
-
   let user = await User.findOne({ email: req.body.email });
   req.body.categories.forEach(function (letter) {
     let existsAlready = user.assignedCategories.find((category) => category.letter === letter);
@@ -66,6 +65,8 @@ router.post("/judgingGroups", isLoggedIn, async (req, res) => {
   await user.save();
   res.render("judgingGroups", { JudgeGroups });
 });
+
+//  award entry dropdown page
 
 router.get("/awardWinners", isLoggedIn, async (req, res) => {
   let artentries = await ArtEntry.find({}).exec();
@@ -88,18 +89,15 @@ router.get("/awardWinners", isLoggedIn, async (req, res) => {
 //Award Winners post
 
 router.post("/awardWinners", (req, res) => {
-  const { category, title } = req.body;
-
-  const update = title;
-
-  ArtEntry.findOneAndUpdate(req.params.title, update, (err, foundPAge) => {
-    if (err) {
-      console.log("update error: ", err.message);
-      res.render("/");
-    }
-
-    res.redirect("/artentries/" + req.params.id);
-  });
+  const { category, excellenceEntryId, excellenceWinner, meritEntryId, meritWinner } = req.body;
+  console.log("body", req.body);
+  // ArtEntry.findOneAndUpdate({ id: excellenceEntryId }, { $set: { excellenceWinner: true } }, (err, foundPAge) => {
+  //   if (err) {
+  //     console.log("update error: ", err.message);
+  //     res.render("/");
+  //   }
+  //   res.redirect("/awardWinners");
+  // });
 });
 
 router.get("/appendixA", (req, res) => res.render("appendixA", { JudgeGroups }));
@@ -166,7 +164,7 @@ router.get("/artentries/", isLoggedIn, async function (req, res) {
           pageCategoryId,
           categorySpecifics,
           JudgeGroups,
-          letterIndex,
+          letterIndexKeys,
         });
       });
 
@@ -187,7 +185,7 @@ router.get("/artentries/", isLoggedIn, async function (req, res) {
     //       DBX_API_KEY,
     //       pageCategoryId,
     //       categorySpecifics,
-    //       letterIndex,
+    //       letterIndexKeys,
     //     });
     //   })
     //     .populate("judge")
@@ -285,7 +283,7 @@ router.get("/artentries/:id", isLoggedIn, async (req, res) => {
       notes,
       complete,
       JudgeGroups,
-      letterIndex,
+      letterIndexKeys,
       pageCategoryId,
       categorySpecifics,
       gnrl_part1_1_message,

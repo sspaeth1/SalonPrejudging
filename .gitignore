@@ -1,11 +1,9 @@
-node_modules
 /node_modules
 .env
 **/archive
-**/PastSalonWinners/
 **/dropbox-sdk-js
 /public/DBtest.js
-images/
-data/
+/images
+/data
 .rest
-DELETE/
+/DELETE

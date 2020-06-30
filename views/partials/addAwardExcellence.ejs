@@ -4,7 +4,7 @@
     <label for="Award_of_Excellence"> Award of Excellence:        </label>
 <select name="Award_of_Excellence" id="Award_of_Excellence">
    <% for( let j = 0; j < artentries.length ; j++){ 
-      if( letterIndex[i]  === artentries[j].category){ %>
+      if( letterIndexKeys[i]  === artentries[j].category){ %>
     <option value=""> <%= artentries[j].title %> </option>
    <% } %> 
   <% } %> 

@@ -3968,6 +3968,7 @@ input[type="button"].btn-block {
   }
 }
 
+
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -9841,10 +9842,14 @@ li a.linkOrange.lineSpaceing2 {
 }
 
 section#scoring h1 span {
-  left: 0;
-  top: 0;
-  position: relative;
+  /* left: 0;
+  top: 0; */
+  /* position: relative; */
   font-weight: bold;
+}
+
+.ui-icon {
+  transform: scale(2);
 }
 
 .artEntriesTitle {
@@ -10348,6 +10353,13 @@ span.labelAward {
   padding: 30px 0;
 }
 
+h4.winnerList::before{
+	content: "✩";
+}
+
+h4.winnerList {
+    display: inline;
+}
 .appendixContainer {
   margin: auto;
   width: 100%;

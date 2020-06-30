@@ -446,7 +446,7 @@
 
 
     <% if(complete === true){ %>
-        <button id="buttonComplete" type="button" class="scoreSubmitBtn btn btn-success btn-block btn-lg" onclick="notesAndComplete()" true> Marked as Complete</button>
+        <button id="buttonComplete" type="button" class="scoreSubmitBtn btn btn-success btn-block btn-lg" onclick="notesAndComplete().prevent" true> Marked as Complete</button>
 
      <% } else{ %>
             <button id="buttonComplete" type="button" class="scoreSubmitBtn btn btn-warning btn-block btn-lg" onclick="notesAndComplete()"  > Submit & mark complete</button>            
@@ -463,6 +463,9 @@
 
 <script>
     function notesAndComplete(){  
+
+
+
        const entryId = window.location.pathname.substring(12);
        const category = $('h1.fullSpan span').text();
        const complete =   document.querySelector('button#buttonComplete').toggleAttribute('true')

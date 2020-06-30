@@ -16,7 +16,7 @@
 <% if( currentUser != currentUser.Admin){ %>
 
   <h1  class="fullSpan"> Award Submissions: <span class="white">Group <%= currentUser.judgingGroup.substring(currentUser.judgingGroup.length, currentUser.judgingGroup.length-1) %></span> </h1>
-    <div class="centerTextContainer p-3 ">
+    <div class="centerTextContainer p-3 "  >
    
                 <h1 class="text-left">  <% for(let i =0 ; i < JudgeGroups[currentUser.judgingGroup].length  ; i++){  %>
                 
@@ -28,44 +28,131 @@
                       
                   <form action="/awardWinners" method="POST" class="Award_of_Excellence">
                         <label for="Award_of_Excellence"> Award of Excellence:        </label>
-                    <select name="Award_of_Excellence" id="Award_of_Excellence">
+                      
+                        <h3 >test</h3>
+                    <select name="Award_of_Excellence" id="Award_of_Excellence"  onChange="addExcellenceWinner().preventDefault()")>
+                      <option>   --Select an entry-- </option>
                       <% for( let j = 0; j < artentries.length ; j++){ 
                           if( JudgeGroups[currentUser.judgingGroup][i].letter  === artentries[j].category){ %>
-                        <option value=""> <%= artentries[j].title %> </option>
+                        <option  categoryId=" <%= letterIndex.findIndex( i => i  === artentries[j].category)%>" id="excellenceWinner"   entryId="<%= artentries[j].id %>"  >
+                          <%= artentries[j].title %> 
+                           </option>
                       <% } %> 
                       <% } %> 
                     </select> 
-                    <span><img src="/images/x.png" class="removeAward" onclick="removeAwardExcellence()"  alt="X remove item"> </span>
-                    <input type="submit" class="awardExcellence btn btn-warning">
-                    
+                    <input type="submit"  value="Add this Award of Excellence" onclick="addExcellenceWinner().preventDefault()" id="<%=JudgeGroups[currentUser.judgingGroup][i].letter%>" class=" awardExcellence btn btn-warning">                   
                   </form> 
                   
-                  <h2 class="addAwardExcellence" onclick="addAwardExcellence()"><a href="#" >+ Additional Award of Excellence</a> </h2>
               </div>
-
+            
                   <br>
               <div id="AwardOfMerit">
                   <form action="/awardWinners" method="POST" class="Award_of_Merit">
-                        <label for="Award_of_Merit"> Award of Merit:      </label>
-                    <select name="Award_of_Merit" id="Award_of_Merit">
-                      <% for( let j = 0; j < artentries.length ; j++){ 
-                          if( JudgeGroups[currentUser.judgingGroup][i].letter === artentries[j].category){ %>
-                        <option value=""> <%= artentries[j].title %> </option>
-                      <% } %> 
+                       
+                            <label for="Award_of_Merit"> Award of Merit:        </label> 
+                    <select name="Award_of_Merit" id="Award_of_Merit"  onselect="addMeritWinner().preventDefault()">
+                     <% for( let j = 0; j < artentries.length ; j++){
+                         let category = artentries[j].category;
+                          if( JudgeGroups[currentUser.judgingGroup][i].letter === artentries[j].category){ %>  
+          
+                       <option value="<%= j %>" id="meritWinner"  entryId="<%= artentries[j].id %>">   <%= artentries[j].title %> </option>
+                      <% } %>  
                       <% } %> 
                     </select>
-                    <span><img src="/images/x.png"   class="removeAward"  onclick="removeAwardMerit()"  alt="X remove item"> </span>
-                    <input type="submit" class="awardMerit btn btn-warning">
-                  </form>
-            
-                  <h2 class="additonalAward" onclick="addAwardMerit()"><a href="#" >+ Additional Award of Merit</a> </h2>
+                    <input type="submit" value="Add this Award of Merit" onclick="addMeritWinner().preventDefault()" id="<%=JudgeGroups[currentUser.judgingGroup][i].letter%>"  class="awardMerit btn btn-warning">
+
                   <hr class="award">
           </div> 
         </div> 
       <script>
 
+
+        function addExcellenceWinner(){  
+           
+    
+          //  select option     //  select index from category Id vvalue       
+          const category = document.querySelectorAll(`input#${elem.id}`)[0].previousElementSibling.value.split("-")[0];
+              const excellenceWinner = document.querySelectorAll(`input#${elem.id}`)[0].previousElementSibling.value;
+              const excellenceEntryId =  document.querySelectorAll(`input#${elem.id}`)[0].previousElementSibling.children[1].getAttribute('entryId');
+
+
+              $.ajax('/awardWinners', {
+              type: 'POST', 
+              data: {
+                    category: category,
+                    excellenceEntryId: excellenceEntryId,
+                    excellenceWinner: excellenceWinner,
+                  },
+              dataType: 'json',
+              success: function (data, status, xhr) {
+                 
+              },
+              error: function (jqXhr, textStatus, err) {
+                  console.log("ajax  notes and submit: " + err.message + "id:" + entryId);
+                  }
+              });
+
+              $( document ).ajaxComplete(function() {
+
+              //   let newWinner = [ `<div><h4 class="winnerList" >`,
+              //                     meritWinner ,  
+              //                     `</h4> <img src="/images/x.png" class="removeAward" onclick="removeAwardExcellence()"  alt="X remove item"> </div>`
+              //                   ].join('');
+              // let newDiv = document.createElement('div');
+              // newDiv.innerHTML = newWinner;
+              //  let selectForm = document.querySelector('form.Award_of_Merit');
+              //  selectForm.appendChild(newDiv);
+              });
+          }
+
+
+
+    function addMeritWinner(){  
+
+      const meritWinner = document.querySelector('option#meritWinner').innerText;
+      // const meritEntryId =  document.querySelectorAll("input#G4")[1].previousElementSibling.children[1].getAttribute('entryId');
+
+      const meritEntryId =  document.querySelector('#meritWinner').getAttribute('entryId');
+      const index =  document.querySelector('#meritWinner').getAttribute('value');
+       const category =   document.querySelector('#meritWinner').getAttribute('value').split("-")[0];
+     
+
+
+              $.ajax('/awardWinners', {
+              type: 'POST', 
+              data: {
+                    category: category,
+                    meritEntryId: meritEntryId,
+                    meritWinner: meritWinner,
+                   },
+              dataType: 'json',
+              success: function (data, status, xhr) {
+
+              },
+              error: function (jqXhr, textStatus, err) {
+                  console.log("ajax  notes and submit: " + err.message + "id:" + entryId);
+                  }
+              });
+        
+            //   $( document ).ajaxComplete(function() {
+       
+            //     let newWinner = [ `<div><h4 class="winnerList" >`,
+            //                       meritWinner ,  
+            //                       `</h4> <img src="/images/x.png" class="removeAward" onclick="removeAwardExcellence()"  alt="X remove item"> </div>`
+            //                     ].join('');
+                
+            //         <span><img src="/images/x.png"   class="removeAward"  onclick="removeAwardMerit()"  alt="X remove item"> </span>
+
+            //  });
+          }
+
+
+ 
+
+
       function addAwardExcellence(){
           let getLastEntry = document.querySelector('form.Award_of_Excellence');
+          
 
           let addAward = document.createElement('div');
           let test = "test input";
@@ -111,7 +198,7 @@
          
 </div>
 
-<script src="../public/js/addAwardMeritField.js" type="text/javascript"></script>
+<script src="js/addAwardMeritField.js" type="text/javascript"></script>
 
 
     <%- include('partials/footer.ejs') %>

@@ -9790,10 +9790,11 @@ section.loginLinks li {
 }
 
 section#scoring h1 span {
-  left: 0;
-  top: 0;
-  position: relative;
   font-weight: bold;
+}
+
+.ui-icon {
+  transform: scale(2);
 }
 
 .artEntriesTitle {
@@ -10345,6 +10346,14 @@ select#Award_of_Excellence, select#Award_of_Merit {
 
 input.awardExcellence.btn.btn-warning, input.awardMerit.btn.btn-warning {
   margin-top: 15px;
+}
+
+h4.winnerList::before {
+  content: "✩";
+}
+
+h4.winnerList {
+  display: inline;
 }
 
 img.removeAward {
