@@ -24,11 +24,6 @@ const config = {
 };
 const dbx = new Dropbox(config);
 
-exports.index = function (req, res) {
-  res.jshare.JudgeGroups = { JudgeGroups: JudgeGroups };
-  res.render("index", { JudgeGroups: JudgeGroups });
-};
-
 //==============
 //RESTful routes
 //==============
