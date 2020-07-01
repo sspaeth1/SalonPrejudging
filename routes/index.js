@@ -24,6 +24,11 @@ const config = {
 };
 const dbx = new Dropbox(config);
 
+exports.index = function (req, res) {
+  res.jshare.JudgeGroups = { JudgeGroups: JudgeGroups };
+  res.render("index", { JudgeGroups: JudgeGroups });
+};
+
 //==============
 //RESTful routes
 //==============
@@ -90,7 +95,7 @@ router.get("/awardWinners", isLoggedIn, async (req, res) => {
 
 router.post("/awardWinners", (req, res) => {
   const { category, excellenceEntryId, excellenceWinner, meritEntryId, meritWinner } = req.body;
-  console.log("body", req.body , '\n', "-------------------------");
+  console.log("body", req.body, "\n", "-------------------------");
   // ArtEntry.findOneAndUpdate({ id: excellenceEntryId }, { $set: { excellenceWinner: true } }, (err, foundPAge) => {
   //   if (err) {
   //     console.log("update error: ", err.message);

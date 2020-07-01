@@ -12,6 +12,7 @@ const bodyParser = require("body-parser"),
   alt = "acdNGY4RKoPe",
   categorySpecifics = require("./public/json/categorySpecifics.js");
 const JudgeGroups = require("./public/json/Groups2019.js");
+const jshare = require("jshare");
 entrants2019 = require("./public/data/2019/2019AllEntrants"); // js file with all entries  converted from excel> CSV > Json > js
 
 const newItemRoutes = require("./routes/newItem");
@@ -74,6 +75,7 @@ app.use(
 );
 app.use(flash());
 app.use(expressSanitizer());
+app.use(jshare());
 
 //Use passport functions
 app.use(passport.initialize());

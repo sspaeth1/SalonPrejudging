@@ -9,15 +9,18 @@
   </script>
 
 
-
-
-
-
 <% if( currentUser != currentUser.Admin){ %>
 
   <h1  class="fullSpan"> Award Submissions: <span class="white">Group <%= currentUser.judgingGroup.substring(currentUser.judgingGroup.length, currentUser.judgingGroup.length-1) %></span> </h1>
     <div class="centerTextContainer p-3 "  >
    
+      <h2 class="ratingFormHeader">
+        <ul>
+          <li>Select an option from the pulldown and the award will be displayed. </li>
+          <li>You can continue to add all winners in this manner.</li>
+          <li>To delete a selected winner simply click the X on the right side of the item.</li>
+        </ul>
+      </h2>
                 <h1 class="text-left">  <% for(let i =0 ; i < JudgeGroups[currentUser.judgingGroup].length  ; i++){  %>
                 
             
@@ -28,11 +31,11 @@
                       
                   <form action="/awardWinners" method="POST" class="Award_of_Excellence">
                         <label for="Award_of_Excellence"> Award of Excellence:        </label>
-                    <select name="Award_of_Excellence" id="Award_of_Excellence"  onchange="addExcellenceWinner()")>
-                      <option>   --Select an entry-- </option>
+                    <select name="Award_of_Excellence" id="Award_of_Excellence"  onchange="addExcellenceWinner().preventDefault();")>
+                      <option>  — Add a winning entry — </option>
                       <% for( let j = 0; j < artentries.length ; j++){ 
                           if( JudgeGroups[currentUser.judgingGroup][i].letter  === artentries[j].category){ %>
-                        <option  categoryId=" <%= letterIndex.findIndex( i => i  === artentries[j].category)%>" id="excellenceWinner"   value="<%= artentries[j].id %>"  id="<%=JudgeGroups[currentUser.judgingGroup][i].letter%>" > <%= artentries[j].title %></option>
+                        <option  categoryId=" <%= letterIndex.findIndex( i => i  === artentries[j].category)%>" id="excellenceWinner"   index="<%j%>"  value="<%= artentries[j].id %>"  id="<%=JudgeGroups[currentUser.judgingGroup][i].letter%>" > <%= artentries[j].title %></option>
                       <% } %> 
                       <% } %> 
                     </select> 
@@ -45,35 +48,39 @@
                   <form action="/awardWinners" method="POST" class="Award_of_Merit">
                        
                             <label for="Award_of_Merit"> Award of Merit:        </label> 
-                    <select name="Award_of_Merit" id="Award_of_Merit"  onchange="addMeritWinner()">
-                      <option>   --Select an entry-- </option>
+                    <select name="Award_of_Merit" id="Award_of_Merit"  onchange="addMeritWinner().preventDefault();">
+                      <option>   — Add a winning entry — </option>
                      <% for( let j = 0; j < artentries.length ; j++){
                          let category = artentries[j].category;
                           if( JudgeGroups[currentUser.judgingGroup][i].letter === artentries[j].category){ %>  
           
-                       <option categoryId=" <%= letterIndex.findIndex( i => i  === artentries[j].category)%>"  id="meritWinner"  value="<%= artentries[j].id %>" >   <%= artentries[j].title %> </option>
+                       <option categoryId=" <%= letterIndex.findIndex( i => i  === artentries[j].category)%>"  id="meritWinner"  value="<%= artentries[j].id %>" index="<%j%>" >   <%= artentries[j].title %> </option>
                       <% } %>  
                       <% } %> 
                     </select>
+                  </form> 
 
                   <hr class="award">
           </div> 
         </div> 
 
 
-
+       
       <script>
 
 
         function addExcellenceWinner(){  
-           
-                     
+                
                 const select = event.target;
                 const value = select.value;
 
+
               const removeFirst = select.selectedOptions[0].text;
-              let excellenceWinner;
-                if( removeFirst != "--Select an entry--"){
+              let excellenceWinner = [];
+              excellenceWinner.forEach(winner => {
+                
+              });
+                if( removeFirst != "— Add a winning entry —"  ){
                    excellenceWinner = select.selectedOptions[0].text;
                 }
               const category  = excellenceWinner.split("-")[0];
@@ -81,11 +88,12 @@
 
                 let newWinner =  `<h4 class="winnerList" >` +
                                      excellenceWinner   +
-                                  `</h4> <img src="images/svg/x.svg" class="removeAward" onclick="removeAwardExcellence()"  alt="X remove item"> `;
+                                  `</h4> <img src="images/svg/x.svg" class="removeAward" onclick="removeAward().preventDefault();"  alt="X remove item"> `;
               let newDiv = document.createElement('div');
               newDiv.setAttribute('class', ' winner btn btn-success');
+              newDiv.setAttribute('id', excellenceWinner);
               newDiv.innerHTML = newWinner;
-               let selectLabel= document.querySelector('label[for="Award_of_Excellence"]');
+               let selectLabel= select.previousElementSibling;
                selectLabel.appendChild(newDiv);
 
 
@@ -105,10 +113,6 @@
                   }
               });
 
-             
-
-             
-          
           }
 
 
@@ -116,11 +120,13 @@
     function addMeritWinner(){  
 
               const select = event.target;
+
+              
               const value = select.value;
  
               const removeFirst = select.selectedOptions[0].text;
               let meritWinner;
-                if( removeFirst != "--Select an entry--"){
+                if( removeFirst != "— Add a winning entry —"){
                   meritWinner = select.selectedOptions[0].text;
                 }
               const category  = meritWinner.split("-")[0];
@@ -129,11 +135,12 @@
               
               let newWinner =  `<h4 class="winnerList" >` +
                                  meritWinner   +
-                                  `</h4> <img src="images/svg/x.svg" class="removeAward" onclick="removeAwardExcellence()"  alt="X remove item"> `;
+                                  `</h4> <img src="images/svg/x.svg" class="removeAward" onclick="removeAward().preventDefault();"  alt="X remove item"> `;
               let newDiv = document.createElement('div');
               newDiv.setAttribute('class', ' winner btn btn-success');
+              newDiv.setAttribute('id', meritWinner);
               newDiv.innerHTML = newWinner;
-               let selectLabel= document.querySelector('label[for="Award_of_Merit"]');
+              let selectLabel= select.previousElementSibling;
                selectLabel.appendChild(newDiv);
 
 
@@ -158,8 +165,12 @@
             }
 
 
-          function removeAwardExcellence(){
+          function removeAward(){
+            const el =  event.target;
+            const winnerName = el.parentNode;
 
+               el.parentNode.parentNode.removeChild(winnerName);
+                console.log(winnerName);
             }
 
       </script>
