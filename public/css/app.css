@@ -10348,8 +10348,11 @@ input.awardExcellence.btn.btn-warning, input.awardMerit.btn.btn-warning {
   margin-top: 15px;
 }
 
-h4.winnerList::before {
-  content: "✩";
+.winner.btn.btn-success {
+  display: block;
+  text-align: left;
+  margin: 10px 0;
+  width: 95%;
 }
 
 h4.winnerList {
@@ -10357,7 +10360,9 @@ h4.winnerList {
 }
 
 img.removeAward {
-  opacity: .5;
+  opacity: .7;
+  float: right;
+  width: 25px;
 }
 
 img.removeAward:hover {

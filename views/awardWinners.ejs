@@ -28,19 +28,14 @@
                       
                   <form action="/awardWinners" method="POST" class="Award_of_Excellence">
                         <label for="Award_of_Excellence"> Award of Excellence:        </label>
-                      
-                        <h3 >test</h3>
-                    <select name="Award_of_Excellence" id="Award_of_Excellence"  onChange="addExcellenceWinner().preventDefault()")>
+                    <select name="Award_of_Excellence" id="Award_of_Excellence"  onchange="addExcellenceWinner()")>
                       <option>   --Select an entry-- </option>
                       <% for( let j = 0; j < artentries.length ; j++){ 
                           if( JudgeGroups[currentUser.judgingGroup][i].letter  === artentries[j].category){ %>
-                        <option  categoryId=" <%= letterIndex.findIndex( i => i  === artentries[j].category)%>" id="excellenceWinner"   entryId="<%= artentries[j].id %>"  >
-                          <%= artentries[j].title %> 
-                           </option>
+                        <option  categoryId=" <%= letterIndex.findIndex( i => i  === artentries[j].category)%>" id="excellenceWinner"   value="<%= artentries[j].id %>"  id="<%=JudgeGroups[currentUser.judgingGroup][i].letter%>" > <%= artentries[j].title %></option>
                       <% } %> 
                       <% } %> 
                     </select> 
-                    <input type="submit"  value="Add this Award of Excellence" onclick="addExcellenceWinner().preventDefault()" id="<%=JudgeGroups[currentUser.judgingGroup][i].letter%>" class=" awardExcellence btn btn-warning">                   
                   </form> 
                   
               </div>
@@ -50,30 +45,48 @@
                   <form action="/awardWinners" method="POST" class="Award_of_Merit">
                        
                             <label for="Award_of_Merit"> Award of Merit:        </label> 
-                    <select name="Award_of_Merit" id="Award_of_Merit"  onselect="addMeritWinner().preventDefault()">
+                    <select name="Award_of_Merit" id="Award_of_Merit"  onchange="addMeritWinner()">
+                      <option>   --Select an entry-- </option>
                      <% for( let j = 0; j < artentries.length ; j++){
                          let category = artentries[j].category;
                           if( JudgeGroups[currentUser.judgingGroup][i].letter === artentries[j].category){ %>  
           
-                       <option value="<%= j %>" id="meritWinner"  entryId="<%= artentries[j].id %>">   <%= artentries[j].title %> </option>
+                       <option categoryId=" <%= letterIndex.findIndex( i => i  === artentries[j].category)%>"  id="meritWinner"  value="<%= artentries[j].id %>" >   <%= artentries[j].title %> </option>
                       <% } %>  
                       <% } %> 
                     </select>
-                    <input type="submit" value="Add this Award of Merit" onclick="addMeritWinner().preventDefault()" id="<%=JudgeGroups[currentUser.judgingGroup][i].letter%>"  class="awardMerit btn btn-warning">
 
                   <hr class="award">
           </div> 
         </div> 
+
+
+
       <script>
 
 
         function addExcellenceWinner(){  
            
-    
-          //  select option     //  select index from category Id vvalue       
-          const category = document.querySelectorAll(`input#${elem.id}`)[0].previousElementSibling.value.split("-")[0];
-              const excellenceWinner = document.querySelectorAll(`input#${elem.id}`)[0].previousElementSibling.value;
-              const excellenceEntryId =  document.querySelectorAll(`input#${elem.id}`)[0].previousElementSibling.children[1].getAttribute('entryId');
+                     
+                const select = event.target;
+                const value = select.value;
+
+              const removeFirst = select.selectedOptions[0].text;
+              let excellenceWinner;
+                if( removeFirst != "--Select an entry--"){
+                   excellenceWinner = select.selectedOptions[0].text;
+                }
+              const category  = excellenceWinner.split("-")[0];
+               const excellenceEntryId = event.target.value;
+
+                let newWinner =  `<h4 class="winnerList" >` +
+                                     excellenceWinner   +
+                                  `</h4> <img src="images/svg/x.svg" class="removeAward" onclick="removeAwardExcellence()"  alt="X remove item"> `;
+              let newDiv = document.createElement('div');
+              newDiv.setAttribute('class', ' winner btn btn-success');
+              newDiv.innerHTML = newWinner;
+               let selectLabel= document.querySelector('label[for="Award_of_Excellence"]');
+               selectLabel.appendChild(newDiv);
 
 
               $.ajax('/awardWinners', {
@@ -92,32 +105,39 @@
                   }
               });
 
-              $( document ).ajaxComplete(function() {
+             
 
-              //   let newWinner = [ `<div><h4 class="winnerList" >`,
-              //                     meritWinner ,  
-              //                     `</h4> <img src="/images/x.png" class="removeAward" onclick="removeAwardExcellence()"  alt="X remove item"> </div>`
-              //                   ].join('');
-              // let newDiv = document.createElement('div');
-              // newDiv.innerHTML = newWinner;
-              //  let selectForm = document.querySelector('form.Award_of_Merit');
-              //  selectForm.appendChild(newDiv);
-              });
+             
+          
           }
 
 
 
     function addMeritWinner(){  
 
-      const meritWinner = document.querySelector('option#meritWinner').innerText;
-      // const meritEntryId =  document.querySelectorAll("input#G4")[1].previousElementSibling.children[1].getAttribute('entryId');
+              const select = event.target;
+              const value = select.value;
+ 
+              const removeFirst = select.selectedOptions[0].text;
+              let meritWinner;
+                if( removeFirst != "--Select an entry--"){
+                  meritWinner = select.selectedOptions[0].text;
+                }
+              const category  = meritWinner.split("-")[0];
+              const meritEntryId = event.target.value;
+          
+              
+              let newWinner =  `<h4 class="winnerList" >` +
+                                 meritWinner   +
+                                  `</h4> <img src="images/svg/x.svg" class="removeAward" onclick="removeAwardExcellence()"  alt="X remove item"> `;
+              let newDiv = document.createElement('div');
+              newDiv.setAttribute('class', ' winner btn btn-success');
+              newDiv.innerHTML = newWinner;
+               let selectLabel= document.querySelector('label[for="Award_of_Merit"]');
+               selectLabel.appendChild(newDiv);
 
-      const meritEntryId =  document.querySelector('#meritWinner').getAttribute('entryId');
-      const index =  document.querySelector('#meritWinner').getAttribute('value');
-       const category =   document.querySelector('#meritWinner').getAttribute('value').split("-")[0];
+
      
-
-
               $.ajax('/awardWinners', {
               type: 'POST', 
               data: {
@@ -134,55 +154,18 @@
                   }
               });
         
-            //   $( document ).ajaxComplete(function() {
-       
-            //     let newWinner = [ `<div><h4 class="winnerList" >`,
-            //                       meritWinner ,  
-            //                       `</h4> <img src="/images/x.png" class="removeAward" onclick="removeAwardExcellence()"  alt="X remove item"> </div>`
-            //                     ].join('');
-                
-            //         <span><img src="/images/x.png"   class="removeAward"  onclick="removeAwardMerit()"  alt="X remove item"> </span>
 
-            //  });
-          }
+            }
 
 
- 
+          function removeAwardExcellence(){
 
-
-      function addAwardExcellence(){
-          let getLastEntry = document.querySelector('form.Award_of_Excellence');
-          
-
-          let addAward = document.createElement('div');
-          let test = "test input";
-      
-          addAward.innerHTML =  newExcellenceForm;
-            getLastEntry.appendChild(addAward);
-      }  
-
-      function removeAwardExcellence(){
-        let el = document.querySelector('form.Award_of_Excellence');
-        el.parentElement.removeChild(el)
-      }
-
-
-
-      function addAwardMerit(){
-
-      }    
-
-      function removeAwardMerit(){
-          let el = document.querySelector('form.Award_of_Merit');
-        el.parentElement.removeChild(el)
-      }
+            }
 
       </script>
 
   <% } %>
 
- 
-        
 
 
 <% }else{ %>
