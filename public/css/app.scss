@@ -482,10 +482,21 @@ div.centerTextContainer h3 {
     font-size: 1.5rem;
 	font-weight: bold;
 	border-bottom: 1px solid $orange;
-	width:30%;
+	width:45%;
 }
 
 
+.judgeLogin {
+    border: 1px orange solid;
+    padding: 19px;
+    border-radius: 10px;
+    width: 46%;
+	box-shadow: 2px 2px 2px orange;
+}
+
+.judgeLogin:hover {
+	box-shadow: 1px 1px 5px orange;
+}
 
 
 @media only screen and (max-width : 769px){
@@ -655,7 +666,7 @@ h1.formField{
 }
 
 img[alt="Home button"]{
-	margin-left: 10px;
+	margin-right: 10px;
 	margin-top: 20%;
 	height:35px;
 	width: 25px;
@@ -875,6 +886,13 @@ img.removeAward:hover{
 	margin-bottom: 0;
 	padding-top: 20px;
 }
+
+h2.ratingFormHeader Ul {
+    padding-left: 3%;
+    line-height: 2rem;
+}
+
+
 
 .ratingFormSubHeader{
 	background: #ddd !important;
@@ -1115,6 +1133,14 @@ height: 100%;
 iframe{
 	width: 100%;
     height: 100%
+}
+
+
+// video
+
+video{
+	width: 100%;
+    padding: 8px 10px 0 5px;
 }
 
 

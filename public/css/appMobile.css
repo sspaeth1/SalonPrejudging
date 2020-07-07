@@ -363,15 +363,15 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1, .h1 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
 }
 
 h2, .h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 h3, .h3 {
-  font-size: 1.75rem;
+  font-size: 2rem;
 }
 
 h4, .h4 {
@@ -3838,6 +3838,19 @@ input[type="button"].btn-block {
   border-radius: 1rem;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   appearance: none;
+}
+
+/* index */ 
+.judgeLogin {
+  border: 1px orange solid;
+  padding: 19px;
+  border-radius: 10px;
+  width: 88%;
+box-shadow: 2px 2px 2px orange;
+}
+
+.judgeLogin:hover {
+box-shadow: 1px 1px 5px orange;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -9747,7 +9760,7 @@ div.artEntriesTitle p {
 
 .indexLinks{
   font-size: 3rem;
-  margin-left: 3%;
+  margin-left: 2%;
 }
 li a.linkOrange.lineSpaceing2 {
   font-size: 2.25rem ;
@@ -9799,16 +9812,19 @@ li a.linkOrange.lineSpaceing2 {
   color: #bd4747;
   background-color: #ffba43;
   margin-top: 20px;
+  z-index: 10;
 }
 
 .alert-success {
   color: #ffffff;
   background-color: #00a8b4;
   margin-top: 20px;
+  z-index: 10;
 }
 
 .alert-warning {
   word-break: break-word;
+  z-index: 10;
 }
 
 .green, .green.ui-accordion-header.ui-corner-top.ui-state-default.ui-accordion-icons.ui-accordion-header-collapsed.ui-corner-all {
@@ -10069,8 +10085,8 @@ select#categories {
   margin-bottom: -22px;
 }
 
-.container.centerTextContainer li {
-  list-style: none;
+div.row.indexNonJudge h5, div.row.indexNonJudge h4{
+  font-size: 3rem;
 }
 
 .annualLogo {
@@ -10084,14 +10100,17 @@ div.centerTextContainer h1 {
 
 div.centerTextContainer h2 {
   font-size: 2rem;
-  font-weight: bold;
 }
 
 div.centerTextContainer h3 {
-  font-size: 1.75rem;
+  font-size: 2.5rem;
   font-weight: bold;
   border-bottom: 1px solid #ffa100;
-  width: 30%;
+  width: 80%;
+  margin-bottom: 3%;
+}
+.container.centerTextContainer li {
+  list-style: none;
 }
 
 @media only screen and (max-width: 769px) {
@@ -10347,6 +10366,7 @@ select.pulldown {
   text-align: left;
   margin: 10px 0;
   width: 95%;
+  padding: 20px 10px;
 }
 
 img.removeAward{
@@ -10367,16 +10387,14 @@ span.labelAward {
   padding: 30px 0;
 }
 
-h4.winnerList::before{
-	content: "✩";
-}
 
 h4.winnerList {
     display: inline;
+    font-size: 2rem;
 }
 .appendixContainer {
   margin: auto;
-  width: 100%;
+  width: 95%;
   border: solid #002632 1px;
   border-top: 0;
   background-color: #fff;
@@ -10396,11 +10414,12 @@ h4.winnerList {
   background-color: #ffa100;
   color: #002632;
   font-weight: 500;
-  padding: 1% 8%;
+  padding: 3% 8%;
   box-shadow: 2px 2px 10px #d85102;
   margin-bottom: 0;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   line-height: 2.5rem;
+
 }
 
 .appendixA {
@@ -10429,6 +10448,15 @@ h4.winnerList {
 
 h1.ratingFormHeader p {
   padding-top: 19px;
+}
+
+h2.ratingFormHeader Ul {
+  padding-left: 3%;
+  line-height: 2rem;
+}
+
+h2.ratingFormHeader li {
+  margin-top: 3%;
 }
 
 h1.ratingFormHeader > span {
@@ -10559,7 +10587,7 @@ article.appendixBcontainer h2 {
   margin-bottom: -31px;
   font-size: 1.25rem;
   position: relative;
-  left: -58px;
+  left: -56px;
 }
 
 article.appendixBcontainer h2::before {

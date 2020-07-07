@@ -8,7 +8,7 @@
 </script>
 
 <h1  class="fullSpan">
-  <span class="darkOrange font-weight-bold"><%=  pageCategoryId.categoryId %>: <%= categorySpecifics[letterIndexKeys[0][pageCategoryId.categoryId]] .type  %> </span>
+  <span class="darkOrange font-weight-bold"><%=  pageCategoryId.categoryId %>: <%= categorySpecifics[letterIndexKeys[0][pageCategoryId.categoryId]].type  %> </span>
 <br>
   <span  class="myCategorySpecific" ><%= categorySpecifics[letterIndexKeys[0][pageCategoryId.categoryId]].subtype  %></span>        
    <span class="white"><%=  categorySpecifics[letterIndexKeys[0][pageCategoryId.categoryId]].specific  %></span>       
@@ -29,16 +29,7 @@
 <div id="setPageCategoryId" data=""></div>
 
 <article class="appendixContainer">
-  <p class="alert alert-warning alert-dismissible fade show" role="alert">The goal is to have this page dynamically populate from the submissions on AMI.org via the dropbox folders  
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </p>
 
-
-
-   <!-- <div class="winVar" data=""> <script>window.localStorage.getItem('category')</script></div>
- <script> console.log($('div.winVar').html())</script> -->
    <div class="row entries">
     <% for( let i = 0 ; i < artentries.length -1 ; i++){   
        if( artentries[i].category ===  pageCategoryId.categoryId ){   %>
@@ -47,45 +38,58 @@
       <div class="col-lg-4 col-md-6 col-sm-6 mt-5 <%= findScore.id %>" id="item<%= i %>" >
         <div class="img-thumbnail " >
       
-
-         
-
         <a href="/artentries/<%= artentries[i]._id %>?<%= pageCategoryId.categoryId %>" >  
-         <img src="<%= artentries[i].link %>" class="card-img-top" alt="Image for scoring" > </a>
+
+
+         <%   if(  artentries[i].category=== "A1" ||
+                  artentries[i].category=== "A2" ||
+                  artentries[i].category=== "B" ||
+                  artentries[i].category=== "C" ||
+                  artentries[i].category=== "D" ||
+                  artentries[i].category=== "E" ||
+                  artentries[i].category=== "H" ||
+                  artentries[i].category=== "I1" ||
+                  artentries[i].category=== "I2" ||
+                  artentries[i].category=== "I3" ||
+                  artentries[i].category=== "J" ||
+                  artentries[i].category=== "K"){   %>
+                    <img src="<%= artentries[i].link %>" class="card-img-top" alt="Image for scoring" >
+                     </a>
+                <%  } else { %>
+                        <video class="card-img-top"   controls>
+                          <source src="<%= artentries[i].link %>" type="video/mp4">
+
+                          Your browser does not support the video tag.
+                        </video> 
+                      </a>
+                <%  } %>
+
 
   
-<!--  
-//             <video width="320" height="240" controls>
-//   <source src="https://dl.dropboxusercontent.com/apitl/1/AcA3IJewZChcApqreikqF5YaCGRiFZ0dQkFi3EywmjQq3wNodI-11TUOdvejiBbKiRrBSIOyaz_BY5XxcX1-ojoyOVPg4RJctITGGbLLJlORGlMBLikCp0lw6f5SgrzJPDvYbiHU14iU7RVh173mLG8ldgwQ3Jyu2ujlwvzVb6-thYEE1tXEvcU5VVGXw0uF7d5e2CVf52maW8qSdvuxg7QglnReVawVbtAJGlvQqH3K8cDzZzIURwYJohyAH-0h-HDdkYIxEG8DXgGq1Rv_h7t-__vf7QGEtpcfWt_yQxgP6Yf8EuSWzLy_niSCTKgS6IX7_f6sSyyitvvBzDr4eWCy_nYY6dRAi3TEewCqilweA5p4uPr6f6vQ9rEid_aVodY" type="video/mp4">
 
-//   Your browser does not support the video tag.
-// </video>
--->
+
+
         </div>
         <div class="artEntriesTitle">  
          
-           <h3>
-               <% if (artentries[i].title.toString().length <= 100){ %>
-                <%= artentries[i].title  %>
-                <% } else{ %>
-                  <%= artentries[i].title.substring(0,100)+"..." %>
-                <% } %>
-            </h3>
+           <h3><% if (artentries[i].title.toString().length <= 100){ %><%= artentries[i].title  %><% } else{ %><%= artentries[i].title.substring(0,100)+"..." %><% } %></h3>
             <p> <div class="orange font-weight-bolder threeQuarterRem ">Primary Audience: </div> <%= artentries[i].primaryAudience %></p>
             <p> <div class="orange font-weight-bolder threeQuarterRem ">Intended purpose: </div><%= artentries[i].intended_purpose.substring(0,50) %>... </p> 
            
 
 
-
-          <%  for( let j = 0 ; j <  findComplete.length  ; j++){ %>
+      
+          <%  for( let j = 0 ; j <  findComplete.length  ; j++){ %> 
+               <% console.log()  %>
          <%    let buttonTruth = []; 
             buttonTruth.push(JSON.stringify(findComplete[j].entryId).substring(1,25) ===  artentries[i].id);
            
             %> 
-            <% if( buttonTruth.some( e=>e === true) ){ %>
-             <div class="">   <a href="/artentries/<%= artentries[i]._id %>?<%= pageCategoryId.categoryId %>"  name="<%= artentries[i]._id %>"  class="btn btn-success lg scoreThisEntryComplete"> Entry Scored</a></div> 
-            <% } else{  %>
+            <% if( buttonTruth.some( e=>e === !true) ){ %>
               <div class="scoreThisEntry" id="unscored<%= artentries[i]._id %>" >   <a href="/artentries/<%= artentries[i]._id %>?<%= pageCategoryId.categoryId %>"  name="<%= artentries[i]._id %>"  class="btn btn-primary lg"> Score this entry</a></div> 
+
+            <% } else{  %>
+              <div class="">   <a href="/artentries/<%= artentries[i]._id %>?<%= pageCategoryId.categoryId %>"  name="<%= artentries[i]._id %>"  class="btn btn-success lg scoreThisEntryComplete"> Entry Scored</a></div> 
 
           <% } %>
           <% } %>

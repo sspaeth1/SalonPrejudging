@@ -19,7 +19,7 @@ const group1 = [
     specific: "- Editorial",
   },
   {
-    letter: " K",
+    letter: "K",
     type: "Student Still Media Section",
     subtype: "Didactic/Instructional",
     specific: "– Advertising and Marketing/Promotional",
@@ -65,7 +65,7 @@ const group2 = [
     specific: "– Surgical/Clinical Procedures",
   },
   {
-    letter: " L",
+    letter: "L",
     type: "Student Motion Media ",
     subtype: "– Animation",
     specific: "",

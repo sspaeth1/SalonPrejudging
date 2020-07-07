@@ -19,14 +19,13 @@
 
 
 <h1  class="fullSpan">
-    <span class="darkOrange font-weight-bold"><%= artentries.category %>: <%= categorySpecifics[letterIndexKeys[0][artentries.category]].type %> </span>
+    <span class="darkOrange font-weight-bold"><%= artentries.category %>: <%= categorySpecifics[0].type %> </span>
  <br>
-    <span  class="myCategorySpecific" ><%= categorySpecifics[letterIndexKeys[0][artentries.category]].subtype  %></span>        
-     <span class="white"><%= categorySpecifics[letterIndexKeys[0][artentries.category]].specific  %></span>       
+   <span  class="myCategorySpecific" ><%= categorySpecifics[letterIndexKeys[0][artentries.category]].subtype  %></span>        
+     <span class="white"><%= categorySpecifics[letterIndexKeys[0][artentries.category]].specific  %></span>        
 
      </h1>
 
-  
      <button  action="action" type="button" value="Back" onclick="window.history.go(-1); return false;"class="btn btn-primary m-2  btn-lg  buttonReturn" style="margin-left:5%;" >
       Back to entries in this category</button>
 <main class="centerRatingPage">
@@ -40,7 +39,7 @@
         <div id="displayDescriptions" class=" mt-4 ml-4" >
             <h2 ><div class="orange entryDescriptors">
                 Title: 
-            </div><%= artentries.title %> </h2>
+            </div><%=artentries.title%></h2>
           <div class="orange entryDescriptors">Medium or Software Used: </div>  <p> <%= artentries.medium_software %></p>
             <div class="orange entryDescriptors">Presentation format: </div><p> <%= artentries.presentation_format %></p>
             <div class="orange entryDescriptors">Primary audience: </div> <p><%= artentries.primaryAudience %></p>
@@ -48,14 +47,29 @@
        </div>
 
        <div id="displayImage">
-        <a href="https://www.dropbox.com/s/rgrnbhzfk88o7yk/A1-001.jpg?dl=0"
-        class="dropbox-embed img-fluid imgScore"
+        <%   if( artentries.category === "A1" ||
+                 artentries.category === "A2" ||
+                 artentries.category === "B" ||
+                 artentries.category === "C" ||
+                 artentries.category === "D" ||
+                 artentries.category === "E" ||
+                 artentries.category === "H" ||
+                 artentries.category === "I1" ||
+                 artentries.category === "I2" ||
+                 artentries.category === "I3" ||
+                 artentries.category === "J" ||
+                 artentries.category === "K"){   %>
+          <img src="<%= mediaLink %>" class="card-img-top"  alt="<%= artentries.title %>" >
+           </a>
+      <%  } else { %>
+              <video class="card-img-top"   controls>
+                <source src="<%= mediaLink %>" type="video/mp4">
 
-        alt="<%= artentries.title %>"
-        >
-    </a>	   
+                Your browser does not support the video tag.
+              </video> 
+            </a>
+      <%  } %>
 
-  
 
        
     </div>

@@ -19,7 +19,7 @@ var UserSchema = new mongoose.Schema({
       specific: String,
     },
   ],
-  judgingGroup: String,
+  judgingGroup: {type: String, default: "0"},
   // assignedCategories: [{ type: mongoose.Schema.Types.ObjectId, ref: "Category" }],
   isAdmin: { type: Boolean, default: false },
   created: { type: Date, default: Date.now },

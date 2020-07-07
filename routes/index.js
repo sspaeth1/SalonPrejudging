@@ -13,6 +13,7 @@ letterIndex = require("../public/json/LetterIndex");
 Dotenv = require("dotenv");
 const { isLoggedIn } = require("../middleware");
 var fetch = require("isomorphic-fetch");
+const { response } = require("express");
 Dotenv.config({ debug: process.env.DEBUG });
 const DBX_API_KEY = process.env.DBX_API_KEY;
 
@@ -71,8 +72,19 @@ router.post("/judgingGroups", isLoggedIn, async (req, res) => {
 router.get("/awardWinners", isLoggedIn, async (req, res) => {
   let artentries = await ArtEntry.find({}).exec();
   let score = await GeneralScore.find({}).populate("judge").populate("score_general").exec();
+  let exellenceWinnersDB = await ArtEntry.find({ excellenceWinner: true }, function (err, user) {
+    if (err) {
+      res.send(err);
+    }
+  });
 
-  res.render("awardWinners", { score, artentries, categorySpecifics, letterIndex, JudgeGroups });
+  let meritWinnersDB = await ArtEntry.find({ meritWinner: true }, function (err, user) {
+    if (err) {
+      res.send(err);
+    }
+  });
+
+  res.render("awardWinners", { score, artentries, categorySpecifics, letterIndex, JudgeGroups, exellenceWinnersDB, meritWinnersDB });
 });
 
 // await GeneralScore.find({}, (err, scores) => {
@@ -88,16 +100,36 @@ router.get("/awardWinners", isLoggedIn, async (req, res) => {
 
 //Award Winners post
 
-router.post("/awardWinners", (req, res) => {
-  const { category, excellenceEntryId, excellenceWinner, meritEntryId, meritWinner } = req.body;
-  console.log("body", req.body, "\n", "-------------------------");
-  // ArtEntry.findOneAndUpdate({ id: excellenceEntryId }, { $set: { excellenceWinner: true } }, (err, foundPAge) => {
-  //   if (err) {
-  //     console.log("update error: ", err.message);
-  //     res.render("/");
-  //   }
-  //   res.redirect("/awardWinners");
-  // });
+router.post("/awardWinners", async (req, res) => {
+  try {
+    let { category, excellenceWinner, excellenceEntryId, excellenceWinnerName, meritWinner, meritEntryId, meritWinnerName } = req.body;
+    console.log("body", req.body, "\n", "-------------------------");
+
+    console.log("excellenceWinner: ", excellenceWinner);
+    console.log("meritWinner:", meritWinner);
+
+    console.log("!!meritWinner:", meritWinner);
+
+    if (excellenceWinner === "true") {
+      await ArtEntry.findOneAndUpdate({ _id: excellenceEntryId }, { $set: { excellenceWinner: true, meritWinner: false } }).exec();
+      console.log("excellenceWinner === true");
+    } else if (excellenceWinner === "false") {
+      console.log("excellenceWinner === false");
+      await ArtEntry.findOneAndUpdate({ _id: excellenceEntryId }, { $set: { excellenceWinner: false } }).exec();
+    } else if (meritWinner === "true") {
+      console.log("meritWinner === true");
+      await ArtEntry.findOneAndUpdate({ _id: meritEntryId }, { $set: { meritWinner: true, excellenceWinner: false } }).exec();
+    } else if (meritWinner === "false") {
+      console.log("meritWinner === false");
+      await ArtEntry.findOneAndUpdate({ _id: meritEntryId }, { $set: { meritWinner: false } }, null, (err, meritWinner) => {
+        console.log(meritWinner, ":", meritEntryId, " -update");
+        res.redirect("/awardWinners");
+      }).exec();
+    }
+  } catch (err) {
+    console.log("update error: ", err.message);
+    res.render("/");
+  }
 });
 
 router.get("/appendixA", (req, res) => res.render("appendixA", { JudgeGroups }));
@@ -126,27 +158,57 @@ router.get("/artentries/", isLoggedIn, async function (req, res) {
     await ArtEntry.find({})
       .populate("judge")
       .populate("score_general")
+      .exec()
       .then(async (artentries) => {
-        console.log(" req.query", req.query.categoryId);
         for (var i = 0; i < artentries.length; i++) {
-          let sub = "/" + req.query.categoryId + "/" + artentries[i].title.split(" ", 1)[0] + ".jpg";
-          // console.log(sub.split("-", 1)[0]);
-          // console.log("/" + req.query.categoryId + "/" + req.query.categoryId);
-          if (sub.split("-", 1)[0] == "/" + req.query.categoryId + "/" + req.query.categoryId) {
+          let path = "/" + req.query.categoryId + "/" + artentries[i].title.split("-", 1)[0];
+          let title = artentries[i].title;
+          let categoryPath = "/" + req.query.categoryId + "/";
+          let filePathImage = "/" + req.query.categoryId + "/" + artentries[i].title.split(" ", 1)[0] + ".jpg";
+          let filePathVideo = "/" + req.query.categoryId + "/" + artentries[i].title.split(" ", 1)[0] + ".mp4";
+          let a = artentries[i].category;
+          if (path.split("-", 1)[0] + "/" === "/" + req.query.categoryId + "/" + req.query.categoryId + "/") {
             try {
-              // console.log("substr", sub);
-              await dbx
-                .filesGetTemporaryLink({
-                  path: sub,
-                })
-                .then(function (response) {
-                  artentries[i].link = response.link;
-                  console.log(" linkr: ", response.link);
-                });
+              // console.log("pathstr", path);
+
+              if (
+                a === "A1" ||
+                a === "A2" ||
+                a === "B" ||
+                a === "C" ||
+                a === "D" ||
+                a === "E" ||
+                a === "H" ||
+                a === "I1" ||
+                a === "I2" ||
+                a === "I3" ||
+                a === "J" ||
+                a === "K"
+              ) {
+                await dbx
+                  .filesGetTemporaryLink({
+                    path: filePathImage,
+                  })
+                  .then(function (response) {
+                    artentries[i].link = response.link;
+                    console.log(" link: ", response.link);
+                  });
+              } else {
+                await dbx
+                  .filesGetTemporaryLink({
+                    path: filePathVideo,
+                  })
+                  .then(function (response) {
+                    console.log(filePathVideo);
+                    artentries[i].link = response.link;
+                    console.log(" link: ", response.link);
+                  });
+              }
             } catch (err) {
               artentries[i].link = "https://i.imgur.com/33E6CfN.jpg";
-              console.log(" linkr: ", artentries[i].link);
-              console.log(" page catch err: ", err.message);
+              console.log(" catch link: ", artentries[i].link);
+              console.log("artentries[i] : " + filePathImage);
+              // console.log(" page catch err: ", err.error);
             }
           }
         }
@@ -213,18 +275,12 @@ router.get("/artentries/:id", isLoggedIn, async (req, res) => {
       .populate("entryId")
       .exec();
 
-    let foundPage = {};
     if (!findScore) {
       console.log("No existing score, creating new score");
       await GeneralScore.create({
         judge: req.user.id,
         entryId: req.params.id,
       });
-
-      findScore = await GeneralScore.findOne({
-        judge: req.user.id,
-        entryId: req.params.id,
-      }).exec();
     }
 
     let {
@@ -274,13 +330,63 @@ router.get("/artentries/:id", isLoggedIn, async (req, res) => {
       complete,
     } = findScore;
 
+    let foundPage = {};
     foundPage = await ArtEntry.findById(req.params.id);
+
+    let a = foundPage.category;
+    let filePathImage = "/" + foundPage.category + "/" + foundPage.title.split(" ", 1)[0] + ".jpg";
+    let filePathVideo = "/" + foundPage.category + "/" + foundPage.title.split(" ", 1)[0] + ".mp4";
+
+    if (foundPage) {
+      try {
+        if (
+          a === "A1" ||
+          a === "A2" ||
+          a === "B" ||
+          a === "C" ||
+          a === "D" ||
+          a === "E" ||
+          a === "H" ||
+          a === "I1" ||
+          a === "I2" ||
+          a === "I3" ||
+          a === "j" ||
+          a === "K"
+        ) {
+          await dbx
+            .filesGetTemporaryLink({
+              path: filePathImage,
+            })
+            .then(function (response) {
+              mediaLink = response.link;
+              console.log(" image link: ", response.link);
+            });
+        } else {
+          await dbx
+            .filesGetTemporaryLink({
+              path: filePathVideo,
+            })
+            .then(function (response) {
+              console.log(filePathVideo);
+              mediaLink = response.link;
+              console.log(" video link: ", response.link);
+            });
+        }
+      } catch (err) {
+        amediaLink = "https://i.imgur.com/33E6CfN.jpg";
+        console.log(" catch link: ", err);
+        console.log("filePathImage: " + filePathImage);
+        // console.log(" page catch err: ", err.error);
+      }
+    }
+
     res.render("show", {
       artentries: foundPage,
       score: findScore,
       DBX_API_KEY: DBX_API_KEY,
       id,
       notes,
+      mediaLink,
       complete,
       JudgeGroups,
       letterIndexKeys,
@@ -327,6 +433,10 @@ router.get("/artentries/:id", isLoggedIn, async (req, res) => {
       intractv_part2_10_usability,
       intractv_part2_11_functionality,
     });
+
+    if (complete) {
+      req.flash("scucess", "Marked as completed");
+    }
   } catch (err) {
     console.log("go to :id page catch err: " + err.message);
     res.redirect("/artentries");
@@ -346,14 +456,14 @@ router.get("/SampleEntry", function (req, res) {
 });
 
 //EDIT ROUTE
-router.get("/artentries/:id/edit", function (req, res) {
-  ArtEntry.findById(req.params.id, function (err, foundPage) {
-    if (err) {
+router.get("/artentries/:id/edit", async (req, res) => {
+  await ArtEntry.findById(req.params.id, function (err, foundPage) {
+    try {
+      res.render("edit", { artentries: foundPage, JudgeGroups });
+    } catch (err) {
       console.log("redirect id edit");
       res.redirect("/artentries");
     }
-
-    res.render("edit", { artentries: foundPage, JudgeGroups });
   });
 });
 

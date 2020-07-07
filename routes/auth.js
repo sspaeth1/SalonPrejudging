@@ -1,6 +1,7 @@
 const express = require("express"),
   router = express.Router(),
   passport = require("passport"),
+  auth = require("../routes/auth"),
   LocalStrategy = require("passport-local"),
   bodyParser = require("body-parser"),
   methodOverride = require("method-override"),
@@ -18,65 +19,81 @@ const { isLoggedIn } = require("../middleware");
 
 // show register form
 router.get("/register", async (req, res) => {
-  await res.render("register");
+  try {
+    await res.render("register", { JudgeGroups });
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 router.get("/registerAdmin", async (req, res) => {
-  res.render("registerAdmin");
+  res.render("registerAdmin", { JudgeGroups });
 });
 
 //handle sign up logic
 
 //Show register form
 router.post("/register", async (req, res) => {
-  req.body.password = req.sanitize(req.body.password);
-  var newUser = new User({
-    username: req.body.username,
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    avatar: req.body.avatar,
-    judge: req.body.judge,
-    judgingGroup: req.body.judgingGroup,
-  });
+  try {
+    req.body.password = req.sanitize(req.body.password);
+    var newUser = new User({
+      username: req.body.username,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      avatar: req.body.avatar,
+      judge: req.body.judge,
+      judgingGroup: req.body.judgingGroup,
+    });
 
-  User.register(newUser, req.body.password, isLoggedIn, async (err, user) => {
-    try {
-      await passport.authenticate("local", req, res, () => {
-        req.flash("success", "Welcome " + user.username);
-        res.redirect("/index");
-      });
-    } catch (err) {
-      console.log(err);
-      req.flash("error", err);
-      return res.render("register");
-    }
-  });
+    User.register(newUser, req.body.password, isLoggedIn, async (err, user) => {
+      try {
+        await passport.authenticate("local", req, res, () => {
+          req.flash("success", "Welcome " + user.username);
+          res.redirect("/index");
+        });
+      } catch (err) {
+        console.log(err);
+        req.flash("error", err);
+        return res.render("register");
+      }
+    });
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 // admin register POST
 router.post("/registerAdmin", isLoggedIn, function (req, res) {
-  var newUser = new User({
-    username: req.body.username,
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    avatar: req.body.avatar,
-    isAdmin: req.body.isAdmin,
-    assignedCategories: req.body.assignedCategories,
-  });
-  if (req.body.adminCode === "12cranialnerves") {
-    newUser.isAdmin = true;
-  }
-  User.register(newUser, req.body.password, function (err, user) {
-    if (err) {
-      console.log(err);
-      return res.render("registerAdmin");
-    }
-    passport.authenticate("local", req, res, function () {
-      res.redirect("/index");
+  try {
+    var newUser = new User({
+      username: req.body.username,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      avatar: req.body.avatar,
+      judge: req.body.judge,
+      isAdmin: req.body.isAdmin,
+      assignedCategories: req.body.assignedCategories,
     });
-  });
+    if (req.body.isAdmin === true) {
+      newUser.isAdmin = true;
+    }
+
+    User.register(newUser, req.body.password, function (err, user) {
+      try {
+        req.flash("success", "Welcome " + user.username);
+        passport.authenticate("local", req, res, function () {
+          return res.render("registerAdmin");
+        });
+      } catch (err) {
+        console.log(err);
+        res.redirect("/index");
+      }
+    });
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 //User Profiles
@@ -92,13 +109,14 @@ router.get("/profile/:id", isLoggedIn, function (req, res) {
 });
 
 //EDIT User
-router.get("/profile/:id/edit", function (req, res) {
-  User.findById(req.params.id, function (err, foundProfile) {
-    if (err) {
+router.get("/profile/:id/edit", async (req, res) => {
+  await User.findById(req.params.id, (err, foundProfile) => {
+    try {
+      res.render("editUser", { user: foundProfile, JudgeGroups });
+    } catch (err) {
       console.log("redirect id edit");
       res.redirect("/artentries");
     }
-    res.render("editUser", { user: foundProfile, JudgeGroups });
   });
 });
 
@@ -106,21 +124,23 @@ router.get("/profile/:id/edit", function (req, res) {
 router.put("/profile/:id/", async (req, res) => {
   // (id, new data, callback )
   User.findByIdAndUpdate(req.params.id, req.body.user, async (err, foundPage) => {
-    if (err) {
+    try {
+      for (const userId of req.body.users) {
+        let user = await User.findById(userId);
+        user.assignedCategories = req.body.categories;
+        await user.save();
+        res.redirect("/login/" + req.params.id);
+      }
+    } catch (err) {
+      req.flash("error", "Urp, issue with your profile");
       console.log("error");
       res.render("/");
-    }
-    for (const userId of req.body.users) {
-      let user = await User.findById(userId);
-      user.assignedCategories = req.body.categories;
-      await user.save();
-      res.redirect("/login/" + req.params.id);
     }
   });
 });
 
 //Destroy user
-router.delete("/profile/:id", function (req, res) {
+router.delete("/profile/:id", (req, res) => {
   //destroy
   User.deleteOne(req.params.id, function (err) {
     if (err) {
@@ -135,7 +155,7 @@ router.delete("/profile/:id", function (req, res) {
 //======
 //LOGIN
 //======
-router.get("/login", function (req, res) {
+router.get("/login", async (req, res) => {
   res.render("login");
 });
 
