@@ -267,21 +267,24 @@ router.get("/artentries/:id", isLoggedIn, async (req, res) => {
   try {
     let pageCategoryId = req.query;
 
-    let findScore = await GeneralScore.findOne({
+    let findScore;
+
+    if (!findScore) {
+      console.log("No existing score, creating new score");
+      await GeneralScore.create({
+        entryId: req.params.id,
+        judge: req.user.id,
+      });
+      console.log(req.user.id);
+    }
+
+    findScore = await GeneralScore.findOne({
       judge: req.user.id,
       entryId: req.params.id,
     })
       .populate("judge")
       .populate("entryId")
       .exec();
-
-    if (!findScore) {
-      console.log("No existing score, creating new score");
-      await GeneralScore.create({
-        judge: req.user.id,
-        entryId: req.params.id,
-      });
-    }
 
     let {
       judge: { judge },
@@ -350,7 +353,7 @@ router.get("/artentries/:id", isLoggedIn, async (req, res) => {
           a === "I1" ||
           a === "I2" ||
           a === "I3" ||
-          a === "j" ||
+          a === "J" ||
           a === "K"
         ) {
           await dbx
@@ -375,12 +378,15 @@ router.get("/artentries/:id", isLoggedIn, async (req, res) => {
       } catch (err) {
         amediaLink = "https://i.imgur.com/33E6CfN.jpg";
         console.log(" catch link: ", err);
-        console.log("filePathImage: " + filePathImage);
+        console.log("response.link: " + response.link);
         // console.log(" page catch err: ", err.error);
       }
     }
 
     res.render("show", {
+      categorySpecifics,
+      letterIndexKeys,
+      pageCategoryId,
       artentries: foundPage,
       score: findScore,
       DBX_API_KEY: DBX_API_KEY,
@@ -389,9 +395,6 @@ router.get("/artentries/:id", isLoggedIn, async (req, res) => {
       mediaLink,
       complete,
       JudgeGroups,
-      letterIndexKeys,
-      pageCategoryId,
-      categorySpecifics,
       gnrl_part1_1_message,
       gnrl_part1_2_audience,
       gnrl_part1_3_problemSolving,

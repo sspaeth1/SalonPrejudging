@@ -1140,8 +1140,11 @@ iframe{
 
 video{
 	width: 100%;
-    padding: 8px 10px 0 5px;
+	padding: 8px 10px 0 5px;
+	max-height: 100%;
 }
+
+
 
 
 // radio buttons

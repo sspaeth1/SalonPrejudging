@@ -59,7 +59,8 @@
                  artentries.category === "I3" ||
                  artentries.category === "J" ||
                  artentries.category === "K"){   %>
-          <img src="<%= mediaLink %>" class="card-img-top"  alt="<%= artentries.title %>" >
+      <a href="<%= mediaLink %>">
+                  <img src="<%= mediaLink %>" class="card-img-top"  alt="<%= artentries.title %>" >
            </a>
       <%  } else { %>
               <video class="card-img-top"   controls>

@@ -77,23 +77,7 @@
             <p> <div class="orange font-weight-bolder threeQuarterRem ">Intended purpose: </div><%= artentries[i].intended_purpose.substring(0,50) %>... </p> 
            
 
-
-      
-          <%  for( let j = 0 ; j <  findComplete.length  ; j++){ %> 
-               <% console.log()  %>
-         <%    let buttonTruth = []; 
-            buttonTruth.push(JSON.stringify(findComplete[j].entryId).substring(1,25) ===  artentries[i].id);
-           
-            %> 
-            <% if( buttonTruth.some( e=>e === !true) ){ %>
-              <div class="scoreThisEntry" id="unscored<%= artentries[i]._id %>" >   <a href="/artentries/<%= artentries[i]._id %>?<%= pageCategoryId.categoryId %>"  name="<%= artentries[i]._id %>"  class="btn btn-primary lg"> Score this entry</a></div> 
-
-            <% } else{  %>
-              <div class="">   <a href="/artentries/<%= artentries[i]._id %>?<%= pageCategoryId.categoryId %>"  name="<%= artentries[i]._id %>"  class="btn btn-success lg scoreThisEntryComplete"> Entry Scored</a></div> 
-
-          <% } %>
-          <% } %>
-
+          <div class="scoreThisEntry" id="unscored<%= artentries[i]._id %>" >   <a href="/artentries/<%= artentries[i]._id %>?<%= pageCategoryId.categoryId %>"  name="<%= artentries[i]._id %>"  class="btn btn-primary lg"> Score this entry</a></div>
           
         </div>
       </div>

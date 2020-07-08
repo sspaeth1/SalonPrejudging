@@ -10732,4 +10732,13 @@ section.container input[type=radio]:checked ~ label {
   outline: none;
 }
 
+
+
+video{
+	width: 100%;
+	padding: 8px 10px 0 5px;
+	max-height: 100%;
+}
+
+
 /*# sourceMappingURL=app.css.map */
