@@ -1,17 +1,21 @@
 const express = require("express"),
   router = express.Router(),
   passport = require("passport"),
-  auth = require("../routes/auth"),
   LocalStrategy = require("passport-local"),
   bodyParser = require("body-parser"),
   methodOverride = require("method-override"),
   mongoose = require("mongoose"),
   expressSanitizer = require("express-sanitizer"),
-  JudgeGroups = require("../public/json/Groups2019"),
   User = require("../models/user"),
-  ArtEntry = require("../models/artEntry");
-
+  ArtEntry = require("../models/artEntry"),
+  async = require("async"),
+  nodemailer = require("nodemailer"),
+  Dotenv = require("dotenv"),
+  crypto = require("crypto");
+JudgeGroups = require("../public/json/Groups2019");
 const { isLoggedIn } = require("../middleware");
+const { render } = require("ejs");
+Dotenv.config({ debug: process.env.DEBUG });
 
 // ===================
 // Authenticate routes
@@ -84,7 +88,7 @@ router.post("/registerAdmin", isLoggedIn, function (req, res) {
       try {
         req.flash("success", "Welcome " + user.username);
         passport.authenticate("local", req, res, function () {
-          return res.render("registerAdmin");
+          return res.render("registerAdmin", { JudgeGroups });
         });
       } catch (err) {
         console.log(err);
@@ -96,9 +100,141 @@ router.post("/registerAdmin", isLoggedIn, function (req, res) {
   }
 });
 
+// forgot
+
+router.get("/forgot", async (req, res) => {
+  try {
+    res.render("forgot", { JudgeGroups });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+router.post("/forgot", function (req, res, next) {
+  async.waterfall(
+    [
+      function (done) {
+        crypto.randomBytes(20, function (err, buf) {
+          var token = buf.toString("hex");
+          done(err, token);
+        });
+      },
+      function (token, done) {
+        User.findOne({ email: req.body.email }, function (err, user) {
+          if (!user) {
+            req.flash("error", "No account with that email address exists.");
+            return res.redirect("/forgot");
+          }
+
+          user.resetPasswordToken = token;
+          user.resetPasswordTokenExpires = Date.now() + 36000000; // 1hour
+
+          user.save(function (err) {
+            done(err, token, user);
+          });
+        });
+      },
+      function (token, user, done) {
+        var smtpTransport = nodemailer.createTransport({
+          service: "Gmail",
+          auth: {
+            user: "shlomospaeth@gmail.com",
+            pass: process.env.GMLPW,
+          },
+        });
+        var mailOptions = {
+          to: user.email,
+          from: "shlomospaeth@gmail.com",
+          subject: "AMI Portal password reset",
+          text:
+            "You are receiving this because you have requested to reset your password" +
+            "Please click on the following link or paste this into your browser to complete the process" +
+            "http://" +
+            req.header.host +
+            "/reset/" +
+            token +
+            "\n\n" +
+            "IF you did not request this, please ignore this email and your password will remain unchanged",
+        };
+        smtpTransport.sendMail(mailOptions, function (err) {
+          console.log("mail sent");
+          req.flash("success", "An e-mail had been sent to" + user.email + " with further intructions.");
+          done(err, "done");
+        });
+      },
+    ],
+    function (err) {
+      if (err) return next(err);
+      res.redirect("/forgot");
+    }
+  );
+});
+
+router.get("/reset:token", function (req, res) {
+  User.findOne({ resetPasswordToken: req.params.token, resetPasswordTokenExpires: { $gt: Date.now() } }, function (err, user) {
+    if (!user) {
+      req.flash("error", "Password reset token is invalid or has expired.");
+      return res.redirect("/forgot");
+    }
+    res.render("reset", { token: req.params.token });
+  });
+});
+
+router.post("/reset:token", function (req, res) {
+  async.waterfall(
+    [
+      function (done) {
+        User.findOne({ resetPasswordToken: req.params.token, resetPasswordTokenExpires: { $gt: Date.now() } }, function (err, user) {
+          if (!user) {
+            req.flash("error", "Password reset token is invalid or has expired.");
+            return res.redirect("back");
+          }
+          if (req.body.password === req.body.confirm) {
+            user.setPassword(req.body.password, function (err) {
+              user.resetPasswordToken = undefined;
+              user.resetPasswordTokenExpires = undefined;
+
+              user.save(function (err) {
+                req.login(user, function (err) {
+                  done(err, user);
+                });
+              });
+            });
+          } else {
+            req.flash("error", "Password do not match.");
+            return res.redirect("back");
+          }
+        });
+      },
+      function (user, done) {
+        var smtpTransport = nodemailer.createTransport({
+          service: "Gmail",
+          auth: {
+            user: "shlomospaeth@gmail.com",
+            pass: process.env.GMAILPW,
+          },
+        });
+        var mailOptions = {
+          to: user.email,
+          from: "shlomospaeth@gmail.com",
+          subject: "Your Password has been changed",
+          text: "Hello, \n\n" + "This is a confirmation that the password for your account " + user.email + " has just been changed",
+        };
+        smtpTransport.sendMail(mailOptions, function (err) {
+          req.flash("success", "Success! Your password had been changed");
+          done(err);
+        });
+      },
+    ],
+    function (err) {
+      res.redirect("/artEntries");
+    }
+  );
+});
+
 //User Profiles
 
-router.get("/profile/:id", isLoggedIn, function (req, res) {
+router.get("/profile/:id", isLoggedIn, (req, res) => {
   User.findById(req.params.id, function (err, foundProfile) {
     if (err) {
       req.flash("error", "Urp, issue with your profile");

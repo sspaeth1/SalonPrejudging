@@ -8,10 +8,10 @@
 </script>
 
 <h1  class="fullSpan">
-  <span class="darkOrange font-weight-bold"><%=  pageCategoryId.categoryId %>: <%= categorySpecifics[letterIndexKeys[0][pageCategoryId.categoryId]].type  %> </span>
+  <span class="darkOrange font-weight-bold"><%=  pageCategoryId %>: <%= categorySpecifics[letterIndexKeys[0][pageCategoryId]].type  %> </span>
 <br>
-  <span  class="myCategorySpecific" ><%= categorySpecifics[letterIndexKeys[0][pageCategoryId.categoryId]].subtype  %></span>        
-   <span class="white"><%=  categorySpecifics[letterIndexKeys[0][pageCategoryId.categoryId]].specific  %></span>       
+  <span  class="myCategorySpecific" ><%= categorySpecifics[letterIndexKeys[0][pageCategoryId]].subtype  %></span>        
+   <span class="white"><%=  categorySpecifics[letterIndexKeys[0][pageCategoryId]].specific  %></span>       
 
    </h1>
 
@@ -31,14 +31,13 @@
 <article class="appendixContainer">
 
    <div class="row entries">
-    <% for( let i = 0 ; i < artentries.length -1 ; i++){   
-       if( artentries[i].category ===  pageCategoryId.categoryId ){   %>
-
+    <% artentries.forEach( (artentry, i) => { %>
+    
 
       <div class="col-lg-4 col-md-6 col-sm-6 mt-5 <%= findScore.id %>" id="item<%= i %>" >
         <div class="img-thumbnail " >
       
-        <a href="/artentries/<%= artentries[i]._id %>?<%= pageCategoryId.categoryId %>" >  
+        <a href="/artentries/<%= artentries[i]._id %>?<%= pageCategoryId %>" >  
 
 
          <%   if(  artentries[i].category=== "A1" ||
@@ -76,13 +75,21 @@
             <p> <div class="orange font-weight-bolder threeQuarterRem ">Primary Audience: </div> <%= artentries[i].primaryAudience %></p>
             <p> <div class="orange font-weight-bolder threeQuarterRem ">Intended purpose: </div><%= artentries[i].intended_purpose.substring(0,50) %>... </p> 
            
-
-          <div class="scoreThisEntry" id="unscored<%= artentries[i]._id %>" >   <a href="/artentries/<%= artentries[i]._id %>?<%= pageCategoryId.categoryId %>"  name="<%= artentries[i]._id %>"  class="btn btn-primary lg"> Score this entry</a></div>
+    
           
+            
+            <% if( artentries[i].judges[currentUser.id])  {  %>
+                      <div class="scoreThisEntry" id="unscored<%= artentries[i]._id %>" >  
+                         <a href="/artentries/<%= artentries[i]._id %>?<%= pageCategoryId %>"  name="<%= artentries[i]._id %>"  class="btn btn-success lg"> Entry Scored: <%= score %></a></div>
+
+            <% }else{  %>
+              <div class="scoreThisEntry" id="unscored<%= artentries[i]._id %>" >   <a href="/artentries/<%= artentries[i]._id %>?<%= pageCategoryId %>"  name="<%= artentries[i]._id %>"  class="btn btn-primary lg"> Score this entry  <%=  %> </a></div>
+              <% } %>
+
         </div>
-      </div>
-      <% } %>
-    <% } %>  
+      </div> 
+      <% }); %>
+
     
   </div>
 </div>

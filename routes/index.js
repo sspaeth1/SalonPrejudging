@@ -46,11 +46,11 @@ router.get("/index", async (req, res) => {
 
 router.get("/home", (req, res) => res.render("home"));
 
-router.get("/generalGuidelines", (req, res) => res.render("generalGuidelines", { JudgeGroups }));
+router.get("/generalGuidelines", (req, res) => res.render("generalGuidelines", { JudgeGroups, categorySpecifics }));
 
-router.get("/guidelinesPrejudging", (req, res) => res.render("guidelinesPrejudging", { JudgeGroups }));
+router.get("/guidelinesPrejudging", (req, res) => res.render("guidelinesPrejudging", { JudgeGroups, categorySpecifics }));
 
-router.get("/judgingGroups", isLoggedIn, (req, res) => res.render("judgingGroups", { JudgeGroups }));
+router.get("/judgingGroups", isLoggedIn, (req, res) => res.render("judgingGroups", { JudgeGroups, categorySpecifics }));
 
 router.post("/judgingGroups", isLoggedIn, async (req, res) => {
   let user = await User.findOne({ email: req.body.email });
@@ -138,25 +138,21 @@ router.get("/appendixB", (req, res) => res.render("appendixB", { JudgeGroups }))
 
 router.get("/ballots", (req, res) => res.render("ballots", { JudgeGroups }));
 
-router.get("/artentries/", isLoggedIn, async function (req, res) {
+router.get("/judgingForms", (req, res) => res.render("judgingForms", { JudgeGroups }));
+
+router.get("/artentries", isLoggedIn, async function (req, res) {
   try {
-    let pageCategoryId = req.query;
+    let pageCategoryId = req.query.categoryId;
 
     let findScore = await GeneralScore.find({
       judge: req.user.id,
-    }).exec();
-
-    let findComplete = await GeneralScore.find({
-      judge: req.user.id,
-      complete: true,
     }).exec();
 
     // var page = req.params.page || 1;
     // var r_limit = req.params.limit || 2;
     // var limit = parseInt(r_limit);
 
-    await ArtEntry.find({})
-      .populate("judge")
+    await ArtEntry.find({ category: pageCategoryId })
       .populate("score_general")
       .exec()
       .then(async (artentries) => {
@@ -212,6 +208,7 @@ router.get("/artentries/", isLoggedIn, async function (req, res) {
             }
           }
         }
+        console.log(artentries.length);
         res.render("artentries", {
           // title: "pagination",
           // result: result.docs,
@@ -221,7 +218,6 @@ router.get("/artentries/", isLoggedIn, async function (req, res) {
           // pages: result.pages,
           artentries,
           findScore,
-          findComplete,
           DBX_API_KEY,
           pageCategoryId,
           categorySpecifics,

@@ -9861,6 +9861,15 @@ img.card-img-top {
   list-style: none;
 }
 
+section#scoring ul {
+  position: relative;
+  left: 40px;
+  color: #272727;
+  font-size: 1rem;
+  width: 95%;
+  margin-top: 10px;
+}
+
 #scoringSlider ul.slider li.slider {
   position: relative;
   display: block;

@@ -6,7 +6,7 @@ var UserSchema = new mongoose.Schema({
   Password: String,
   firstName: String,
   lastName: String,
-  email: String,
+  email: { type: String, unique: true, required: true },
   avatar: { type: String, default: "https://i.imgur.com/O2vFdrv.jpg" },
   // artEntry: { type: mongoose.Schema.Types.ObjectId, ref: "ArtEntry" },
   judge: { type: Boolean, default: true },
@@ -19,9 +19,11 @@ var UserSchema = new mongoose.Schema({
       specific: String,
     },
   ],
-  judgingGroup: {type: String, default: "0"},
+  judgingGroup: { type: String, default: "0" },
   // assignedCategories: [{ type: mongoose.Schema.Types.ObjectId, ref: "Category" }],
   isAdmin: { type: Boolean, default: false },
+  resetPasswordToken: String,
+  resetPasswordTokenExpires: Date,
   created: { type: Date, default: Date.now },
 });
 
