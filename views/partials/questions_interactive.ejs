@@ -107,7 +107,7 @@
                </label>
             </form>
          </div>
-         <h3 class="" aria-expanded="false">2. Appropriate for the intended audience</h3>
+  <h3 class="" aria-expanded="false">2. Appropriate for the intended audience</h3>
          <div class="ratingFormSubHeader " > 
              <form action="/show" method="POST" class="intractv_part1_2_audience">
                  <p> The simplicity or complexity of the work
@@ -176,39 +176,6 @@
                 </label>
              </form>
           </div>
-          <h3 class="" aria-expanded="false">4. Appropriate use of interactivity</h3>
-          <div class="ratingFormSubHeader " > 
-              <form action="/show" method="POST" class="intractv_part1_4_intractvUse">
-                  <p>  Is interactivity used effectively to achieve
-                    communication goals or is it used gratuitously? Has the interaction design solution helped to effectively
-                    solve the communication problem? Is the user a participant and not a spectator?</p>
-                
-                  <label for="1-0">
-                      <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="1-0" name="rating" value="0"  <%= intractv_part1_4_intractvUse == 0 ? 'checked' : '' %> /> 
-                      0 Failure 
-                  </label>
-                  <label for="1-1">
-                      <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="1-1" name="rating" value="1"  <%= intractv_part1_4_intractvUse == 1 ? 'checked' : '' %> /> 
-                      1 Minimal/Poor      
-                  </label>
-                  <label for="1-2">
-                      <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="1-2" name="rating" value="2"  <%= intractv_part1_4_intractvUse == 2 ? 'checked' : '' %> /> 
-                      2 Fair/low    
-                  </label>
-                  <label for="1-3">
-                      <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="1-3" name="rating" value="3"  <%= intractv_part1_4_intractvUse == 3 ? 'checked' : '' %> /> 
-                      3 Average / Adequate
-                  </label>
-                  <label for="1-4">
-                      <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="1-4" name="rating" value="4"   <%= intractv_part1_4_intractvUse == 4 ? 'checked' : '' %> />  
-                      4 Very Good / High   
-                  </label>
-                  <label for="1-5">
-                      <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="1-5" name="rating" value="5"   <%= intractv_part1_4_intractvUse == 5 ? 'checked' : '' %> /> 
-                      5 Excellent / Very High   
-                  </label>
-               </form>
-            </div>
             <h3 class="" aria-expanded="false">4. Appropriate use of interactivity</h3>
             <div class="ratingFormSubHeader " > 
                 <form action="/show" method="POST" class="intractv_part1_5_accuracy">

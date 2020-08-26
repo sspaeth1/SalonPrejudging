@@ -10,10 +10,9 @@ const bodyParser = require("body-parser"),
   ArtEntry = require("./models/artEntry"),
   Category = require("./models/category"),
   alt = "acdNGY4RKoPe",
-  categorySpecifics = require("./public/json/categorySpecifics.js");
-const JudgeGroups = require("./public/json/Groups2019.js");
-entrants2019 = require("./public/data/2019/2019AllEntrants"); // js file with all entries  converted from excel> CSV > Json > js
-
+  categorySpecifics = require("./public/json/categorySpecifics.js"),
+  JudgeGroups = require("./public/json/Groups2019.js"), // 2019
+  entrants = require("./public/data/2019/2019AllEntrants"); // js file with all entries  converted from excel> CSV > Json > js
 const newItemRoutes = require("./routes/newItem");
 const auth = require("./routes/auth");
 const indexRoutes = require("./routes/index");
@@ -35,8 +34,8 @@ mongoose
     //Populate Art Entries from Js/JSON file. created from spreadsheet
     ArtEntry.find().then((res) => {
       if (res.length == 0) {
-        for (let i = 0; i < entrants2019.length; i++) {
-          let art = new ArtEntry(entrants2019[i]);
+        for (let i = 0; i < entrants.length; i++) {
+          let art = new ArtEntry(entrants[i]);
           art.save();
         }
       }
