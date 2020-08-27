@@ -24,7 +24,7 @@ const app = express();
 
 // //mongoose connect mongo DB Atlas
 mongoose
-  .connect("mongodb+srv://spaeth2:" + alt + "@ss-apps-vtkpg.mongodb.net/AMI-Judging-Portal-Collection?retryWrites=true&w=majority", {
+  .connect("mongodb+srv://spaeth2:" + alt + "@ss-apps.vtkpg.mongodb.net/AMI-Judging-Portal-Collection?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
