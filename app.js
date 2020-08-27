@@ -11,8 +11,8 @@ const bodyParser = require("body-parser"),
   Category = require("./models/category"),
   alt = "acdNGY4RKoPe",
   categorySpecifics = require("./public/json/categorySpecifics.js"),
-  JudgeGroups = require("./public/json/Groups2019.js"), // 2019
-  entrants = require("./public/data/2019/2019AllEntrants"); // js file with all entries  converted from excel> CSV > Json > js
+  JudgeGroups = require("./public/json/Groups.js"),
+  entrants = require("./public/data/AllEntrants"); // js file with all entries  converted from excel> CSV > Json > js
 const newItemRoutes = require("./routes/newItem");
 const auth = require("./routes/auth");
 const indexRoutes = require("./routes/index");
@@ -24,7 +24,7 @@ const app = express();
 
 // //mongoose connect mongo DB Atlas
 mongoose
-  .connect("mongodb+srv://spaeth2:" + alt + "@ss-apps-vtkpg.mongodb.net/ami_prejudge?retryWrites=true&w=majority", {
+  .connect("mongodb+srv://spaeth2:" + alt + "@ss-apps-vtkpg.mongodb.net/AMI-Judging-Portal-Collection?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,

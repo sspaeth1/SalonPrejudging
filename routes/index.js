@@ -5,7 +5,7 @@ const express = require("express"),
   ArtEntry = require("../models/artEntry"),
   Category = require("../models/category"),
   GeneralScore = require("../models/score_general"),
-  JudgeGroups = require("../public/json/Groups2019"),
+  JudgeGroups = require("../public/json/Groups.js"),
   auth = require("../routes/auth"),
   categorySpecifics = require("../public/json/categorySpecifics.js"),
   letterIndexKeys = require("../public/json/LetterIndexKeys.json");
@@ -374,7 +374,7 @@ router.get("/artentries/:id", isLoggedIn, async (req, res) => {
       } catch (err) {
         amediaLink = "https://i.imgur.com/33E6CfN.jpg";
         console.log(" catch link: ", err);
-        console.log("response.link: " + response.link);
+        console.log("response.link: " + response.link.response);
         // console.log(" page catch err: ", err.error);
       }
     }

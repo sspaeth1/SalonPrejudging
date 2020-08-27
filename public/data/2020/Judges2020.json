@@ -1,0 +1,525 @@
+[
+  {
+    "_id": "5f47bf0835f15e5b03151281",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 1",
+    "isAdmin": "FALSE",
+    "username": "EleanorBailey",
+    "firstName:": "Eleanor",
+    "lastName": "Bailey",
+    "email": "ebailey@healthwise.org",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151282",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 1",
+    "isAdmin": "FALSE",
+    "username": "LydiaGregg",
+    "firstName:": "Lydia",
+    "lastName": "Gregg",
+    "email": "lgregg6@jhmi.edu",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151283",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 1",
+    "isAdmin": "FALSE",
+    "username": "CarolinaHrejsa",
+    "firstName:": "Carolina",
+    "lastName": "Hrejsa",
+    "email": "chrejsa@yahoo.com",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151284",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 1",
+    "isAdmin": "FALSE",
+    "username": "WestonDeWolff",
+    "firstName:": "Weston",
+    "lastName": "DeWolff",
+    "email": "weston@chromatincreative.com",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151285",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 1",
+    "isAdmin": "FALSE",
+    "username": "JoeSamson",
+    "firstName:": "Joe",
+    "lastName": "Samson",
+    "email": "jcsamson2@gmail.com",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151286",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 2",
+    "isAdmin": "FALSE",
+    "username": "AmyZhong",
+    "firstName:": "Amy",
+    "lastName": "Zhong",
+    "email": "art@amyzhong.com",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151287",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 2",
+    "isAdmin": "FALSE",
+    "username": "MeganFoldenauer",
+    "firstName:": "Megan",
+    "lastName": "Foldenauer",
+    "email": "redmeg8@gmail.com",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151288",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 2",
+    "isAdmin": "FALSE",
+    "username": "Ni-kaFord",
+    "firstName:": "Ni-ka",
+    "lastName": "Ford",
+    "email": "nikaford07@gmail.com",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151289",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 2",
+    "isAdmin": "FALSE",
+    "username": "CaitlinMock",
+    "firstName:": "Caitlin",
+    "lastName": "Mock",
+    "email": "cjmock24@gmail.com",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151290",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 2",
+    "isAdmin": "FALSE",
+    "username": "HannahEly",
+    "firstName:": "Hannah",
+    "lastName": "Ely",
+    "email": "hannah.b.ely@gmail.com",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151291",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 3",
+    "isAdmin": "FALSE",
+    "username": "MelanieConnolly",
+    "firstName:": "Melanie",
+    "lastName": "Connolly",
+    "email": "melanie@mecovisuals.com",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151292",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 3",
+    "isAdmin": "FALSE",
+    "username": "KevinMillar",
+    "firstName:": "Kevin",
+    "lastName": "Millar",
+    "email": "kevin@invivo.com",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151293",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 3",
+    "isAdmin": "FALSE",
+    "username": "JudyRubin",
+    "firstName:": "Judy",
+    "lastName": "Rubin",
+    "email": "jrubinvisuals@gmail.com",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151294",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 3",
+    "isAdmin": "FALSE",
+    "username": "ImanCarr",
+    "firstName:": "Iman",
+    "lastName": "Carr",
+    "email": "iman.carr@roswellpark.org",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151295",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 3",
+    "isAdmin": "FALSE",
+    "username": "JeffDay",
+    "firstName:": "Jeff",
+    "lastName": "Day",
+    "email": "jday19@jhmi.edu",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151296",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 4",
+    "isAdmin": "FALSE",
+    "username": "VeronicaFalconieri  Hays",
+    "firstName:": "Veronica",
+    "lastName": "Falconieri  Hays",
+    "email": "veronica@falconierivisuals.com",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151297",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 4",
+    "isAdmin": "FALSE",
+    "username": "DonnaDeSmet",
+    "firstName:": "Donna",
+    "lastName": "DeSmet",
+    "email": "desmet.donna@mayo.edu",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151298",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 4",
+    "isAdmin": "FALSE",
+    "username": "MeredithHoffman",
+    "firstName:": "Meredith",
+    "lastName": "Hoffman",
+    "email": "melehoffman@gmail.com",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151299",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 4",
+    "isAdmin": "FALSE",
+    "username": "MayaShoemaker",
+    "firstName:": "Maya",
+    "lastName": "Shoemaker",
+    "email": "maya@shoemakermedical.com",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151300",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 4",
+    "isAdmin": "FALSE",
+    "username": "CariNunziato",
+    "firstName:": "Cari",
+    "lastName": "Nunziato",
+    "email": "cnunzi123@gmail.com",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151301",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 4",
+    "isAdmin": "FALSE",
+    "username": "ValerieAltounian",
+    "firstName:": "Valerie",
+    "lastName": "Altounian",
+    "email": "valtounian@gmail.com",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151302",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 5",
+    "isAdmin": "FALSE",
+    "username": "PatThomas",
+    "firstName:": "Pat",
+    "lastName": "Thomas",
+    "email": "pat@patmedicalart.com",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151303",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 5",
+    "isAdmin": "FALSE",
+    "username": "TainaLitwak",
+    "firstName:": "Taina",
+    "lastName": "Litwak",
+    "email": "taina@litwakillustration.com",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151304",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 5",
+    "isAdmin": "FALSE",
+    "username": "PegGerrity",
+    "firstName:": "Peg",
+    "lastName": "Gerrity",
+    "email": "pg@peggerrity.com",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151305",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 5",
+    "isAdmin": "FALSE",
+    "username": "AlisonBurke",
+    "firstName:": "Alison",
+    "lastName": "Burke",
+    "email": "aburke@nejm.org",
+    "": "ferrante.virginia@gmail.com"
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151306",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 5",
+    "isAdmin": "FALSE",
+    "username": "VirginiaM",
+    "firstName:": "Virginia",
+    "lastName": "M",
+    "email": "Ferrante-Iqbal",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151307",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 6",
+    "isAdmin": "FALSE",
+    "username": "AnthonyBaker",
+    "firstName:": "Anthony",
+    "lastName": "Baker",
+    "email": "anthony.baker@osumc.edu",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151308",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 6",
+    "isAdmin": "FALSE",
+    "username": "RochelleKu",
+    "firstName:": "Rochelle",
+    "lastName": "Ku",
+    "email": "rkusciart@gmail.com",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151309",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 6",
+    "isAdmin": "FALSE",
+    "username": "TziporahThompson",
+    "firstName:": "Tziporah",
+    "lastName": "Thompson",
+    "email": "tziporah@gmail.com",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151310",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 6",
+    "isAdmin": "FALSE",
+    "username": "CassioLynm",
+    "firstName:": "Cassio",
+    "lastName": "Lynm",
+    "email": "cassio.lynm.ami@gmail.com",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  },
+  {
+    "_id": "5f47bf0835f15e5b03151311",
+    "avatar": "https://i.imgur.com/33E6CfN.jpg",
+    "judge": "TRUE",
+    "assignedCategories": "",
+    "judgingGroup": "group 6",
+    "isAdmin": "FALSE",
+    "username": "NatalieKoscal",
+    "firstName:": "Natalie",
+    "lastName": "Koscal",
+    "email": "nkoscal@nejm.org",
+   "created": {
+        "$date": {
+            "$numberLong": "1592704866525"
+        }
+   }
+  }
+]
