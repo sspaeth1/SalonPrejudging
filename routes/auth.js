@@ -17,6 +17,8 @@ const { isLoggedIn } = require("../middleware");
 const { render } = require("ejs");
 Dotenv.config({ debug: process.env.DEBUG });
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
 // ===================
 // Authenticate routes
 // ===================
