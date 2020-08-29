@@ -72,12 +72,6 @@ const group3 = [
     specific: " -Gaming",
   },
   {
-    letter: "G5",
-    type: "Professional Motion Media",
-    subtype: "Interactive Media",
-    specific: "Interactive Media – Interactive Textbook",
-  },
-  {
     letter: "M",
     type: "Student Interactive Section",
     subtype: "Interactive",
@@ -293,4 +287,4 @@ module.exports.group4 = group4;
 module.exports.group5 = group5;
 module.exports.group6 = group6;
 module.exports.group7 = group7;
-module.exports.group7 = groupAdmin;
+module.exports.groupAdmin = groupAdmin;

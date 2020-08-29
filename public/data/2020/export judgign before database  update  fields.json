@@ -1,0 +1,5460 @@
+[{
+  "_id": {
+    "$oid": "5f4668b2c62ffc42588cf4a6"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce792"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-26T13:50:42.050Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f466ac1c62ffc42588cf4a7"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce6ff"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-26T13:59:29.581Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4729e642a42b6054a68236"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce7ab"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-27T03:35:02.147Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f472a0c42a42b6054a68237"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce7ab"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-27T03:35:40.486Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f472a1442a42b6054a68238"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce7af"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-27T03:35:48.430Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f472a2342a42b6054a68239"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce679"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-27T03:36:03.847Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f472d1242a42b6054a6823a"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce673"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-27T03:48:34.148Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f472d7c42a42b6054a6823b"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce678"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-27T03:50:20.228Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f472e2e42a42b6054a6823c"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce679"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-27T03:53:18.253Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f472e3e42a42b6054a6823d"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce7ab"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-27T03:53:34.850Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f472e6642a42b6054a6823e"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce7ab"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-27T03:54:14.987Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f472ff742a42b6054a6823f"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce797"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-27T04:00:55.209Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f47303942a42b6054a68240"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce797"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-27T04:02:01.155Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f473127797cca1548dfc540"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce797"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-27T04:05:59.883Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f47320b18cd213b28d89978"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce679"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-27T04:09:47.672Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f47323918cd213b28d89979"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce797"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-27T04:10:33.101Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f47326518cd213b28d8997a"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce796"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-27T04:11:17.278Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f47341a62ce611720bb6810"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce796"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-27T04:18:34.352Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f47349b3f1e4c4e444a1ca9"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce797"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-27T04:20:43.196Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4734f991b6d37050e8d0bc"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce797"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-27T04:22:17.271Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f47ba63a3196f3e4872572f"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce797"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-27T13:51:31.764Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f47baaba3196f3e48725730"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce796"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-27T13:52:43.931Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f47bd78a3196f3e48725731"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce6a2"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-27T14:04:40.847Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f47bd9ba3196f3e48725732"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce794"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-27T14:05:15.005Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f47bdb5a3196f3e48725733"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce679"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-27T14:05:41.315Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f47fbcfa3196f3e48725734"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce797"
+  },
+  "judge": {
+    "$oid": "2020d684640fac6c9932a3a9"
+  },
+  "created": {
+    "$date": "2020-08-27T18:30:39.851Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f482bc8174b856894e90781"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f45d445b7338c56f8fce70a"
+  },
+  "judge": {
+    "$oid": "5f482b49174b856894e9077f"
+  },
+  "created": {
+    "$date": "2020-08-27T21:55:20.351Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4866683d23db36c0198c7e"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89a9"
+  },
+  "judge": {
+    "$oid": "5f48267b174b856894e90773"
+  },
+  "created": {
+    "$date": "2020-08-28T02:05:28.149Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f486ce236b5b70017043ee8"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89b9"
+  },
+  "judge": {
+    "$oid": "5f482b49174b856894e9077f"
+  },
+  "created": {
+    "$date": "2020-08-28T02:33:06.181Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f48812536b5b70017043f0a"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e898b"
+  },
+  "judge": {
+    "$oid": "5f482b49174b856894e9077f"
+  },
+  "created": {
+    "$date": "2020-08-28T03:59:33.776Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f490b0125d2dc00175f4bf2"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a05"
+  },
+  "judge": {
+    "$oid": "5f4908063954516298055046"
+  },
+  "created": {
+    "$date": "2020-08-28T13:47:45.571Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49169ebd8b6b50242d3173"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a91"
+  },
+  "judge": {
+    "$oid": "5f490df93954516298055053"
+  },
+  "created": {
+    "$date": "2020-08-28T14:37:18.164Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4916a4bd8b6b50242d3174"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a74"
+  },
+  "judge": {
+    "$oid": "5f490df93954516298055053"
+  },
+  "created": {
+    "$date": "2020-08-28T14:37:24.304Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4916aabd8b6b50242d3175"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a91"
+  },
+  "judge": {
+    "$oid": "5f490df93954516298055053"
+  },
+  "created": {
+    "$date": "2020-08-28T14:37:30.958Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49179abd8b6b50242d3176"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a91"
+  },
+  "judge": {
+    "$oid": "5f490df93954516298055053"
+  },
+  "created": {
+    "$date": "2020-08-28T14:41:30.778Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4928620bfecf00176cb982"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89c9"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-28T15:53:06.056Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 5,
+  "gnrl_part1_2_audience": 5,
+  "gnrl_part1_3_problemSolving": 5,
+  "gnrl_part1_4_accuracy": 4,
+  "gnrl_part1_5_clarity": 5,
+  "gnrl_part2_6_technique": 5,
+  "gnrl_part2_7_composition": 5,
+  "gnrl_part2_8_draftsmanship": 5,
+  "gnrl_part2_9_craftsmanship": 5,
+  "notes": "gave it all 5s, very nicely done!"
+},{
+  "_id": {
+    "$oid": "5f4928d40bfecf00176cb983"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89ca"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-28T15:55:00.732Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 5,
+  "gnrl_part1_2_audience": 4,
+  "gnrl_part1_3_problemSolving": 4,
+  "gnrl_part1_4_accuracy": 5,
+  "gnrl_part1_5_clarity": 5,
+  "gnrl_part2_6_technique": 5,
+  "gnrl_part2_7_composition": 3,
+  "gnrl_part2_8_draftsmanship": 5,
+  "gnrl_part2_9_craftsmanship": 5,
+  "notes": "Like this one a lot. Only negative comment is that I would have made the mechanism part larger but that could have been just a repeat image from another board color dedicated to the machinery. However that could have been mentioned in description."
+},{
+  "_id": {
+    "$oid": "5f49292f0bfecf00176cb984"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89cb"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-28T15:56:31.474Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 4,
+  "gnrl_part1_2_audience": 4,
+  "gnrl_part1_3_problemSolving": 5,
+  "gnrl_part1_4_accuracy": 5,
+  "gnrl_part1_5_clarity": 3,
+  "gnrl_part2_6_technique": 4,
+  "gnrl_part2_7_composition": 4,
+  "gnrl_part2_8_draftsmanship": 5,
+  "gnrl_part2_9_craftsmanship": 4,
+  "notes": "Very nice but a juror might get a little lost in orientation. Thought green background in the last two was a bit off. Still would consider for award of merit."
+},{
+  "_id": {
+    "$oid": "5f4929840bfecf00176cb985"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89cf"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-28T15:57:56.287Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 4,
+  "gnrl_part1_2_audience": 3,
+  "gnrl_part1_3_problemSolving": 4,
+  "gnrl_part1_4_accuracy": 4,
+  "gnrl_part1_5_clarity": 4,
+  "gnrl_part2_6_technique": 4,
+  "gnrl_part2_7_composition": 3,
+  "gnrl_part2_8_draftsmanship": 3,
+  "gnrl_part2_9_craftsmanship": 4,
+  "notes": "This was good in explaining the concept but just not very pretty."
+},{
+  "_id": {
+    "$oid": "5f4929a60bfecf00176cb986"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89ce"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-28T15:58:30.636Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 3,
+  "gnrl_part1_2_audience": 3,
+  "gnrl_part1_3_problemSolving": 3,
+  "gnrl_part1_4_accuracy": 3,
+  "gnrl_part1_5_clarity": 3,
+  "gnrl_part2_6_technique": 3,
+  "gnrl_part2_7_composition": 4,
+  "gnrl_part2_8_draftsmanship": 3,
+  "gnrl_part2_9_craftsmanship": 3,
+  "notes": "This was ok, nothing special."
+},{
+  "_id": {
+    "$oid": "5f4929ca0bfecf00176cb987"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d0"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-28T15:59:06.897Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 5,
+  "gnrl_part1_2_audience": 5,
+  "gnrl_part1_3_problemSolving": 4,
+  "gnrl_part1_4_accuracy": 4,
+  "gnrl_part1_5_clarity": 5,
+  "gnrl_part2_6_technique": 5,
+  "gnrl_part2_7_composition": 3,
+  "gnrl_part2_8_draftsmanship": 4,
+  "gnrl_part2_9_craftsmanship": 4,
+  "notes": "Maybe award of merit. Composition was crowded but good draftsmanship and conveying of concept."
+},{
+  "_id": {
+    "$oid": "5f492a150bfecf00176cb988"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d1"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-28T16:00:21.953Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 4,
+  "gnrl_part1_2_audience": 4,
+  "gnrl_part1_3_problemSolving": 4,
+  "gnrl_part1_4_accuracy": 4,
+  "gnrl_part1_5_clarity": 4,
+  "gnrl_part2_6_technique": 3,
+  "gnrl_part2_7_composition": 3,
+  "gnrl_part2_8_draftsmanship": 5,
+  "gnrl_part2_9_craftsmanship": 5,
+  "notes": "Overall very good but should have divided into 2 boards or made the heads smaller and films a bit larger."
+},{
+  "_id": {
+    "$oid": "5f492a5b0bfecf00176cb989"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d2"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-28T16:01:31.662Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 4,
+  "gnrl_part1_2_audience": 4,
+  "gnrl_part1_3_problemSolving": 4,
+  "gnrl_part1_4_accuracy": 4,
+  "gnrl_part1_5_clarity": 3,
+  "gnrl_part2_6_technique": 4,
+  "gnrl_part2_7_composition": 3,
+  "gnrl_part2_8_draftsmanship": 3,
+  "gnrl_part2_9_craftsmanship": 4,
+  "notes": "I felt it could be more dramatic in showing the imbalance between the twins. Maybe making Nathan a bit more pale and less robust. I wasn't able to quickly grasp the content and inequity of blood flow. However it was done with great care and very clean appearance."
+},{
+  "_id": {
+    "$oid": "5f492aa30bfecf00176cb98a"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d3"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-28T16:02:43.352Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 4,
+  "gnrl_part1_2_audience": 4,
+  "gnrl_part1_3_problemSolving": 4,
+  "gnrl_part1_5_clarity": 3,
+  "gnrl_part2_6_technique": 3,
+  "gnrl_part2_7_composition": 4,
+  "gnrl_part2_8_draftsmanship": 3,
+  "gnrl_part2_9_craftsmanship": 3,
+  "notes": "Image seems very digitized, maybe from modeling software. Appreciate the re-creation of the location of the tumor and depiction of its location. Don't think the jury would grasp the danger to circulation based just on these images."
+},{
+  "_id": {
+    "$oid": "5f492b2a0bfecf00176cb98b"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d7"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-28T16:04:58.646Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 4,
+  "gnrl_part1_2_audience": 4,
+  "gnrl_part1_3_problemSolving": 3,
+  "gnrl_part1_4_accuracy": 3,
+  "gnrl_part1_5_clarity": 4,
+  "gnrl_part2_6_technique": 4,
+  "gnrl_part2_7_composition": 4,
+  "gnrl_part2_8_draftsmanship": 3,
+  "gnrl_part2_9_craftsmanship": 3,
+  "notes": "This was a very simplified presentation of the surgery which is probably good for some jurors. The dissection image didn't seem to go with the orientation of the others."
+},{
+  "_id": {
+    "$oid": "5f492d8fbd8b6b50242d317e"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a12"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T16:15:11.519Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 3,
+  "gnrl_part1_2_audience": 3,
+  "gnrl_part1_3_problemSolving": 2,
+  "gnrl_part1_4_accuracy": 3,
+  "gnrl_part1_5_clarity": 2,
+  "gnrl_part2_6_technique": 4,
+  "gnrl_part2_7_composition": 4,
+  "notes": "It's nicely rendered but the nerve felt too stylized for me to understand its course. It is hard to tell where the nerve is actually sitting spatially."
+},{
+  "_id": {
+    "$oid": "5f492e5b0bfecf00176cb98c"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89aa"
+  },
+  "judge": {
+    "$oid": "5f4901133954516298055039"
+  },
+  "created": {
+    "$date": "2020-08-28T16:18:35.915Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 3,
+  "gnrl_part1_2_audience": 4,
+  "gnrl_part1_3_problemSolving": 3,
+  "gnrl_part1_4_accuracy": 4,
+  "gnrl_part1_5_clarity": 5,
+  "gnrl_part2_6_technique": 5,
+  "gnrl_part2_7_composition": 3,
+  "gnrl_part2_8_draftsmanship": 3,
+  "gnrl_part2_9_craftsmanship": 4,
+  "notes": "Needs to be shown with labels--as it is, it's not meeting its intended purpose.\nThere are some benefits (clarity, readability) of 2D/Drawing that were lost by doing this in 3D--these losses were not compensated for."
+},{
+  "_id": {
+    "$oid": "5f492fd10bfecf00176cb98d"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89a5"
+  },
+  "judge": {
+    "$oid": "5f4901133954516298055039"
+  },
+  "created": {
+    "$date": "2020-08-28T16:24:49.990Z"
+  },
+  "__v": 0,
+  "gnrl_part2_7_composition": 2,
+  "gnrl_part2_8_draftsmanship": 4,
+  "gnrl_part2_9_craftsmanship": 4,
+  "gnrl_part1_1_message": 4,
+  "gnrl_part1_2_audience": 3,
+  "gnrl_part1_3_problemSolving": 4,
+  "gnrl_part1_4_accuracy": 3,
+  "gnrl_part1_5_clarity": 4,
+  "gnrl_part2_6_technique": 4,
+  "notes": "Great contrast/color. Great draftsmanship and craftsmanship. \n\nObjects have been simplified in an successful way. It's not overly detailed or unnecessarily 'scientific'. However, I am not sure if this is ideal for the intended audience.\n\nThe composition is okay--the speedometer is creating a tangent with the objects above, and it seems an unnecessary addition to show speed, which is already shown by the motion lines. "
+},{
+  "_id": {
+    "$oid": "5f4931e50bfecf00176cb98e"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89a0"
+  },
+  "judge": {
+    "$oid": "5f4901133954516298055039"
+  },
+  "created": {
+    "$date": "2020-08-28T16:33:41.479Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 1,
+  "gnrl_part1_2_audience": 2,
+  "gnrl_part1_3_problemSolving": 3,
+  "gnrl_part1_4_accuracy": 1,
+  "gnrl_part1_5_clarity": 2,
+  "gnrl_part2_6_technique": 2,
+  "gnrl_part2_7_composition": 3,
+  "gnrl_part2_8_draftsmanship": 2,
+  "gnrl_part2_9_craftsmanship": 2,
+  "notes": "The composition is fair. \nThe rendering on the virus particles is much more detailed than the rendering on anything else.\n\nThe alveoli are not illustrated/organized in a way that is good for the intended audience. It looks like it's communicating that breathing in the virus would cause your lungs to have growths. The composition in no way indicates that the alveoli are \"zoomed in\"\n\nThe trachea is medically inaccurate. It's huge."
+},{
+  "_id": {
+    "$oid": "5f4933a70bfecf00176cb98f"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8995"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T16:41:11.047Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4934380bfecf00176cb990"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89ad"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T16:43:36.260Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4934540bfecf00176cb991"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89a8"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T16:44:04.777Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49345f0bfecf00176cb992"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e898a"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T16:44:15.970Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4934800bfecf00176cb993"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89c5"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T16:44:48.639Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4934a60bfecf00176cb994"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89c6"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T16:45:26.123Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4935210bfecf00176cb995"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e898b"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T16:47:29.641Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4935610bfecf00176cb996"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8995"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T16:48:33.081Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49362b0bfecf00176cb997"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d1"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T16:51:55.220Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 4,
+  "gnrl_part1_2_audience": 4,
+  "gnrl_part1_3_problemSolving": 3,
+  "gnrl_part1_4_accuracy": 3,
+  "gnrl_part1_5_clarity": 3,
+  "gnrl_part2_6_technique": 3,
+  "gnrl_part2_7_composition": 3,
+  "gnrl_part2_8_draftsmanship": 4,
+  "gnrl_part2_9_craftsmanship": 3,
+  "notes": "Nice rendition of the actual plaintiff"
+},{
+  "_id": {
+    "$oid": "5f49366a0bfecf00176cb998"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e898e"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T16:52:58.611Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4936b90bfecf00176cb999"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d2"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T16:54:17.015Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 4,
+  "gnrl_part1_2_audience": 3,
+  "gnrl_part1_3_problemSolving": 4,
+  "gnrl_part1_4_accuracy": 3,
+  "gnrl_part1_5_clarity": 4,
+  "gnrl_part2_6_technique": 3,
+  "gnrl_part2_7_composition": 3,
+  "gnrl_part2_8_draftsmanship": 4,
+  "gnrl_part2_9_craftsmanship": 4,
+  "notes": "nice piece -tricky concept. Description does not state age of gestation, so concerns about size of amnion vs age/size of fetuses. "
+},{
+  "_id": {
+    "$oid": "5f4936c10bfecf00176cb99a"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8996"
+  },
+  "judge": {
+    "$oid": "5f4901133954516298055039"
+  },
+  "created": {
+    "$date": "2020-08-28T16:54:25.412Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 3,
+  "gnrl_part1_2_audience": 4,
+  "gnrl_part1_3_problemSolving": 3,
+  "gnrl_part1_4_accuracy": 3,
+  "gnrl_part1_5_clarity": 4,
+  "gnrl_part2_6_technique": 3,
+  "gnrl_part2_7_composition": 3,
+  "gnrl_part2_8_draftsmanship": 3,
+  "gnrl_part2_9_craftsmanship": 3,
+  "notes": "changing the skin tone of the hands would have improved clarity and not harmed the message of the piece. "
+},{
+  "_id": {
+    "$oid": "5f4937820bfecf00176cb99b"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d7"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T16:57:38.993Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 3,
+  "gnrl_part1_2_audience": 3,
+  "gnrl_part1_3_problemSolving": 3,
+  "gnrl_part1_4_accuracy": 3,
+  "gnrl_part1_5_clarity": 3,
+  "gnrl_part2_6_technique": 3,
+  "gnrl_part2_7_composition": 1,
+  "gnrl_part2_8_draftsmanship": 2,
+  "gnrl_part2_9_craftsmanship": 2,
+  "notes": ""
+},{
+  "_id": {
+    "$oid": "5f4937bf0bfecf00176cb99c"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89a9"
+  },
+  "judge": {
+    "$oid": "5f4901133954516298055039"
+  },
+  "created": {
+    "$date": "2020-08-28T16:58:39.863Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 3,
+  "gnrl_part1_2_audience": 3,
+  "gnrl_part1_3_problemSolving": 4,
+  "gnrl_part1_4_accuracy": 3,
+  "gnrl_part1_5_clarity": 3,
+  "gnrl_part2_6_technique": 3,
+  "gnrl_part2_7_composition": 4,
+  "gnrl_part2_8_draftsmanship": 3,
+  "gnrl_part2_9_craftsmanship": 3,
+  "notes": "There is a clear separation and difference in what is 3D and what is 2D. That harms the cohesiveness of the piece and was unnecessary. \n"
+},{
+  "_id": {
+    "$oid": "5f4937c20bfecf00176cb99d"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8994"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T16:58:42.762Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4937fc0bfecf00176cb99e"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89c9"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T16:59:40.210Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 4,
+  "gnrl_part1_2_audience": 5,
+  "gnrl_part1_3_problemSolving": 3,
+  "gnrl_part1_4_accuracy": 5,
+  "gnrl_part1_5_clarity": 3,
+  "gnrl_part2_6_technique": 3,
+  "gnrl_part2_7_composition": 3,
+  "gnrl_part2_8_draftsmanship": 5,
+  "gnrl_part2_9_craftsmanship": 4,
+  "notes": "Very nuanced treatment of a concept that is difficult for jurors to understand. I love the solution of the blue drapery for subtle privacy."
+},{
+  "_id": {
+    "$oid": "5f4937fc0bfecf00176cb99f"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89c9"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T16:59:40.342Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4938150bfecf00176cb9a0"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e898b"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T17:00:05.104Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4938ae0bfecf00176cb9a1"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8987"
+  },
+  "judge": {
+    "$oid": "5f4901133954516298055039"
+  },
+  "created": {
+    "$date": "2020-08-28T17:02:38.048Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 4,
+  "gnrl_part1_2_audience": 4,
+  "gnrl_part1_3_problemSolving": 3,
+  "gnrl_part1_4_accuracy": 4,
+  "gnrl_part1_5_clarity": 4,
+  "gnrl_part2_6_technique": 4,
+  "gnrl_part2_7_composition": 4,
+  "gnrl_part2_8_draftsmanship": 4,
+  "gnrl_part2_9_craftsmanship": 4,
+  "notes": "This piece immediately points to collaboration. It's clear about its message.\n\nI wish the hand in the top right were doing something to contribute though. \n\n"
+},{
+  "_id": {
+    "$oid": "5f493a1e0bfecf00176cb9a2"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d7"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-28T17:08:46.144Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493a700bfecf00176cb9a3"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d1"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-28T17:10:08.563Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493ad60bfecf00176cb9a4"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8925"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:11:50.411Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493aee0bfecf00176cb9a5"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8926"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:12:14.103Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493afa0bfecf00176cb9a6"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e892e"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:12:26.381Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493b170bfecf00176cb9a7"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d2"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-28T17:12:55.468Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493b7d0bfecf00176cb9a8"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8924"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:14:37.767Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493bed0bfecf00176cb9a9"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d7"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-28T17:16:29.292Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493c0e0bfecf00176cb9aa"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8933"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:17:02.022Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493c220bfecf00176cb9ab"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8941"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:17:22.080Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493c5a0bfecf00176cb9ac"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8941"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:18:18.949Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493c6a0bfecf00176cb9ad"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8940"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:18:34.987Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493cba0bfecf00176cb9ae"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89c9"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-28T17:19:54.512Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493d070bfecf00176cb9af"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89ce"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-28T17:21:11.339Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493d080bfecf00176cb9b0"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e894c"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:21:12.899Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493d230bfecf00176cb9b1"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e892f"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:21:39.310Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493d3c0bfecf00176cb9b2"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89fd"
+  },
+  "judge": {
+    "$oid": "5f492b8dbd8b6b50242d317b"
+  },
+  "created": {
+    "$date": "2020-08-28T17:22:04.425Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493d520bfecf00176cb9b3"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d3"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-28T17:22:26.671Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493d5f0bfecf00176cb9b4"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e895f"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:22:39.283Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493d710bfecf00176cb9b5"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89fe"
+  },
+  "judge": {
+    "$oid": "5f492b8dbd8b6b50242d317b"
+  },
+  "created": {
+    "$date": "2020-08-28T17:22:57.496Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493d780bfecf00176cb9b6"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8957"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:23:04.366Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493dd30bfecf00176cb9b7"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89ce"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T17:24:35.800Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 2,
+  "gnrl_part1_2_audience": 2,
+  "gnrl_part1_3_problemSolving": 3,
+  "gnrl_part1_4_accuracy": 4,
+  "gnrl_part1_5_clarity": 2,
+  "gnrl_part2_6_technique": 2,
+  "gnrl_part2_7_composition": 3,
+  "gnrl_part2_8_draftsmanship": 3,
+  "gnrl_part2_9_craftsmanship": 3,
+  "notes": "The choice not to clearly show the nerves and vessels in relation to one another in the main central image was unfortunate. "
+},{
+  "_id": {
+    "$oid": "5f493df00bfecf00176cb9b8"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89ca"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-28T17:25:04.557Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493e120bfecf00176cb9b9"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d1"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T17:25:38.750Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493e230bfecf00176cb9ba"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d2"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T17:25:55.290Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493e380bfecf00176cb9bb"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d7"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T17:26:16.434Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493e510bfecf00176cb9bc"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d3"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T17:26:41.592Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 0,
+  "gnrl_part1_2_audience": 3,
+  "gnrl_part1_3_problemSolving": 3,
+  "gnrl_part1_4_accuracy": 3,
+  "gnrl_part1_5_clarity": 2,
+  "gnrl_part2_6_technique": 3,
+  "gnrl_part2_7_composition": 3,
+  "gnrl_part2_8_draftsmanship": 3,
+  "gnrl_part2_9_craftsmanship": 3,
+  "notes": "I'm confused.  Did the artist also create the 3D print?  was it printed from the artwork?  Was the 3D model used by the attorneys, or simply the still version? I'm also confused as to which arteries were actually ligated.  "
+},{
+  "_id": {
+    "$oid": "5f493e730bfecf00176cb9bd"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89cf"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-28T17:27:15.266Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493e970bfecf00176cb9be"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89ca"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T17:27:51.496Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 5,
+  "gnrl_part1_2_audience": 3,
+  "gnrl_part1_3_problemSolving": 3,
+  "gnrl_part1_4_accuracy": 3,
+  "gnrl_part1_5_clarity": 5,
+  "gnrl_part2_6_technique": 3,
+  "gnrl_part2_7_composition": 3,
+  "gnrl_part2_8_draftsmanship": 4,
+  "notes": "Unless there was a testifying witness who saw this UP CLOSE, it couldn’t be admitted under the general rules of admissible demonstrable evidence anywhere.  The purpose of a piece of demonstrable evidence or a demonstrable aid is to help the judge or jury better understand the testimony of an expert witness.  It must also not unfairly prejudice, inflame, confuse or mislead the jury. (text in red) "
+},{
+  "_id": {
+    "$oid": "5f493eb80bfecf00176cb9bf"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89df"
+  },
+  "judge": {
+    "$oid": "5f492b8dbd8b6b50242d317b"
+  },
+  "created": {
+    "$date": "2020-08-28T17:28:24.484Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493ec80bfecf00176cb9c0"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89cf"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T17:28:40.129Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 3,
+  "gnrl_part1_2_audience": 2,
+  "gnrl_part1_3_problemSolving": 3,
+  "gnrl_part1_4_accuracy": 3,
+  "gnrl_part1_5_clarity": 2,
+  "gnrl_part2_6_technique": 3,
+  "gnrl_part2_7_composition": 2,
+  "gnrl_part2_8_draftsmanship": 3,
+  "gnrl_part2_9_craftsmanship": 3,
+  "notes": ""
+},{
+  "_id": {
+    "$oid": "5f493ee10bfecf00176cb9c1"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d4"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-28T17:29:05.157Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 3,
+  "gnrl_part1_2_audience": 3,
+  "gnrl_part1_3_problemSolving": 3,
+  "gnrl_part1_4_accuracy": 4,
+  "gnrl_part1_5_clarity": 4,
+  "gnrl_part2_6_technique": 3,
+  "gnrl_part2_7_composition": 4,
+  "gnrl_part2_8_draftsmanship": 3,
+  "gnrl_part2_9_craftsmanship": 3,
+  "notes": "Nothing very special here. Content can be found on hundreds of websites and just this meniscus view without accompanying other views of the ACL will not convey the significance of the injury."
+},{
+  "_id": {
+    "$oid": "5f493f0b0bfecf00176cb9c2"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8958"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:29:47.966Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493f240bfecf00176cb9c3"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8974"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:30:12.280Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493f2f0bfecf00176cb9c4"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8979"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:30:23.433Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493f530bfecf00176cb9c5"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89cf"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T17:30:59.593Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493f6a0bfecf00176cb9c6"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e891f"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:31:22.165Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493f6b0bfecf00176cb9c7"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d4"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T17:31:23.457Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 2,
+  "gnrl_part1_2_audience": 2,
+  "gnrl_part1_3_problemSolving": 2,
+  "gnrl_part1_4_accuracy": 3,
+  "gnrl_part1_5_clarity": 3,
+  "gnrl_part2_6_technique": 3,
+  "gnrl_part2_7_composition": 3,
+  "gnrl_part2_8_draftsmanship": 3,
+  "gnrl_part2_9_craftsmanship": 3,
+  "notes": ""
+},{
+  "_id": {
+    "$oid": "5f493f7a0bfecf00176cb9c8"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8923"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:31:38.361Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493f7b0bfecf00176cb9c9"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d0"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-28T17:31:39.592Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493f890bfecf00176cb9ca"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8920"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:31:53.138Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493f910bfecf00176cb9cb"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d0"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T17:32:01.553Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 4,
+  "gnrl_part1_2_audience": 4,
+  "gnrl_part1_3_problemSolving": 3,
+  "gnrl_part1_4_accuracy": 3,
+  "gnrl_part1_5_clarity": 4,
+  "gnrl_part2_6_technique": 4,
+  "gnrl_part2_7_composition": 3,
+  "gnrl_part2_8_draftsmanship": 4,
+  "gnrl_part2_9_craftsmanship": 3,
+  "notes": "location of head of fibula in relation to lateral condyle of tibia seems off. Doesn't really match the xray."
+},{
+  "_id": {
+    "$oid": "5f493fac0bfecf00176cb9cc"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8927"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:32:28.439Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493fb60bfecf00176cb9cd"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e893d"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:32:38.939Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493fbe0bfecf00176cb9ce"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8938"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:32:46.832Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493fe00bfecf00176cb9cf"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8942"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:33:20.167Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f493fe90bfecf00176cb9d0"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8947"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:33:29.838Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4940140bfecf00176cb9d1"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8945"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:34:12.477Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49401c0bfecf00176cb9d2"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89cb"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-28T17:34:20.576Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4940280bfecf00176cb9d3"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e895b"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:34:32.924Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4940420bfecf00176cb9d4"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e892b"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:34:58.045Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4940490bfecf00176cb9d5"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8955"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:35:05.420Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4940550bfecf00176cb9d6"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8964"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:35:17.600Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4940650bfecf00176cb9d7"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8957"
+  },
+  "judge": {
+    "$oid": "5f49063d3954516298055042"
+  },
+  "created": {
+    "$date": "2020-08-28T17:35:33.114Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49408d0bfecf00176cb9d8"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89cb"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T17:36:13.950Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 3,
+  "gnrl_part1_2_audience": 2,
+  "gnrl_part1_3_problemSolving": 3,
+  "gnrl_part1_4_accuracy": 3,
+  "gnrl_part1_5_clarity": 2,
+  "gnrl_part2_6_technique": 3,
+  "gnrl_part2_7_composition": 3,
+  "gnrl_part2_8_draftsmanship": 3,
+  "gnrl_part2_9_craftsmanship": 2,
+  "notes": ""
+},{
+  "_id": {
+    "$oid": "5f4945730bfecf00176cb9d9"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89c9"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T17:57:07.883Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49481b0bfecf00176cb9da"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89c9"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T18:08:27.538Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4948710bfecf00176cb9db"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89c9"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T18:09:53.764Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49489e0bfecf00176cb9dc"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89ca"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T18:10:38.460Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f494a7e0bfecf00176cb9dd"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d2"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T18:18:38.771Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f494cf30bfecf00176cb9de"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a12"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T18:29:07.057Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f494eec0bfecf00176cb9df"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89c9"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T18:37:32.498Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f494f060bfecf00176cb9e0"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89ca"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T18:37:58.844Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f494f6a0bfecf00176cb9e1"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d2"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T18:39:38.287Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f494f700bfecf00176cb9e2"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8986"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T18:39:44.884Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f494f890bfecf00176cb9e3"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8995"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T18:40:09.788Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f494ffd0bfecf00176cb9e4"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8982"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T18:42:05.175Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4950210bfecf00176cb9e5"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89a4"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T18:42:41.238Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4950750bfecf00176cb9e6"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d0"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T18:44:05.604Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4950870bfecf00176cb9e7"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89a9"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T18:44:23.878Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49509b0bfecf00176cb9e8"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8996"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T18:44:43.886Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4950be0bfecf00176cb9e9"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89a0"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T18:45:18.394Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4950c60bfecf00176cb9ea"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a17"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T18:45:26.955Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 5,
+  "gnrl_part1_2_audience": 5,
+  "gnrl_part1_3_problemSolving": 4,
+  "gnrl_part1_4_accuracy": 5,
+  "gnrl_part1_5_clarity": 5,
+  "gnrl_part2_6_technique": 4,
+  "gnrl_part2_7_composition": 4,
+  "gnrl_part2_8_draftsmanship": 4,
+  "gnrl_part2_9_craftsmanship": 5,
+  "notes": "This was really nice. The baby's head maybe felt a little off-sized but the style it is allowable."
+},{
+  "_id": {
+    "$oid": "5f4950d20bfecf00176cb9eb"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89a7"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T18:45:38.084Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4950e60bfecf00176cb9ec"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8980"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T18:45:58.640Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4951040bfecf00176cb9ed"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8985"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T18:46:28.191Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4951150bfecf00176cb9ee"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e899e"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T18:46:45.840Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4951200bfecf00176cb9ef"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89c9"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T18:46:56.781Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4951260bfecf00176cb9f0"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89a8"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T18:47:02.847Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4951320bfecf00176cb9f1"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89ad"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T18:47:14.651Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4951550bfecf00176cb9f2"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89a3"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T18:47:49.087Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4951560bfecf00176cb9f3"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d0"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T18:47:50.965Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49516a0bfecf00176cb9f4"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8995"
+  },
+  "judge": {
+    "$oid": "5f490193395451629805503a"
+  },
+  "created": {
+    "$date": "2020-08-28T18:48:10.529Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4951ca0bfecf00176cb9f5"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a21"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T18:49:46.991Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 5,
+  "gnrl_part1_2_audience": 5,
+  "gnrl_part1_3_problemSolving": 5,
+  "gnrl_part1_4_accuracy": 5,
+  "gnrl_part1_5_clarity": 5,
+  "gnrl_part2_6_technique": 5,
+  "gnrl_part2_7_composition": 5,
+  "gnrl_part2_8_draftsmanship": 5,
+  "gnrl_part2_9_craftsmanship": 5,
+  "notes": "Definite contender for Award of Excellence. Extremely well done."
+},{
+  "_id": {
+    "$oid": "5f4951dc0bfecf00176cb9f6"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a2b"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T18:50:04.861Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 4,
+  "gnrl_part1_2_audience": 3,
+  "gnrl_part1_3_problemSolving": 3,
+  "gnrl_part1_4_accuracy": 4,
+  "gnrl_part1_5_clarity": 4,
+  "gnrl_part2_6_technique": 4,
+  "gnrl_part2_7_composition": 3,
+  "gnrl_part2_8_draftsmanship": 3,
+  "gnrl_part2_9_craftsmanship": 4,
+  "notes": "This is really close to being very good but needs some linework or something."
+},{
+  "_id": {
+    "$oid": "5f4951f70bfecf00176cb9f7"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a21"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T18:50:31.196Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4952050bfecf00176cb9f8"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a12"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T18:50:45.580Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4952300bfecf00176cb9f9"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a30"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T18:51:28.661Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 4,
+  "gnrl_part1_2_audience": 2,
+  "gnrl_part1_3_problemSolving": 1,
+  "gnrl_part1_4_accuracy": 4,
+  "gnrl_part1_5_clarity": 3,
+  "gnrl_part2_6_technique": 2,
+  "gnrl_part2_7_composition": 2,
+  "gnrl_part2_8_draftsmanship": 3,
+  "gnrl_part2_9_craftsmanship": 3,
+  "notes": "Very low contrast, very straightforward textbook anatomy."
+},{
+  "_id": {
+    "$oid": "5f49523d0bfecf00176cb9fa"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a35"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T18:51:41.377Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 5,
+  "gnrl_part1_2_audience": 5,
+  "gnrl_part1_3_problemSolving": 4,
+  "gnrl_part1_4_accuracy": 5,
+  "gnrl_part1_5_clarity": 5,
+  "gnrl_part2_6_technique": 5,
+  "gnrl_part2_7_composition": 4,
+  "gnrl_part2_8_draftsmanship": 5,
+  "gnrl_part2_9_craftsmanship": 5,
+  "notes": "Very skilled line drawing."
+},{
+  "_id": {
+    "$oid": "5f4952480bfecf00176cb9fb"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a13"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T18:51:52.386Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 4,
+  "gnrl_part1_2_audience": 4,
+  "gnrl_part1_3_problemSolving": 4,
+  "gnrl_part1_4_accuracy": 4,
+  "gnrl_part1_5_clarity": 5,
+  "gnrl_part2_6_technique": 5,
+  "gnrl_part2_7_composition": 5,
+  "gnrl_part2_8_draftsmanship": 4,
+  "gnrl_part2_9_craftsmanship": 5,
+  "notes": "Nice pacing and design and drawing. I felt it wrapped up a little fast though. I wanted more about the hand metaphor and why it's important to know."
+},{
+  "_id": {
+    "$oid": "5f49526f0bfecf00176cb9fc"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a18"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T18:52:31.719Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4952ab0bfecf00176cb9fd"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a3f"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T18:53:31.477Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4952b80bfecf00176cb9fe"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a22"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T18:53:44.281Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4952c30bfecf00176cb9ff"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a2c"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T18:53:55.656Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4952ec0bfecf00176cba00"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a31"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T18:54:36.353Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4952f60bfecf00176cba01"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a36"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T18:54:46.211Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4953050bfecf00176cba02"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a3b"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T18:55:01.042Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4953360bfecf00176cba03"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d1"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T18:55:50.630Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4959e80bfecf00176cba04"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89ca"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T19:24:24.743Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f495b040bfecf00176cba05"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89ca"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T19:29:08.421Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f495b700bfecf00176cba06"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89ca"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T19:30:56.807Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4961ae0bfecf00176cba07"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d7"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T19:57:34.744Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4962590bfecf00176cba08"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d4"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T20:00:25.409Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4962590bfecf00176cba09"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d4"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T20:00:25.637Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4962ea0bfecf00176cba0a"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d3"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T20:02:50.277Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49643b0bfecf00176cba0b"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89cf"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T20:08:27.706Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4965420bfecf00176cba0c"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89cf"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T20:12:50.623Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4965520bfecf00176cba0d"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89ce"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T20:13:06.132Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49669c0bfecf00176cba0e"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89ce"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T20:18:36.438Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49687b0bfecf00176cba0f"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89cb"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T20:26:35.289Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4969460bfecf00176cba10"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89cb"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T20:29:58.382Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4969630bfecf00176cba11"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89cb"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T20:30:27.116Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f496b800bfecf00176cba12"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8aa2"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-28T20:39:28.502Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4974e2f64ad3001724628d"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8947"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:19:30.594Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4974f3f64ad3001724628e"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8941"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:19:47.217Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49750af64ad3001724628f"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8940"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:20:10.116Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497529f64ad30017246290"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e895b"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:20:41.485Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497535f64ad30017246291"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e892b"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:20:53.996Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497607f64ad30017246292"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8964"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:24:23.848Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49761cf64ad30017246293"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a0f"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:24:44.838Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497624f64ad30017246294"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8952"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:24:52.611Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497643f64ad30017246295"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a19"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:25:23.705Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49765cf64ad30017246296"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8944"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:25:48.320Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497673f64ad30017246297"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a1e"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:26:11.215Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497684f64ad30017246298"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e893f"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:26:28.884Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497689f64ad30017246299"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a23"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:26:33.222Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497692f64ad3001724629a"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a10"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:26:42.216Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497698f64ad3001724629b"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8949"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:26:48.656Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49769df64ad3001724629c"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a28"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:26:53.825Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4976a1f64ad3001724629d"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8958"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:26:57.214Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4976aaf64ad3001724629e"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a32"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:27:06.943Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4976b5f64ad3001724629f"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a1f"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:27:17.217Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4976bcf64ad300172462a0"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a37"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:27:24.604Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4976f7f64ad300172462a1"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a3c"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:28:23.153Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497715f64ad300172462a2"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e894c"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:28:53.092Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497721f64ad300172462a3"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a24"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:29:05.893Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49774cf64ad300172462a4"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a29"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:29:48.092Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497751f64ad300172462a5"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a2e"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:29:53.737Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49775cf64ad300172462a6"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8922"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:30:04.697Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497760f64ad300172462a7"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a33"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:30:08.239Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497770f64ad300172462a8"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e892e"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:30:24.162Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4977e2f64ad300172462a9"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8945"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:32:18.933Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497851f64ad300172462aa"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e893f"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:34:09.114Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49785ef64ad300172462ab"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a38"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:34:22.990Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4978a0f64ad300172462ac"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a3d"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:35:28.207Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4978bbf64ad300172462ad"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a11"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:35:55.336Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4978c9f64ad300172462ae"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a2a"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:36:09.394Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4978e0f64ad300172462af"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a20"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:36:32.630Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4978f4f64ad300172462b0"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a16"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:36:52.543Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497906f64ad300172462b1"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a25"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:37:10.185Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49790ef64ad300172462b2"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a2f"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:37:18.225Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497918f64ad300172462b3"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a3e"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:37:28.582Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497933f64ad300172462b4"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a34"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:37:55.891Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49795df64ad300172462b5"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a17"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:38:37.826Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497991f64ad300172462b6"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8935"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:39:29.244Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497a4bf64ad300172462b7"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8935"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:42:35.709Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497a9cf64ad300172462b8"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8935"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:43:56.502Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497aa7f64ad300172462b9"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e891f"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:44:07.262Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497adbf64ad300172462ba"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e894c"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:44:59.665Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497adcf64ad300172462bb"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a21"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:45:00.412Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497b7ef64ad300172462bc"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8938"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:47:42.622Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497b88f64ad300172462bd"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8938"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:47:52.925Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497ba5f64ad300172462be"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e893d"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:48:21.728Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497baef64ad300172462bf"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8942"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:48:30.925Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497bf5f64ad300172462c0"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a2b"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:49:41.754Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497c79f64ad300172462c1"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8945"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:51:53.145Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497cb1f64ad300172462c2"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8944"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-28T21:52:49.027Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497d81f64ad300172462c3"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a21"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:56:17.651Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f497d96f64ad300172462c4"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a30"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T21:56:38.293Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4986ddf64ad300172462c5"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a35"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T22:36:13.218Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4987c5f64ad300172462c6"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a13"
+  },
+  "judge": {
+    "$oid": "5f492d2cbd8b6b50242d317d"
+  },
+  "created": {
+    "$date": "2020-08-28T22:40:05.386Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49a7709bd510001790073c"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8923"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T00:55:12.263Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49a7959bd510001790073d"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8938"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T00:55:49.395Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49a8ef9bd510001790073e"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89e0"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T01:01:35.696Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49b5f791b6560017f052dc"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e893f"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T01:57:11.303Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49b64891b6560017f052dd"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8944"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T01:58:32.003Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49b69c91b6560017f052de"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8958"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T01:59:56.846Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49b6ab91b6560017f052df"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8949"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T02:00:11.874Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49b6ce91b6560017f052e0"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8935"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T02:00:46.445Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49b6db91b6560017f052e1"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8969"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T02:00:59.915Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49b6eb91b6560017f052e2"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8957"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T02:01:15.825Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49b6fb91b6560017f052e3"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8964"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T02:01:31.491Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49b71b91b6560017f052e4"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e892b"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T02:02:03.561Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49b72791b6560017f052e5"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8951"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T02:02:15.470Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49b80791b6560017f052e6"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e894c"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T02:05:59.823Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49b8ed91b6560017f052e7"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8945"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T02:09:49.072Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49ba7591b6560017f052e8"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8979"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T02:16:21.190Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49ba7e91b6560017f052e9"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e896c"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T02:16:30Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49ba8a91b6560017f052ea"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e896c"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T02:16:42.016Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49bab391b6560017f052eb"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e899f"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T02:17:23.657Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49bae091b6560017f052ec"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8982"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T02:18:08.230Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49bb0891b6560017f052ed"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8987"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T02:18:48.518Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49bb2191b6560017f052ee"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8934"
+  },
+  "judge": {
+    "$oid": "5f4900a83954516298055037"
+  },
+  "created": {
+    "$date": "2020-08-29T02:19:13.173Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49bb3691b6560017f052ef"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8996"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T02:19:34.818Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49bb4991b6560017f052f0"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8942"
+  },
+  "judge": {
+    "$oid": "5f4900a83954516298055037"
+  },
+  "created": {
+    "$date": "2020-08-29T02:19:53.561Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49bd8e8cc8502da4b5d15f"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8abc"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T02:29:34.122Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49bd9c8cc8502da4b5d160"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8abc"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T02:29:48.115Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49c857d5e4210017a22dfc"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a05"
+  },
+  "judge": {
+    "$oid": "5f4908063954516298055046"
+  },
+  "created": {
+    "$date": "2020-08-29T03:15:35.135Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49c87ad5e4210017a22dfd"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a02"
+  },
+  "judge": {
+    "$oid": "5f4908063954516298055046"
+  },
+  "created": {
+    "$date": "2020-08-29T03:16:10.173Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49caf4d5e4210017a22dfe"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e8a05"
+  },
+  "judge": {
+    "$oid": "5f4908063954516298055046"
+  },
+  "created": {
+    "$date": "2020-08-29T03:26:44.068Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49cc33d5e4210017a22dff"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89f4"
+  },
+  "judge": {
+    "$oid": "5f4908063954516298055046"
+  },
+  "created": {
+    "$date": "2020-08-29T03:32:03.483Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49ceced5e4210017a22e00"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89f9"
+  },
+  "judge": {
+    "$oid": "5f4908063954516298055046"
+  },
+  "created": {
+    "$date": "2020-08-29T03:43:10.749Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49d1f5c5b9b1001760ee78"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f400176021d4"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T03:56:37.559Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49d21bc5b9b1001760ee79"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f400176021d5"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T03:57:15.772Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49d263c5b9b1001760ee7a"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f4001760213e"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T03:58:27.088Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49d2c93411990017d192a2"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f4001760213b"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T04:00:09.598Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49d3133411990017d192a3"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f40017602060"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T04:01:23.653Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49d3423411990017d192a4"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f40017602056"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T04:02:10.721Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49d35d3411990017d192a5"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f40017602050"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T04:02:37.430Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 3
+},{
+  "_id": {
+    "$oid": "5f49d3773411990017d192a6"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f40017602051"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T04:03:03.240Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49d39e3411990017d192a7"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f49d19703d5f40017602052"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T04:03:42.317Z"
+  },
+  "__v": 0,
+  "gnrl_part1_1_message": 1,
+  "gnrl_part1_2_audience": 1,
+  "gnrl_part1_3_problemSolving": 3,
+  "gnrl_part1_4_accuracy": 4,
+  "gnrl_part1_5_clarity": 5,
+  "gnrl_part2_6_technique": 3,
+  "gnrl_part2_7_composition": 3,
+  "gnrl_part2_8_draftsmanship": 3,
+  "gnrl_part2_9_craftsmanship": 4,
+  "notes": "First Test with updated DB"
+},{
+  "_id": {
+    "$oid": "5f49d51e3411990017d192a8"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f40017602050"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T04:10:06.880Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49d5393411990017d192a9"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f40017602050"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T04:10:33.477Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49d6553411990017d192aa"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f4001760210d"
+  },
+  "judge": {
+    "$oid": "5f4908063954516298055046"
+  },
+  "created": {
+    "$date": "2020-08-29T04:15:17.926Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49d6943411990017d192ab"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f4001760212b"
+  },
+  "judge": {
+    "$oid": "5f4908063954516298055046"
+  },
+  "created": {
+    "$date": "2020-08-29T04:16:20.954Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49d90f2147d300173a32d8"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f400176020fc"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-29T04:26:55.573Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49d91b2147d300173a32d9"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f40017602103"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-29T04:27:07.095Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49d9292147d300173a32da"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f400176020fb"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-29T04:27:21.085Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49d9312147d300173a32db"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f40017602100"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-29T04:27:29.398Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49d9cd2147d300173a32dc"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f48425e4f844863085e89d1"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-29T04:30:05.765Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49da6c2147d300173a32dd"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f49d19703d5f40017602125"
+  },
+  "judge": {
+    "$oid": "5f4908063954516298055046"
+  },
+  "created": {
+    "$date": "2020-08-29T04:32:44.732Z"
+  },
+  "__v": 0,
+  "notes": "Nice render, but text and actions are too fast for viewer to digest. Especially general public. Some text is hard to read with detailed moving actions on top."
+},{
+  "_id": {
+    "$oid": "5f49da7f2147d300173a32de"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f40017602126"
+  },
+  "judge": {
+    "$oid": "5f4908063954516298055046"
+  },
+  "created": {
+    "$date": "2020-08-29T04:33:03.457Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49daae2147d300173a32df"
+  },
+  "complete": true,
+  "entryId": {
+    "$oid": "5f49d19703d5f4001760212a"
+  },
+  "judge": {
+    "$oid": "5f4908063954516298055046"
+  },
+  "created": {
+    "$date": "2020-08-29T04:33:50.081Z"
+  },
+  "__v": 0,
+  "notes": "Nice look and renders! Hyperglycemia not really illustrated well. Narration and actions don't match up perfectly(eg gut to blood to bodY). Split anatomy shots are difficult to look at the same time. Purple change of color looks like blue energize. Unclear what the second guy was (obese, DM?). Missed opportunity to illustrate hyperglycemia."
+},{
+  "_id": {
+    "$oid": "5f49dabb2147d300173a32e0"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f400176020fc"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-29T04:34:03.510Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49dabe2147d300173a32e1"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f40017602125"
+  },
+  "judge": {
+    "$oid": "5f4908063954516298055046"
+  },
+  "created": {
+    "$date": "2020-08-29T04:34:06.219Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49dae12147d300173a32e2"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f4001760212b"
+  },
+  "judge": {
+    "$oid": "5f4908063954516298055046"
+  },
+  "created": {
+    "$date": "2020-08-29T04:34:41.282Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49db6d7c58340017352a11"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f40017602125"
+  },
+  "judge": {
+    "$oid": "5f4908063954516298055046"
+  },
+  "created": {
+    "$date": "2020-08-29T04:37:01.449Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49db6d7c58340017352a12"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f40017602125"
+  },
+  "judge": {
+    "$oid": "5f4908063954516298055046"
+  },
+  "created": {
+    "$date": "2020-08-29T04:37:01.465Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49db717c58340017352a13"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f400176020fc"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-29T04:37:05.025Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49db747c58340017352a14"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f4001760212a"
+  },
+  "judge": {
+    "$oid": "5f4908063954516298055046"
+  },
+  "created": {
+    "$date": "2020-08-29T04:37:08.979Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49db787c58340017352a15"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f40017602103"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-29T04:37:12.972Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49db827c58340017352a16"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f400176020fa"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-29T04:37:22.937Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49db8e7c58340017352a17"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f40017602101"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-29T04:37:34.461Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49db957c58340017352a18"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f400176020fb"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-29T04:37:41.396Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49dbaf7c58340017352a19"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f40017602175"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-29T04:38:07.569Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49dbb77c58340017352a1a"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f4001760217b"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-29T04:38:15.365Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49dbbf7c58340017352a1b"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f40017602183"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-29T04:38:23.148Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49dbd27c58340017352a1c"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f400176021ca"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-29T04:38:42.266Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49dbd87c58340017352a1d"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f400176021cb"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-29T04:38:48.511Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49dbdf7c58340017352a1e"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f400176021cf"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-29T04:38:55.996Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49dbea7c58340017352a1f"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f400176021c8"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-29T04:39:06.341Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49dbf87c58340017352a20"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f400176021cd"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-29T04:39:20.180Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49dc3b7c58340017352a21"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49d19703d5f400176020fc"
+  },
+  "judge": {
+    "$oid": "5f490cca3954516298055050"
+  },
+  "created": {
+    "$date": "2020-08-29T04:40:27.367Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e1c36e76915048aeba24"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeb942"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T05:04:03.265Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e1f56e76915048aeba25"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeb944"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T05:04:53.513Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e2046e76915048aeba26"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeb959"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T05:05:08.046Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e20a6e76915048aeba27"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeb959"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T05:05:14.405Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e2176e76915048aeba28"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeb954"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T05:05:27.912Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e21e6e76915048aeba29"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeb959"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T05:05:34.380Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e2356e76915048aeba2a"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeb952"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T05:05:57.580Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e23d6e76915048aeba2b"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeb95a"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T05:06:05.783Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e2456e76915048aeba2c"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeb959"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T05:06:13.403Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e28e6e76915048aeba2d"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeb959"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T05:07:26.437Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e2a16e76915048aeba2e"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeb952"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T05:07:45.773Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e2a76e76915048aeba2f"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeb950"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T05:07:51.377Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e2ac6e76915048aeba30"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e18ef4d0e5607ce6e0ae"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T05:07:56.858Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e2b76e76915048aeba31"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e18ef4d0e5607ce6e0aa"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T05:08:07.745Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e2bc6e76915048aeba32"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeb950"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T05:08:12.601Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e2dd6e76915048aeba33"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeb959"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T05:08:45.416Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e2ee6e76915048aeba34"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeb959"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T05:09:02.715Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e30b6e76915048aeba35"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeb952"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T05:09:31.176Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e3126e76915048aeba36"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeb950"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T05:09:38.739Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e31b6e76915048aeba37"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e18ef4d0e5607ce6e0ab"
+  },
+  "judge": {
+    "$oid": "5f4900733954516298055036"
+  },
+  "created": {
+    "$date": "2020-08-29T05:09:47.809Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e35d6e76915048aeba38"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeb938"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-29T05:10:53.806Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e3696e76915048aeba39"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeb930"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-29T05:11:05.040Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e3716e76915048aeba3a"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeb931"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-29T05:11:13.423Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e3866e76915048aeba3b"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeb95b"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-29T05:11:34.269Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e3ac6e76915048aeba3c"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeb95e"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-29T05:12:12.698Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e3cb6e76915048aeba3d"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeb968"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-29T05:12:43.291Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e3ea6e76915048aeba3e"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeba0a"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-29T05:13:14.235Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e4236e76915048aeba3f"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e18ef4d0e5607ce6e142"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-29T05:14:11.484Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f49e43c6e76915048aeba40"
+  },
+  "complete": false,
+  "entryId": {
+    "$oid": "5f49e1876e76915048aeba22"
+  },
+  "judge": {
+    "$oid": "5f490c1f395451629805504e"
+  },
+  "created": {
+    "$date": "2020-08-29T05:14:36.489Z"
+  },
+  "__v": 0
+}]

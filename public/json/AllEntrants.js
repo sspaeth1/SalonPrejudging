@@ -4358,7 +4358,7 @@ const entrants = [
     lastName: "Kim",
     email: "taeah.kim@mail.utoronto.ca",
     category: "I3",
-    title: "I3-040/I3-041/I3-042/I3-043 The Life of Barbara McClintock and Her Jumping Gene",
+    title: "I3-040 /I3-041/I3-042/I3-043 The Life of Barbara McClintock and Her Jumping Gene",
     medium_software: "Adobe Photoshop, Adobe Illustrator",
     presentation_format: "Print, US letter comic booklet",
     primaryAudience: "Lay Audience",
