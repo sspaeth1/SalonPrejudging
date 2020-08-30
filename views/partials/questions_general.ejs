@@ -180,25 +180,25 @@
                         <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="4-0" name="rating" value="0" <%= gnrl_part1_4_accuracy == 0 ? 'checked' : '' %> /> 
                         0 Failure 
                     </label>
-                    <label for="4-1">
-                        <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="4-1" name="rating" value="1"  <%= gnrl_part1_4_accuracy == 1 ? 'checked' : '' %> /> 
-                        1 Minimal/Poor      
-                    </label>
                     <label for="4-2">
                         <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="4-2" name="rating" value="2"  <%= gnrl_part1_4_accuracy == 2 ? 'checked' : '' %> /> 
-                        2 Fair/low    
-                    </label>
-                    <label for="4-3">
-                        <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="4-3" name="rating" value="3" <%= gnrl_part1_4_accuracy == 3 ? 'checked' : '' %>  /> 
-                        3 Average / Adequate
+                        2 Minimal/Poor      
                     </label>
                     <label for="4-4">
-                        <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="4-4" name="rating" value="4" <%= gnrl_part1_4_accuracy == 4 ? 'checked' : '' %> /> 
-                        4 Very Good / High   
+                        <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="4-4" name="rating" value="4"  <%= gnrl_part1_4_accuracy == 4 ? 'checked' : '' %> /> 
+                        4 Fair/low    
                     </label>
-                    <label for="4-5">
-                        <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="4-5" name="rating" value="5" <%= gnrl_part1_4_accuracy == 5 ? 'checked' : '' %> /> 
-                        5 Excellent / Very High   
+                    <label for="4-6">
+                        <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="4-6" name="rating" value="6" <%= gnrl_part1_4_accuracy == 6 ? 'checked' : '' %>  /> 
+                        6 Average / Adequate
+                    </label>
+                    <label for="4-8">
+                        <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="4-8" name="rating" value="8" <%= gnrl_part1_4_accuracy == 8 ? 'checked' : '' %> /> 
+                        8 Very Good / High   
+                    </label>
+                    <label for="4-10">
+                        <input onclick="radioSelect( event, '<%= artentries.id %>');" type="radio" id="4-10" name="rating" value="5" <%= gnrl_part1_4_accuracy == 5 ? 'checked' : '' %> /> 
+                        10 Excellent / Very High   
                     </label>
                  </form>
         </div>
@@ -370,7 +370,7 @@
         <form action="/show" method="POST" class="notesSubmit">
 <p> <%= artentries.score_general %> </p>
             <label for="notes">
-                <textarea type="text" id="notes" name="notes" rows="15" cols="50" placeholder="Thoughts?"><%= complete === true? notes : '' %></textarea>
+                <textarea type="text" id="notes" name="notes" rows="15" cols="50" placeholder="Thoughts?"><%= complete === true? notes : notes %></textarea>
             </label>
 
       
