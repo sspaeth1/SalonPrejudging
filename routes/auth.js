@@ -12,7 +12,7 @@ const express = require("express"),
   nodemailer = require("nodemailer"),
   Dotenv = require("dotenv"),
   crypto = require("crypto");
-JudgeGroups = require("../public/json/Groups2019");
+JudgeGroups = require("../public/json/Groups.js");
 const { isLoggedIn } = require("../middleware");
 const { render } = require("ejs");
 Dotenv.config({ debug: process.env.DEBUG });

@@ -2,7 +2,6 @@
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.js"></script>
 <script type="text/javascript" src="/js/Dropbox-sdk.min.js"></script>
-<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="91x0vhk5lkdccy5"></script>
 <link rel="stylesheet" href="/css/db.css" type="text/css">
 
 
@@ -19,57 +18,47 @@
 
 
 <h1  class="fullSpan">
-    <span class="darkOrange font-weight-bold">A1: Professional still media section (sample non-judge) </span>
- <br>
-    <span  class="myCategorySpecific" >Didactic/Instructional </span>        
-     <span class="white">- Non-Commercial</span>       
+  <span class="darkOrange font-weight-bold">A1: Professional still media section (sample non-judge) </span>
+<br>
+  <span  class="myCategorySpecific" >Didactic/Instructional </span>        
+   <span class="white">- Commercial</span>       
 
-     </h1>
+   </h1>
 
-  
-     <button type="button" class="btn btn-primary m-2  btn-lg  buttonReturn" style="margin-left:5%;" ><a href="/index">Back to entries in this category (for judges)</a></button>
+     <button  action="action" type="button" value="Back" onclick="window.history.go(-1); return false;"class="btn btn-primary m-2  btn-lg  buttonReturn" style="margin-left:5%;" >
+      Back to Home</button>
+
 
 <main class="centerRatingPage">
  
-
-
-
     <div class="row">
        
+      <div id="displayDescriptions" class=" mt-4 ml-4" >
 
-        <div id="displayDescriptions" class=" mt-4 ml-4" >
-            <h2 ><div class="orange entryDescriptors">
-                Title: 
-            </div>A1-001 Optogenetic Neuromodulation of Urinary Tract Function </h2>
-          <div class="orange entryDescriptors">Medium or Software Used: </div>  <p>Adobe Illustrator and Photoshop</p>
-            <div class="orange entryDescriptors">Presentation format: </div><p> Print, online</p>
-            <div class="orange entryDescriptors">Primary audience: </div> <p>General Medical Audience</p>
-            <div class="orange entryDescriptors">Intended purpose: </div><p>The intended purpose of this illustration was to demonstrate placement of a closed-loop wireless system that measures and controls the bladder in freely moving rats for a general medical audience. The figure starts in the upper left with the device, and your eye is then led to the central rat. The 'standing' rat angle was picked to show placement of the device, but also shows the freely moving aspect of the device. Color coding was used to show the light-emitting diode ('-ILED) as 'on or off' and correlates with the inset in the final panel. The palette and rendering style adds interest to the subject, and softens the mechanical aspects of the content.</p>
-       </div>
+       <div class="orange entryDescriptors"> Title:</div> <h2>A1-001 Genetic and epigenetic alterations potentially drive a tumor’s progression</h2>
+       <div class="orange entryDescriptors">Medium or Software Used: </div> <p>Autodesk 3ds Max, Adobe Illustrator and Photoshop</p>
+        <div class="orange entryDescriptors">Presentation format: </div> <p> Print, online</p>
+        <div class="orange entryDescriptors">Primary audience: </div> <p> Medical Audience</p>
+        <div class="orange entryDescriptors">Intended purpose: </div> <p>The intended purpose of this illustration was an editorial display of the research studying genetic and epigenetic alterations can be selected for and potentially drive a tumor’s progression. The arc is a measure of time. The bright star shapes on the timeline represent driver alterations in the growth of the cells. The teardrop represents the potential growth changes in the cell due to the tumor driver alteration at the start of the teardrop.  The progenitor tree graphic is stamped in the background to show the change in cells progeny or pluripotency.  </p>
+      </div>
 
        <div id="displayImage">
-        <a href="https://www.dropbox.com/s/rgrnbhzfk88o7yk/A1-001.jpg?dl=0"
-        class="dropbox-embed img-fluid imgScore"
-
-        alt="Sample Art Entry">
-    </a>	   
-
-  
-
-       
-    </div>
+          <a>  <img src="https://biochromatic.com/images/biochromaticJournalCover.jpg" class="card-img-top" alt="Sample Art Entry"> </a>
+      </div>
 
     </div>
 
     <div id="user"></div>
 
+
     <%- include('../partials/questions_sample') %>
 
-   <button type="button" class="btn btn-primary m-2  
-   -lg  buttonReturn" style="margin-left:5%;" ><a href="/index">Back to entries in this category (for judges)</a></button>
+   <button  action="action" type="button" value="Back" onclick="window.history.go(-1); return false;"class="btn btn-primary m-2  btn-lg  buttonReturn" style="margin-left:5%;" >
+    Back to entries in this category</button>
 
 
-<script src="/js/dropboxFileThumbSort.js"  id="helper" data-name="<%= DBX_API_KEY %>"  type="module"> </script>
  
 </main>
 <%- include('../partials/footer') %>
+
+ <input 

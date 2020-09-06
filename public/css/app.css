@@ -9769,7 +9769,6 @@ section.loginLinks li {
   cursor: pointer;
   position: relative;
   margin: 2px 0 0 0;
-  padding: .5em .5em .5em .7em;
   font-size: 100%;
   background: #467946;
   font-weight: normal;
@@ -9782,7 +9781,6 @@ section.loginLinks li {
   cursor: pointer;
   position: relative;
   margin: 2px 0 0 0;
-  padding: .5em .5em .5em .7em;
   font-size: 100%;
   background: #598b4b;
   font-weight: normal;

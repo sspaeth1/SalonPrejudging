@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "5f4a474e3ec0aa5becebe673"
+  },
+  "image": "https://i.imgur.com/33E6CfN.jpg",
+  "star": "false",
+  "excellencewinner": "false",
+  "meritwinner": "false",
+  "judges": "[]",
+  "scoregeneral": "[]",
+  "firstname": "Shawna",
+  "lastname": "Snyder",
+  "email": "ssnydernp11@gmail.com",
+  "category": "F1",
+  "title": "F1-015 Stages of Lymphedema in the Upper Limb",
+  "fileName": "F1-015",
+  "entryTitle": "Stages of Lymphedema in the Upper Limb",
+  "medium_software": "Photoshop",
+  "presentation_format": "Website",
+  "primaryAudience": "Vascular specialists, Patients",
+  "intended_purpose": "Lymphedema is swelling of the arms or legs. It is caused by damage to the lymphatic system and excess fluid building up in body tissues. Since therapy options vary based on the disease stage of the patient, proper diagnosis is vital for effective treatment. This illustration shows the four stages of lymphedema in the upper arm, with an unaffected arm presented for rapid comparison. The goal is to provide a guide for patients and vascular specialists in order to facilitate difficult conversations and emphasize the need for treatment. Lymphedema does get worse with time, but proper management of the disease can help."
+}]
