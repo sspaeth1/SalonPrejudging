@@ -22,7 +22,7 @@
     "dropbox": "^4.0.30",
     "ejs": "^3.0.1",
     "es6-promise": "^4.2.8",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-sanitizer": "^1.0.5",
     "express-session": "^1.17.0",
     "googleapis": "^39.2.0",
